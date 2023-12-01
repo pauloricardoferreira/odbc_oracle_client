@@ -1,0 +1,35 @@
+[Oracle]
+DISTRIBUTION=TRUE
+SOURCE=../stage/products.xml
+LICENSE_LOCATION=
+BOOTSTRAP_COMPS="oracle.precomp.rsf:12.2.0.1.0,oracle.has.common:12.2.0.1.0,oracle.rdbms.rsf.ic:12.2.0.1.0,oracle.swd.oui:12.2.0.1.4,oracle.swd.oui.core:12.2.0.1.4,oracle.swd.oui.core.min:12.2.0.1.4,oracle.jdk:1.8.0.91.0,oracle.assistants.deconfig:12.2.0.1.0,oracle.usm.deconfig:12.2.0.1.0,oracle.sysman.ccr.deconfig:10.3.1.0.0,oracle.has.deconfig:12.2.0.1.0,oracle.rdbms.deconfig:12.2.0.1.0,oracle.perlint:5.22.0.0.0,oracle.perlint.modules:5.22.0.0.0,oracle.perlint.expat:2.0.1.0.3,oracle.bali.ewt:11.1.1.6.0,oracle.ons:12.2.0.1.0,oracle.ldap.rsf.ic:12.2.0.1.0,oracle.ons.ic:12.2.0.1.0,oracle.rdbms.install.plugins:12.2.0.1.0,oracle.ldap.rsf:12.2.0.1.0,oracle.xdk.rsf:12.2.0.1.0,oracle.network.aso:12.2.0.1.0,oracle.network.rsf:12.2.0.1.0,oracle.oracore.rsf:12.2.0.1.0,oracle.network.rsf:12.2.0.1.0,oracle.oracore.rsf:12.2.0.1.0,oracle.slax.rsf:12.2.0.1.0,oracle.nlsrtl.rsf.core:12.2.0.1.0,oracle.rdbms.rsf:12.2.0.1.0,oracle.install.deinstalltool:12.2.0.1.0"
+#JRE_SCRATCH_LOC=jdk/jre
+JRE_MEMORY_OPTIONS=" -Xms150m -Xmx2048m"
+NO_BROWSE=/net
+NLS_ENABLED=TRUE
+BOOTSTRAP=TRUE
+OUI_VERSION=12.2.0.1.4
+SHOW_HOSTNAME=NEVER_SHOW
+#THIN_JDBC_FILENAME is optional and defaults to classes12.jar
+#The value specified for this should be packaged with OUI, and should 
+#be relative to <OUI expanded stagedir>/jlib/
+THIN_JDBC_FILENAME=classes12.jar
+#JRE_OSDPARAM is to set OS dependent param for JRE ( mainly for native VM in 1.3.1)
+#JRE_OSDPARAM is optional and should be set to -native for the JRE's
+#that support native VM ( mainly for Unix platforms ), in JRE 1.3.1
+#For JRE 1.4.1 this should be set to empty or the type of VM that is 
+#supported client/server. The default value is -native in UNIX platforms
+#that supports native VM
+#Unix supporting native - JRE_OSDPARAM="-native" 
+#Unix NOT supporting native and 1.4.1 - JRE_OSDPARAM="" 
+JRE_OSDPARAM=""
+UMASK=022
+EXT_JLIB=../stage/ext/jlib
+EXT_LIB=../stage/ext/lib
+EXT_BIN=../stage/ext/bin
+
+
+[Generic Prereqs]
+TEMP_SPACE=1639
+SWAP_SPACE=150
+MIN_DISPLAY_COLORS=256

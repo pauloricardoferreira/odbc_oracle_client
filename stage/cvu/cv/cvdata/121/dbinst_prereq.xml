@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<HOST PLATID="233">
+<SYSTEM>
+	<MEMORY>
+		<PHYSICAL_MEMORY VALUE="1024" UNIT="MB" SEVERITY="IGNORABLE"/>
+		<AVAILABLE_MEMORY VALUE="50" UNIT="MB" SEVERITY="IGNORABLE"/>
+	<SWAP_SIZE SEVERITY="IGNORABLE">
+             	<STEPS>
+		<MIN VALUE="1024" UNIT="MB"/>
+		<MAX VALUE="16" UNIT="GB"/>
+                 	<STEP NAME="PHYSICAL_MEMORY" ATLEAST="1024" ATMOST="2048" UNIT="MB" MULTIPLE="1.5"/>
+                 	<STEP NAME="PHYSICAL_MEMORY" GREATER_THAN="2048" UNIT="MB" MULTIPLE="1"/>
+               </STEPS>
+        </SWAP_SIZE>
+	</MEMORY>
+
+	<SPACE>
+		<LOC VAR="RAC_HOME" SIZE="6" UNIT="GB" SEVERITY="IGNORABLE"/>
+		<LOC VAR="TEMP_AREA" TEMP="true" SIZE="500" UNIT="MB" SEVERITY="IGNORABLE"/>
+	</SPACE>
+
+</SYSTEM>
+<CERTIFIED_SYSTEMS>
+         <OPERATING_SYSTEM RELEASE="6.0">
+         	 <VERSION VALUE="3"/>
+         	 <ARCHITECTURE VALUE="64-bit"/>
+         	 <NAME VALUE="WindowsServer2008"/>
+         	 <ENV_VAR_LIST>
+         	     <ENV_VAR NAME="PATH" MAX_LENGTH="5119" />
+         	 </ENV_VAR_LIST>
+         </OPERATING_SYSTEM>
+         <OPERATING_SYSTEM RELEASE="6.0">
+         	 <VERSION VALUE="3"/>
+         	 <ARCHITECTURE VALUE="64-bit"/>
+         	 <NAME VALUE="WindowsVista"/>
+         	 <ENV_VAR_LIST>
+         	     <ENV_VAR NAME="PATH" MAX_LENGTH="5119" />
+         	 </ENV_VAR_LIST>
+         </OPERATING_SYSTEM>
+     	 <OPERATING_SYSTEM RELEASE="6.1">
+         	 <VERSION VALUE="3"/>
+         	 <ARCHITECTURE VALUE="64-bit"/>
+         	 <NAME VALUE="Windows 7"/>
+         	 <ENV_VAR_LIST>
+         	     <ENV_VAR NAME="PATH" MAX_LENGTH="5119" />
+         	 </ENV_VAR_LIST>
+         </OPERATING_SYSTEM>
+     	 <OPERATING_SYSTEM RELEASE="6.1">
+         	 <VERSION VALUE="3"/>
+         	 <ARCHITECTURE VALUE="64-bit"/>
+         	 <NAME VALUE="WindowsServer2008R2"/>
+         	 <ENV_VAR_LIST>
+         	     <ENV_VAR NAME="PATH" MAX_LENGTH="5119" />
+         	 </ENV_VAR_LIST>
+         </OPERATING_SYSTEM>
+	  <OPERATING_SYSTEM RELEASE="6.2">
+         	 <VERSION VALUE="3"/>
+         	 <ARCHITECTURE VALUE="64-bit"/>
+         	 <NAME VALUE="Windows 8"/>
+         	 <ENV_VAR_LIST>
+         	     <ENV_VAR NAME="PATH" MAX_LENGTH="5119" />
+         	 </ENV_VAR_LIST>
+         </OPERATING_SYSTEM>
+	 <OPERATING_SYSTEM RELEASE="6.2">
+                 <VERSION VALUE="3"/>
+	         <ARCHITECTURE VALUE="64-bit"/>
+                 <NAME VALUE="Windows Server 2012"/>
+                 <ENV_VAR_LIST>
+                     <ENV_VAR NAME="PATH" MAX_LENGTH="5119" />
+                 </ENV_VAR_LIST>
+	 </OPERATING_SYSTEM>
+	 <OPERATING_SYSTEM RELEASE="6.3">
+                 <VERSION VALUE="3"/>
+                 <ARCHITECTURE VALUE="64-bit"/>
+                 <NAME VALUE="Windows Server 2012 R2"/>
+                 <ENV_VAR_LIST>
+                     <ENV_VAR NAME="PATH" MAX_LENGTH="5119" />
+                 </ENV_VAR_LIST>
+         </OPERATING_SYSTEM>
+</CERTIFIED_SYSTEMS>
+<ORACLE_HOME>
+	<COMPATIBILITY_MATRIX>
+		<ALLOW>
+			<!-- Allowing new home and removing all disallow section ,fix for bug# 17399376  -->
+			<NEW_HOME/>
+		</ALLOW>
+	</COMPATIBILITY_MATRIX>      
+	<EXISTENCE_MATRIX>
+		<COMP NAME="oracle.crs" DESC="Oracle Cluster Ready Services (CRS) 10gR2" EXISTS="FALSE" ATLEAST="10.1.0.0.0" ATMOST="10.2.0.0.0"/>
+		<COMP NAME="oracle.server" DESC="Oracle Real Application Cluster (RAC) 10gR2" EXISTS="FALSE" ATLEAST="9.2.0.0.0" ATMOST="9.2.0.0.0"/>
+	</EXISTENCE_MATRIX>
+</ORACLE_HOME>
+</HOST>
+

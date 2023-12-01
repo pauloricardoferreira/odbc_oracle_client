@@ -1,0 +1,24 @@
+# Configuration file for Cluster Verification Utility(CVU)
+# Version: 032305
+# Platform: Windows
+# 
+# NOTE:
+# 1._ Any line without a '=' will be ignored
+# 2._ Since the fallback option will look into the environment variables,
+#     please have a component prefix(CV_) for each property to avoid 
+#     potential conflicts.
+# 
+
+
+#Nodes for the cluster. If CRS home is not installed, this list will be 
+#picked up when -n all is mentioned in the commandline argument.
+#CV_NODE_ALL=
+
+
+# Fallback to this distribution id ( Windows Server 2003 )
+#CV_ASSUME_DISTID=6.0
+
+#SRVM_TRACE=true
+
+# Maximum number of retries for discover DHCP server
+#CV_MAX_RETRIES_DHCP_DISCOVERY=5

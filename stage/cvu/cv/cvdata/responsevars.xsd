@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!--  $Header: opsm/cv/cvdata/responsevars.xsd /main/1 2015/12/18 09:15:15 jgagarci Exp $ -->
+
+<!-- 
+ Copyright (c) 2014, 2015, Oracle and/or its affiliates. All rights reserved.
+
+   NAME
+     responsevars.xsd - Response variables xml schema
+
+   DESCRIPTION
+     XML schema for response variables matching valid options
+
+   NOTES
+     
+   MODIFIED   (MM/DD/YY)
+   jgagarci    12/14/15 - Creation
+
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.w3.org/2001/XMLSchema http://www.w3.org/2001/XMLSchema.xsd">
+    <xs:element name="ROOT" >
+       <xs:complexType>
+         <xs:sequence>
+            <xs:element name="SOFTWARE" minOccurs="0" maxOccurs="unbounded">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="VARIABLE_LIST" minOccurs="1" maxOccurs="1">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element name="VARIABLE" minOccurs="1" maxOccurs="unbounded">
+                                 <xs:complexType>
+                                    <xs:all>
+                                       <xs:element name="RESPONSE_VARIABLE" minOccurs="1" maxOccurs="1" type="valueAttribute"/>
+                                       <xs:element name="VALID_OPTIONS" minOccurs="1" maxOccurs="1" type="valueAttribute"/>
+                                    </xs:all>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="VERSION" use="required" type="xs:string"/>
+               </xs:complexType>
+            </xs:element>
+         </xs:sequence>
+       </xs:complexType>
+    </xs:element>
+    <xs:complexType name="valueAttribute">
+       <xs:attribute name="VALUE" use="required" type="xs:string"/>
+    </xs:complexType>
+</xs:schema>

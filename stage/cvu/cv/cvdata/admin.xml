@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="ISO-8859-1"  ?>
+<!DOCTYPE RootProperty SYSTEM "admin.dtd" []>
+
+
+<!-- 
+======================================================================
+ CAUTION:                                                             
+    Changes to this file might adversely affect Cluster Verification.  
+
+    This file has 2 sections. Section D contains the default values    
+    where as Section P contains the platform specific values 
+======================================================================= 
+-->
+
+<!-- Root property -->
+<RootProperty>
+
+  <!-- 
+  ===============  SECTION D: [ START ]  ============================
+  This section contains the default values for various properties. 
+  Generally, these are available/applicable on all the platforms.
+  ===================================================================
+  -->
+
+  <!-- name of the constraint file -->
+  <Property Name ="file_constraints_xml"  
+            Value="constraints.xml" />
+
+  <!-- default/current OCR version for this platform -->
+  <Property Name="def_ocr_ver"  
+            Value="4"/>
+  <!-- default/current ocr version for this platform for 11.2-->
+  <Property Name="def_ocr_ver_11_2"
+            Value="3"/>
+  <!-- default/current ocr version for this platform for 11.1-->
+  <Property Name="def_ocr_ver_11_0"  
+            Value="2"/>
+  <!-- default/current ocr version for this platform for 11.1-->
+  <Property Name="def_ocr_ver_11_1"  
+            Value="2"/>
+  <!-- default/current ocr version for this platform for 10.2-->
+  <Property Name="def_ocr_ver_10_2"  
+            Value="2"/>    
+  <!-- default value for 'ocr' size  -->
+  <Property Name="def_ocr_size"  Value="262144"/>
+  <!-- default value for min space limit in MB for CRS Home to be monitored by FreeSpaceComponent -->
+  <!-- modify free space value in message DESC_COMP_FREE_SPACE when below line is modified -->
+  <Property Name="def_crshome_freespace_default_limit"
+            Value="5120"/>
+  <!-- default value for percentage of available space to define the minimum limit for CRS Home -->
+  <!-- modify free space percent value in message DESC_COMP_FREE_SPACE when below line is modified -->
+  <Property Name="def_crshome_freespace_percentage_limit"
+            Value="0.05"/>
+  <!-- default relaxation factor to be used for mathematical comparisons -->
+  <Property Name="def_relax_factor_percent"  
+            Value="5"/>
+  <!-- default runtime memory limit for serialization -->
+  <!-- Note that this limit is specified in bytes and is basically used to 
+       reduce the chances of "Out of memory" error. Also, this helps in reducing
+       the usage of file descriptor which are used by the serialization code in 
+       CVU framework.
+       i.e The more this limit is, less will be the use of file descriptors as
+       the actual serialization happens only after the object being serialized 
+       by the CVU framework crosses this limit and is not allowed to stay 
+       in memory. The default value is 1MB in bytes i.e 1048576 bytes -->
+  <Property Name="def_runtime_memory_limit_for_serialization_in_bytes"  
+            Value="1048576"/>
+
+  <!--  ********************  SECTION D: [ END ]  *****************  -->
+
+
+  <!-- 
+  ===============  SECTION P: [ START ]  ============================
+  This section contains the platform specific properties and their
+  values. These values may or may not exist on other platforms. 
+  ===================================================================
+  -->
+  <!-- List of AntiVirus service names to verify they are not running
+  nav, Norton antivirus 2014
+  mcshield, McAfee antivirus 2014
+  avp, Kaspersky 2015
+  -->
+  <Property Name="def_antivirus_service_names"
+          Value="nav,mcshield,avp"/>
+  <!--  Name of the remote command(the wrapper script for exectask) -->
+  <Property Name ="rem_command"  
+            Value="exectask.exe" />
+  <!--  Files required on the remote node for exectask operation -->
+  <!-- To be changed later -->
+  <Property Name ="rem_cmd_files"  
+            Value="cv\remenv\exectask.exe,bin\oracore12.dll,bin\orauts.dll,bin\oranls12.dll,bin\oraunls12.dll,msvcr120.dll,msvcp120.dll,bin\msvcr120.dll,bin\msvcp120.dll,inventory\scripts\ext\bin\msvcr120.dll,inventory\scripts\ext\bin\msvcp120.dll,cv\remenv\cvuhelper.bat,cv\remenv\jlib,cv\remenv\pluggable" />
+
+  <!-- default temp location on this platform -->
+  <Property Name ="def_dir_temp"  
+            Value="C:\temp" />
+
+  <!-- CRS Daemon - internal name -->
+  <Property Name ="DAEMON_INAME_CRS"
+            Value="OracleCRService" />
+  <!-- CRS Daemon - display name -->
+  <Property Name ="DAEMON_DNAME_CRS"
+            Value="CRS daemon" />
+
+  <!-- CSS Daemon - internal name -->
+  <Property Name ="DAEMON_INAME_CSS"
+            Value="OracleCSService" />
+  <!-- CSS Daemon - display name -->
+  <Property Name ="DAEMON_DNAME_CSS"
+            Value="CSS daemon" />
+
+  <!-- EVM Daemon - internal name -->
+  <Property Name ="DAEMON_INAME_EVM"
+            Value="OracleEVMService" />
+  <!-- EVM Daemon - display name -->
+  <Property Name ="DAEMON_DNAME_EVM"
+            Value="EVM daemon" />
+
+  <!-- OHASD Daemon - internal name -->
+  <Property Name ="DAEMON_INAME_OHASD"
+            Value="OracleOHService" />
+  <!-- CRS Daemon - display name -->
+  <Property Name ="DAEMON_DNAME_OHASD"
+            Value="OHAS daemon" />
+
+	<!-- List of critical directories whose attributes need to be collected 
+		during baseline collection. For NT, currently no critical directories, apart 
+		from the ones being collected by regular comp software, have been identified. 
+		Hence empty. -->
+  <Property Name="critical_directories_to_be_baselined" Value="" />
+  <!-- Default Ping timeout in seconds -->
+  <Property Name="def_ping_timeout_val"
+            Value="3"/>
+
+  <!--  ***************  SECTION P:  [ END ]  ************************  -->
+
+</RootProperty>

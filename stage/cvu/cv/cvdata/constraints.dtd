@@ -1,0 +1,59 @@
+<!-- DTD for constraint model, used in CDM module, Cluster verification -->
+
+<!--
+*  
+* RootConstraint:
+*   As the name indicates, it is the root constraint
+*
+* BranchConstraint:
+*
+* Constraint:
+-->
+
+<!-- Predefined types for Constraint, simple type.
+     These are defined as entity so that the changes can be made at one place.
+ -->
+<!ENTITY % STypeEntity
+ "(OS | OSVER | OSPATCH | KRNVER | KRNPARAM | SYSPARAM |
+  PACKAGE | LIB | FILE | PATH | CLASSPATH | EXE | SPACE |
+   REGENTRY | ALIVE | USER | GROUP | USERGRP | OWNERSHIP |
+    PORT | JAVAVER | RAWSIZE | SWAP | FREEMEM | TOTALMEM  |
+     NUMPROCESSOR | OCRVER | ARCHITECTURE )" >
+
+<!-- Qualifiers to be used in Constraint.  
+-->
+<!ENTITY % SQualifierEntity 
+  "(LT | LTE | GT | GTE | EXIST | NOTEXIST | EQUAL | 
+    NOTEQUAL | ALIVE | NOTALIVE | DISCOVER | COMPARE | QUERY )" >
+
+<!-- Action on failure entity -->
+<!ENTITY % FallbackEntity "( STOP | WARN | INFO | SKIP )" >
+
+<!-- Leaf level building block.
+-->
+<!ELEMENT Constraint ( KeyData, RefData ) >
+
+<!ATTLIST Constraint Type %STypeEntity; #REQUIRED >
+<!ATTLIST Constraint FallbackAction %FallbackEntity; #IMPLIED >
+<!ATTLIST Constraint Qualifier %SQualifierEntity; #REQUIRED >
+<!ATTLIST Constraint Condition CDATA #IMPLIED >
+
+<!-- NOTE: These child elements could have been defined as attributes of 
+     Constraint. There is a fair chance that these will 
+     become more complicated to address issues like indirection and 
+     reference. Modelling them as child element provides better flexibility
+     in this direction.  
+-->
+<!ELEMENT KeyData (#PCDATA) >
+<!ELEMENT RefData (#PCDATA) >
+
+<!-- BranchConstraint
+-->
+<!ELEMENT BranchConstraint ( Constraint+ ) >
+
+<!ATTLIST BranchConstraint Name CDATA #REQUIRED >
+
+<!-- RootConstraint 
+-->
+<!ELEMENT RootConstraint ( BranchConstraint+ ) >
+

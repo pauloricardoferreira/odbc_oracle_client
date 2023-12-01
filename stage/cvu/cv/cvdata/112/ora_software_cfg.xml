@@ -1,0 +1,2296 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SoftwareComponents>
+   <SoftwareComponent Name="crs">
+      <File Path="bin/" Name="crsdiag.pl" Permissions="0755"/>
+      <File Path="racg/lib/" Name="ins_has.mk"/>
+      <File Path="lib/" Name="libclsr11.a"/>
+      <File Path="srvm/lib/" Name="libocr11.a"/>
+      <File Path="srvm/lib/" Name="libocrb11.a"/>
+      <File Path="srvm/lib/" Name="libocrutl11.a"/>
+      <File Path="srvm/lib/" Name="libdbcfg11.a"/>
+      <File Path="srvm/lib/" Name="libuini11.a"/>
+      <File Path="srvm/lib/" Name="libsrvm11.a"/>
+      <File Path="srvm/lib/" Name="libsrvmhas11.a"/>
+      <File Path="srvm/lib/" Name="libsrvmocr11.a"/>
+      <File Path="bin/" Name="srvconfig" Permissions="0755"/>
+      <File Path="bin/" Name="rawutl" Permissions="0755"/>
+      <File Path="bin/" Name="osdbagrp" Permissions="0755"/>
+      <File Path="bin/" Name="lsnodes" Permissions="0755"/>
+      <File Path="srvm/lib/" Name="prraw.o"/>
+      <File Path="srvm/lib/" Name="sprraw.o"/>
+      <File Path="srvm/lib/" Name="pradmgrp.o"/>
+      <File Path="srvm/lib/" Name="sprdbgrp.o"/>
+      <File Path="srvm/lib/" Name="prifcg.o"/>
+      <File Path="srvm/lib/" Name="sprifcg.o"/>
+      <File Path="srvm/lib/" Name="prifutl.o"/>
+      <File Path="srvm/lib/" Name="prifcmn.o"/>
+      <File Path="bin/" Name="cluvfy" Permissions="0755"/>
+      <File Path="jlib/" Name="dbui2.jar"/>
+      <File Path="jlib/" Name="dbui2-nls.jar"/>
+      <File Path="ldap/lib/" Name="oidca.jar"/>
+      <File Path="ldap/lib/" Name="oidca_help.jar"/>
+      <File Path="bin/" Name="dsml2ldif" Permissions="0755"/>
+      <File Path="bin/" Name="ldapadd" Permissions="0755"/>
+      <File Path="bin/" Name="ldapaddmt" Permissions="0755"/>
+      <File Path="bin/" Name="ldapbind" Permissions="0755"/>
+      <File Path="bin/" Name="ldapcompare" Permissions="0755"/>
+      <File Path="bin/" Name="ldapdelete" Permissions="0755"/>
+      <File Path="bin/" Name="ldapmoddn" Permissions="0755"/>
+      <File Path="bin/" Name="ldapmodify" Permissions="0755"/>
+      <File Path="bin/" Name="ldapmodifymt" Permissions="0755"/>
+      <File Path="bin/" Name="ldapsearch" Permissions="0755"/>
+      <File Path="ldap/lib/" Name="s0gslbind.o"/>
+      <File Path="ldap/lib/" Name="s0gslcompare.o"/>
+      <File Path="ldap/lib/" Name="s0gsldel.o"/>
+      <File Path="ldap/lib/" Name="s0gsldsearch.o"/>
+      <File Path="ldap/lib/" Name="s0gsldsml2ldif.o"/>
+      <File Path="ldap/lib/" Name="s0gslmod.o"/>
+      <File Path="ldap/lib/" Name="s0gslmoddn.o"/>
+      <File Path="ldap/lib/" Name="s0gsltmod.o"/>
+      <File Path="ldap/lib/" Name="gslmcu.o"/>
+      <File Path="ldap/lib/" Name="env_ldap.mk"/>
+      <File Path="ldap/lib/" Name="ins_ldap.mk"/>
+      <File Path="assistants/jlib/" Name="assistantsCommon.jar"/>
+      <File Path="assistants/netca/jlib/" Name="netca.jar"/>
+      <File Path="deinstall/jlib/" Name="deinstall_core.jar"/>
+      <File Path="deinstall/jlib/" Name="deinstall_wrapper.jar"/>
+      <File Path="clone/bin/" Name="clone.pl" Permissions="0755"/>
+      <File Path="clone/bin/" Name="prepare_clone.pl" Permissions="0755"/>
+      <File Path="bin/" Name="chopt" Permissions="0755"/>
+      <File Path="bin/" Name="chopt.pl"/>
+      <File Path="bin/" Name="chopt.ini"/>
+      <File Path="bin/" Name="bndlchk" Permissions="0755"/>
+      <File Path="bin/" Name="relink" Permissions="0755"/>
+      <File Path="bin/" Name="symfind" Permissions="0755"/>
+      <File Path="jlib/" Name="o3logon.jar"/>
+      <File Path="network/jlib/" Name="netmgr.jar"/>
+      <File Path="network/jlib/" Name="netmgrm.jar"/>
+      <File Path="network/jlib/" Name="trcasst.jar"/>
+      <File Path="jlib/" Name="verifier15.jar"/>
+      <File Path="bin/" Name="adapters" Permissions="0755"/>
+      <File Path="bin/" Name="trcroute"/>
+      <File Path="network/lib/" Name="libnoncj11.so"/>
+      <File Path="network/lib/" Name="nur.o"/>
+      <File Path="network/lib/" Name="s0nur.o"/>
+      <File Path="network/lib/" Name="snlptdum.o"/>
+      <File Path="lib/" Name="nigcon.o"/>
+      <File Path="lib/" Name="nigtab.o"/>
+      <File Path="lib/" Name="osntabst.o"/>
+      <File Path="lib/" Name="libsql11.a"/>
+      <File Path="precomp/lib/" Name="env_precomp.mk"/>
+      <File Path="precomp/lib/" Name="ins_precomp.mk"/>
+      <File Path="precomp/lib/" Name="libpgp.a"/>
+      <File Path="bin/" Name="diagcollection.pl" Permissions="0755"/>
+      <File Path="jlib/" Name="ndfnceca.jar"/>
+      <File Path="bin/" Name="oradnssd"/>
+      <File Path="bin/" Name="asmproxy" Permissions="0755"/>
+      <File Path="bin/" Name="appagent.bin" Permissions="0755"/>
+      <File Path="bin/" Name="clssproxy.bin" Permissions="0755"/>
+      <File Path="bin/" Name="cssvfupgd.bin" Permissions="0755"/>
+      <File Path="bin/" Name="crs_getperm.bin" Permissions="0755"/>
+      <File Path="bin/" Name="crs_profile.bin" Permissions="0755"/>
+      <File Path="bin/" Name="crs_register.bin" Permissions="0755"/>
+      <File Path="bin/" Name="crs_relocate.bin" Permissions="0755"/>
+      <File Path="bin/" Name="crs_setperm.bin" Permissions="0755"/>
+      <File Path="bin/" Name="crs_start.bin" Permissions="0755"/>
+      <File Path="bin/" Name="crs_stat.bin" Permissions="0755"/>
+      <File Path="bin/" Name="crs_stop.bin" Permissions="0755"/>
+      <File Path="bin/" Name="crs_unregister.bin" Permissions="0755"/>
+      <File Path="bin/" Name="octssd.bin" Permissions="0741"/>
+      <File Path="bin/" Name="ohasd.bin" Permissions="0741"/>
+      <File Path="bin/" Name="gipcd.bin" Permissions="0755"/>
+      <File Path="bin/" Name="mdnsd.bin" Permissions="0755"/>
+      <File Path="bin/" Name="gpnpd.bin" Permissions="0755"/>
+      <File Path="bin/" Name="gpnptool.bin" Permissions="0755"/>
+      <File Path="bin/" Name="gnsd.bin" Permissions="0741"/>
+      <File Path="bin/" Name="oranetmonitor.bin" Permissions="0755"/>
+      <File Path="bin/" Name="oradnssd.bin" Permissions="0741"/>
+      <File Path="bin/" Name="crsd.bin" Permissions="0741"/>
+      <File Path="bin/" Name="oclskd.bin" Permissions="0751"/>
+      <File Path="bin/" Name="evmd.bin" Permissions="0755"/>
+      <File Path="bin/" Name="evminfo.bin" Permissions="0755"/>
+      <File Path="bin/" Name="evmlogger.bin" Permissions="0755"/>
+      <File Path="bin/" Name="evmmkbin.bin" Permissions="0755"/>
+      <File Path="bin/" Name="evmmklib.bin" Permissions="0755"/>
+      <File Path="bin/" Name="evmpost.bin" Permissions="0755"/>
+      <File Path="bin/" Name="evmshow.bin" Permissions="0755"/>
+      <File Path="bin/" Name="evmsort.bin" Permissions="0755"/>
+      <File Path="bin/" Name="evmwatch.bin" Permissions="0755"/>
+      <File Path="bin/" Name="oraagent.bin" Permissions="0755"/>
+      <File Path="bin/" Name="orarootagent.bin" Permissions="0741"/>
+      <File Path="bin/" Name="racgevtf" Permissions="0755"/>
+      <File Path="bin/" Name="racgons.bin" Permissions="0755"/>
+      <File Path="bin/" Name="racgvip" Permissions="0755"/>
+      <File Path="bin/" Name="sclsspawn" Permissions="0755"/>
+      <File Path="bin/" Name="scriptagent.bin" Permissions="0755"/>
+      <File Path="bin/" Name="cssdagent" Permissions="0755"/>
+      <File Path="bin/" Name="cssdmonitor" Permissions="0755"/>
+      <File Path="bin/" Name="oprocd" Permissions="0755"/>
+      <File Path="bin/" Name="emcrsp.bin" Permissions="0755"/>
+      <File Path="bin/" Name="appvipcfg" Permissions="0755"/>
+      <File Path="bin/" Name="diskmonagent.bin" Permissions="0741"/>
+      <File Path="bin/" Name="clscfg.bin" Permissions="0755"/>
+      <File Path="bin/" Name="clsecho.bin" Permissions="0755"/>
+      <File Path="bin/" Name="clsfmt.bin" Permissions="0755"/>
+      <File Path="bin/" Name="clsid.bin" Permissions="0755"/>
+      <File Path="bin/" Name="crsctl.bin" Permissions="0755"/>
+      <File Path="bin/" Name="ocssd.bin" Permissions="0755"/>
+      <File Path="bin/" Name="crstmpl.scr" Permissions="0755"/>
+      <File Path="crs/lib/" Name="caa_regapp.o"/>
+      <File Path="evm/lib/" Name="libevmd.a"/>
+      <File Path="bin/" Name="evt.sh" Permissions="0755"/>
+      <File Path="bin/" Name="crswrapexece.pl" Permissions="0744"/>
+      <File Path="bin/" Name="ocrcheck.bin" Permissions="0755"/>
+      <File Path="bin/" Name="ocrconfig.bin" Permissions="0755"/>
+      <File Path="bin/" Name="ocrdump.bin" Permissions="0755"/>
+      <File Path="bin/" Name="cemutls.bin" Permissions="0755"/>
+      <File Path="bin/" Name="cemutlo.bin" Permissions="0755"/>
+      <File Path="bin/" Name="lsdb.bin" Permissions="0755"/>
+      <File Path="bin/" Name="oifcfg.bin" Permissions="0755"/>
+      <File Path="bin/" Name="olsnodes.bin" Permissions="0755"/>
+      <File Path="bin/" Name="gsd" Permissions="0755"/>
+      <File Path="bin/" Name="usrvip" Permissions="0755"/>
+      <File Path="bin/" Name="oc4jctl.pl" Permissions="0755"/>
+      <File Path="bin/" Name="appvipcfg.pl" Permissions="0750"/>
+      <File Path="rdbms/jlib/" Name="xdb.jar"/>
+      <File Path="rdbms/jlib/" Name="xs.jar"/>
+      <File Path="rdbms/jlib/" Name="eusm.jar"/>
+      <File Path="rdbms/jlib/" Name="usermigrate-1_0.jar"/>
+      <File Path="jlib/" Name="opm.jar"/>
+      <File Path="bin/" Name="genclntsh" Permissions="0755"/>
+      <File Path="bin/" Name="genclntst" Permissions="0755"/>
+      <File Path="bin/" Name="genoccish" Permissions="0755"/>
+      <File Path="bin/" Name="coraenv" Permissions="0755"/>
+      <File Path="bin/" Name="dbhome" Permissions="0755"/>
+      <File Path="bin/" Name="extjob"/>
+      <File Path="bin/" Name="extjobo"/>
+      <File Path="bin/" Name="genagtsh" Permissions="0755"/>
+      <File Path="bin/" Name="kgmgr"/>
+      <File Path="bin/" Name="loadpsp"/>
+      <File Path="bin/" Name="oraenv" Permissions="0755"/>
+      <File Path="lib/" Name="libocci11.a"/>
+      <File Path="lib/" Name="libagent11.a"/>
+      <File Path="lib/" Name="libclntsh.so.11.1"/>
+      <File Path="lib/" Name="sysliblist"/>
+      <File Path="lib/" Name="facility.lis"/>
+      <File Path="lib/" Name="libclient11.a"/>
+      <File Path="lib/" Name="libclntst11.a"/>
+      <File Path="lib/" Name="libcommon11.a"/>
+      <File Path="lib/" Name="libgeneric11.a"/>
+      <File Path="lib/" Name="libmm.a"/>
+      <File Path="lib/" Name="libnnet11.a"/>
+      <File Path="lib/" Name="libnnetd11.a"/>
+      <File Path="lib/" Name="libplc11.a"/>
+      <File Path="lib/" Name="libplp11.a"/>
+      <File Path="lib/" Name="libpls11.a"/>
+      <File Path="lib/" Name="libplc11_pic.a"/>
+      <File Path="lib/" Name="libplp11_pic.a"/>
+      <File Path="lib/" Name="libpls11_pic.a"/>
+      <File Path="lib/" Name="libpsa11.a"/>
+      <File Path="lib/" Name="liborion11.a"/>
+      <File Path="lib/" Name="libxdb.so"/>
+      <File Path="bin/" Name="orion" Permissions="0755"/>
+      <File Path="rdbms/lib/" Name="env_rdbms.mk"/>
+      <File Path="rdbms/lib/" Name="genezi.o"/>
+      <File Path="rdbms/lib/" Name="ins_rdbms.mk"/>
+      <File Path="rdbms/lib/" Name="kgutc.o"/>
+      <File Path="rdbms/lib/" Name="sjsex.o"/>
+      <File Path="rdbms/lib/" Name="wpspldrv.o"/>
+      <File Path="rdbms/lib/" Name="xaondy.o"/>
+      <File Path="rdbms/lib/" Name="xaonsl.o"/>
+      <File Path="rdbms/lib/" Name="srfsd.o"/>
+      <File Path="rdbms/lib/" Name="rfsin.o"/>
+      <File Path="rdbms/lib/" Name="rfobsv.o"/>
+      <File Path="rdbms/lib/" Name="rfscom.o"/>
+      <File Path="rdbms/lib/" Name="rfsd.o"/>
+      <File Path="rdbms/lib/" Name="rfsxc.o"/>
+      <File Path="rdbms/lib/" Name="orion.o"/>
+      <File Path="rdbms/lib/" Name="libxdb.a"/>
+      <File Path="rdbms/lib/" Name="libwrc11.a"/>
+      <File Path="rdbms/lib/" Name="sskeced.o"/>
+      <File Path="rdbms/lib/" Name="skecpt.o"/>
+      <File Path="rdbms/lib/" Name="ssdbgved.o"/>
+      <File Path="rdbms/lib/" Name="sdbgvpt.o"/>
+      <File Path="rdbms/lib/" Name="dbgvci.o"/>
+      <File Path="rdbms/lib/" Name="ssdbgued.o"/>
+      <File Path="rdbms/lib/" Name="sdbgupt.o"/>
+      <File Path="rdbms/lib/" Name="dbguci.o"/>
+      <File Path="rdbms/lib/" Name="libdbtools11.a"/>
+      <File Path="rdbms/lib/" Name="sskrmed.o"/>
+      <File Path="rdbms/lib/" Name="skrmpt.o"/>
+      <File Path="rdbms/lib/" Name="sysresv.o"/>
+      <File Path="lib/" Name="liborasdk.so.11.1"/>
+      <File Path="lib/" Name="liborasdkbase.so.11.1"/>
+      <File Path="lib/" Name="libskgxp11.so"/>
+      <File Path="lib/" Name="libskgxpd.so"/>
+      <File Path="lib/" Name="libskgxpg.so"/>
+      <File Path="lib/" Name="libskgxpr.so"/>
+      <File Path="lib/" Name="libskgxpcompat.so"/>
+      <File Path="rdbms/lib/" Name="libskgxpd.a"/>
+      <File Path="rdbms/lib/" Name="libskgxpg.a"/>
+      <File Path="rdbms/lib/" Name="libskgxpr.a"/>
+      <File Path="rdbms/lib/" Name="libcdf11.a"/>
+      <File Path="jlib/" Name="ewt3.jar"/>
+      <File Path="jlib/" Name="ewt3-nls.jar"/>
+      <File Path="install/jlib/" Name="installcommons_1.0.0b.jar"/>
+      <File Path="install/jlib/" Name="instcommon.jar"/>
+      <File Path="install/jlib/" Name="instdb.jar"/>
+      <File Path="install/jlib/" Name="instcrs.jar"/>
+      <File Path="bin/" Name="kfod"/>
+      <File Path="bin/" Name="kfed"/>
+      <File Path="lib/" Name="libasmclnt11.so"/>
+      <File Path="lib/" Name="libcell11.so"/>
+      <File Path="jdbc/lib/" Name="ojdbc5_g.jar"/>
+      <File Path="jdbc/lib/" Name="ojdbc5dms.jar"/>
+      <File Path="jdbc/lib/" Name="ojdbc5dms_g.jar"/>
+      <File Path="jdbc/lib/" Name="ojdbc6_g.jar"/>
+      <File Path="jdbc/lib/" Name="ojdbc6dms.jar"/>
+      <File Path="jdbc/lib/" Name="ojdbc6dms_g.jar"/>
+      <File Path="jdbc/lib/" Name="simplefan.jar"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5-i686/bin/" Name="acfsdbg"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5-i686/bin/" Name="acfsdbg.bin"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5-i686/bin/" Name="acfsutil"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5-i686/bin/" Name="acfsutil.bin"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5-i686/bin/" Name="advmutil"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5-i686/bin/" Name="advmutil.bin"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5-i686/bin/" Name="fsck.acfs"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5-i686/bin/" Name="fsck.acfs.bin"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5-i686/bin/" Name="mkfs.acfs"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5-i686/bin/" Name="mkfs.acfs.bin"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5-i686/bin/" Name="mount.acfs"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5-i686/bin/" Name="mount.acfs.bin"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5-i686/bin/" Name="oracleacfs.ko"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5-i686/bin/" Name="oracleadvm.ko"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5-i686/bin/" Name="oracleoks.ko"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5xen-i686/bin/" Name="acfsdbg"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5xen-i686/bin/" Name="acfsdbg.bin"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5xen-i686/bin/" Name="acfsutil"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5xen-i686/bin/" Name="acfsutil.bin"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5xen-i686/bin/" Name="advmutil"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5xen-i686/bin/" Name="advmutil.bin"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5xen-i686/bin/" Name="fsck.acfs"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5xen-i686/bin/" Name="fsck.acfs.bin"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5xen-i686/bin/" Name="mkfs.acfs"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5xen-i686/bin/" Name="mkfs.acfs.bin"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5xen-i686/bin/" Name="mount.acfs"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5xen-i686/bin/" Name="mount.acfs.bin"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5xen-i686/bin/" Name="oracleacfs.ko"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5xen-i686/bin/" Name="oracleadvm.ko"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5xen-i686/bin/" Name="oracleoks.ko"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5PAE-i686/bin/" Name="acfsdbg"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5PAE-i686/bin/" Name="acfsdbg.bin"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5PAE-i686/bin/" Name="acfsutil"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5PAE-i686/bin/" Name="acfsutil.bin"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5PAE-i686/bin/" Name="advmutil"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5PAE-i686/bin/" Name="advmutil.bin"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5PAE-i686/bin/" Name="fsck.acfs"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5PAE-i686/bin/" Name="fsck.acfs.bin"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5PAE-i686/bin/" Name="mkfs.acfs"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5PAE-i686/bin/" Name="mkfs.acfs.bin"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5PAE-i686/bin/" Name="mount.acfs"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5PAE-i686/bin/" Name="mount.acfs.bin"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5PAE-i686/bin/" Name="oracleacfs.ko"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5PAE-i686/bin/" Name="oracleadvm.ko"/>
+      <File Path="install/usm/EL5/i386/2.6.18-8/2.6.18-8.el5PAE-i686/bin/" Name="oracleoks.ko"/>
+      <File Path="install/usm/EL5/x86_64/2.6.18-8/2.6.18-8.el5-x86_64/bin/" Name="oracleacfs.ko"/>
+      <File Path="install/usm/EL5/x86_64/2.6.18-8/2.6.18-8.el5-x86_64/bin/" Name="oracleadvm.ko"/>
+      <File Path="install/usm/EL5/x86_64/2.6.18-8/2.6.18-8.el5-x86_64/bin/" Name="oracleoks.ko"/>
+      <File Path="install/usm/EL5/x86_64/2.6.18-8/2.6.18-8.el5xen-x86_64/bin/" Name="oracleacfs.ko"/>
+      <File Path="install/usm/EL5/x86_64/2.6.18-8/2.6.18-8.el5xen-x86_64/bin/" Name="oracleadvm.ko"/>
+      <File Path="install/usm/EL5/x86_64/2.6.18-8/2.6.18-8.el5xen-x86_64/bin/" Name="oracleoks.ko"/>
+      <File Path="jlib/" Name="jaxen.jar"/>
+      <File Path="jlib/" Name="osdt_cert.jar"/>
+      <File Path="jlib/" Name="osdt_cmp.jar"/>
+      <File Path="jlib/" Name="osdt_cms.jar"/>
+      <File Path="jlib/" Name="osdt_core.jar"/>
+      <File Path="jlib/" Name="osdt_core_fips.jar"/>
+      <File Path="jlib/" Name="osdt_jce.jar"/>
+      <File Path="jlib/" Name="osdt_ldap.jar"/>
+      <File Path="jlib/" Name="osdt_lib_v11.jar"/>
+      <File Path="jlib/" Name="osdt_lib_v12.jar"/>
+      <File Path="jlib/" Name="osdt_ocsp.jar"/>
+      <File Path="jlib/" Name="osdt_saml.jar"/>
+      <File Path="jlib/" Name="osdt_smime.jar"/>
+      <File Path="jlib/" Name="osdt_tsp.jar"/>
+      <File Path="jlib/" Name="osdt_wss.jar"/>
+      <File Path="jlib/" Name="osdt_xkms.jar"/>
+      <File Path="jlib/" Name="osdt_xmlsec.jar"/>
+      <File Path="jlib/" Name="osdt_saml2.jar"/>
+      <File Path="sysman/jlib/" Name="log4j-core.jar"/>
+      <File Path="sysman/jlib/" Name="jmxri.jar"/>
+      <File Path="sysman/jlib/" Name="rmissl.jar"/>
+      <File Path="sysman/jlib/" Name="jmxremote.jar"/>
+      <File Path="jlib/" Name="emConfigInstall.jar"/>
+      <File Path="sysman/jlib/" Name="emagentSDK.jar"/>
+      <File Path="sysman/jlib/" Name="jmxFetchlet.jar"/>
+      <File Path="bin/" Name="AgentLifeCycle.pm" Permissions="0755"/>
+      <File Path="bin/" Name="AgentMisc.pm" Permissions="0755"/>
+      <File Path="bin/" Name="AgentStatus.pm" Permissions="0755"/>
+      <File Path="bin/" Name="AgentSubAgent.pm" Permissions="0755"/>
+      <File Path="bin/" Name="CompEMagent.pm" Permissions="0755"/>
+      <File Path="bin/" Name="EMAgent.pm" Permissions="0755"/>
+      <File Path="bin/" Name="EMDeploy.pm" Permissions="0755"/>
+      <File Path="bin/" Name="EMAgentPatch.pm" Permissions="0755"/>
+      <File Path="bin/" Name="EMSAConsoleCommon.pm" Permissions="0755"/>
+      <File Path="bin/" Name="EmCommonCmdDriver.pm" Permissions="0755"/>
+      <File Path="bin/" Name="LaunchEMagent.pm" Permissions="0755"/>
+      <File Path="bin/" Name="emwd.pl" Permissions="0755"/>
+      <File Path="bin/" Name="sAgentUtils.pm" Permissions="0755"/>
+      <File Path="bin/" Name="SecureAgentCmds.pm" Permissions="0755"/>
+      <File Path="bin/" Name="SecureUtil.pm" Permissions="0755"/>
+      <File Path="bin/" Name="patchAgtStPlugin.pm" Permissions="0750"/>
+      <File Path="bin/" Name="nfsPatchPlugin.pm" Permissions="0750"/>
+      <File Path="bin/" Name="StartAgent.pl" Permissions="0750"/>
+      <File Path="bin/" Name="emdfail.command" Permissions="0755"/>
+      <File Path="bin/" Name="sqlplus"/>
+      <File Path="lib/" Name="libsqlplus.so"/>
+      <File Path="lib/" Name="libordimt11.a"/>
+      <File Path="lib/" Name="xml.jar"/>
+      <File Path="lib/" Name="xmlcomp2.jar"/>
+      <File Path="lib/" Name="xmlmesg.jar"/>
+      <File Path="lib/" Name="xmlparserv2.jar"/>
+      <File Path="lib/" Name="xsu12.jar"/>
+      <File Path="lib/" Name="xschema.jar"/>
+      <File Path="bin/" Name="orajaxb" Permissions="0755"/>
+      <File Path="bin/" Name="oraxml" Permissions="0755"/>
+      <File Path="bin/" Name="oraxsl" Permissions="0755"/>
+      <File Path="bin/" Name="schema" Permissions="0755"/>
+      <File Path="bin/" Name="xml" Permissions="0755"/>
+      <File Path="rdbms/jlib/" Name="xstreams.jar"/>
+      <File Path="lib/" Name="libocci.so.11.1"/>
+      <File Path="bin/" Name="wrc"/>
+      <File Path="bin/" Name="adrci"/>
+      <File Path="jlib/" Name="oemlt.jar"/>
+      <File Path="assistants/jlib/" Name="rconfig.jar"/>
+      <File Path="bin/" Name="CompEMcentral.pm"/>
+      <File Path="bin/" Name="CompEMcore.pm"/>
+      <File Path="bin/" Name="EMDiag.pm"/>
+      <File Path="bin/" Name="EMconnectorCmds.pm"/>
+      <File Path="bin/" Name="EMomsCmds.pm"/>
+      <File Path="bin/" Name="EmKeyCmds.pm"/>
+      <File Path="bin/" Name="RegisterTType.pm"/>
+      <File Path="bin/" Name="SecureOMSCmds.pm"/>
+      <File Path="sysman/jlib/" Name="emcoreAgent.jar"/>
+      <File Path="bin/" Name="Directory.pm" Permissions="0755"/>
+      <File Path="bin/" Name="Path.pm" Permissions="0755"/>
+      <File Path="jlib/" Name="ewtcompat-3_3_15.jar"/>
+      <File Path="jlib/" Name="oracle_ice5.jar"/>
+      <File Path="jlib/" Name="orai18n-mapping.jar"/>
+      <File Path="jlib/" Name="orai18n.jar"/>
+      <File Path="plsql/lib/" Name="env_plsql.mk"/>
+      <File Path="plsql/lib/" Name="ins_plsql.mk"/>
+      <File Path="plsql/lib/" Name="s0plsw.o"/>
+      <File Path="rdbms/lib/" Name="kxmwsd.o"/>
+      <File Path="jlib/" Name="srvm.jar"/>
+      <File Path="lib/" Name="libsrvm11.so"/>
+      <File Path="jlib/" Name="cvu.jar"/>
+      <File Path="jlib/" Name="cosnaming.jar"/>
+      <File Path="jlib/" Name="javavm_ssl_1_2.jar"/>
+      <File Path="lib/" Name="http_client.jar"/>
+      <File Path="javavm/lib/" Name="appletviewer.properties"/>
+      <File Path="javavm/lib/" Name="awt.properties"/>
+      <File Path="javavm/lib/" Name="content-types.properties"/>
+      <File Path="javavm/lib/" Name="jce.jar"/>
+      <File Path="javavm/lib/" Name="rmic.properties"/>
+      <File Path="javavm/lib/" Name="serialver.properties"/>
+      <File Path="javavm/lib/" Name="sunjce_provider.jar"/>
+      <File Path="javavm/lib/" Name="tzmappings"/>
+      <File Path="javavm/lib/" Name="logging.properties"/>
+      <File Path="lib/" Name="libjavavm11.a"/>
+      <File Path="jlib/" Name="ldapjclnt11.jar"/>
+      <File Path="jlib/" Name="identitystore.jar"/>
+      <File Path="jlib/" Name="identityutils.jar"/>
+      <File Path="lib/" Name="libldapjclnt11.a"/>
+      <File Path="lib/" Name="libldapclnt11.a"/>
+      <File Path="lib/" Name="libldapjclnt11.so"/>
+      <File Path="lib/" Name="libnnz11.a"/>
+      <File Path="lib/" Name="libzt11.a"/>
+      <File Path="lib/" Name="libztkg11.a"/>
+      <File Path="jlib/" Name="jewt4-nls.jar"/>
+      <File Path="jlib/" Name="jewt4.jar"/>
+      <File Path="lib/" Name="libhasgen11.so"/>
+      <File Path="lib/" Name="libagfw11.so"/>
+      <File Path="lib/" Name="libclsra11.so"/>
+      <File Path="lib/" Name="libocr11.so"/>
+      <File Path="lib/" Name="libocrb11.so"/>
+      <File Path="lib/" Name="libocrutl11.so"/>
+      <File Path="crs/lib/" Name="env_has.mk"/>
+      <File Path="md/jlib/" Name="routepartition.jar"/>
+      <File Path="md/jlib/" Name="routeserver.ear"/>
+      <File Path="md/jlib/" Name="elocation.ear"/>
+      <File Path="md/jlib/" Name="geocoder.ear"/>
+      <File Path="md/jlib/" Name="sdoapi.jar"/>
+      <File Path="md/jlib/" Name="sdogcdr.jar"/>
+      <File Path="md/jlib/" Name="sdogr.jar"/>
+      <File Path="md/jlib/" Name="sdondme.jar"/>
+      <File Path="md/jlib/" Name="sdondmx.jar"/>
+      <File Path="md/jlib/" Name="sdonm.jar"/>
+      <File Path="md/jlib/" Name="sdordf.jar"/>
+      <File Path="md/jlib/" Name="sdotopo.jar"/>
+      <File Path="md/jlib/" Name="sdotype.jar"/>
+      <File Path="md/jlib/" Name="sdoutl.jar"/>
+      <File Path="md/jlib/" Name="sdowshandlerols.jar"/>
+      <File Path="md/jlib/" Name="sdowshandlers.jar"/>
+      <File Path="md/jlib/" Name="sdowspool.jar"/>
+      <File Path="md/jlib/" Name="sdowfscs.jar"/>
+      <File Path="md/jlib/" Name="sdows.ear"/>
+      <File Path="lib/" Name="libordsdo11.a"/>
+      <File Path="lib/" Name="librdjni11.so"/>
+      <File Path="jlib/" Name="rd.jar"/>
+      <File Path="jlib/" Name="rdtool.jar"/>
+      <File Path="jlib/" Name="gns.jar"/>
+      <File Path="lib/" Name="libgns11.so"/>
+      <File Path="lib/" Name="libgnsjni11.so"/>
+      <File Path="bin/" Name="gnsd" Permissions="0741"/>
+      <File Path="lib/" Name="libuini11.so"/>
+      <File Path="lib/" Name="libdbcfg11.so"/>
+      <File Path="lib/" Name="libsrvmhas11.so"/>
+      <File Path="lib/" Name="libsrvmocr11.so"/>
+      <File Path="jlib/" Name="srvmhas.jar"/>
+      <File Path="jlib/" Name="srvmasm.jar"/>
+      <File Path="srvm/jlib/" Name="srvctl.jar"/>
+      <File Path="jlib/" Name="supercluster-common.jar"/>
+      <File Path="jlib/" Name="supercluster.jar"/>
+      <File Path="bin/" Name="racgeut" Permissions="0755"/>
+      <File Path="bin/" Name="racgmain" Permissions="0755"/>
+      <File Path="srvm/lib/" Name="prgcrshm.o"/>
+      <File Path="srvm/lib/" Name="sprgcrshm.o"/>
+      <File Path="lib/" Name="liboevm.a"/>
+      <File Path="racg/lib/" Name="s0clsrdmai.o"/>
+      <File Path="racg/lib/" Name="s0clsrmain.o"/>
+      <File Path="racg/lib/" Name="s0clsrmdb.o"/>
+      <File Path="racg/lib/" Name="s0clsreut.o"/>
+      <File Path="srvm/lib/" Name="env_srvm.mk"/>
+      <File Path="srvm/lib/" Name="ins_srvm.mk"/>
+      <File Path="bin/" Name="rman"/>
+      <File Path="bin/" Name="aqxmlctl.pl"/>
+      <File Path="rdbms/jlib/" Name="aqapi.jar"/>
+      <File Path="rdbms/jlib/" Name="aqapi_g.jar"/>
+      <File Path="rdbms/jlib/" Name="aqxml.jar"/>
+      <File Path="rdbms/jlib/" Name="aqxml_g.jar"/>
+      <File Path="rdbms/jlib/" Name="jmscommon.jar"/>
+      <File Path="rdbms/jlib/" Name="diagsetup.jar" Permissions="0755"/>
+      <File Path="bin/" Name="dbgeu_run_action.pl"/>
+      <File Path="bin/" Name="dbshut" Permissions="0750"/>
+      <File Path="bin/" Name="dbstart" Permissions="0750"/>
+      <File Path="bin/" Name="exp"/>
+      <File Path="bin/" Name="expdp"/>
+      <File Path="bin/" Name="extproc"/>
+      <File Path="bin/" Name="imp"/>
+      <File Path="bin/" Name="impdp"/>
+      <File Path="bin/" Name="osh" Permissions="0750"/>
+      <File Path="bin/" Name="plshprof"/>
+      <File Path="bin/" Name="sqlldr"/>
+      <File Path="bin/" Name="dg4pwd"/>
+      <File Path="bin/" Name="tkprof"/>
+      <File Path="bin/" Name="uidrvci"/>
+      <File Path="rdbms/lib/" Name="homts.o"/>
+      <File Path="rdbms/lib/" Name="hormc.o"/>
+      <File Path="rdbms/lib/" Name="hormd.o"/>
+      <File Path="rdbms/lib/" Name="osh.o"/>
+      <File Path="rdbms/lib/" Name="s0exudrv.o"/>
+      <File Path="rdbms/lib/" Name="s0impdrv.o"/>
+      <File Path="rdbms/lib/" Name="s0khpf.o"/>
+      <File Path="rdbms/lib/" Name="s0kvpf.o"/>
+      <File Path="rdbms/lib/" Name="s0udexp.o"/>
+      <File Path="rdbms/lib/" Name="s0udimp.o"/>
+      <File Path="rdbms/lib/" Name="sllfls.o"/>
+      <File Path="rdbms/lib/" Name="sulmain.o"/>
+      <File Path="rdbms/lib/" Name="dg4pwd.o"/>
+      <File Path="rdbms/lib/" Name="houzi.o"/>
+      <File Path="rdbms/lib/" Name="skrnpt.o"/>
+      <File Path="lib/" Name="libagtsh.so.1.0"/>
+      <File Path="bin/" Name="dbfs_client" Permissions="0750"/>
+      <File Path="rdbms/lib/" Name="cdf.o"/>
+      <File Path="jdbc/lib/" Name="ojdbc5.jar"/>
+      <File Path="jdbc/lib/" Name="ojdbc6.jar"/>
+      <File Path="lib/" Name="libocijdbc11.so"/>
+      <File Path="lib/" Name="libheteroxa11.so"/>
+      <File Path="jlib/" Name="share.jar"/>
+      <File Path="ord/jlib/" Name="mlibwrapper_jai.jar"/>
+      <File Path="ord/jlib/" Name="ordimann.jar"/>
+      <File Path="lib/" Name="libordim11.a"/>
+      <File Path="lib/" Name="libordim11.so"/>
+      <File Path="bin/" Name="lsnrctl"/>
+      <File Path="bin/" Name="tnslsnr"/>
+      <File Path="network/lib/" Name="ins_net_server.mk"/>
+      <File Path="network/lib/" Name="s0nsgl.o"/>
+      <File Path="network/lib/" Name="s0nsglc.o"/>
+      <File Path="network/lib/" Name="snsglp.o"/>
+      <File Path="assistants/asmca/jlib/" Name="asmca.jar"/>
+      <File Path="javavm/lib/" Name="jasper.zip"/>
+      <File Path="nls/lbuilder/jlib/" Name="LocaleBuilder.jar"/>
+      <File Path="nls/lbuilder/jlib/" Name="olbhelp.jar"/>
+      <File Path="nls/lbuilder/jlib/" Name="jewt-opt-4_1_3.zip"/>
+      <File Path="bin/" Name="lbuilder" Permissions="0755"/>
+      <File Path="bin/" Name="csscan" Permissions="0755"/>
+      <File Path="rdbms/lib/" Name="zsmsdrv.o"/>
+      <File Path="bin/" Name="zip" Permissions="0755"/>
+      <File Path="bin/" Name="unzip" Permissions="0755"/>
+      <File Path="bin/" Name="oerr" Permissions="0755"/>
+      <File Path="bin/" Name="genorasdksh" Permissions="0755"/>
+      <File Path="bin/" Name="gensyslib" Permissions="0755"/>
+      <File Path="bin/" Name="linkshlib" Permissions="0755"/>
+      <File Path="lib/" Name="libimf.a"/>
+      <File Path="lib/" Name="libirc.a"/>
+      <File Path="lib/" Name="libirc_pic.a"/>
+      <File Path="lib/" Name="libipgo.a"/>
+      <File Path="lib/" Name="libipgo_pic.a"/>
+      <File Path="lib/" Name="libcxaguard.so.5"/>
+      <File Path="lib/" Name="libintlc.so.5"/>
+      <File Path="jlib/" Name="jndi.jar"/>
+      <File Path="jlib/" Name="jta.jar"/>
+      <File Path="jlib/" Name="ldap.jar"/>
+      <File Path="jlib/" Name="providerutil.jar"/>
+      <File Path="lib/" Name="activation.jar"/>
+      <File Path="lib/" Name="mail.jar"/>
+      <File Path="javavm/lib/" Name="aurora.zip"/>
+      <File Path="javavm/lib/" Name="aurora_ncomp_gen.zip"/>
+      <File Path="javavm/lib/" Name="jaccelerator.zip"/>
+      <File Path="javavm/lib/" Name="ncomp.zip"/>
+      <File Path="jlib/" Name="help4.jar"/>
+      <File Path="jlib/" Name="help4-nls.jar"/>
+      <File Path="bin/" Name="lsnodes.bin" Permissions="0755"/>
+      <File Path="jlib/" Name="oraclepki.jar"/>
+      <File Path="jlib/" Name="oraclepki103.jar"/>
+      <File Path="owm/jlib/" Name="owm-3_0.jar"/>
+      <File Path="owm/jlib/" Name="owm_help.jar"/>
+      <File Path="owm/jlib/" Name="owm-images.jar"/>
+      <File Path="lib/" Name="libowm2.so"/>
+      <File Path="lib/" Name="libslax11.a"/>
+      <File Path="ons/bin/" Name="nrd" Permissions="0755"/>
+      <File Path="ons/lib/" Name="ons.jar"/>
+      <File Path="lib/" Name="libeons.so"/>
+      <File Path="lib/" Name="libsqlplus.a"/>
+      <File Path="sqlplus/lib/" Name="s0afimai.o"/>
+      <File Path="jlib/" Name="orai18n-collation.jar"/>
+      <File Path="jlib/" Name="orai18n-lcsd.jar"/>
+      <File Path="jlib/" Name="orai18n-utility.jar"/>
+      <File Path="jlib/" Name="orai18n-translation.jar"/>
+      <File Path="jlib/" Name="orai18n-net.jar"/>
+      <File Path="jlib/" Name="orai18n-servlet.jar"/>
+      <File Path="jlib/" Name="orai18n-tools.jar"/>
+      <File Path="bin/" Name="lcsscan" Permissions="0755"/>
+      <File Path="bin/" Name="lmsgen" Permissions="0755"/>
+      <File Path="bin/" Name="lxchknlb" Permissions="0755"/>
+      <File Path="bin/" Name="lxegen" Permissions="0755"/>
+      <File Path="bin/" Name="lxinst" Permissions="0755"/>
+      <File Path="lib/" Name="liblxled.a"/>
+      <File Path="lib/" Name="libnls11.a"/>
+      <File Path="lib/" Name="libsnls11.a"/>
+      <File Path="lib/" Name="libunls11.a"/>
+      <File Path="opmn/bin/" Name="onsctli"/>
+      <File Path="opmn/bin/" Name="ons"/>
+      <File Path="opmn/lib/" Name="ons.jar"/>
+      <File Path="lib/" Name="libons.so"/>
+      <File Path="lib/" Name="libonsx.so"/>
+      <File Path="bin/" Name="onsctl"/>
+      <File Path="opmn/bin/" Name="onsctl"/>
+      <File Path="bin/" Name="orabase" Permissions="0755"/>
+      <File Path="jlib/" Name="oracle_ice.jar"/>
+      <File Path="ord/jlib/" Name="ordhttp.jar"/>
+      <File Path="ord/jlib/" Name="ordim.jar"/>
+      <File Path="ord/jlib/" Name="orddicom.jar"/>
+      <File Path="ord/jlib/" Name="orddcmmt.jar"/>
+      <File Path="ord/im/lib/" Name="env_ordim.mk"/>
+      <File Path="jlib/" Name="wlm-common.jar"/>
+      <File Path="lib/" Name="libgx11.a"/>
+      <File Path="lib/" Name="libzx11.a"/>
+      <File Path="lib/" Name="libctx11.a"/>
+      <File Path="lib/" Name="libctxc11.a"/>
+      <File Path="network/lib/" Name="libnmd.a"/>
+      <File Path="network/lib/" Name="libnml.a"/>
+      <File Path="network/lib/" Name="libnms.a"/>
+      <File Path="network/lib/" Name="libnms0.a"/>
+      <File Path="network/lib/" Name="libnmsp.a"/>
+      <File Path="network/lib/" Name="libnmt.a"/>
+      <File Path="network/lib/" Name="libpeer.a"/>
+      <File Path="lib/" Name="libskgxn2.so"/>
+      <File Path="bin/" Name="diskmon.bin" Permissions="0741"/>
+      <File Path="lib/" Name="libwwg.a"/>
+      <File Path="sqlplus/lib/" Name="env_sqlplus.mk"/>
+      <File Path="sqlplus/lib/" Name="ins_sqlplus.mk"/>
+      <File Path="ord/jlib/" Name="jai_codec.jar"/>
+      <File Path="ord/jlib/" Name="jai_core.jar"/>
+      <File Path="ord/jlib/" Name="ordimimg.jar"/>
+      <File Path="ord/jlib/" Name="ordimdcm.jar"/>
+      <File Path="jlib/" Name="ojmisc.jar"/>
+      <File Path="jlib/" Name="ojpse.jar"/>
+      <File Path="jlib/" Name="netcfg.jar"/>
+      <File Path="bin/" Name="echodo" Permissions="0755"/>
+      <File Path="bin/" Name="gennfgt" Permissions="0755"/>
+      <File Path="bin/" Name="gennttab" Permissions="0755"/>
+      <File Path="lib/" Name="clntsh.map"/>
+      <File Path="lib/" Name="ldflags"/>
+      <File Path="lib/" Name="libn11.a"/>
+      <File Path="lib/" Name="libnbeq11.a"/>
+      <File Path="lib/" Name="libncrypt11.a"/>
+      <File Path="lib/" Name="libnhost11.a"/>
+      <File Path="lib/" Name="libnl11.a"/>
+      <File Path="lib/" Name="libnro11.a"/>
+      <File Path="lib/" Name="libnsgr11.a"/>
+      <File Path="lib/" Name="libnsslb11.a"/>
+      <File Path="lib/" Name="libntcp11.a"/>
+      <File Path="lib/" Name="libntns11.a"/>
+      <File Path="lib/" Name="libnus11.a"/>
+      <File Path="lib/" Name="libnzjs11.a"/>
+      <File Path="lib/" Name="naedhs.o"/>
+      <File Path="lib/" Name="nnfgt.o"/>
+      <File Path="lib/" Name="ntcontab.o"/>
+      <File Path="network/lib/" Name="env_network.mk"/>
+      <File Path="network/lib/" Name="ins_net_client.mk"/>
+      <File Path="network/lib/" Name="libncm11.a"/>
+      <File Path="network/lib/" Name="libnlsnr11.a"/>
+      <File Path="network/lib/" Name="libnlsnrc11.a"/>
+      <File Path="network/lib/" Name="libnta11.a"/>
+      <File Path="network/lib/" Name="libntal11.a"/>
+      <File Path="network/lib/" Name="s0nfpr.o"/>
+      <File Path="network/lib/" Name="nsping.o"/>
+      <File Path="network/lib/" Name="s0nsping.o"/>
+      <File Path="lib/" Name="libnoname11.a"/>
+      <File Path="bin/" Name="tnsping"/>
+      <File Path="lib/" Name="libnldap11.a"/>
+      <File Path="lib/" Name="libnjni11.so"/>
+      <File Path="network/lib/" Name="libnldapj11.so"/>
+      <File Path="lib/" Name="libntcpaio11.so"/>
+      <File Path="lib/" Name="libnque11.so"/>
+      <File Path="rdbms/jlib/" Name="extusrupgrade.jar"/>
+      <File Path="rdbms/jlib/" Name="CDC.jar"/>
+      <File Path="rdbms/jlib/" Name="CartridgeServices.jar"/>
+      <File Path="rdbms/jlib/" Name="ExprFilter.jar"/>
+      <File Path="rdbms/jlib/" Name="mgd_idcode.jar"/>
+      <File Path="rdbms/jlib/" Name="ODCI.jar"/>
+      <File Path="rdbms/jlib/" Name="appctxapi.jar"/>
+      <File Path="rdbms/jlib/" Name="jdm.jar"/>
+      <File Path="rdbms/jlib/" Name="ojdm_api.jar"/>
+      <File Path="rdbms/jlib/" Name="schagent.jar"/>
+      <File Path="rdbms/jlib/" Name="servlet.jar"/>
+      <File Path="rdbms/jlib/" Name="sqljtype.jar"/>
+      <File Path="rdbms/jlib/" Name="trcsess.jar"/>
+      <File Path="rdbms/jlib/" Name="xdb_g.jar"/>
+      <File Path="bin/" Name="asmcmdcore" Permissions="0755"/>
+      <File Path="lib/" Name="asmcmdbase.pm"/>
+      <File Path="lib/" Name="asmcmdglobal.pm"/>
+      <File Path="lib/" Name="asmcmdshare.pm"/>
+      <File Path="lib/" Name="asmcmdambr.pm"/>
+      <File Path="lib/" Name="asmcmddisk.pm"/>
+      <File Path="lib/" Name="asmcmdvol.pm"/>
+      <File Path="lib/" Name="asmcmdattr.pm"/>
+      <File Path="lib/" Name="asmcmdsys.pm"/>
+      <File Path="lib/" Name="asmcmdug.pm"/>
+      <File Path="lib/" Name="asmcmdtmpl.pm"/>
+      <File Path="lib/" Name="asmcmd_disk_header_format"/>
+      <File Path="bin/" Name="agtctl"/>
+      <File Path="bin/" Name="dbv"/>
+      <File Path="bin/" Name="fmputl" Permissions="0750"/>
+      <File Path="bin/" Name="fmputlhp" Permissions="0750"/>
+      <File Path="bin/" Name="hsalloci"/>
+      <File Path="bin/" Name="hsdepxa"/>
+      <File Path="bin/" Name="hsots"/>
+      <File Path="bin/" Name="nid"/>
+      <File Path="bin/" Name="oracle"/>
+      <File Path="bin/" Name="orapwd"/>
+      <File Path="bin/" Name="wrap"/>
+      <File Path="bin/" Name="grdcscan" Permissions="0750"/>
+      <File Path="bin/" Name="trcldr" Permissions="0750"/>
+      <File Path="bin/" Name="asmcmd" Permissions="0750"/>
+      <File Path="bin/" Name="cursize"/>
+      <File Path="bin/" Name="dbfsize"/>
+      <File Path="bin/" Name="dgmgrl"/>
+      <File Path="bin/" Name="dumpsga"/>
+      <File Path="bin/" Name="mapsga"/>
+      <File Path="bin/" Name="maxmem"/>
+      <File Path="bin/" Name="sbttest"/>
+      <File Path="bin/" Name="tstshm"/>
+      <File Path="lib/" Name="libnid.a"/>
+      <File Path="lib/" Name="libavstub11.a"/>
+      <File Path="lib/" Name="libodm11.a"/>
+      <File Path="bin/" Name="amdu"/>
+      <File Path="bin/" Name="setasmgid"/>
+      <File Path="bin/" Name="renamedg"/>
+      <File Path="lib/" Name="libcell11.a"/>
+      <File Path="rdbms/lib/" Name="dmndm.o"/>
+      <File Path="rdbms/lib/" Name="hoaoci.o"/>
+      <File Path="rdbms/lib/" Name="hoat.o"/>
+      <File Path="rdbms/lib/" Name="hoax.o"/>
+      <File Path="rdbms/lib/" Name="horm.o"/>
+      <File Path="rdbms/lib/" Name="hormt.o"/>
+      <File Path="rdbms/lib/" Name="hout.o"/>
+      <File Path="rdbms/lib/" Name="hsxaora.o"/>
+      <File Path="rdbms/lib/" Name="jox.o"/>
+      <File Path="rdbms/lib/" Name="joxoff.o"/>
+      <File Path="rdbms/lib/" Name="jssu.o"/>
+      <File Path="rdbms/lib/" Name="kciwcx.o"/>
+      <File Path="rdbms/lib/" Name="kcsm.o"/>
+      <File Path="rdbms/lib/" Name="kfon.o"/>
+      <File Path="rdbms/lib/" Name="kfoff.o"/>
+      <File Path="rdbms/lib/" Name="kfod.o"/>
+      <File Path="rdbms/lib/" Name="kfndg.o"/>
+      <File Path="rdbms/lib/" Name="kkxntp.o"/>
+      <File Path="rdbms/lib/" Name="kkxwtp.o"/>
+      <File Path="rdbms/lib/" Name="kopc.o"/>
+      <File Path="rdbms/lib/" Name="kprnts.o"/>
+      <File Path="rdbms/lib/" Name="kprwts.o"/>
+      <File Path="rdbms/lib/" Name="kpucb.o"/>
+      <File Path="rdbms/lib/" Name="ksms.o"/>
+      <File Path="rdbms/lib/" Name="ksnkcs.o"/>
+      <File Path="rdbms/lib/" Name="ksnktd.o"/>
+      <File Path="rdbms/lib/" Name="ksnnni.o"/>
+      <File Path="rdbms/lib/" Name="ksnnt2.o"/>
+      <File Path="rdbms/lib/" Name="ktd.o"/>
+      <File Path="rdbms/lib/" Name="kzlnlbac.o"/>
+      <File Path="rdbms/lib/" Name="kzvndv.o" Permissions="0664"/>
+      <File Path="rdbms/lib/" Name="libknlopt.a"/>
+      <File Path="rdbms/lib/" Name="libperfsrv11.a"/>
+      <File Path="rdbms/lib/" Name="libdsga11.a"/>
+      <File Path="rdbms/lib/" Name="libskgxns.a"/>
+      <File Path="rdbms/lib/" Name="libnfsodm11.a"/>
+      <File Path="rdbms/lib/" Name="libqsmashr.a"/>
+      <File Path="rdbms/lib/" Name="opimai.o"/>
+      <File Path="rdbms/lib/" Name="s0kudbv.o"/>
+      <File Path="rdbms/lib/" Name="s0kuzr.o"/>
+      <File Path="rdbms/lib/" Name="shou.o"/>
+      <File Path="rdbms/lib/" Name="shorm.o"/>
+      <File Path="rdbms/lib/" Name="sjssu.o"/>
+      <File Path="rdbms/lib/" Name="skfedpt.o"/>
+      <File Path="rdbms/lib/" Name="skfodpt.o"/>
+      <File Path="rdbms/lib/" Name="skfndgpt.o"/>
+      <File Path="rdbms/lib/" Name="skrspt.o"/>
+      <File Path="rdbms/lib/" Name="sskfeded.o"/>
+      <File Path="rdbms/lib/" Name="sskfoded.o"/>
+      <File Path="rdbms/lib/" Name="sskfndged.o"/>
+      <File Path="rdbms/lib/" Name="sskrned.o"/>
+      <File Path="rdbms/lib/" Name="sskrsed.o"/>
+      <File Path="rdbms/lib/" Name="ssoraed.o"/>
+      <File Path="rdbms/lib/" Name="sstrced.o"/>
+      <File Path="rdbms/lib/" Name="strcpt.o"/>
+      <File Path="rdbms/lib/" Name="ttcoerr.o"/>
+      <File Path="rdbms/lib/" Name="ttcsoi.o"/>
+      <File Path="rdbms/lib/" Name="xsnoolap.o"/>
+      <File Path="rdbms/lib/" Name="cursize.o"/>
+      <File Path="rdbms/lib/" Name="dbfsize.o"/>
+      <File Path="rdbms/lib/" Name="dumpsga.o"/>
+      <File Path="rdbms/lib/" Name="mapsga.o"/>
+      <File Path="rdbms/lib/" Name="maxmem.o"/>
+      <File Path="rdbms/lib/" Name="tstshm.o"/>
+      <File Path="rdbms/lib/" Name="sskfmued.o"/>
+      <File Path="rdbms/lib/" Name="skfmupt.o"/>
+      <File Path="rdbms/lib/" Name="sskfsaged.o"/>
+      <File Path="rdbms/lib/" Name="skfsagpt.o"/>
+      <File Path="rdbms/lib/" Name="kkpoban.o"/>
+      <File Path="rdbms/lib/" Name="ksnkkpo.o"/>
+      <File Path="rdbms/lib/" Name="kxmnsd.o"/>
+      <File Path="rdbms/lib/" Name="kecnr.o"/>
+      <File Path="rdbms/lib/" Name="diskmon.o"/>
+      <File Path="lib/" Name="libskgxns.so"/>
+      <File Path="lib/" Name="libosbws11.so"/>
+      <File Path="lib/" Name="libasmclnt11.a"/>
+      <File Path="bin/" Name="genksms" Permissions="0755"/>
+      <File Path="bin/" Name="sysresv"/>
+      <File Path="bin/" Name="mkpatch"/>
+      <File Path="bin/" Name="oradism"/>
+      <File Path="lib/" Name="libodmd11.so"/>
+      <File Path="lib/" Name="libnfsodm11.so"/>
+      <File Path="lib/" Name="libqsmashr.so"/>
+      <File Path="lib/" Name="libserver11.a"/>
+      <File Path="lib/" Name="libskvol11.so"/>
+      <File Path="rdbms/lib/" Name="genksms.o"/>
+      <File Path="rdbms/lib/" Name="mkpatch.o"/>
+      <File Path="rdbms/lib/" Name="libeva11.a"/>
+      <File Path="lib/" Name="libxml11.a"/>
+      <File Path="lib/" Name="lclasses12.zip"/>
+      <File Path="lib/" Name="lclasses14.zip"/>
+      <File Path="lib/" Name="libcore11.a"/>
+      <File Path="lib/" Name="liboraz.a"/>
+      <File Path="lib/" Name="liblzopro.a"/>
+      <File Path="lib/" Name="s0main.o"/>
+      <File Path="lib/" Name="scorept.o"/>
+      <File Path="lib/" Name="sscoreed.o"/>
+      <File Path="lib/" Name="libcorejava.so"/>
+      <File Path="jlib/" Name="deconfigCCR.jar"/>
+      <File Path="lib/" Name="libnnz11.so"/>
+      <File Path="jlib/" Name="emca.jar"/>
+      <File Path="bin/" Name="targetdeploy.pl" Permissions="0755"/>
+      <File Path="bin/" Name="emca" Permissions="0755"/>
+   </SoftwareComponent>
+<SoftwareComponent Name="database">
+      <File Path="bin/" Name="crsdiag.pl" Permissions="0755"/>
+      <File Path="racg/lib/" Name="ins_has.mk"/>
+      <File Path="lib/" Name="libclsr11.a"/>
+      <File Path="srvm/lib/" Name="libocr11.a"/>
+      <File Path="srvm/lib/" Name="libocrb11.a"/>
+      <File Path="srvm/lib/" Name="libocrutl11.a"/>
+      <File Path="srvm/lib/" Name="libdbcfg11.a"/>
+      <File Path="srvm/lib/" Name="libuini11.a"/>
+      <File Path="srvm/lib/" Name="libsrvm11.a"/>
+      <File Path="srvm/lib/" Name="libsrvmhas11.a"/>
+      <File Path="srvm/lib/" Name="libsrvmocr11.a"/>
+      <File Path="bin/" Name="srvconfig" Permissions="0755"/>
+      <File Path="bin/" Name="rawutl" Permissions="0755"/>
+      <File Path="bin/" Name="osdbagrp" Permissions="0755"/>
+      <File Path="bin/" Name="lsnodes" Permissions="0755"/>
+      <File Path="srvm/lib/" Name="prraw.o"/>
+      <File Path="srvm/lib/" Name="sprraw.o"/>
+      <File Path="srvm/lib/" Name="pradmgrp.o"/>
+      <File Path="srvm/lib/" Name="sprdbgrp.o"/>
+      <File Path="srvm/lib/" Name="prifcg.o"/>
+      <File Path="srvm/lib/" Name="sprifcg.o"/>
+      <File Path="srvm/lib/" Name="prifutl.o"/>
+      <File Path="srvm/lib/" Name="prifcmn.o"/>
+      <File Path="bin/" Name="cluvfy" Permissions="0755"/>
+      <File Path="ldap/lib/" Name="oidca.jar"/>
+      <File Path="ldap/lib/" Name="oidca_help.jar"/>
+      <File Path="bin/" Name="dsml2ldif" Permissions="0755"/>
+      <File Path="bin/" Name="ldapadd" Permissions="0755"/>
+      <File Path="bin/" Name="ldapaddmt" Permissions="0755"/>
+      <File Path="bin/" Name="ldapbind" Permissions="0755"/>
+      <File Path="bin/" Name="ldapcompare" Permissions="0755"/>
+      <File Path="bin/" Name="ldapdelete" Permissions="0755"/>
+      <File Path="bin/" Name="ldapmoddn" Permissions="0755"/>
+      <File Path="bin/" Name="ldapmodify" Permissions="0755"/>
+      <File Path="bin/" Name="ldapmodifymt" Permissions="0755"/>
+      <File Path="bin/" Name="ldapsearch" Permissions="0755"/>
+      <File Path="ldap/lib/" Name="s0gslbind.o"/>
+      <File Path="ldap/lib/" Name="s0gslcompare.o"/>
+      <File Path="ldap/lib/" Name="s0gsldel.o"/>
+      <File Path="ldap/lib/" Name="s0gsldsearch.o"/>
+      <File Path="ldap/lib/" Name="s0gsldsml2ldif.o"/>
+      <File Path="ldap/lib/" Name="s0gslmod.o"/>
+      <File Path="ldap/lib/" Name="s0gslmoddn.o"/>
+      <File Path="ldap/lib/" Name="s0gsltmod.o"/>
+      <File Path="ldap/lib/" Name="gslmcu.o"/>
+      <File Path="ldap/lib/" Name="env_ldap.mk"/>
+      <File Path="ldap/lib/" Name="ins_ldap.mk"/>
+      <File Path="assistants/jlib/" Name="assistantsCommon.jar"/>
+      <File Path="assistants/netca/jlib/" Name="netca.jar"/>
+      <File Path="jlib/" Name="ewt3.jar"/>
+      <File Path="jlib/" Name="ewt3-nls.jar"/>
+      <File Path="install/jlib/" Name="installcommons_1.0.0b.jar"/>
+      <File Path="install/jlib/" Name="instcommon.jar"/>
+      <File Path="install/jlib/" Name="instdb.jar"/>
+      <File Path="install/jlib/" Name="instcrs.jar"/>
+      <File Path="jlib/" Name="jaxen.jar"/>
+      <File Path="jlib/" Name="osdt_cert.jar"/>
+      <File Path="jlib/" Name="osdt_cmp.jar"/>
+      <File Path="jlib/" Name="osdt_cms.jar"/>
+      <File Path="jlib/" Name="osdt_core.jar"/>
+      <File Path="jlib/" Name="osdt_core_fips.jar"/>
+      <File Path="jlib/" Name="osdt_jce.jar"/>
+      <File Path="jlib/" Name="osdt_ldap.jar"/>
+      <File Path="jlib/" Name="osdt_lib_v11.jar"/>
+      <File Path="jlib/" Name="osdt_lib_v12.jar"/>
+      <File Path="jlib/" Name="osdt_ocsp.jar"/>
+      <File Path="jlib/" Name="osdt_saml.jar"/>
+      <File Path="jlib/" Name="osdt_smime.jar"/>
+      <File Path="jlib/" Name="osdt_tsp.jar"/>
+      <File Path="jlib/" Name="osdt_wss.jar"/>
+      <File Path="jlib/" Name="osdt_xkms.jar"/>
+      <File Path="jlib/" Name="osdt_xmlsec.jar"/>
+      <File Path="jlib/" Name="osdt_saml2.jar"/>
+      <File Path="sysman/jlib/" Name="log4j-core.jar"/>
+      <File Path="sysman/jlib/" Name="jmxri.jar"/>
+      <File Path="sysman/jlib/" Name="rmissl.jar"/>
+      <File Path="sysman/jlib/" Name="jmxremote.jar"/>
+      <File Path="jlib/" Name="emConfigInstall.jar"/>
+      <File Path="sysman/jlib/" Name="emagentSDK.jar"/>
+      <File Path="sysman/jlib/" Name="jmxFetchlet.jar"/>
+      <File Path="bin/" Name="AgentLifeCycle.pm" Permissions="0755"/>
+      <File Path="bin/" Name="AgentMisc.pm" Permissions="0755"/>
+      <File Path="bin/" Name="AgentStatus.pm" Permissions="0755"/>
+      <File Path="bin/" Name="AgentSubAgent.pm" Permissions="0755"/>
+      <File Path="bin/" Name="CompEMagent.pm" Permissions="0755"/>
+      <File Path="bin/" Name="EMAgent.pm" Permissions="0755"/>
+      <File Path="bin/" Name="EMDeploy.pm" Permissions="0755"/>
+      <File Path="bin/" Name="EMAgentPatch.pm" Permissions="0755"/>
+      <File Path="bin/" Name="EMSAConsoleCommon.pm" Permissions="0755"/>
+      <File Path="bin/" Name="EmCommonCmdDriver.pm" Permissions="0755"/>
+      <File Path="bin/" Name="LaunchEMagent.pm" Permissions="0755"/>
+      <File Path="bin/" Name="emwd.pl" Permissions="0755"/>
+      <File Path="bin/" Name="sAgentUtils.pm" Permissions="0755"/>
+      <File Path="bin/" Name="SecureAgentCmds.pm" Permissions="0755"/>
+      <File Path="bin/" Name="SecureUtil.pm" Permissions="0755"/>
+      <File Path="bin/" Name="patchAgtStPlugin.pm" Permissions="0750"/>
+      <File Path="bin/" Name="nfsPatchPlugin.pm" Permissions="0750"/>
+      <File Path="bin/" Name="StartAgent.pl" Permissions="0750"/>
+      <File Path="bin/" Name="emdfail.command" Permissions="0755"/>
+      <File Path="ord/Annotator/lib/" Name="Annotator.jar"/>
+      <File Path="lib/" Name="libordimt11.a"/>
+      <File Path="lib/" Name="xml.jar"/>
+      <File Path="lib/" Name="xmlcomp2.jar"/>
+      <File Path="lib/" Name="xmlmesg.jar"/>
+      <File Path="lib/" Name="xmlparserv2.jar"/>
+      <File Path="lib/" Name="xsu12.jar"/>
+      <File Path="lib/" Name="xschema.jar"/>
+      <File Path="bin/" Name="orajaxb" Permissions="0755"/>
+      <File Path="bin/" Name="oraxml" Permissions="0755"/>
+      <File Path="bin/" Name="oraxsl" Permissions="0755"/>
+      <File Path="bin/" Name="schema" Permissions="0755"/>
+      <File Path="bin/" Name="xml" Permissions="0755"/>
+      <File Path="jlib/" Name="oemlt.jar"/>
+      <File Path="assistants/jlib/" Name="rconfig.jar"/>
+      <File Path="jlib/" Name="regexp.jar"/>
+      <File Path="bin/" Name="CompEMcentral.pm"/>
+      <File Path="bin/" Name="CompEMcore.pm"/>
+      <File Path="bin/" Name="EMDiag.pm"/>
+      <File Path="bin/" Name="EMconnectorCmds.pm"/>
+      <File Path="bin/" Name="EMomsCmds.pm"/>
+      <File Path="bin/" Name="EmKeyCmds.pm"/>
+      <File Path="bin/" Name="RegisterTType.pm"/>
+      <File Path="bin/" Name="SecureOMSCmds.pm"/>
+      <File Path="sysman/jlib/" Name="emcoreAgent.jar"/>
+      <File Path="bin/" Name="Directory.pm" Permissions="0755"/>
+      <File Path="bin/" Name="Path.pm" Permissions="0755"/>
+      <File Path="jlib/" Name="orai18n-mapping.jar"/>
+      <File Path="jlib/" Name="orai18n.jar"/>
+      <File Path="plsql/lib/" Name="env_plsql.mk"/>
+      <File Path="plsql/lib/" Name="ins_plsql.mk"/>
+      <File Path="plsql/lib/" Name="s0plsw.o"/>
+      <File Path="rdbms/lib/" Name="kxmwsd.o"/>
+      <File Path="jlib/" Name="srvm.jar"/>
+      <File Path="lib/" Name="libsrvm11.so"/>
+      <File Path="jlib/" Name="cvu.jar"/>
+      <File Path="bin/" Name="dg4odbc"/>
+      <File Path="hs/lib/" Name="dg4odbc.o"/>
+      <File Path="rdbms/lib/" Name="libhggcon11.a"/>
+      <File Path="md/jlib/" Name="routepartition.jar"/>
+      <File Path="md/jlib/" Name="routeserver.ear"/>
+      <File Path="md/jlib/" Name="elocation.ear"/>
+      <File Path="md/jlib/" Name="geocoder.ear"/>
+      <File Path="md/jlib/" Name="sdoapi.jar"/>
+      <File Path="md/jlib/" Name="sdogcdr.jar"/>
+      <File Path="md/jlib/" Name="sdogr.jar"/>
+      <File Path="md/jlib/" Name="sdondme.jar"/>
+      <File Path="md/jlib/" Name="sdondmx.jar"/>
+      <File Path="md/jlib/" Name="sdonm.jar"/>
+      <File Path="md/jlib/" Name="sdordf.jar"/>
+      <File Path="md/jlib/" Name="sdotopo.jar"/>
+      <File Path="md/jlib/" Name="sdotype.jar"/>
+      <File Path="md/jlib/" Name="sdoutl.jar"/>
+      <File Path="md/jlib/" Name="sdowshandlerols.jar"/>
+      <File Path="md/jlib/" Name="sdowshandlers.jar"/>
+      <File Path="md/jlib/" Name="sdowspool.jar"/>
+      <File Path="md/jlib/" Name="sdowfscs.jar"/>
+      <File Path="md/jlib/" Name="sdows.ear"/>
+      <File Path="lib/" Name="libordsdo11.a"/>
+      <File Path="bin/" Name="rman"/>
+      <File Path="bin/" Name="aqxmlctl.pl"/>
+      <File Path="rdbms/jlib/" Name="aqapi.jar"/>
+      <File Path="rdbms/jlib/" Name="aqapi_g.jar"/>
+      <File Path="rdbms/jlib/" Name="aqxml.jar"/>
+      <File Path="rdbms/jlib/" Name="aqxml_g.jar"/>
+      <File Path="rdbms/jlib/" Name="jmscommon.jar"/>
+      <File Path="rdbms/jlib/" Name="diagsetup.jar" Permissions="0755"/>
+      <File Path="bin/" Name="dbgeu_run_action.pl"/>
+      <File Path="bin/" Name="dbshut" Permissions="0750"/>
+      <File Path="bin/" Name="dbstart" Permissions="0750"/>
+      <File Path="bin/" Name="exp"/>
+      <File Path="bin/" Name="expdp"/>
+      <File Path="bin/" Name="extproc"/>
+      <File Path="bin/" Name="imp"/>
+      <File Path="bin/" Name="impdp"/>
+      <File Path="bin/" Name="osh" Permissions="0750"/>
+      <File Path="bin/" Name="plshprof"/>
+      <File Path="bin/" Name="sqlldr"/>
+      <File Path="bin/" Name="dg4pwd"/>
+      <File Path="bin/" Name="tkprof"/>
+      <File Path="bin/" Name="uidrvci"/>
+      <File Path="rdbms/lib/" Name="homts.o"/>
+      <File Path="rdbms/lib/" Name="hormc.o"/>
+      <File Path="rdbms/lib/" Name="hormd.o"/>
+      <File Path="rdbms/lib/" Name="osh.o"/>
+      <File Path="rdbms/lib/" Name="s0exudrv.o"/>
+      <File Path="rdbms/lib/" Name="s0impdrv.o"/>
+      <File Path="rdbms/lib/" Name="s0khpf.o"/>
+      <File Path="rdbms/lib/" Name="s0kvpf.o"/>
+      <File Path="rdbms/lib/" Name="s0udexp.o"/>
+      <File Path="rdbms/lib/" Name="s0udimp.o"/>
+      <File Path="rdbms/lib/" Name="sllfls.o"/>
+      <File Path="rdbms/lib/" Name="sulmain.o"/>
+      <File Path="rdbms/lib/" Name="dg4pwd.o"/>
+      <File Path="rdbms/lib/" Name="houzi.o"/>
+      <File Path="rdbms/lib/" Name="skrnpt.o"/>
+      <File Path="lib/" Name="libagtsh.so.1.0"/>
+      <File Path="bin/" Name="dbfs_client" Permissions="0750"/>
+      <File Path="rdbms/lib/" Name="cdf.o"/>
+      <File Path="lib/" Name="libhgosh11.a"/>
+      <File Path="lib/" Name="libhgotrace11.so" Permissions="0755"/>
+      <File Path="jlib/" Name="share.jar"/>
+      <File Path="ord/jlib/" Name="mlibwrapper_jai.jar"/>
+      <File Path="ord/jlib/" Name="ordimann.jar"/>
+      <File Path="lib/" Name="libordim11.a"/>
+      <File Path="lib/" Name="libordim11.so"/>
+      <File Path="jlib/" Name="kodiak.jar"/>
+      <File Path="bin/" Name="lsnrctl"/>
+      <File Path="bin/" Name="tnslsnr"/>
+      <File Path="network/lib/" Name="ins_net_server.mk"/>
+      <File Path="network/lib/" Name="s0nsgl.o"/>
+      <File Path="network/lib/" Name="s0nsglc.o"/>
+      <File Path="network/lib/" Name="snsglp.o"/>
+      <File Path="jlib/" Name="xquery.jar"/>
+      <File Path="sysman/jlib/" Name="ConfigCCR.jar"/>
+      <File Path="jlib/" Name="emocmclnt.jar"/>
+      <File Path="jlib/" Name="emocmclnt.ks"/>
+      <File Path="bin/" Name="zip" Permissions="0755"/>
+      <File Path="bin/" Name="unzip" Permissions="0755"/>
+      <File Path="bin/" Name="oerr" Permissions="0755"/>
+      <File Path="bin/" Name="genorasdksh" Permissions="0755"/>
+      <File Path="bin/" Name="gensyslib" Permissions="0755"/>
+      <File Path="bin/" Name="linkshlib" Permissions="0755"/>
+      <File Path="lib/" Name="libimf.a"/>
+      <File Path="lib/" Name="libirc.a"/>
+      <File Path="lib/" Name="libirc_pic.a"/>
+      <File Path="lib/" Name="libipgo.a"/>
+      <File Path="lib/" Name="libipgo_pic.a"/>
+      <File Path="lib/" Name="libcxaguard.so.5"/>
+      <File Path="lib/" Name="libintlc.so.5"/>
+      <File Path="jlib/" Name="ohw.jar"/>
+      <File Path="jlib/" Name="help4.jar"/>
+      <File Path="jlib/" Name="help4-nls.jar"/>
+      <File Path="ons/bin/" Name="nrd" Permissions="0755"/>
+      <File Path="ons/lib/" Name="ons.jar"/>
+      <File Path="lib/" Name="libeons.so"/>
+      <File Path="precomp/lib/" Name="ottclasses.zip"/>
+      <File Path="bin/" Name="proc" Permissions="0755"/>
+      <File Path="bin/" Name="ott" Permissions="0755"/>
+      <File Path="precomp/lib/" Name="cobsqlintf.o"/>
+      <File Path="precomp/lib/" Name="libproc2.a"/>
+      <File Path="precomp/lib/" Name="pdb.o"/>
+      <File Path="precomp/lib/" Name="pdc.o"/>
+      <File Path="precomp/lib/" Name="pds.o"/>
+      <File Path="lib/" Name="libsqlplus.a"/>
+      <File Path="sqlplus/lib/" Name="s0afimai.o"/>
+      <File Path="jlib/" Name="orai18n-collation.jar"/>
+      <File Path="jlib/" Name="orai18n-lcsd.jar"/>
+      <File Path="jlib/" Name="orai18n-utility.jar"/>
+      <File Path="jlib/" Name="orai18n-translation.jar"/>
+      <File Path="jlib/" Name="orai18n-net.jar"/>
+      <File Path="jlib/" Name="orai18n-servlet.jar"/>
+      <File Path="jlib/" Name="orai18n-tools.jar"/>
+      <File Path="bin/" Name="lcsscan" Permissions="0755"/>
+      <File Path="bin/" Name="lmsgen" Permissions="0755"/>
+      <File Path="bin/" Name="lxchknlb" Permissions="0755"/>
+      <File Path="bin/" Name="lxegen" Permissions="0755"/>
+      <File Path="bin/" Name="lxinst" Permissions="0755"/>
+      <File Path="lib/" Name="liblxled.a"/>
+      <File Path="lib/" Name="libnls11.a"/>
+      <File Path="lib/" Name="libsnls11.a"/>
+      <File Path="lib/" Name="libunls11.a"/>
+      <File Path="bin/" Name="orabase" Permissions="0755"/>
+      <File Path="jlib/" Name="oracle_ice.jar"/>
+      <File Path="ord/jlib/" Name="ordhttp.jar"/>
+      <File Path="ord/jlib/" Name="ordim.jar"/>
+      <File Path="ord/jlib/" Name="orddicom.jar"/>
+      <File Path="ord/jlib/" Name="orddcmmt.jar"/>
+      <File Path="ord/im/lib/" Name="env_ordim.mk"/>
+      <File Path="network/lib/" Name="libnmd.a"/>
+      <File Path="network/lib/" Name="libnml.a"/>
+      <File Path="network/lib/" Name="libnms.a"/>
+      <File Path="network/lib/" Name="libnms0.a"/>
+      <File Path="network/lib/" Name="libnmsp.a"/>
+      <File Path="network/lib/" Name="libnmt.a"/>
+      <File Path="network/lib/" Name="libpeer.a"/>
+      <File Path="lib/" Name="libskgxn2.so"/>
+      <File Path="bin/" Name="diskmon.bin" Permissions="0755"/>
+      <File Path="lib/" Name="libwwg.a"/>
+      <File Path="sqlj/lib/" Name="runtime12.jar"/>
+      <File Path="sqlj/lib/" Name="runtime12ee.jar"/>
+      <File Path="lib/" Name="libmgwagent.so"/>
+      <File Path="mgw/jlib/" Name="mgw.jar"/>
+      <File Path="sysman/jlib/" Name="emDB.jar"/>
+      <File Path="sysman/jlib/" Name="emdb_emjsp.jar"/>
+      <File Path="sqlplus/lib/" Name="env_sqlplus.mk"/>
+      <File Path="sqlplus/lib/" Name="ins_sqlplus.mk"/>
+      <File Path="assistants/dbca/jlib/" Name="dbca.jar"/>
+      <File Path="assistants/dbua/jlib/" Name="dbma.jar"/>
+      <File Path="ord/jlib/" Name="jai_codec.jar"/>
+      <File Path="ord/jlib/" Name="jai_core.jar"/>
+      <File Path="ord/jlib/" Name="ordimimg.jar"/>
+      <File Path="ord/jlib/" Name="ordimdcm.jar"/>
+      <File Path="jlib/" Name="ojmisc.jar"/>
+      <File Path="jlib/" Name="ojpse.jar"/>
+      <File Path="jlib/" Name="netcfg.jar"/>
+      <File Path="bin/" Name="echodo" Permissions="0755"/>
+      <File Path="bin/" Name="gennfgt" Permissions="0755"/>
+      <File Path="bin/" Name="gennttab" Permissions="0755"/>
+      <File Path="lib/" Name="clntsh.map"/>
+      <File Path="lib/" Name="ldflags"/>
+      <File Path="lib/" Name="libn11.a"/>
+      <File Path="lib/" Name="libnbeq11.a"/>
+      <File Path="lib/" Name="libncrypt11.a"/>
+      <File Path="lib/" Name="libnhost11.a"/>
+      <File Path="lib/" Name="libnl11.a"/>
+      <File Path="lib/" Name="libnro11.a"/>
+      <File Path="lib/" Name="libnsgr11.a"/>
+      <File Path="lib/" Name="libnsslb11.a"/>
+      <File Path="lib/" Name="libntcp11.a"/>
+      <File Path="lib/" Name="libntns11.a"/>
+      <File Path="lib/" Name="libnus11.a"/>
+      <File Path="lib/" Name="libnzjs11.a"/>
+      <File Path="lib/" Name="naedhs.o"/>
+      <File Path="lib/" Name="nnfgt.o"/>
+      <File Path="lib/" Name="ntcontab.o"/>
+      <File Path="network/lib/" Name="env_network.mk"/>
+      <File Path="network/lib/" Name="ins_net_client.mk"/>
+      <File Path="network/lib/" Name="libncm11.a"/>
+      <File Path="network/lib/" Name="libnlsnr11.a"/>
+      <File Path="network/lib/" Name="libnlsnrc11.a"/>
+      <File Path="network/lib/" Name="libnta11.a"/>
+      <File Path="network/lib/" Name="libntal11.a"/>
+      <File Path="network/lib/" Name="s0nfpr.o"/>
+      <File Path="network/lib/" Name="nsping.o"/>
+      <File Path="network/lib/" Name="s0nsping.o"/>
+      <File Path="lib/" Name="libnoname11.a"/>
+      <File Path="bin/" Name="tnsping"/>
+      <File Path="lib/" Name="libnldap11.a"/>
+      <File Path="lib/" Name="libnjni11.so"/>
+      <File Path="network/lib/" Name="libnldapj11.so"/>
+      <File Path="lib/" Name="libntcpaio11.so"/>
+      <File Path="lib/" Name="libnque11.so"/>
+      <File Path="sysman/jlib/" Name="emdbAgent.jar"/>
+      <File Path="rdbms/lib/" Name="kecwr.o" Permissions="0664"/>
+      <File Path="bin/" Name="setsso.pl"/>
+      <File Path="bin/" Name="omsstart.pl"/>
+      <File Path="bin/" Name="omsstop.pl"/>
+      <File Path="bin/" Name="omsdown.pl"/>
+      <File Path="sysman/jlib/" Name="qsma.jar"/>
+      <File Path="sysman/jlib/" Name="iview.jar"/>
+      <File Path="sysman/jlib/" Name="jviewsall.jar"/>
+      <File Path="sysman/jlib/" Name="svgdom.jar"/>
+      <File Path="sysman/jlib/" Name="jcb.jar"/>
+      <File Path="jlib/" Name="axis-ant.jar"/>
+      <File Path="jlib/" Name="axis.jar"/>
+      <File Path="jlib/" Name="commons-discovery-0.2.jar"/>
+      <File Path="jlib/" Name="commons-logging-1.0.4.jar"/>
+      <File Path="jlib/" Name="jaxrpc.jar"/>
+      <File Path="jlib/" Name="saaj.jar"/>
+      <File Path="jlib/" Name="wsdl4j-1.5.1.jar"/>
+      <File Path="sysman/jlib/" Name="emCORE.jar"/>
+      <File Path="sysman/jlib/" Name="emCfg.jar"/>
+      <File Path="sysman/jlib/" Name="emJDBC14.jar"/>
+      <File Path="sysman/jlib/" Name="emPid.jar"/>
+      <File Path="sysman/jlib/" Name="emProvisioningAll.jar"/>
+      <File Path="sysman/jlib/" Name="emcore_emjsp.jar"/>
+      <File Path="sysman/jlib/" Name="emcore_emjspf_classes.jar"/>
+      <File Path="sysman/jlib/" Name="emcore_jobtype.jar"/>
+      <File Path="sysman/jlib/" Name="emcore_targettype.jar"/>
+      <File Path="j2ee/OC4J_EM/applications/em/em/WEB-INF/lib/" Name="linux_prov_cs_help.jar"/>
+      <File Path="j2ee/OC4J_EM/applications/em/em/monitoring/website/txn/lib/" Name="OraBcnTxnRec.htm"/>
+      <File Path="j2ee/OC4J_EM/applications/em/em/monitoring/website/txn/lib/" Name="OraDHTMLRec.CAB"/>
+      <File Path="j2ee/OC4J_EM/applications/em/em/monitoring/website/txn/lib/" Name="OraDHTMLRec.htm"/>
+      <File Path="bin/" Name="findAvailableSpace.pl"/>
+      <File Path="bin/" Name="EMDeploy.bat"/>
+      <File Path="bin/" Name="EMDeploy"/>
+      <File Path="bin/" Name="deploymentLibraryExport.sh" Permissions="0750"/>
+      <File Path="bin/" Name="deploymentLibraryImport.sh" Permissions="0750"/>
+      <File Path="bin/" Name="purgeDeploymentLibrary" Permissions="0750"/>
+      <File Path="bin/" Name="emdwgrd.pl" Permissions="0755"/>
+      <File Path="bin/" Name="emdwgrd" Permissions="0755"/>
+      <File Path="bin/" Name="emdwgrd.bat" Permissions="0750"/>
+      <File Path="install/jlib/" Name="launchBrowser.jar"/>
+      <File Path="bin/" Name="CompEMdbconsole.pm"/>
+      <File Path="bin/" Name="SecureDBConsoleCmds.pm"/>
+      <File Path="bin/" Name="DBConsole.pm"/>
+      <File Path="bin/" Name="DBConsoleLifeCycle.pm"/>
+      <File Path="bin/" Name="DBConsoleStatus.pm"/>
+      <File Path="bin/" Name="LaunchEMdbconsole.pm"/>
+      <File Path="bin/" Name="DBConsoleBanner.pm"/>
+      <File Path="bin/" Name="db2gc"/>
+      <File Path="sysman/jlib/" Name="crimson-1.1.3.jar"/>
+      <File Path="rdbms/lib/" Name="dmwdm.o"/>
+      <File Path="jlib/" Name="dbui2.jar"/>
+      <File Path="jlib/" Name="dbui2-nls.jar"/>
+      <File Path="jlib/" Name="o3logon.jar"/>
+      <File Path="network/jlib/" Name="netmgr.jar"/>
+      <File Path="network/jlib/" Name="netmgrm.jar"/>
+      <File Path="network/jlib/" Name="trcasst.jar"/>
+      <File Path="jlib/" Name="verifier15.jar"/>
+      <File Path="bin/" Name="adapters" Permissions="0755"/>
+      <File Path="bin/" Name="trcroute"/>
+      <File Path="network/lib/" Name="libnoncj11.so"/>
+      <File Path="network/lib/" Name="nur.o"/>
+      <File Path="network/lib/" Name="s0nur.o"/>
+      <File Path="network/lib/" Name="snlptdum.o"/>
+      <File Path="lib/" Name="nigcon.o"/>
+      <File Path="lib/" Name="nigtab.o"/>
+      <File Path="lib/" Name="osntabst.o"/>
+      <File Path="deinstall/jlib/" Name="deinstall_core.jar"/>
+      <File Path="deinstall/jlib/" Name="deinstall_wrapper.jar"/>
+      <File Path="clone/bin/" Name="clone.pl" Permissions="0755"/>
+      <File Path="clone/bin/" Name="prepare_clone.pl" Permissions="0755"/>
+      <File Path="bin/" Name="chopt" Permissions="0755"/>
+      <File Path="bin/" Name="chopt.pl"/>
+      <File Path="bin/" Name="chopt.ini"/>
+      <File Path="bin/" Name="bndlchk" Permissions="0755"/>
+      <File Path="bin/" Name="relink" Permissions="0755"/>
+      <File Path="bin/" Name="symfind" Permissions="0755"/>
+      <File Path="lib/" Name="libsql11.a"/>
+      <File Path="precomp/lib/" Name="env_precomp.mk"/>
+      <File Path="precomp/lib/" Name="ins_precomp.mk"/>
+      <File Path="precomp/lib/" Name="libpgp.a"/>
+      <File Path="md/jlib/" Name="sdovis3d.jar"/>
+      <File Path="md/jlib/" Name="georasterapi.jar"/>
+      <File Path="rdbms/jlib/" Name="xdb.jar"/>
+      <File Path="rdbms/jlib/" Name="xs.jar"/>
+      <File Path="rdbms/jlib/" Name="eusm.jar"/>
+      <File Path="rdbms/jlib/" Name="usermigrate-1_0.jar"/>
+      <File Path="jlib/" Name="opm.jar"/>
+      <File Path="bin/" Name="genclntsh" Permissions="0755"/>
+      <File Path="bin/" Name="genclntst" Permissions="0755"/>
+      <File Path="bin/" Name="genoccish" Permissions="0755"/>
+      <File Path="bin/" Name="coraenv" Permissions="0755"/>
+      <File Path="bin/" Name="dbhome" Permissions="0755"/>
+      <File Path="bin/" Name="extjob"/>
+      <File Path="bin/" Name="extjobo"/>
+      <File Path="bin/" Name="genagtsh" Permissions="0755"/>
+      <File Path="bin/" Name="kgmgr"/>
+      <File Path="bin/" Name="loadpsp"/>
+      <File Path="bin/" Name="oraenv" Permissions="0755"/>
+      <File Path="lib/" Name="libocci11.a"/>
+      <File Path="lib/" Name="libagent11.a"/>
+      <File Path="lib/" Name="libclntsh.so.11.1"/>
+      <File Path="lib/" Name="sysliblist"/>
+      <File Path="lib/" Name="facility.lis"/>
+      <File Path="lib/" Name="libclient11.a"/>
+      <File Path="lib/" Name="libclntst11.a"/>
+      <File Path="lib/" Name="libcommon11.a"/>
+      <File Path="lib/" Name="libgeneric11.a"/>
+      <File Path="lib/" Name="libmm.a"/>
+      <File Path="lib/" Name="libnnet11.a"/>
+      <File Path="lib/" Name="libnnetd11.a"/>
+      <File Path="lib/" Name="libplc11.a"/>
+      <File Path="lib/" Name="libplp11.a"/>
+      <File Path="lib/" Name="libpls11.a"/>
+      <File Path="lib/" Name="libplc11_pic.a"/>
+      <File Path="lib/" Name="libplp11_pic.a"/>
+      <File Path="lib/" Name="libpls11_pic.a"/>
+      <File Path="lib/" Name="libpsa11.a"/>
+      <File Path="lib/" Name="liborion11.a"/>
+      <File Path="lib/" Name="libxdb.so"/>
+      <File Path="bin/" Name="orion" Permissions="0755"/>
+      <File Path="rdbms/lib/" Name="env_rdbms.mk"/>
+      <File Path="rdbms/lib/" Name="genezi.o"/>
+      <File Path="rdbms/lib/" Name="ins_rdbms.mk"/>
+      <File Path="rdbms/lib/" Name="kgutc.o"/>
+      <File Path="rdbms/lib/" Name="sjsex.o"/>
+      <File Path="rdbms/lib/" Name="wpspldrv.o"/>
+      <File Path="rdbms/lib/" Name="xaondy.o"/>
+      <File Path="rdbms/lib/" Name="xaonsl.o"/>
+      <File Path="rdbms/lib/" Name="srfsd.o"/>
+      <File Path="rdbms/lib/" Name="rfsin.o"/>
+      <File Path="rdbms/lib/" Name="rfobsv.o"/>
+      <File Path="rdbms/lib/" Name="rfscom.o"/>
+      <File Path="rdbms/lib/" Name="rfsd.o"/>
+      <File Path="rdbms/lib/" Name="rfsxc.o"/>
+      <File Path="rdbms/lib/" Name="orion.o"/>
+      <File Path="rdbms/lib/" Name="libxdb.a"/>
+      <File Path="rdbms/lib/" Name="libwrc11.a"/>
+      <File Path="rdbms/lib/" Name="sskeced.o"/>
+      <File Path="rdbms/lib/" Name="skecpt.o"/>
+      <File Path="rdbms/lib/" Name="ssdbgved.o"/>
+      <File Path="rdbms/lib/" Name="sdbgvpt.o"/>
+      <File Path="rdbms/lib/" Name="dbgvci.o"/>
+      <File Path="rdbms/lib/" Name="ssdbgued.o"/>
+      <File Path="rdbms/lib/" Name="sdbgupt.o"/>
+      <File Path="rdbms/lib/" Name="dbguci.o"/>
+      <File Path="rdbms/lib/" Name="libdbtools11.a"/>
+      <File Path="rdbms/lib/" Name="sskrmed.o"/>
+      <File Path="rdbms/lib/" Name="skrmpt.o"/>
+      <File Path="rdbms/lib/" Name="sysresv.o"/>
+      <File Path="lib/" Name="liborasdk.so.11.1"/>
+      <File Path="lib/" Name="liborasdkbase.so.11.1"/>
+      <File Path="lib/" Name="libskgxp11.so"/>
+      <File Path="lib/" Name="libskgxpd.so"/>
+      <File Path="lib/" Name="libskgxpg.so"/>
+      <File Path="lib/" Name="libskgxpr.so"/>
+      <File Path="lib/" Name="libskgxpcompat.so"/>
+      <File Path="rdbms/lib/" Name="libskgxpd.a"/>
+      <File Path="rdbms/lib/" Name="libskgxpg.a"/>
+      <File Path="rdbms/lib/" Name="libskgxpr.a"/>
+      <File Path="rdbms/lib/" Name="libcdf11.a"/>
+      <File Path="ucp/lib/" Name="ucp.jar"/>
+      <File Path="bin/" Name="kfod"/>
+      <File Path="bin/" Name="kfed"/>
+      <File Path="lib/" Name="libasmclnt11.so"/>
+      <File Path="lib/" Name="libcell11.so"/>
+      <File Path="jdbc/lib/" Name="ojdbc5_g.jar"/>
+      <File Path="jdbc/lib/" Name="ojdbc5dms.jar"/>
+      <File Path="jdbc/lib/" Name="ojdbc5dms_g.jar"/>
+      <File Path="jdbc/lib/" Name="ojdbc6_g.jar"/>
+      <File Path="jdbc/lib/" Name="ojdbc6dms.jar"/>
+      <File Path="jdbc/lib/" Name="ojdbc6dms_g.jar"/>
+      <File Path="jdbc/lib/" Name="simplefan.jar"/>
+      <File Path="bin/" Name="sqlplus"/>
+      <File Path="lib/" Name="libsqlplus.so"/>
+      <File Path="lib/" Name="libolapapi11.so"/>
+      <File Path="lib/" Name="liboraolap11.a"/>
+      <File Path="network/jlib/" Name="netradius15.jar"/>
+      <File Path="bin/" Name="okdstry" Permissions="0755"/>
+      <File Path="bin/" Name="okinit" Permissions="0755"/>
+      <File Path="bin/" Name="oklist" Permissions="0755"/>
+      <File Path="network/lib/" Name="ins_nau.mk"/>
+      <File Path="network/lib/" Name="s0nauk5d.o"/>
+      <File Path="network/lib/" Name="s0nauk5i.o"/>
+      <File Path="network/lib/" Name="s0nauk5l.o"/>
+      <File Path="network/lib/" Name="snauk5pt.o"/>
+      <File Path="odbc/lib/" Name="env_odbc.mk"/>
+      <File Path="odbc/lib/" Name="ins_odbc.mk"/>
+      <File Path="odbc/lib/" Name="sqora.a"/>
+      <File Path="odbc/lib/" Name="sqoci.a"/>
+      <File Path="odbc/lib/" Name="utility.a"/>
+      <File Path="rdbms/jlib/" Name="xstreams.jar"/>
+      <File Path="lib/" Name="libocci.so.11.1"/>
+      <File Path="bin/" Name="wrc"/>
+      <File Path="bin/" Name="adrci"/>
+      <File Path="jlib/" Name="ewtcompat-3_3_15.jar"/>
+      <File Path="jlib/" Name="oracle_ice5.jar"/>
+      <File Path="sqldeveloper/lib/" Name="classgen.jar"/>
+      <File Path="sqldeveloper/lib/" Name="mfcdao.dll"/>
+      <File Path="sqldeveloper/lib/" Name="oraclexsql.jar"/>
+      <File Path="sqldeveloper/lib/" Name="registry.dll"/>
+      <File Path="sqldeveloper/lib/" Name="xml.jar"/>
+      <File Path="sqldeveloper/lib/" Name="xmlcomp.jar"/>
+      <File Path="sqldeveloper/lib/" Name="xmlcomp2.jar"/>
+      <File Path="sqldeveloper/lib/" Name="xmlparserv2.jar"/>
+      <File Path="sqldeveloper/lib/" Name="xquery.jar"/>
+      <File Path="sqldeveloper/lib/" Name="xschema.jar"/>
+      <File Path="sqldeveloper/lib/" Name="xsqlserializers.jar"/>
+      <File Path="sqldeveloper/lib/" Name="xsu12.jar"/>
+      <File Path="sqldeveloper/ide/lib/" Name="annotations.jar"/>
+      <File Path="sqldeveloper/ide/lib/" Name="audit-boot.jar"/>
+      <File Path="sqldeveloper/ide/lib/" Name="dafjava.jar"/>
+      <File Path="sqldeveloper/ide/lib/" Name="dbapi-impl.jar"/>
+      <File Path="sqldeveloper/ide/lib/" Name="dbapi.jar"/>
+      <File Path="sqldeveloper/ide/lib/" Name="dbtransfer.jar"/>
+      <File Path="sqldeveloper/ide/lib/" Name="deploy-rt-boot.jar"/>
+      <File Path="sqldeveloper/ide/lib/" Name="expression-builder.jar"/>
+      <File Path="sqldeveloper/ide/lib/" Name="google-collect-snapshot-20071022.jar"/>
+      <File Path="sqldeveloper/ide/lib/" Name="ide-boot.jar"/>
+      <File Path="sqldeveloper/ide/lib/" Name="ideimpl.jar"/>
+      <File Path="sqldeveloper/ide/lib/" Name="idenative.dll"/>
+      <File Path="sqldeveloper/ide/lib/" Name="idert.jar"/>
+      <File Path="sqldeveloper/ide/lib/" Name="indexing-migrator-boot.jar"/>
+      <File Path="sqldeveloper/ide/lib/" Name="indexing-rt-boot.jar"/>
+      <File Path="sqldeveloper/ide/lib/" Name="javatools.jar"/>
+      <File Path="sqldeveloper/ide/lib/" Name="javax-ide.jar"/>
+      <File Path="sqldeveloper/ide/lib/" Name="oicons.jar"/>
+      <File Path="sqldeveloper/ide/lib/" Name="oj-compiler-boot.jar"/>
+      <File Path="sqldeveloper/ide/lib/" Name="oj-formatter-boot.jar"/>
+      <File Path="sqldeveloper/ide/lib/" Name="uic.jar"/>
+      <File Path="sqldeveloper/ide/bin/" Name="edt.properties"/>
+      <File Path="sqldeveloper/ide/bin/" Name="encodings.xml"/>
+      <File Path="sqldeveloper/ide/bin/" Name="ide.boot"/>
+      <File Path="sqldeveloper/ide/bin/" Name="ide.conf"/>
+      <File Path="sqldeveloper/ide/bin/" Name="jdk.conf"/>
+      <File Path="sqldeveloper/ide/bin/" Name="launcher.dll"/>
+      <File Path="sqldeveloper/ide/bin/" Name="launcher.sh"/>
+      <File Path="sqldeveloper/dvt/lib/" Name="dvt-jclient.jar"/>
+      <File Path="sqldeveloper/dvt/lib/" Name="dvt-utils.jar"/>
+      <File Path="sqldeveloper/BC4J/lib/" Name="adf-share-base.jar"/>
+      <File Path="sqldeveloper/BC4J/lib/" Name="adf-share-ca.jar"/>
+      <File Path="sqldeveloper/BC4J/lib/" Name="db-ca.jar"/>
+      <File Path="sqldeveloper/j2ee/home/lib/" Name="el-ri.jar"/>
+      <File Path="sqldeveloper/j2ee/home/lib/" Name="pcl.jar"/>
+      <File Path="sqldeveloper/j2ee/home/lib/" Name="servlet.jar"/>
+      <File Path="sqldeveloper/jdbc/lib/" Name="ojdbc5.jar"/>
+      <File Path="sqldeveloper/jdev/lib/" Name="javacore.jar"/>
+      <File Path="sqldeveloper/jdev/lib/" Name="jdev-rt.jar"/>
+      <File Path="sqldeveloper/jdev/lib/" Name="jdev.jar"/>
+      <File Path="sqldeveloper/jdev/lib/" Name="jdkver.jar"/>
+      <File Path="sqldeveloper/jdev/lib/" Name="jprof.jar"/>
+      <File Path="sqldeveloper/jdev/lib/" Name="jsch.jar"/>
+      <File Path="sqldeveloper/jdev/lib/" Name="ocvs.jar"/>
+      <File Path="sqldeveloper/jdev/lib/" Name="ojc.jar"/>
+      <File Path="sqldeveloper/jdev/lib/" Name="xml-compare.jar"/>
+      <File Path="sqldeveloper/jdev/lib/" Name="xmleditor.jar"/>
+      <File Path="sqldeveloper/jdev/bin/" Name="version.properties"/>
+      <File Path="sqldeveloper/jlib/" Name="dbui4.jar"/>
+      <File Path="sqldeveloper/jlib/" Name="help-share.jar"/>
+      <File Path="sqldeveloper/jlib/" Name="inspect4.jar"/>
+      <File Path="sqldeveloper/jlib/" Name="jdev-cm.jar"/>
+      <File Path="sqldeveloper/jlib/" Name="jewt4.jar"/>
+      <File Path="sqldeveloper/jlib/" Name="ohj.jar"/>
+      <File Path="sqldeveloper/jlib/" Name="ojmisc.jar"/>
+      <File Path="sqldeveloper/jlib/" Name="oracle_ice.jar"/>
+      <File Path="sqldeveloper/jlib/" Name="orai18n-collation.jar"/>
+      <File Path="sqldeveloper/jlib/" Name="orai18n-mapping.jar"/>
+      <File Path="sqldeveloper/jlib/" Name="orai18n-servlet.jar"/>
+      <File Path="sqldeveloper/jlib/" Name="orai18n-utility.jar"/>
+      <File Path="sqldeveloper/jlib/" Name="orai18n.jar"/>
+      <File Path="sqldeveloper/jlib/" Name="regexp.jar"/>
+      <File Path="sqldeveloper/jlib/" Name="share.jar"/>
+      <File Path="sqldeveloper/jlib/" Name="xmlef.jar"/>
+      <File Path="sqldeveloper/rdbms/jlib/" Name="ojdi.jar"/>
+      <File Path="sqldeveloper/rdbms/jlib/" Name="xdb.jar"/>
+      <File Path="sqldeveloper/sqldeveloper/lib/" Name="SQLinForm.jar"/>
+      <File Path="sqldeveloper/sqldeveloper/lib/" Name="antlr.jar"/>
+      <File Path="sqldeveloper/sqldeveloper/lib/" Name="jdevnative.dll"/>
+      <File Path="sqldeveloper/sqldeveloper/lib/" Name="jle2.jar"/>
+      <File Path="sqldeveloper/sqldeveloper/lib/" Name="jline-0.9.9.jar"/>
+      <File Path="sqldeveloper/sqldeveloper/lib/" Name="oracle.sqldeveloper.utils.jar"/>
+      <File Path="sqldeveloper/sqldeveloper/lib/" Name="poi-2.5.1-final-20040804.jar"/>
+      <File Path="sqldeveloper/sqldeveloper/lib/" Name="stringtemplate.jar"/>
+      <File Path="sqldeveloper/sqldeveloper/bin/" Name="jdk.conf"/>
+      <File Path="sqldeveloper/sqldeveloper/bin/" Name="logging-debug.conf"/>
+      <File Path="sqldeveloper/sqldeveloper/bin/" Name="logging.conf"/>
+      <File Path="sqldeveloper/sqldeveloper/bin/" Name="splash.gif"/>
+      <File Path="sqldeveloper/sqldeveloper/bin/" Name="splash.png"/>
+      <File Path="sqldeveloper/sqldeveloper/bin/" Name="sqldeveloper-Darwin.conf"/>
+      <File Path="sqldeveloper/sqldeveloper/bin/" Name="sqldeveloper-debug.conf"/>
+      <File Path="sqldeveloper/sqldeveloper/bin/" Name="sqldeveloper-nondebug.conf"/>
+      <File Path="sqldeveloper/sqldeveloper/bin/" Name="sqldeveloper.boot"/>
+      <File Path="sqldeveloper/sqldeveloper/bin/" Name="sqldeveloper.conf"/>
+      <File Path="sqldeveloper/sqldeveloper/bin/" Name="version.properties"/>
+      <File Path="sqldeveloper/sqldeveloper/bin/" Name="sqldeveloper" Permissions="0750"/>
+      <File Path="sqldeveloper/sqldeveloper/bin/" Name="sqldeveloper.exe" Permissions="0750"/>
+      <File Path="sqldeveloper/sqldeveloper/bin/" Name="sqldeveloperW.exe" Permissions="0750"/>
+      <File Path="jlib/" Name="ldapjclnt11.jar"/>
+      <File Path="jlib/" Name="identitystore.jar"/>
+      <File Path="jlib/" Name="identityutils.jar"/>
+      <File Path="lib/" Name="libldapjclnt11.a"/>
+      <File Path="lib/" Name="libldapclnt11.a"/>
+      <File Path="lib/" Name="libldapjclnt11.so"/>
+      <File Path="lib/" Name="libnnz11.a"/>
+      <File Path="lib/" Name="libzt11.a"/>
+      <File Path="lib/" Name="libztkg11.a"/>
+      <File Path="jlib/" Name="cosnaming.jar"/>
+      <File Path="jlib/" Name="javavm_ssl_1_2.jar"/>
+      <File Path="lib/" Name="http_client.jar"/>
+      <File Path="javavm/lib/" Name="appletviewer.properties"/>
+      <File Path="javavm/lib/" Name="awt.properties"/>
+      <File Path="javavm/lib/" Name="content-types.properties"/>
+      <File Path="javavm/lib/" Name="jce.jar"/>
+      <File Path="javavm/lib/" Name="rmic.properties"/>
+      <File Path="javavm/lib/" Name="serialver.properties"/>
+      <File Path="javavm/lib/" Name="sunjce_provider.jar"/>
+      <File Path="javavm/lib/" Name="tzmappings"/>
+      <File Path="javavm/lib/" Name="logging.properties"/>
+      <File Path="lib/" Name="libjavavm11.a"/>
+      <File Path="jlib/" Name="jewt4-nls.jar"/>
+      <File Path="jlib/" Name="jewt4.jar"/>
+      <File Path="lib/" Name="libhasgen11.so"/>
+      <File Path="lib/" Name="libagfw11.so"/>
+      <File Path="lib/" Name="libclsra11.so"/>
+      <File Path="lib/" Name="libocr11.so"/>
+      <File Path="lib/" Name="libocrb11.so"/>
+      <File Path="lib/" Name="libocrutl11.so"/>
+      <File Path="crs/lib/" Name="env_has.mk"/>
+      <File Path="dv/jlib/" Name="dvca.jar"/>
+      <File Path="rdbms/lib/" Name="kzvidv.o" Permissions="0664"/>
+      <File Path="bin/" Name="dvca" Permissions="0750"/>
+      <File Path="bin/" Name="emdrollogs.pl" Permissions="0755"/>
+      <File Path="sysman/jlib/" Name="emagentRT.jar"/>
+      <File Path="bin/" Name="emagentdeploy.pl" Permissions="0755"/>
+      <File Path="bin/" Name="emtgtctl" Permissions="0755"/>
+      <File Path="lib/" Name="clusters.reg"/>
+      <File Path="lib/" Name="fetchlets.reg"/>
+      <File Path="lib/" Name="recvlets.reg"/>
+      <File Path="lib/" Name="credentials.reg"/>
+      <File Path="sysman/lib/" Name="env_emagent.mk"/>
+      <File Path="sysman/lib/" Name="ins_emagent.mk"/>
+      <File Path="sysman/lib/" Name="libnmeps.a"/>
+      <File Path="sysman/lib/" Name="libnmnl.a"/>
+      <File Path="sysman/lib/" Name="libnmnp.a"/>
+      <File Path="sysman/lib/" Name="libnmd.a"/>
+      <File Path="sysman/lib/" Name="libnms.a"/>
+      <File Path="sysman/lib/" Name="libnmsp.a"/>
+      <File Path="sysman/lib/" Name="libnms0.a"/>
+      <File Path="sysman/lib/" Name="libpeer.a"/>
+      <File Path="sysman/lib/" Name="libnmadbg.a"/>
+      <File Path="sysman/lib/" Name="libnmadm.a"/>
+      <File Path="sysman/lib/" Name="libnmalk.a"/>
+      <File Path="sysman/lib/" Name="libnmarl.a"/>
+      <File Path="sysman/lib/" Name="libnmasf.a"/>
+      <File Path="sysman/lib/" Name="libnmastk.a"/>
+      <File Path="sysman/lib/" Name="libnmb.a"/>
+      <File Path="sysman/lib/" Name="libnmosudo.a"/>
+      <File Path="sysman/lib/" Name="libnmeb.a"/>
+      <File Path="sysman/lib/" Name="libnmec.a"/>
+      <File Path="sysman/lib/" Name="libnmeclumgr.a"/>
+      <File Path="sysman/lib/" Name="libnmecluster.a"/>
+      <File Path="sysman/lib/" Name="libnmectl.a"/>
+      <File Path="sysman/lib/" Name="libnmedc.a"/>
+      <File Path="sysman/lib/" Name="libnmedm.a"/>
+      <File Path="sysman/lib/" Name="libnmedr.a"/>
+      <File Path="sysman/lib/" Name="libnmedt.a"/>
+      <File Path="sysman/lib/" Name="libnmee.a"/>
+      <File Path="sysman/lib/" Name="libnmefmgr.a"/>
+      <File Path="sysman/lib/" Name="libnmefos.a"/>
+      <File Path="sysman/lib/" Name="libnmefsp.a"/>
+      <File Path="sysman/lib/" Name="libnmefsql.a"/>
+      <File Path="sysman/lib/" Name="libnmefsqlt.a"/>
+      <File Path="sysman/lib/" Name="libnmefpfa.a"/>
+      <File Path="sysman/lib/" Name="libnmefport.a"/>
+      <File Path="sysman/lib/" Name="libnmefud.a"/>
+      <File Path="sysman/lib/" Name="libnmefdms.a"/>
+      <File Path="sysman/lib/" Name="libnmefojmx.a"/>
+      <File Path="sysman/lib/" Name="libnmefut.a"/>
+      <File Path="sysman/lib/" Name="libnmefvr.a"/>
+      <File Path="sysman/lib/" Name="libnmefw.a"/>
+      <File Path="sysman/lib/" Name="libnmehl.a"/>
+      <File Path="sysman/lib/" Name="libnmehu.a"/>
+      <File Path="sysman/lib/" Name="libnmei.a"/>
+      <File Path="sysman/lib/" Name="libnmej.a"/>
+      <File Path="sysman/lib/" Name="libnmejc.a"/>
+      <File Path="sysman/lib/" Name="libnmem.a"/>
+      <File Path="sysman/lib/" Name="libnmeoci.a"/>
+      <File Path="sysman/lib/" Name="libnmepm.a"/>
+      <File Path="sysman/lib/" Name="libnmer.a"/>
+      <File Path="sysman/lib/" Name="libnmesched.a"/>
+      <File Path="sysman/lib/" Name="libnmeu.a"/>
+      <File Path="sysman/lib/" Name="libnmevq.a"/>
+      <File Path="sysman/lib/" Name="libnmevc.a"/>
+      <File Path="sysman/lib/" Name="libnmevsp.a"/>
+      <File Path="sysman/lib/" Name="libnmevr.a"/>
+      <File Path="sysman/lib/" Name="libnmexml.a"/>
+      <File Path="sysman/lib/" Name="libnmhs.a"/>
+      <File Path="sysman/lib/" Name="libnml.a"/>
+      <File Path="sysman/lib/" Name="libnmo.a"/>
+      <File Path="sysman/lib/" Name="libnmocat.a"/>
+      <File Path="sysman/lib/" Name="libnmt.a"/>
+      <File Path="sysman/lib/" Name="libnmum.a"/>
+      <File Path="sysman/lib/" Name="libnmupm.a"/>
+      <File Path="sysman/lib/" Name="libojmxtool.a"/>
+      <File Path="sysman/lib/" Name="libnmcbuf.a"/>
+      <File Path="sysman/lib/" Name="libnmccol.a"/>
+      <File Path="sysman/lib/" Name="snmccolm.o"/>
+      <File Path="sysman/lib/" Name="libnmcfhc.a"/>
+      <File Path="sysman/lib/" Name="libnmcfsga.a"/>
+      <File Path="sysman/lib/" Name="nmaj.o"/>
+      <File Path="sysman/lib/" Name="nmajclbk.o"/>
+      <File Path="sysman/lib/" Name="nmajout.o"/>
+      <File Path="sysman/lib/" Name="nmajrules.o"/>
+      <File Path="sysman/lib/" Name="nmajsm.o"/>
+      <File Path="sysman/lib/" Name="nmajutl.o"/>
+      <File Path="sysman/lib/" Name="s0nmb.o"/>
+      <File Path="sysman/lib/" Name="s0nmosud.o"/>
+      <File Path="sysman/lib/" Name="s0nmdmain.o"/>
+      <File Path="sysman/lib/" Name="s0nmectl.o"/>
+      <File Path="sysman/lib/" Name="s0nmei.o"/>
+      <File Path="sysman/lib/" Name="s0nmem.o"/>
+      <File Path="sysman/lib/" Name="s0nmetgctl.o"/>
+      <File Path="sysman/lib/" Name="s0nmhs.o"/>
+      <File Path="sysman/lib/" Name="s0nmo.o"/>
+      <File Path="sysman/lib/" Name="s0nmocat.o"/>
+      <File Path="sysman/lib/" Name="s0nmum.o"/>
+      <File Path="sysman/lib/" Name="s0nmumc.o"/>
+      <File Path="sysman/lib/" Name="s0nmupm.o"/>
+      <File Path="sysman/lib/" Name="s0ojmxtool.o"/>
+      <File Path="sysman/lib/" Name="snmajmn.o"/>
+      <File Path="sysman/lib/" Name="snmajpt.o"/>
+      <File Path="sysman/lib/" Name="snmajutl.o"/>
+      <File Path="sysman/lib/" Name="ssnmajed.o"/>
+      <File Path="lib/" Name="libnmadbg.so"/>
+      <File Path="lib/" Name="libnmadbg.so.0"/>
+      <File Path="lib/" Name="libnmadm.so"/>
+      <File Path="lib/" Name="libnmadm.so.0"/>
+      <File Path="lib/" Name="libnmalk.so"/>
+      <File Path="lib/" Name="libnmalk.so.0"/>
+      <File Path="lib/" Name="libnmarl.so"/>
+      <File Path="lib/" Name="libnmarl.so.0"/>
+      <File Path="lib/" Name="libnmasf.so"/>
+      <File Path="lib/" Name="libnmasf.so.0"/>
+      <File Path="lib/" Name="libnmastk.so"/>
+      <File Path="lib/" Name="libnmastk.so.0"/>
+      <File Path="lib/" Name="libnmefos.so"/>
+      <File Path="lib/" Name="libnmefos.so.0"/>
+      <File Path="lib/" Name="libnmefsp.so"/>
+      <File Path="lib/" Name="libnmefsp.so.0"/>
+      <File Path="lib/" Name="libnmefsql.so"/>
+      <File Path="lib/" Name="libnmefsql.so.0"/>
+      <File Path="lib/" Name="libnmefsqlt.so"/>
+      <File Path="lib/" Name="libnmefsqlt.so.0"/>
+      <File Path="lib/" Name="libnmefpfa.so"/>
+      <File Path="lib/" Name="libnmefpfa.so.0"/>
+      <File Path="lib/" Name="libnmefport.so"/>
+      <File Path="lib/" Name="libnmefport.so.0"/>
+      <File Path="lib/" Name="libnmefud.so"/>
+      <File Path="lib/" Name="libnmefud.so.0"/>
+      <File Path="lib/" Name="libnmefdms.so"/>
+      <File Path="lib/" Name="libnmefdms.so.0"/>
+      <File Path="lib/" Name="libnmefojmx.so"/>
+      <File Path="lib/" Name="libnmefojmx.so.0"/>
+      <File Path="lib/" Name="libnmefut.so"/>
+      <File Path="lib/" Name="libnmefut.so.0"/>
+      <File Path="lib/" Name="libnmefvr.so"/>
+      <File Path="lib/" Name="libnmefvr.so.0"/>
+      <File Path="lib/" Name="libnmefw.so"/>
+      <File Path="lib/" Name="libnmefw.so.0"/>
+      <File Path="lib/" Name="libnmemso.so"/>
+      <File Path="lib/" Name="libnmemso.so.0"/>
+      <File Path="lib/" Name="libnmeoci.so"/>
+      <File Path="lib/" Name="libnmeoci.so.0"/>
+      <File Path="lib/" Name="libnmevq.so"/>
+      <File Path="lib/" Name="libnmevq.so.0"/>
+      <File Path="lib/" Name="libnmevc.so"/>
+      <File Path="lib/" Name="libnmevc.so.0"/>
+      <File Path="lib/" Name="libnmevsp.so"/>
+      <File Path="lib/" Name="libnmevsp.so.0"/>
+      <File Path="sysman/lib/" Name="libnmadbg.def"/>
+      <File Path="sysman/lib/" Name="libnmadm.def"/>
+      <File Path="sysman/lib/" Name="libnmalk.def"/>
+      <File Path="sysman/lib/" Name="libnmarl.def"/>
+      <File Path="sysman/lib/" Name="libnmasf.def"/>
+      <File Path="sysman/lib/" Name="libnmastk.def"/>
+      <File Path="sysman/lib/" Name="libnmefos.def"/>
+      <File Path="sysman/lib/" Name="libnmefsp.def"/>
+      <File Path="sysman/lib/" Name="libnmefsql.def"/>
+      <File Path="sysman/lib/" Name="libnmefsqlt.def"/>
+      <File Path="sysman/lib/" Name="libnmefpfa.def"/>
+      <File Path="sysman/lib/" Name="libnmefport.def"/>
+      <File Path="sysman/lib/" Name="libnmefud.def"/>
+      <File Path="sysman/lib/" Name="libnmefdms.def"/>
+      <File Path="sysman/lib/" Name="libnmefojmx.def"/>
+      <File Path="sysman/lib/" Name="libnmefut.def"/>
+      <File Path="sysman/lib/" Name="libnmefvr.def"/>
+      <File Path="sysman/lib/" Name="libnmefw.def"/>
+      <File Path="sysman/lib/" Name="libnmemso.def"/>
+      <File Path="sysman/lib/" Name="libnmeoci.def"/>
+      <File Path="sysman/lib/" Name="libnmevq.def"/>
+      <File Path="sysman/lib/" Name="libnmevc.def"/>
+      <File Path="sysman/lib/" Name="libnmevsp.def"/>
+      <File Path="bin/" Name="agentok.sh" Permissions="0755"/>
+      <File Path="bin/" Name="e2eme" Permissions="0755"/>
+      <File Path="bin/" Name="e2eme0" Permissions="0755"/>
+      <File Path="bin/" Name="emagent"/>
+      <File Path="bin/" Name="emagent0" Permissions="0755"/>
+      <File Path="bin/" Name="emagtm" Permissions="0755"/>
+      <File Path="bin/" Name="emagtmc" Permissions="0755"/>
+      <File Path="bin/" Name="emdctl"/>
+      <File Path="bin/" Name="emdctl0" Permissions="0755"/>
+      <File Path="bin/" Name="emtgtctl2"/>
+      <File Path="bin/" Name="emtgtctl20" Permissions="0755"/>
+      <File Path="bin/" Name="nmb"/>
+      <File Path="bin/" Name="nmb0" Permissions="0755"/>
+      <File Path="bin/" Name="nmosudo" Permissions="0755"/>
+      <File Path="bin/" Name="nmosudo0" Permissions="0755"/>
+      <File Path="bin/" Name="nmei" Permissions="0755"/>
+      <File Path="bin/" Name="nmei0" Permissions="0755"/>
+      <File Path="bin/" Name="nmhs"/>
+      <File Path="bin/" Name="nmhs0" Permissions="0755"/>
+      <File Path="bin/" Name="nmo"/>
+      <File Path="bin/" Name="nmo0" Permissions="0755"/>
+      <File Path="bin/" Name="nmocat" Permissions="0755"/>
+      <File Path="bin/" Name="nmocat0" Permissions="0755"/>
+      <File Path="bin/" Name="nmupm" Permissions="0755"/>
+      <File Path="bin/" Name="nmupm0" Permissions="0755"/>
+      <File Path="bin/" Name="ojmxtool" Permissions="0755"/>
+      <File Path="bin/" Name="ojmxtool0" Permissions="0755"/>
+      <File Path="bin/" Name="runclass" Permissions="0755"/>
+      <File Path="sysman/lib/" Name="libnmecrmgr.a"/>
+      <File Path="sysman/lib/" Name="libnmcfhc.def"/>
+      <File Path="sysman/lib/" Name="libnmcfsga.def"/>
+      <File Path="lib/" Name="libnmcfsga.so"/>
+      <File Path="lib/" Name="libnmcfhc.so"/>
+      <File Path="bin/" Name="nmcbufp" Permissions="0755"/>
+      <File Path="lib/" Name="librdjni11.so"/>
+      <File Path="jlib/" Name="rd.jar"/>
+      <File Path="jlib/" Name="rdtool.jar"/>
+      <File Path="jlib/" Name="gns.jar"/>
+      <File Path="lib/" Name="libgns11.so"/>
+      <File Path="lib/" Name="libgnsjni11.so"/>
+      <File Path="bin/" Name="gnsd" Permissions="0755"/>
+      <File Path="lib/" Name="libuini11.so"/>
+      <File Path="lib/" Name="libdbcfg11.so"/>
+      <File Path="lib/" Name="libsrvmhas11.so"/>
+      <File Path="lib/" Name="libsrvmocr11.so"/>
+      <File Path="jlib/" Name="srvmhas.jar"/>
+      <File Path="jlib/" Name="srvmasm.jar"/>
+      <File Path="srvm/jlib/" Name="srvctl.jar"/>
+      <File Path="jlib/" Name="supercluster-common.jar"/>
+      <File Path="jlib/" Name="supercluster.jar"/>
+      <File Path="bin/" Name="racgeut" Permissions="0755"/>
+      <File Path="bin/" Name="racgmain" Permissions="0755"/>
+      <File Path="srvm/lib/" Name="prgcrshm.o"/>
+      <File Path="srvm/lib/" Name="sprgcrshm.o"/>
+      <File Path="lib/" Name="liboevm.a"/>
+      <File Path="racg/lib/" Name="s0clsrdmai.o"/>
+      <File Path="racg/lib/" Name="s0clsrmain.o"/>
+      <File Path="racg/lib/" Name="s0clsrmdb.o"/>
+      <File Path="racg/lib/" Name="s0clsreut.o"/>
+      <File Path="srvm/lib/" Name="env_srvm.mk"/>
+      <File Path="srvm/lib/" Name="ins_srvm.mk"/>
+      <File Path="rdbms/lib/" Name="kzlilbac.o"/>
+      <File Path="dv/jlib/" Name="dva_webapp.ear"/>
+      <File Path="dv/jlib/" Name="dva_webapp_jsp.jar"/>
+      <File Path="jdbc/lib/" Name="ojdbc5.jar"/>
+      <File Path="jdbc/lib/" Name="ojdbc6.jar"/>
+      <File Path="lib/" Name="libocijdbc11.so"/>
+      <File Path="lib/" Name="libheteroxa11.so"/>
+      <File Path="nls/lbuilder/jlib/" Name="LocaleBuilder.jar"/>
+      <File Path="nls/lbuilder/jlib/" Name="olbhelp.jar"/>
+      <File Path="nls/lbuilder/jlib/" Name="jewt-opt-4_1_3.zip"/>
+      <File Path="bin/" Name="lbuilder" Permissions="0755"/>
+      <File Path="bin/" Name="csscan" Permissions="0755"/>
+      <File Path="rdbms/lib/" Name="zsmsdrv.o"/>
+      <File Path="olap/api/lib/" Name="awxml.jar"/>
+      <File Path="olap/api/lib/" Name="olap_api.jar"/>
+      <File Path="olap/api/lib/" Name="olap_api_spl.jar"/>
+      <File Path="jlib/" Name="jndi.jar"/>
+      <File Path="jlib/" Name="jta.jar"/>
+      <File Path="jlib/" Name="ldap.jar"/>
+      <File Path="jlib/" Name="providerutil.jar"/>
+      <File Path="lib/" Name="activation.jar"/>
+      <File Path="lib/" Name="mail.jar"/>
+      <File Path="javavm/lib/" Name="aurora.zip"/>
+      <File Path="javavm/lib/" Name="aurora_ncomp_gen.zip"/>
+      <File Path="javavm/lib/" Name="jaccelerator.zip"/>
+      <File Path="javavm/lib/" Name="ncomp.zip"/>
+      <File Path="lib/" Name="classgen.jar"/>
+      <File Path="lib/" Name="oraclexsql.jar"/>
+      <File Path="lib/" Name="transx.zip"/>
+      <File Path="lib/" Name="xmlcomp.jar"/>
+      <File Path="lib/" Name="xsqlserializers.jar"/>
+      <File Path="lib/" Name="ojcr.jar"/>
+      <File Path="lib/" Name="jcr-1.0.jar"/>
+      <File Path="lib/" Name="jdev-rt.zip"/>
+      <File Path="bin/" Name="oracg" Permissions="0755"/>
+      <File Path="bin/" Name="orapipe" Permissions="0755"/>
+      <File Path="bin/" Name="transx" Permissions="0755"/>
+      <File Path="bin/" Name="xmlcg" Permissions="0755"/>
+      <File Path="bin/" Name="xsl" Permissions="0755"/>
+      <File Path="bin/" Name="xsql" Permissions="0755"/>
+      <File Path="bin/" Name="xvm" Permissions="0755"/>
+      <File Path="jlib/" Name="oraclepki.jar"/>
+      <File Path="jlib/" Name="oraclepki103.jar"/>
+      <File Path="owm/jlib/" Name="owm-3_0.jar"/>
+      <File Path="owm/jlib/" Name="owm_help.jar"/>
+      <File Path="owm/jlib/" Name="owm-images.jar"/>
+      <File Path="lib/" Name="libowm2.so"/>
+      <File Path="lib/" Name="libslax11.a"/>
+      <File Path="bin/" Name="pafctl.bat"/>
+      <File Path="bin/" Name="PARDeploy.bat"/>
+      <File Path="bin/" Name="pafctl" Permissions="0755"/>
+      <File Path="bin/" Name="PARDeploy" Permissions="0755"/>
+      <File Path="opmn/bin/" Name="onsctli"/>
+      <File Path="opmn/bin/" Name="ons"/>
+      <File Path="opmn/lib/" Name="ons.jar"/>
+      <File Path="lib/" Name="libons.so"/>
+      <File Path="lib/" Name="libonsx.so"/>
+      <File Path="bin/" Name="onsctl"/>
+      <File Path="opmn/bin/" Name="onsctl"/>
+      <File Path="lib/" Name="libgx11.a"/>
+      <File Path="lib/" Name="libzx11.a"/>
+      <File Path="lib/" Name="libctx11.a"/>
+      <File Path="lib/" Name="libctxc11.a"/>
+      <File Path="jlib/" Name="wlm-common.jar"/>
+      <File Path="rdbms/lib/" Name="xsyeolap.o"/>
+      <File Path="jlib/" Name="commons-el.jar"/>
+      <File Path="jlib/" Name="oracle-el.jar"/>
+      <File Path="jlib/" Name="jsp-el-api.jar"/>
+      <File Path="jlib/" Name="uix2-install.zip"/>
+      <File Path="jlib/" Name="uix2.jar"/>
+      <File Path="lib/" Name="libxml11.a"/>
+      <File Path="lib/" Name="lclasses12.zip"/>
+      <File Path="lib/" Name="lclasses14.zip"/>
+      <File Path="lib/" Name="libcore11.a"/>
+      <File Path="lib/" Name="liboraz.a"/>
+      <File Path="lib/" Name="liblzopro.a"/>
+      <File Path="lib/" Name="s0main.o"/>
+      <File Path="lib/" Name="scorept.o"/>
+      <File Path="lib/" Name="sscoreed.o"/>
+      <File Path="lib/" Name="libcorejava.so"/>
+      <File Path="jlib/" Name="deconfigCCR.jar"/>
+      <File Path="lib/" Name="libnnz11.so"/>
+      <File Path="jlib/" Name="emca.jar"/>
+      <File Path="bin/" Name="targetdeploy.pl" Permissions="0755"/>
+      <File Path="bin/" Name="emca" Permissions="0755"/>
+      <File Path="sysman/admin/emdrep/bin/" Name="HeaderUtil.pl"/>
+      <File Path="sysman/admin/emdrep/bin/" Name="UpdateHeaderUtil.pl"/>
+      <File Path="sysman/admin/emdrep/bin/" Name="build.pl"/>
+      <File Path="sysman/admin/emdrep/bin/" Name="emrepmgr.pl"/>
+      <File Path="sysman/admin/emdrep/bin/" Name="repdiff.pl"/>
+      <File Path="sysman/admin/emdrep/bin/" Name="wrap.pl"/>
+      <File Path="sysman/admin/emdrep/bin/" Name="BaseSession.pm"/>
+      <File Path="sysman/admin/emdrep/bin/" Name="Component.pm"/>
+      <File Path="sysman/admin/emdrep/bin/" Name="ExecJava.pm"/>
+      <File Path="sysman/admin/emdrep/bin/" Name="Logger.pm"/>
+      <File Path="sysman/admin/emdrep/bin/" Name="Repository.pm"/>
+      <File Path="sysman/admin/emdrep/bin/" Name="SQLFile.pm"/>
+      <File Path="sysman/admin/emdrep/bin/" Name="SQLPlusSession.pm"/>
+      <File Path="sysman/admin/emdrep/bin/" Name="ScriptSession.pm"/>
+      <File Path="sysman/admin/emdrep/bin/" Name="TransX.pm"/>
+      <File Path="sysman/admin/emdrep/bin/" Name="RepManager" Permissions="0750"/>
+      <File Path="sysman/admin/emdrep/bin/" Name="RepManager.bat" Permissions="0750"/>
+      <File Path="javavm/lib/" Name="jasper.zip"/>
+      <File Path="owb/jrt/jsp/bin/" Name="ojspc"/>
+      <File Path="owb/jrt/jsp/bin/" Name="ojspc.bat"/>
+      <File Path="owb/bridges/lib/" Name="help_manager10.jar"/>
+      <File Path="owb/j2ee/lib/" Name="bc4jct.jar"/>
+      <File Path="owb/j2ee/lib/" Name="ohw.jar"/>
+      <File Path="owb/j2ee/lib/" Name="xdb.jar"/>
+      <File Path="olap/api/lib/" Name="olapi_api.jar"/>
+      <File Path="owb/bin/" Name="CategoryValues.xml"/>
+      <File Path="owb/bin/" Name="ProductNameValues.xml"/>
+      <File Path="owb/bin/" Name="owb-debug.conf"/>
+      <File Path="owb/bin/" Name="owb-nodebug.conf"/>
+      <File Path="owb/bin/" Name="owb.boot"/>
+      <File Path="owb/bin/" Name="owb.conf"/>
+      <File Path="owb/bin/" Name="owb.exe"/>
+      <File Path="owb/bin/" Name="owb.tmp" Permissions="0750"/>
+      <File Path="owb/bin/" Name="patterns_registry.xml"/>
+      <File Path="owb/bin/" Name="rules_registry.xml"/>
+      <File Path="owb/bin/" Name="splash.gif"/>
+      <File Path="owb/bin/" Name="logging.properties"/>
+      <File Path="owb/bin/" Name="owb.properties"/>
+      <File Path="owb/bin/" Name="product.properties"/>
+      <File Path="owb/bin/" Name="version.properties"/>
+      <File Path="owb/jrt/lib/" Name="activation.jar"/>
+      <File Path="owb/jrt/lib/" Name="adminclient.jar"/>
+      <File Path="owb/jrt/lib/" Name="asm-attrs.jar"/>
+      <File Path="owb/jrt/lib/" Name="asm.jar"/>
+      <File Path="owb/jrt/lib/" Name="bcel.jar"/>
+      <File Path="owb/jrt/lib/" Name="commons-el.jar"/>
+      <File Path="owb/jrt/lib/" Name="concurrent.jar"/>
+      <File Path="owb/jrt/lib/" Name="connector.jar"/>
+      <File Path="owb/jrt/lib/" Name="crimson_1_1_3.jar"/>
+      <File Path="owb/jrt/lib/" Name="ejb.jar"/>
+      <File Path="owb/jrt/lib/" Name="ejb30.jar"/>
+      <File Path="owb/jrt/lib/" Name="http_client.jar"/>
+      <File Path="owb/jrt/lib/" Name="iiop_support.jar"/>
+      <File Path="owb/jrt/lib/" Name="jacc-api.jar"/>
+      <File Path="owb/jrt/lib/" Name="javax77.jar"/>
+      <File Path="owb/jrt/lib/" Name="javax88.jar"/>
+      <File Path="owb/jrt/lib/" Name="jax-qname-namespace.jar"/>
+      <File Path="owb/jrt/lib/" Name="jgroups-core.jar"/>
+      <File Path="owb/jrt/lib/" Name="jms.jar"/>
+      <File Path="owb/jrt/lib/" Name="jmx_remote_api.jar"/>
+      <File Path="owb/jrt/lib/" Name="jmxcluster.jar"/>
+      <File Path="owb/jrt/lib/" Name="jmxri.jar"/>
+      <File Path="owb/jrt/lib/" Name="jta.jar"/>
+      <File Path="owb/jrt/lib/" Name="mail.jar"/>
+      <File Path="owb/jrt/lib/" Name="oc4j-internal.jar"/>
+      <File Path="owb/jrt/lib/" Name="oc4j-psm.jar"/>
+      <File Path="owb/jrt/lib/" Name="oc4j-schemas.jar"/>
+      <File Path="owb/jrt/lib/" Name="oc4j-unsupported-api.jar"/>
+      <File Path="owb/jrt/lib/" Name="oc4j_orb.jar"/>
+      <File Path="owb/jrt/lib/" Name="oems-jms-client.jar"/>
+      <File Path="owb/jrt/lib/" Name="oems-jms-oc4j.jar"/>
+      <File Path="owb/jrt/lib/" Name="oems-jms-server.jar"/>
+      <File Path="owb/jrt/lib/" Name="ojms-provider.jar"/>
+      <File Path="owb/jrt/lib/" Name="ojsp.jar"/>
+      <File Path="owb/jrt/lib/" Name="orbbase.jar"/>
+      <File Path="owb/jrt/lib/" Name="pcl.jar"/>
+      <File Path="owb/jrt/lib/" Name="persistence.jar"/>
+      <File Path="owb/jrt/lib/" Name="scheduler.jar"/>
+      <File Path="owb/jrt/lib/" Name="servlet.jar"/>
+      <File Path="owb/wf/lib/" Name="fndctx.jar"/>
+      <File Path="owb/wf/lib/" Name="libwf.a"/>
+      <File Path="owb/wf/lib/" Name="ojdbc14.jar"/>
+      <File Path="owb/wf/lib/" Name="wfapi.jar"/>
+      <File Path="owb/wf/lib/" Name="wfinst.mk"/>
+      <File Path="owb/wf/lib/" Name="wfjava.jar"/>
+      <File Path="owb/jrt/default-web-app/WEB-INF/lib/" Name="jstl.jar"/>
+      <File Path="owb/jrt/default-web-app/WEB-INF/lib/" Name="looptags.jar"/>
+      <File Path="owb/jrt/default-web-app/WEB-INF/lib/" Name="standard.jar"/>
+      <File Path="ide/lib/" Name="annotations.jar"/>
+      <File Path="ide/lib/" Name="ide-boot.jar"/>
+      <File Path="ide/lib/" Name="ideimpl.jar"/>
+      <File Path="ide/lib/" Name="idenative.dll"/>
+      <File Path="ide/lib/" Name="idert.jar"/>
+      <File Path="ide/lib/" Name="javatools.jar"/>
+      <File Path="ide/lib/" Name="javax-ide.jar"/>
+      <File Path="ide/lib/" Name="oicons.jar"/>
+      <File Path="ide/lib/" Name="uic.jar"/>
+      <File Path="ide/bin/" Name="edt.properties"/>
+      <File Path="ide/bin/" Name="encodings.xml"/>
+      <File Path="ide/bin/" Name="ide-logging-debug.conf"/>
+      <File Path="ide/bin/" Name="ide-logging.conf"/>
+      <File Path="ide/bin/" Name="ide.boot"/>
+      <File Path="ide/bin/" Name="ide.conf"/>
+      <File Path="ide/bin/" Name="jdk.conf"/>
+      <File Path="ide/bin/" Name="launcher.dll"/>
+      <File Path="ide/bin/" Name="launcher.sh"/>
+      <File Path="ide/bin/" Name="product.exe"/>
+      <File Path="jdev/lib/" Name="javacore.jar"/>
+      <File Path="jdev/lib/" Name="jdev-rt.jar"/>
+      <File Path="j2ee/home/lib/" Name="pcl.jar"/>
+      <File Path="xdk/lib/" Name="classgen.jar"/>
+      <File Path="xdk/lib/" Name="libxml11.a"/>
+      <File Path="xdk/lib/" Name="ojcr.jar"/>
+      <File Path="xdk/lib/" Name="oraclexsql.jar"/>
+      <File Path="xdk/lib/" Name="transx.zip"/>
+      <File Path="xdk/lib/" Name="xml.jar"/>
+      <File Path="xdk/lib/" Name="xml2.jar"/>
+      <File Path="xdk/lib/" Name="xmlcomp.jar"/>
+      <File Path="xdk/lib/" Name="xmlcomp2.jar"/>
+      <File Path="xdk/lib/" Name="xmlmesg.jar"/>
+      <File Path="xdk/lib/" Name="xmlparserv2.jar"/>
+      <File Path="xdk/lib/" Name="xqjapi.jar"/>
+      <File Path="xdk/lib/" Name="xqjori.jar"/>
+      <File Path="xdk/lib/" Name="xquery.jar"/>
+      <File Path="xdk/lib/" Name="xschema.jar"/>
+      <File Path="xdk/lib/" Name="xsqldemos.ear"/>
+      <File Path="xdk/lib/" Name="xsqlserializers.jar"/>
+      <File Path="xdk/lib/" Name="xsu12.jar"/>
+      <File Path="sqlj/lib/" Name="translator.jar"/>
+      <File Path="bin/" Name="ctxkbtc"/>
+      <File Path="bin/" Name="ctxlc"/>
+      <File Path="bin/" Name="ctxload"/>
+      <File Path="ctx/lib/" Name="env_ctx.mk"/>
+      <File Path="ctx/lib/" Name="gxut.o"/>
+      <File Path="ctx/lib/" Name="gxutf.o"/>
+      <File Path="ctx/lib/" Name="gxutp.o"/>
+      <File Path="ctx/lib/" Name="gxuts.o"/>
+      <File Path="ctx/lib/" Name="gxutt.o"/>
+      <File Path="ctx/lib/" Name="gxutw.o"/>
+      <File Path="ctx/lib/" Name="ins_ctx.mk"/>
+      <File Path="ctx/lib/" Name="sdrz.o"/>
+      <File Path="ctx/lib/" Name="sdrllc.o"/>
+      <File Path="ctx/lib/" Name="sgxut.o"/>
+      <File Path="lib/" Name="libctxs11.a"/>
+      <File Path="lib/" Name="libinlxs11.so"/>
+      <File Path="ctx/bin/" Name="ctxhx"/>
+      <File Path="ctx/lib/" Name="ctxhx.o"/>
+      <File Path="ctx/lib/" Name="libctxhx.a"/>
+      <File Path="ctx/lib/" Name="adinit.dat"/>
+      <File Path="ctx/lib/" Name="cmmap000.bin"/>
+      <File Path="ctx/lib/" Name="ibfpx2.flt"/>
+      <File Path="ctx/lib/" Name="ibgp42.flt"/>
+      <File Path="ctx/lib/" Name="ibjpg2.flt"/>
+      <File Path="ctx/lib/" Name="ibpcd2.flt"/>
+      <File Path="ctx/lib/" Name="ibpsd2.flt"/>
+      <File Path="ctx/lib/" Name="ibxbm2.flt"/>
+      <File Path="ctx/lib/" Name="ibxpm2.flt"/>
+      <File Path="ctx/lib/" Name="ibxwd2.flt"/>
+      <File Path="ctx/lib/" Name="imcd32.flt"/>
+      <File Path="ctx/lib/" Name="imcd42.flt"/>
+      <File Path="ctx/lib/" Name="imcd52.flt"/>
+      <File Path="ctx/lib/" Name="imcd62.flt"/>
+      <File Path="ctx/lib/" Name="imcd72.flt"/>
+      <File Path="ctx/lib/" Name="imcd82.flt"/>
+      <File Path="ctx/lib/" Name="imcdr2.flt"/>
+      <File Path="ctx/lib/" Name="imcm52.flt"/>
+      <File Path="ctx/lib/" Name="imcm72.flt"/>
+      <File Path="ctx/lib/" Name="imcmx2.flt"/>
+      <File Path="ctx/lib/" Name="imdsf2.flt"/>
+      <File Path="ctx/lib/" Name="imfmv2.flt"/>
+      <File Path="ctx/lib/" Name="imgdf2.flt"/>
+      <File Path="ctx/lib/" Name="imgem2.flt"/>
+      <File Path="ctx/lib/" Name="imigs2.flt"/>
+      <File Path="ctx/lib/" Name="immet2.flt"/>
+      <File Path="ctx/lib/" Name="impif2.flt"/>
+      <File Path="ctx/lib/" Name="imps_2.flt"/>
+      <File Path="ctx/lib/" Name="impsi2.flt"/>
+      <File Path="ctx/lib/" Name="impsz2.flt"/>
+      <File Path="ctx/lib/" Name="imrnd2.flt"/>
+      <File Path="ctx/lib/" Name="iphgw2.flt"/>
+      <File Path="ctx/lib/" Name="isunx2.flt"/>
+      <File Path="ctx/lib/" Name="libde_met.so"/>
+      <File Path="ctx/lib/" Name="libde_tree.so"/>
+      <File Path="ctx/lib/" Name="libex_gdsf.so"/>
+      <File Path="ctx/lib/" Name="libex_html.so"/>
+      <File Path="ctx/lib/" Name="libex_ihtml.so"/>
+      <File Path="ctx/lib/" Name="libfreetype.so.6"/>
+      <File Path="ctx/lib/" Name="libos_gd.so"/>
+      <File Path="ctx/lib/" Name="libos_xwin.so"/>
+      <File Path="ctx/lib/" Name="libsc_anno.so"/>
+      <File Path="ctx/lib/" Name="libsc_ca.so"/>
+      <File Path="ctx/lib/" Name="libsc_ch.so"/>
+      <File Path="ctx/lib/" Name="libsc_da.so"/>
+      <File Path="ctx/lib/" Name="libsc_du.so"/>
+      <File Path="ctx/lib/" Name="libsc_ex.so"/>
+      <File Path="ctx/lib/" Name="libsc_exind2.so"/>
+      <File Path="ctx/lib/" Name="libsc_exind3.so"/>
+      <File Path="ctx/lib/" Name="libsc_fa.so"/>
+      <File Path="ctx/lib/" Name="libsc_fi.so"/>
+      <File Path="ctx/lib/" Name="libsc_fmt.so"/>
+      <File Path="ctx/lib/" Name="libsc_fut.so"/>
+      <File Path="ctx/lib/" Name="libsc_img.so"/>
+      <File Path="ctx/lib/" Name="libsc_ind.so"/>
+      <File Path="ctx/lib/" Name="libsc_lo.so"/>
+      <File Path="ctx/lib/" Name="libsc_ut.so"/>
+      <File Path="ctx/lib/" Name="libsc_vw.so"/>
+      <File Path="ctx/lib/" Name="libsc_xp.so"/>
+      <File Path="ctx/lib/" Name="libvs_acad.so"/>
+      <File Path="ctx/lib/" Name="libvs_acd2.so"/>
+      <File Path="ctx/lib/" Name="libvs_acs.so"/>
+      <File Path="ctx/lib/" Name="libvs_ami.so"/>
+      <File Path="ctx/lib/" Name="libvs_bdr.so"/>
+      <File Path="ctx/lib/" Name="libvs_bmp.so"/>
+      <File Path="ctx/lib/" Name="libvs_cgm.so"/>
+      <File Path="ctx/lib/" Name="libvs_dbs.so"/>
+      <File Path="ctx/lib/" Name="libvs_dez.so"/>
+      <File Path="ctx/lib/" Name="libvs_dif.so"/>
+      <File Path="ctx/lib/" Name="libvs_drw.so"/>
+      <File Path="ctx/lib/" Name="libvs_dx.so"/>
+      <File Path="ctx/lib/" Name="libvs_emf.so"/>
+      <File Path="ctx/lib/" Name="libvs_en4.so"/>
+      <File Path="ctx/lib/" Name="libvs_ens.so"/>
+      <File Path="ctx/lib/" Name="libvs_enw.so"/>
+      <File Path="ctx/lib/" Name="libvs_eps.so"/>
+      <File Path="ctx/lib/" Name="libvs_eshr.so"/>
+      <File Path="ctx/lib/" Name="libvs_exe2.so"/>
+      <File Path="ctx/lib/" Name="libvs_fax.so"/>
+      <File Path="ctx/lib/" Name="libvs_fcd.so"/>
+      <File Path="ctx/lib/" Name="libvs_fcs.so"/>
+      <File Path="ctx/lib/" Name="libvs_fft.so"/>
+      <File Path="ctx/lib/" Name="libvs_flw.so"/>
+      <File Path="ctx/lib/" Name="libvs_fwk.so"/>
+      <File Path="ctx/lib/" Name="libvs_gdsf.so"/>
+      <File Path="ctx/lib/" Name="libvs_gif.so"/>
+      <File Path="ctx/lib/" Name="libvs_gzip.so"/>
+      <File Path="ctx/lib/" Name="libvs_hgs.so"/>
+      <File Path="ctx/lib/" Name="libvs_html.so"/>
+      <File Path="ctx/lib/" Name="libvs_hwp.so"/>
+      <File Path="ctx/lib/" Name="libvs_hwp2.so"/>
+      <File Path="ctx/lib/" Name="libvs_ich.so"/>
+      <File Path="ctx/lib/" Name="libvs_ich6.so"/>
+      <File Path="ctx/lib/" Name="libvs_id3.so"/>
+      <File Path="ctx/lib/" Name="libvs_img.so"/>
+      <File Path="ctx/lib/" Name="libvs_indd.so"/>
+      <File Path="ctx/lib/" Name="libvs_inx.so"/>
+      <File Path="ctx/lib/" Name="libvs_iwp.so"/>
+      <File Path="ctx/lib/" Name="libvs_jbg2.so"/>
+      <File Path="ctx/lib/" Name="libvs_jw.so"/>
+      <File Path="ctx/lib/" Name="libvs_leg.so"/>
+      <File Path="ctx/lib/" Name="libvs_lwp7.so"/>
+      <File Path="ctx/lib/" Name="libvs_lzh.so"/>
+      <File Path="ctx/lib/" Name="libvs_m11.so"/>
+      <File Path="ctx/lib/" Name="libvs_manu.so"/>
+      <File Path="ctx/lib/" Name="libvs_mcw.so"/>
+      <File Path="ctx/lib/" Name="libvs_mif.so"/>
+      <File Path="ctx/lib/" Name="libvs_mime.so"/>
+      <File Path="ctx/lib/" Name="libvs_mm.so"/>
+      <File Path="ctx/lib/" Name="libvs_mm4.so"/>
+      <File Path="ctx/lib/" Name="libvs_mmfn.so"/>
+      <File Path="ctx/lib/" Name="libvs_mp.so"/>
+      <File Path="ctx/lib/" Name="libvs_mpp.so"/>
+      <File Path="ctx/lib/" Name="libvs_msg.so"/>
+      <File Path="ctx/lib/" Name="libvs_msw.so"/>
+      <File Path="ctx/lib/" Name="libvs_mwkd.so"/>
+      <File Path="ctx/lib/" Name="libvs_mwks.so"/>
+      <File Path="ctx/lib/" Name="libvs_mwp2.so"/>
+      <File Path="ctx/lib/" Name="libvs_mwpf.so"/>
+      <File Path="ctx/lib/" Name="libvs_mwrk.so"/>
+      <File Path="ctx/lib/" Name="libvs_ow.so"/>
+      <File Path="ctx/lib/" Name="libvs_pbm.so"/>
+      <File Path="ctx/lib/" Name="libvs_pcl.so"/>
+      <File Path="ctx/lib/" Name="libvs_pcx.so"/>
+      <File Path="ctx/lib/" Name="libvs_pdf.so"/>
+      <File Path="ctx/lib/" Name="libvs_pdfi.so"/>
+      <File Path="ctx/lib/" Name="libvs_pdx.so"/>
+      <File Path="ctx/lib/" Name="libvs_pfs.so"/>
+      <File Path="ctx/lib/" Name="libvs_pgl.so"/>
+      <File Path="ctx/lib/" Name="libvs_pic.so"/>
+      <File Path="ctx/lib/" Name="libvs_pict.so"/>
+      <File Path="ctx/lib/" Name="libvs_png.so"/>
+      <File Path="ctx/lib/" Name="libvs_pntg.so"/>
+      <File Path="ctx/lib/" Name="libvs_pp12.so"/>
+      <File Path="ctx/lib/" Name="libvs_pp2.so"/>
+      <File Path="ctx/lib/" Name="libvs_pp7.so"/>
+      <File Path="ctx/lib/" Name="libvs_pp97.so"/>
+      <File Path="ctx/lib/" Name="libvs_ppl.so"/>
+      <File Path="ctx/lib/" Name="libvs_psd.so"/>
+      <File Path="ctx/lib/" Name="libvs_pst.so"/>
+      <File Path="ctx/lib/" Name="libvs_pstf.so"/>
+      <File Path="ctx/lib/" Name="libvs_qa.so"/>
+      <File Path="ctx/lib/" Name="libvs_qad.so"/>
+      <File Path="ctx/lib/" Name="libvs_qp6.so"/>
+      <File Path="ctx/lib/" Name="libvs_qp9.so"/>
+      <File Path="ctx/lib/" Name="libvs_rar.so"/>
+      <File Path="ctx/lib/" Name="libvs_ras.so"/>
+      <File Path="ctx/lib/" Name="libvs_rbs.so"/>
+      <File Path="ctx/lib/" Name="libvs_rft.so"/>
+      <File Path="ctx/lib/" Name="libvs_rfx.so"/>
+      <File Path="ctx/lib/" Name="libvs_rtf.so"/>
+      <File Path="ctx/lib/" Name="libvs_sam.so"/>
+      <File Path="ctx/lib/" Name="libvs_sc5.so"/>
+      <File Path="ctx/lib/" Name="libvs_sdw.so"/>
+      <File Path="ctx/lib/" Name="libvs_shw3.so"/>
+      <File Path="ctx/lib/" Name="libvs_smd.so"/>
+      <File Path="ctx/lib/" Name="libvs_sms.so"/>
+      <File Path="ctx/lib/" Name="libvs_smt.so"/>
+      <File Path="ctx/lib/" Name="libvs_snap.so"/>
+      <File Path="ctx/lib/" Name="libvs_so6.so"/>
+      <File Path="ctx/lib/" Name="libvs_soc.so"/>
+      <File Path="ctx/lib/" Name="libvs_soc6.so"/>
+      <File Path="ctx/lib/" Name="libvs_soi.so"/>
+      <File Path="ctx/lib/" Name="libvs_soi6.so"/>
+      <File Path="ctx/lib/" Name="libvs_sow.so"/>
+      <File Path="ctx/lib/" Name="libvs_spt.so"/>
+      <File Path="ctx/lib/" Name="libvs_swf.so"/>
+      <File Path="ctx/lib/" Name="libvs_taz.so"/>
+      <File Path="ctx/lib/" Name="libvs_text.so"/>
+      <File Path="ctx/lib/" Name="libvs_tga.so"/>
+      <File Path="ctx/lib/" Name="libvs_tif6.so"/>
+      <File Path="ctx/lib/" Name="libvs_tw.so"/>
+      <File Path="ctx/lib/" Name="libvs_txt.so"/>
+      <File Path="ctx/lib/" Name="libvs_vcrd.so"/>
+      <File Path="ctx/lib/" Name="libvs_viso.so"/>
+      <File Path="ctx/lib/" Name="libvs_vw3.so"/>
+      <File Path="ctx/lib/" Name="libvs_w12.so"/>
+      <File Path="ctx/lib/" Name="libvs_w6.so"/>
+      <File Path="ctx/lib/" Name="libvs_w97.so"/>
+      <File Path="ctx/lib/" Name="libvs_wbmp.so"/>
+      <File Path="ctx/lib/" Name="libvs_wg2.so"/>
+      <File Path="ctx/lib/" Name="libvs_wk4.so"/>
+      <File Path="ctx/lib/" Name="libvs_wk6.so"/>
+      <File Path="ctx/lib/" Name="libvs_wks.so"/>
+      <File Path="ctx/lib/" Name="libvs_wm.so"/>
+      <File Path="ctx/lib/" Name="libvs_wmf.so"/>
+      <File Path="ctx/lib/" Name="libvs_wml.so"/>
+      <File Path="ctx/lib/" Name="libvs_word.so"/>
+      <File Path="ctx/lib/" Name="libvs_work.so"/>
+      <File Path="ctx/lib/" Name="libvs_wp5.so"/>
+      <File Path="ctx/lib/" Name="libvs_wp6.so"/>
+      <File Path="ctx/lib/" Name="libvs_wpf.so"/>
+      <File Path="ctx/lib/" Name="libvs_wpg.so"/>
+      <File Path="ctx/lib/" Name="libvs_wpg2.so"/>
+      <File Path="ctx/lib/" Name="libvs_wpl.so"/>
+      <File Path="ctx/lib/" Name="libvs_wpw.so"/>
+      <File Path="ctx/lib/" Name="libvs_ws.so"/>
+      <File Path="ctx/lib/" Name="libvs_ws2.so"/>
+      <File Path="ctx/lib/" Name="libvs_xl12.so"/>
+      <File Path="ctx/lib/" Name="libvs_xl5.so"/>
+      <File Path="ctx/lib/" Name="libvs_xml.so"/>
+      <File Path="ctx/lib/" Name="libvs_xmp.so"/>
+      <File Path="ctx/lib/" Name="libvs_xy.so"/>
+      <File Path="ctx/lib/" Name="libvs_yim.so"/>
+      <File Path="ctx/lib/" Name="libvs_zip.so"/>
+      <File Path="ctx/lib/" Name="libwv_core.so"/>
+      <File Path="ctx/lib/" Name="libwv_gdlib.so"/>
+      <File Path="rdbms/jlib/" Name="extusrupgrade.jar"/>
+      <File Path="rdbms/jlib/" Name="CDC.jar"/>
+      <File Path="rdbms/jlib/" Name="CartridgeServices.jar"/>
+      <File Path="rdbms/jlib/" Name="ExprFilter.jar"/>
+      <File Path="rdbms/jlib/" Name="mgd_idcode.jar"/>
+      <File Path="rdbms/jlib/" Name="ODCI.jar"/>
+      <File Path="rdbms/jlib/" Name="appctxapi.jar"/>
+      <File Path="rdbms/jlib/" Name="jdm.jar"/>
+      <File Path="rdbms/jlib/" Name="ojdm_api.jar"/>
+      <File Path="rdbms/jlib/" Name="schagent.jar"/>
+      <File Path="rdbms/jlib/" Name="servlet.jar"/>
+      <File Path="rdbms/jlib/" Name="sqljtype.jar"/>
+      <File Path="rdbms/jlib/" Name="trcsess.jar"/>
+      <File Path="rdbms/jlib/" Name="xdb_g.jar"/>
+      <File Path="bin/" Name="asmcmdcore" Permissions="0755"/>
+      <File Path="lib/" Name="asmcmdbase.pm"/>
+      <File Path="lib/" Name="asmcmdglobal.pm"/>
+      <File Path="lib/" Name="asmcmdshare.pm"/>
+      <File Path="lib/" Name="asmcmdambr.pm"/>
+      <File Path="lib/" Name="asmcmddisk.pm"/>
+      <File Path="lib/" Name="asmcmdvol.pm"/>
+      <File Path="lib/" Name="asmcmdattr.pm"/>
+      <File Path="lib/" Name="asmcmdsys.pm"/>
+      <File Path="lib/" Name="asmcmdug.pm"/>
+      <File Path="lib/" Name="asmcmdtmpl.pm"/>
+      <File Path="lib/" Name="asmcmd_disk_header_format"/>
+      <File Path="bin/" Name="agtctl"/>
+      <File Path="bin/" Name="dbv"/>
+      <File Path="bin/" Name="fmputl" Permissions="0750"/>
+      <File Path="bin/" Name="fmputlhp" Permissions="0750"/>
+      <File Path="bin/" Name="hsalloci"/>
+      <File Path="bin/" Name="hsdepxa"/>
+      <File Path="bin/" Name="hsots"/>
+      <File Path="bin/" Name="nid"/>
+      <File Path="bin/" Name="oracle"/>
+      <File Path="bin/" Name="orapwd"/>
+      <File Path="bin/" Name="wrap"/>
+      <File Path="bin/" Name="grdcscan" Permissions="0750"/>
+      <File Path="bin/" Name="trcldr" Permissions="0750"/>
+      <File Path="bin/" Name="asmcmd" Permissions="0750"/>
+      <File Path="bin/" Name="cursize"/>
+      <File Path="bin/" Name="dbfsize"/>
+      <File Path="bin/" Name="dgmgrl"/>
+      <File Path="bin/" Name="dumpsga"/>
+      <File Path="bin/" Name="mapsga"/>
+      <File Path="bin/" Name="maxmem"/>
+      <File Path="bin/" Name="sbttest"/>
+      <File Path="bin/" Name="tstshm"/>
+      <File Path="lib/" Name="libnid.a"/>
+      <File Path="lib/" Name="libavstub11.a"/>
+      <File Path="lib/" Name="libodm11.a"/>
+      <File Path="bin/" Name="amdu"/>
+      <File Path="bin/" Name="setasmgid"/>
+      <File Path="bin/" Name="renamedg"/>
+      <File Path="lib/" Name="libcell11.a"/>
+      <File Path="rdbms/lib/" Name="dmndm.o"/>
+      <File Path="rdbms/lib/" Name="hoaoci.o"/>
+      <File Path="rdbms/lib/" Name="hoat.o"/>
+      <File Path="rdbms/lib/" Name="hoax.o"/>
+      <File Path="rdbms/lib/" Name="horm.o"/>
+      <File Path="rdbms/lib/" Name="hormt.o"/>
+      <File Path="rdbms/lib/" Name="hout.o"/>
+      <File Path="rdbms/lib/" Name="hsxaora.o"/>
+      <File Path="rdbms/lib/" Name="jox.o"/>
+      <File Path="rdbms/lib/" Name="joxoff.o"/>
+      <File Path="rdbms/lib/" Name="jssu.o"/>
+      <File Path="rdbms/lib/" Name="kciwcx.o"/>
+      <File Path="rdbms/lib/" Name="kcsm.o"/>
+      <File Path="rdbms/lib/" Name="kfon.o"/>
+      <File Path="rdbms/lib/" Name="kfoff.o"/>
+      <File Path="rdbms/lib/" Name="kfod.o"/>
+      <File Path="rdbms/lib/" Name="kfndg.o"/>
+      <File Path="rdbms/lib/" Name="kkxntp.o"/>
+      <File Path="rdbms/lib/" Name="kkxwtp.o"/>
+      <File Path="rdbms/lib/" Name="kopc.o"/>
+      <File Path="rdbms/lib/" Name="kprnts.o"/>
+      <File Path="rdbms/lib/" Name="kprwts.o"/>
+      <File Path="rdbms/lib/" Name="kpucb.o"/>
+      <File Path="rdbms/lib/" Name="ksms.o"/>
+      <File Path="rdbms/lib/" Name="ksnkcs.o"/>
+      <File Path="rdbms/lib/" Name="ksnktd.o"/>
+      <File Path="rdbms/lib/" Name="ksnnni.o"/>
+      <File Path="rdbms/lib/" Name="ksnnt2.o"/>
+      <File Path="rdbms/lib/" Name="ktd.o"/>
+      <File Path="rdbms/lib/" Name="kzlnlbac.o"/>
+      <File Path="rdbms/lib/" Name="kzvndv.o" Permissions="0664"/>
+      <File Path="rdbms/lib/" Name="libknlopt.a"/>
+      <File Path="rdbms/lib/" Name="libperfsrv11.a"/>
+      <File Path="rdbms/lib/" Name="libdsga11.a"/>
+      <File Path="rdbms/lib/" Name="libskgxns.a"/>
+      <File Path="rdbms/lib/" Name="libnfsodm11.a"/>
+      <File Path="rdbms/lib/" Name="libqsmashr.a"/>
+      <File Path="rdbms/lib/" Name="opimai.o"/>
+      <File Path="rdbms/lib/" Name="s0kudbv.o"/>
+      <File Path="rdbms/lib/" Name="s0kuzr.o"/>
+      <File Path="rdbms/lib/" Name="shou.o"/>
+      <File Path="rdbms/lib/" Name="shorm.o"/>
+      <File Path="rdbms/lib/" Name="sjssu.o"/>
+      <File Path="rdbms/lib/" Name="skfedpt.o"/>
+      <File Path="rdbms/lib/" Name="skfodpt.o"/>
+      <File Path="rdbms/lib/" Name="skfndgpt.o"/>
+      <File Path="rdbms/lib/" Name="skrspt.o"/>
+      <File Path="rdbms/lib/" Name="sskfeded.o"/>
+      <File Path="rdbms/lib/" Name="sskfoded.o"/>
+      <File Path="rdbms/lib/" Name="sskfndged.o"/>
+      <File Path="rdbms/lib/" Name="sskrned.o"/>
+      <File Path="rdbms/lib/" Name="sskrsed.o"/>
+      <File Path="rdbms/lib/" Name="ssoraed.o"/>
+      <File Path="rdbms/lib/" Name="sstrced.o"/>
+      <File Path="rdbms/lib/" Name="strcpt.o"/>
+      <File Path="rdbms/lib/" Name="ttcoerr.o"/>
+      <File Path="rdbms/lib/" Name="ttcsoi.o"/>
+      <File Path="rdbms/lib/" Name="xsnoolap.o"/>
+      <File Path="rdbms/lib/" Name="cursize.o"/>
+      <File Path="rdbms/lib/" Name="dbfsize.o"/>
+      <File Path="rdbms/lib/" Name="dumpsga.o"/>
+      <File Path="rdbms/lib/" Name="mapsga.o"/>
+      <File Path="rdbms/lib/" Name="maxmem.o"/>
+      <File Path="rdbms/lib/" Name="tstshm.o"/>
+      <File Path="rdbms/lib/" Name="sskfmued.o"/>
+      <File Path="rdbms/lib/" Name="skfmupt.o"/>
+      <File Path="rdbms/lib/" Name="sskfsaged.o"/>
+      <File Path="rdbms/lib/" Name="skfsagpt.o"/>
+      <File Path="rdbms/lib/" Name="kkpoban.o"/>
+      <File Path="rdbms/lib/" Name="ksnkkpo.o"/>
+      <File Path="rdbms/lib/" Name="kxmnsd.o"/>
+      <File Path="rdbms/lib/" Name="kecnr.o"/>
+      <File Path="rdbms/lib/" Name="diskmon.o"/>
+      <File Path="lib/" Name="libskgxns.so"/>
+      <File Path="lib/" Name="libosbws11.so"/>
+      <File Path="lib/" Name="libasmclnt11.a"/>
+      <File Path="bin/" Name="genksms" Permissions="0755"/>
+      <File Path="bin/" Name="sysresv"/>
+      <File Path="bin/" Name="mkpatch"/>
+      <File Path="bin/" Name="oradism"/>
+      <File Path="lib/" Name="libodmd11.so"/>
+      <File Path="lib/" Name="libnfsodm11.so"/>
+      <File Path="lib/" Name="libqsmashr.so"/>
+      <File Path="lib/" Name="libserver11.a"/>
+      <File Path="lib/" Name="libskvol11.so"/>
+      <File Path="rdbms/lib/" Name="genksms.o"/>
+      <File Path="rdbms/lib/" Name="mkpatch.o"/>
+      <File Path="rdbms/lib/" Name="libeva11.a"/>
+   </SoftwareComponent>
+</SoftwareComponents>

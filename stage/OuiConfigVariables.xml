@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<agg:Descriptions version="1.0.0" xmlns:agg="http://www.oracle.com/sysman/emCfg/AggregateDescriptions" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.oracle.com/sysman/emCfg/AggregateDescriptions /ade/rvaidhiy_configfacility/emcore/source/oracle/sysman/emCfg/main/AggregateDescriptions.xsd">
+	<agg:SimplestParamModel id="ConfigVarString">
+		<agg:ParamValueDataType >xsd:string</agg:ParamValueDataType>
+	</agg:SimplestParamModel>
+	<agg:SimplestParamModel id="ConfigVarBoolean">
+		<agg:ParamValueDataType >xsd:boolean</agg:ParamValueDataType>
+	</agg:SimplestParamModel>
+	<agg:SimplestArrayParamModel count="-1" id="ConfigVarStringlist">
+		<agg:SimplestParameterModelRef idref="ConfigVarString"/>
+	</agg:SimplestArrayParamModel>
+	<agg:SimplestAggregate id="OuiConfigVariables" >
+		<agg:Parameter id="ORACLE_HOME" encrypt="false" transient="false" mode="settable" scope="visible">
+			<agg:SimpleParameterModelRef idref="ConfigVarString"/>
+		</agg:Parameter>
+		<agg:Parameter id="ORACLE_HOME_SERVICE" encrypt="false" transient="false" mode="settable" scope="visible">
+			<agg:SimpleParameterModelRef idref="ConfigVarString"/>
+		</agg:Parameter>
+		<agg:Parameter id="CLUSTER_NODES" encrypt="false" transient="false" mode="settable" scope="visible">
+			<agg:SimpleParameterModelRef idref="ConfigVarStringlist"/>
+		</agg:Parameter>
+		<agg:Parameter id="REMOTE_NODES" encrypt="false" transient="false" mode="settable" scope="visible">
+			<agg:SimpleParameterModelRef idref="ConfigVarStringlist"/>
+		</agg:Parameter>
+		<agg:Parameter id="USE_OLD_INSTALL_PREREQS" encrypt="false" transient="false" mode="settable" scope="visible">
+			<agg:SimpleParameterModelRef idref="ConfigVarBoolean"/>
+		</agg:Parameter>
+		<agg:Parameter id="ROOTSH_LOCATION" encrypt="false" transient="false" mode="settable" scope="visible">
+			<agg:SimpleParameterModelRef idref="ConfigVarString"/>
+		</agg:Parameter>
+		<agg:Parameter id="ORACLE_HOME_NAME" encrypt="false" transient="false" mode="settable" scope="visible">
+			<agg:SimpleParameterModelRef idref="ConfigVarString"/>
+		</agg:Parameter>
+		<agg:Parameter id="ORACLE_HOME_KEY" encrypt="false" transient="false" mode="settable" scope="visible">
+			<agg:SimpleParameterModelRef idref="ConfigVarString"/>
+		</agg:Parameter>
+		<agg:Parameter id="ORACLE_HOSTNAME" encrypt="false" transient="false" mode="settable" scope="visible">
+			<agg:SimpleParameterModelRef idref="ConfigVarString"/>
+		</agg:Parameter>
+		<agg:Parameter id="LOCAL_NODE" encrypt="false" transient="false" mode="settable" scope="visible">
+			<agg:SimpleParameterModelRef idref="ConfigVarString"/>
+		</agg:Parameter>
+		<agg:Parameter id="LOG_LOCATION" encrypt="false" transient="false" mode="settable" scope="visible">
+			<agg:SimpleParameterModelRef idref="ConfigVarString"/>
+		</agg:Parameter>
+		<agg:Parameter id="INVENTORY_LOCATION" encrypt="false" transient="false" mode="settable" scope="visible">
+			<agg:SimpleParameterModelRef idref="ConfigVarString"/>
+		</agg:Parameter>
+		<agg:Parameter id="SELECTED_LANGUAGES" encrypt="false" transient="false" mode="settable" scope="visible">
+			<agg:SimpleParameterModelRef idref="ConfigVarStringlist"/>
+		</agg:Parameter>
+		<agg:Parameter id="ORACLE_HOME_FOLDER" encrypt="false" transient="false" mode="settable" scope="visible">
+			<agg:SimpleParameterModelRef idref="ConfigVarString"/>
+		</agg:Parameter>
+		<agg:Parameter id="SHOW_SPLASH_SCREEN" encrypt="false" transient="false" mode="settable" scope="visible">
+			<agg:SimpleParameterModelRef idref="ConfigVarBoolean"/>
+		</agg:Parameter>
+		<agg:Parameter id="TOPLEVEL_COMPONENT" encrypt="false" transient="false" mode="settable" scope="visible">
+			<agg:SimpleParameterModelRef idref="ConfigVarString"/>
+		</agg:Parameter>
+</agg:SimplestAggregate>
+</agg:Descriptions>
+

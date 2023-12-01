@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Copyright (c) 2004, 2012, Oracle and/or its affiliates. 
+All rights reserved. -->
+<!-- ref host for microsoft windows 2000 -->
+<HOST PLATID="912">
+   <SYSTEM>
+      <MEMORY>
+         <PHYSICAL_MEMORY VALUE="512" UNIT="MB" SEVERITY="IGNORABLE"/>
+         <AVAILABLE_MEMORY VALUE="50" UNIT="MB" SEVERITY="IGNORABLE"/>
+         <SWAP_SIZE SEVERITY="IGNORABLE">
+             	<STEPS>
+		<MIN VALUE="1024" UNIT="MB"/>
+		<MAX VALUE="16" UNIT="GB"/>
+                 	<STEP NAME="PHYSICAL_MEMORY" GREATER_THAN="256" ATMOST="2048" UNIT="MB" MULTIPLE="1.5"/>
+                 	<STEP NAME="PHYSICAL_MEMORY" GREATER_THAN="2048" UNIT="MB" MULTIPLE="1"/>
+               </STEPS>
+         </SWAP_SIZE>
+       </MEMORY>
+      <SPACE>
+         <LOC VAR="CRS_HOME" SIZE="1" UNIT="GB" SEVERITY="IGNORABLE"/>
+         <LOC VAR="RAC_HOME" SIZE="1" UNIT="GB" SEVERITY="IGNORABLE"/>
+         <LOC VAR="TEMP_AREA" TEMP="true" SIZE="125" UNIT="MB" SEVERITY="IGNORABLE"/>
+      </SPACE>
+   </SYSTEM>
+   <CERTIFIED_SYSTEMS>
+      <OPERATING_SYSTEM RELEASE="0"/>
+   </CERTIFIED_SYSTEMS>
+   <ORACLE_HOME>
+	<COMPATIBILITY_MATRIX>
+         <ALLOW>
+            <NEW_HOME/>
+         </ALLOW>
+         <DISALLOW>
+            <COMP NAME="oracle.server" ATLEAST="8.1.0.0.0" ATMOST="10.1.9.9.0"/>
+         </DISALLOW>
+      </COMPATIBILITY_MATRIX>	
+   </ORACLE_HOME>
+</HOST>

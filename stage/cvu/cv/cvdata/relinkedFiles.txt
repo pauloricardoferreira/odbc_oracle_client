@@ -1,0 +1,17 @@
+#
+# This file contains list of files whose permissions do not come from the map
+# files directly, but instead is set at the run time either during the
+# relinking or by other external process
+#
+# Format:
+# OSLIST FILENAME 
+#
+# Note:
+# OSLIST is a comma-separated list of platforms on which the directory
+# needs to be created.  'all' indicates that the directory needs to be
+# created on every platform.  OSLIST MUST NOT contain whitespace.
+
+Solaris	%ORACLE_HOME%/bin/ctxkbtc
+All %ID%
+All %ORACLE_HOME%/sqldeveloper/sqlcl/bin/sql
+

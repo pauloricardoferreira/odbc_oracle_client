@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Copyright (c) 2004, 2012, Oracle and/or its affiliates. 
+All rights reserved. -->
+<!-- ref host for microsoft windows 2000 -->
+<HOST PLATID="912">
+   <SYSTEM>
+      <MEMORY>
+         <PHYSICAL_MEMORY VALUE="1" UNIT="GB" SEVERITY="IGNORABLE"/>
+         <AVAILABLE_MEMORY VALUE="50" UNIT="MB" SEVERITY="IGNORABLE"/>
+         <SWAP_SIZE SEVERITY="IGNORABLE">
+             	<STEPS>
+		<MIN VALUE="1024" UNIT="MB"/>
+		<MAX VALUE="16" UNIT="GB"/>
+                 	<STEP NAME="PHYSICAL_MEMORY" GREATER_THAN="512" ATMOST="2048" UNIT="MB" MULTIPLE="1.5"/>
+                 	<STEP NAME="PHYSICAL_MEMORY" GREATER_THAN="2048" UNIT="MB" MULTIPLE="1"/>
+               </STEPS>
+         </SWAP_SIZE>
+       </MEMORY>
+      <SPACE>
+         <LOC VAR="CRS_HOME" SIZE="3.59" UNIT="GB" SEVERITY="IGNORABLE"/>
+         <LOC VAR="RAC_HOME" SIZE="2.95" UNIT="GB" SEVERITY="IGNORABLE"/>
+         <LOC VAR="TEMP_AREA" TEMP="true" SIZE="400" UNIT="MB" SEVERITY="IGNORABLE"/>
+      </SPACE>
+   </SYSTEM>
+   <CERTIFIED_SYSTEMS>
+      <OPERATING_SYSTEM RELEASE="5.0">
+         <VERSION VALUE="5.0"/>
+         <ARCHITECTURE VALUE="64-bit"/>
+         <OSPATCH_CHECKS>
+           <OSPATCH VALUE="4"/>
+         </OSPATCH_CHECKS>
+         <NAME VALUE="Windows 2000"/>
+         <VENDOR VALUE="Windows 2000"/>
+      </OPERATING_SYSTEM>
+      <OPERATING_SYSTEM RELEASE="5.1">
+         <VERSION VALUE="5.1"/>
+         <ARCHITECTURE VALUE="64-bit"/>
+         <NAME VALUE="Windows XP"/>
+         <VENDOR VALUE="Windows XP"/>
+      </OPERATING_SYSTEM>
+      <OPERATING_SYSTEM RELEASE="5.2">
+         <VERSION VALUE="5.2"/>
+         <ARCHITECTURE VALUE="64-bit"/>
+         <NAME VALUE="Windows Server 2003"/>
+         <VENDOR VALUE="Windows Server 2003"/>
+      </OPERATING_SYSTEM>
+      <OPERATING_SYSTEM RELEASE="6.0">
+         <VERSION VALUE="6.0"/>
+         <ARCHITECTURE VALUE="64-bit"/>
+         <NAME VALUE="Windows Server 2008"/>
+         <VENDOR VALUE="Windows Server 2008"/>
+      </OPERATING_SYSTEM>
+      <OPERATING_SYSTEM RELEASE="6.1">
+         <VERSION VALUE="6.1"/>
+         <ARCHITECTURE VALUE="64-bit"/>
+         <NAME VALUE="Windows 7"/>
+         <VENDOR VALUE="Windows 7"/>
+      </OPERATING_SYSTEM>
+   </CERTIFIED_SYSTEMS>
+   <ORACLE_HOME>
+	<COMPATIBILITY_MATRIX>
+         <ALLOW>
+            <NEW_HOME/>
+         </ALLOW>
+         <DISALLOW>
+            <COMP NAME="oracle.server" ATLEAST="8.1.0.0.0" ATMOST="10.1.9.9.0"/>
+         </DISALLOW>
+      </COMPATIBILITY_MATRIX>	
+   </ORACLE_HOME>
+</HOST>

@@ -1,0 +1,676 @@
+<?xml version="1.0"?>
+<!--  $Header: opsm/cv/cvdata/variables.xml /main/12 2016/05/25 13:37:34 spavan Exp $ -->
+
+<!-- 
+ Copyright (c) 2014, 2016, Oracle and/or its affiliates. All rights reserved.
+
+   NAME
+     variables.xml - xml file to represent the variable name definition
+
+   DESCRIPTION
+     Defines all the common variables used during install and command line run
+
+   NOTES
+     Following variables names are just sample names, 
+     actual entries can be made only after collecting the actual names for each release.
+
+   MODIFIED   (MM/DD/YY)
+   jgagarci    05/06/16 - Fixbug 23088919 - update ClusterType to
+                          ClusterConfiguration
+   maboddu     04/11/16 - Fix bug#22900458 - add variable
+                          ASM_DISKGROUP_FAILUREGROUPS
+   shhirema    01/21/16 - Bug 20722208: add afd install variable
+   jgagarci    12/16/15 - Fix bug#22318209 - support 12.1 response files
+   ptare       11/24/15 - Fix Bug#21352371 - add QUORUM_DISKS variable.
+   kfgriffi    08/26/15 - Fix bug 21288774 - add RACDBA_GROUP (racdba)
+   spavan      04/16/15 - add client datafile cvu variable
+   jgagarci    03/20/15 - Fix BUG#19645955 - add response file matches
+   maboddu     03/12/15 - Fix bug#20543153 - Add CVU CLI variables
+                          ASM_DISKGROUP_DISKS and ASM_DISK_DISCOVERY_STRING
+   jgagarci    02/24/15 - Fix BUG#20543123 - include ASM_GROUP, DBA_GROUP and
+                          OPER_GROUP in its tuple
+   jgagarci    12/10/14 - Include variable names match for 12.2
+   ptare       11/07/14 - Creation
+
+-->
+<ROOT>
+   <SOFTWARE VERSION="ALL">
+      <VARIABLE_LIST>
+         <VARIABLE>
+            <INSTALL_UI NAME="s_silent"/>
+            <INSTALL_RESP NAME=""/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME="SILENT"/>
+         </VARIABLE>
+      </VARIABLE_LIST>
+   </SOFTWARE>
+   <SOFTWARE VERSION="12.2">
+      <VARIABLE_LIST>
+         <VARIABLE>
+            <INSTALL_UI NAME="OwnerId"/>
+            <INSTALL_RESP NAME=""/>
+            <CVU_CMD_VAR NAME="INSTALL_USER,BACKUP_USER"/>
+            <ROOT_SCRIPT NAME="ORACLE_OWNER,LISTENER_USERNAME"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="s_usergroup"/>
+            <INSTALL_RESP NAME="oracle.install.asm.OSDBA"/>
+            <CVU_CMD_VAR NAME="DBA_GROUP"/>
+            <ROOT_SCRIPT NAME="ORA_DBA_GROUP"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="s_racdbagroup"/>
+            <INSTALL_RESP NAME="oracle.install.OSRACDBA"/>
+            <CVU_CMD_VAR NAME="RACDBA_GROUP"/>
+            <ROOT_SCRIPT NAME="ORA_RACDBA_GROUP"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="oracle_install_OSASM"/>
+            <INSTALL_RESP NAME="oracle.install.asm.OSASM"/>
+            <CVU_CMD_VAR NAME="ASM_GROUP"/>
+            <ROOT_SCRIPT NAME="ORA_ASM_GROUP"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME="oracle.install.asm.OSOPER"/>
+            <CVU_CMD_VAR NAME="OPER_GROUP"/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="s_languageid"/>
+            <INSTALL_RESP NAME=""/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME="LANGUAGE_ID"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="oracle_install_crs_Timezone"/>
+            <INSTALL_RESP NAME=""/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME="TZ"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="oracle_install_crs_isRolling"/>
+            <INSTALL_RESP NAME=""/>
+            <CVU_CMD_VAR NAME="ISROLLING"/>
+            <ROOT_SCRIPT NAME="ISROLLING"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="oracle_install_asm_UseExistingDG"/>
+            <INSTALL_RESP NAME="oracle.install.asm.useExistingDiskGroup"/>
+            <CVU_CMD_VAR NAME="ASM_DISKGROUP_REUSE_OPTION"/>
+            <ROOT_SCRIPT NAME="REUSEDG"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="oracle_install_asm_DisGroupAUSize"/>
+            <INSTALL_RESP NAME="oracle.install.asm.diskGroup.AUSize"/>
+            <CVU_CMD_VAR NAME="ASM_AU_SIZE"/>
+            <ROOT_SCRIPT NAME="CDATA_AUSIZE"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="oracle_install_cres_prereq_Ignored"/>
+            <INSTALL_RESP NAME=""/>
+            <CVU_CMD_VAR NAME="ORA_IGNORE_CVU_ERRORS"/>
+            <ROOT_SCRIPT NAME="USER_IGNORED_PREREQ"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="ORACLE_HOSTNAME"/>
+            <INSTALL_RESP NAME="ORACLE_HOSTNAME"/>
+            <CVU_CMD_VAR NAME="INSTALL_NODE"/>
+            <ROOT_SCRIPT NAME="INSTALL_NODE"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="oracle_install_crs_ConfigureMgmtDB"/>
+            <INSTALL_RESP NAME=""/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME="MGMT_DB"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME="oracle.install.config.managementOption"/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="oracle_install_IsBigCluster"/>
+            <INSTALL_RESP NAME=""/>
+            <CVU_CMD_VAR NAME="BIGCLUSTER"/>
+            <ROOT_SCRIPT NAME="BIG_CLUSTER"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="oracle_install_crs_TargetHubSize"/>
+            <INSTALL_RESP NAME=""/>
+            <CVU_CMD_VAR NAME="TARGET_HUB_SIZE"/>
+            <ROOT_SCRIPT NAME="HUB_SIZE"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="oracle_install_crs_HUBNodesList"/>
+            <INSTALL_RESP NAME=""/>
+            <CVU_CMD_VAR NAME="HUB_LIST"/>
+            <ROOT_SCRIPT NAME="HUB_NODE_LIST"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="oracle_install_crs_RIMNodesList"/>
+            <INSTALL_RESP NAME=""/>
+            <CVU_CMD_VAR NAME="RIM_LIST"/>
+            <ROOT_SCRIPT NAME="RIM_NODE_LIST"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="oracle_install_crs_HUBVipList"/>
+            <INSTALL_RESP NAME=""/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME="HUB_NODE_VIPS"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="oracle_install_crs_Ping_Targets"/>
+            <INSTALL_RESP NAME=""/>
+            <CVU_CMD_VAR NAME="PING_TARGETS"/>
+            <ROOT_SCRIPT NAME="PING_TARGETS"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="ORACLE_HOME"/>
+            <INSTALL_RESP NAME="ORACLE_HOME"/>
+            <CVU_CMD_VAR NAME="ORACLE_HOME"/>
+            <ROOT_SCRIPT NAME="ORACLE_HOME,GPNPCONFIGDIR,GPNPGCONFIGDIR,CRFHOME"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="ORACLE_BASE"/>
+            <INSTALL_RESP NAME="ORACLE_BASE"/>
+            <CVU_CMD_VAR NAME="ORACLE_BASE"/>
+            <ROOT_SCRIPT NAME="ORACLE_BASE"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="oracle_install_crs_configuredCRSHome"/>
+            <INSTALL_RESP NAME=""/>
+            <CVU_CMD_VAR NAME="CONFIGURED_CRS_HOME"/>
+            <ROOT_SCRIPT NAME="OLD_CRS_HOME"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="s_jreLocation"/>
+            <INSTALL_RESP NAME=""/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME="JREDIR"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="s_jlibDir"/>
+            <INSTALL_RESP NAME=""/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME="JLIBDIR"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="s_cluster"/>
+            <INSTALL_RESP NAME=""/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME="VNDR_CLUSTER"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="oracle_install_crs_OCRDeviceList"/>
+            <INSTALL_RESP NAME="oracle.install.crs.config.sharedFileSystemStorage.ocrLocations"/>
+            <CVU_CMD_VAR NAME="OCR_LOCATIONS"/>
+            <ROOT_SCRIPT NAME="OCR_LOCATIONS"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="oracle_install_crs_ClusterName"/>
+            <INSTALL_RESP NAME="oracle.install.crs.config.clusterName"/>
+            <CVU_CMD_VAR NAME="CLUSTER_NAME"/>
+            <ROOT_SCRIPT NAME="CLUSTER_NAME"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME="oracle.install.crs.config.clusterNodes"/>
+            <CVU_CMD_VAR NAME="RSP_CLUSTER_NODES"/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="oracle_install_crs_CommaSeparatedNodes"/>
+            <INSTALL_RESP NAME=""/>
+            <CVU_CMD_VAR NAME="NODE_LIST"/>
+            <ROOT_SCRIPT NAME="NODE_NAME_LIST,HOST_NAME_LIST,NODELIST"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="s_privatenamelist"/>
+            <INSTALL_RESP NAME=""/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME="PRIVATE_NAME_LIST"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="QUORUM_DISKS"/>
+            <INSTALL_RESP NAME="QUORUM_DISKS"/>
+            <CVU_CMD_VAR NAME="QUORUM_DISKS"/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="oracle_install_crs_VotingDiskList"/>
+            <INSTALL_RESP NAME="oracle.install.crs.config.sharedFileSystemStorage.VotingDiskLocations"/>
+            <CVU_CMD_VAR NAME="VOTING_LOCATIONS"/>
+            <ROOT_SCRIPT NAME="VOTING_DISKS"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="oracle_install_asm_DiskGroupName"/>
+            <INSTALL_RESP NAME="oracle.install.asm.diskGroup.name"/>
+            <CVU_CMD_VAR NAME="ASM_DISKGROUP"/>
+            <ROOT_SCRIPT NAME="CDATA_DISK_GROUP"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="oracle_install_asm_DiskDiscoveryString"/>
+            <INSTALL_RESP NAME="oracle.install.asm.diskGroup.diskDiscoveryString"/>
+            <CVU_CMD_VAR NAME="ASM_DISK_DISCOVERY_STRING"/>
+            <ROOT_SCRIPT NAME="ASM_DISCOVERY_STRING"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="oracle_install_asm_Disks"/>
+            <INSTALL_RESP NAME="oracle.install.asm.diskGroup.disks"/>
+            <CVU_CMD_VAR NAME="ASM_DISKGROUP_DISKS"/>
+            <ROOT_SCRIPT NAME="CDATA_DISKS"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="oracle_install_asm_DiskGroupRedundancy"/>
+            <INSTALL_RESP NAME="oracle.install.asm.diskGroup.redundancy"/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME="CDATA_REDUNDANCY"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="oracle_install_asm_FailureGroups"/>
+            <INSTALL_RESP NAME="oracle.install.asm.diskGroup.FailureGroups"/>
+            <CVU_CMD_VAR NAME="ASM_DISKGROUP_FAILUREGROUPS"/>
+            <ROOT_SCRIPT NAME="CDATA_FAILURE_GROUPS"/>
+         </VARIABLE> 
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME="oracle.install.asm.diskGroup.disksWithFailureGroupNames"/>
+            <CVU_CMD_VAR NAME="ASM_DISKGROUP_DISKSWITHFAILUREGROUPNAMES"/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="oracle_install_asm_ConfigurationType"/>
+            <INSTALL_RESP NAME=""/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME="ASM_CONFIG"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="oracle_install_asm_ClientDataFile"/>
+            <INSTALL_RESP NAME="oracle.install.asm.ClientDataFile"/>
+            <CVU_CMD_VAR NAME="ASM_CLIENTDATA"/>
+            <ROOT_SCRIPT NAME="ASM_CREDENTIALS"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="oracle_install_crs_StorageOption"/>
+            <INSTALL_RESP NAME=""/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME="CRS_STORAGE_OPTION"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME="oracle.install.crs.config.storageOption"/>
+            <CVU_CMD_VAR NAME="RSP_STORAGE_OPT"/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME=""/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME="CSS_LEASEDURATION"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME=""/>
+            <CVU_CMD_VAR NAME="HOST_VIP_NAMES"/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="oracle_install_crs_NodeVips"/>
+            <INSTALL_RESP NAME=""/>
+            <CVU_CMD_VAR NAME="CFG_CRS_NODEVIPS"/>
+            <ROOT_SCRIPT NAME="CRS_NODEVIPS,NEW_NODEVIPS"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="oracle_install_crs_FinalInterfaceList"/>
+            <INSTALL_RESP NAME=""/>
+            <CVU_CMD_VAR NAME="CFG_NETWORKS"/>
+            <ROOT_SCRIPT NAME="NETWORKS"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME="oracle.install.crs.config.networkInterfaceList"/>
+            <CVU_CMD_VAR NAME="RSP_NETWORK_IFLIST"/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="oracle_install_crs_SCANName"/>
+            <INSTALL_RESP NAME="oracle.install.crs.config.gpnp.scanName"/>
+            <CVU_CMD_VAR NAME="SCAN_NAME"/>
+            <ROOT_SCRIPT NAME="SCAN_NAME"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="oracle_install_crs_SCANPortNumber"/>
+            <INSTALL_RESP NAME="oracle.install.crs.config.gpnp.scanPort"/>
+            <CVU_CMD_VAR NAME="SCAN_PORT"/>
+            <ROOT_SCRIPT NAME="SCAN_PORT"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="s_paLocation"/>
+            <INSTALL_RESP NAME=""/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME="GPNP_PA"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="oracle_install_crs_ConfigureGNS"/>
+            <INSTALL_RESP NAME="oracle.install.crs.config.gpnp.configureGNS"/>
+            <CVU_CMD_VAR NAME="CONFIGURE_GNS"/>
+            <ROOT_SCRIPT NAME="GNS_CONF"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="oracle_install_crs_GNSType"/>
+            <INSTALL_RESP NAME=""/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME="GNS_TYPE"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME="oracle.install.crs.config.gpnp.gnsOption"/>
+            <CVU_CMD_VAR NAME="RSP_GNS_OPT"/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="oracle_install_crs_GNSVIPAddress"/>
+            <INSTALL_RESP NAME="oracle.install.crs.config.gpnp.gnsVIPAddress"/>
+            <CVU_CMD_VAR NAME="GNS_VIP_ADDRESS"/>
+            <ROOT_SCRIPT NAME="GNS_ADDR_LIST"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="oracle_install_crs_GNSSubDomain"/>
+            <INSTALL_RESP NAME="oracle.install.crs.config.gpnp.gnsSubDomain"/>
+            <CVU_CMD_VAR NAME="GNS_SUB_DOMAIN"/>
+            <ROOT_SCRIPT NAME="GNS_DOMAIN_LIST"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="sl_allowDomainList"/>
+            <INSTALL_RESP NAME=""/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME="GNS_ALLOW_NET_LIST"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="sl_denyDomainList"/>
+            <INSTALL_RESP NAME=""/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME="GNS_DENY_NET_LIST"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="sl_denyInterfaceList"/>
+            <INSTALL_RESP NAME=""/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME="GNS_DENY_ITF_LIST"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="oracle_install_crs_GNSClientDataFile"/>
+            <INSTALL_RESP NAME="oracle.install.crs.config.gpnp.gnsClientDataFile"/>
+            <CVU_CMD_VAR NAME="GNS_CLIENT_DATA_FILE"/>
+            <ROOT_SCRIPT NAME="GNS_CREDENTIALS"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="slHostNames"/>
+            <INSTALL_RESP NAME=""/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME="NEW_HOST_NAME_LIST"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="slNewNodes"/>
+            <INSTALL_RESP NAME=""/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME="NEW_NODE_NAME_LIST"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="slPrivateNodes"/>
+            <INSTALL_RESP NAME=""/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME="NEW_PRIVATE_NAME_LIST"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME=""/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME="OCRLOC"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME=""/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME="OLRLOC"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME=""/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME="OCRID"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME=""/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME="CLUSTER_GUID"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME=""/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME="CLSCFG_MISSCOUNT"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME="oracle.install.responseFileVersion"/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME="INVENTORY_LOCATION"/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME="SELECTED_LANGUAGES"/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME="oracle.install.option"/>
+            <CVU_CMD_VAR NAME="INSTALL_OPTION"/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME="oracle.install.asm.SYSASMPassword"/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME="oracle.install.asm.monitorPassword"/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME="oracle.install.crs.config.ClusterConfiguration"/>
+            <CVU_CMD_VAR NAME="RSP_CLUSTERTYPE_OPT"/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME="oracle.install.crs.config.configureAsExtendedCluster"/>
+            <CVU_CMD_VAR NAME="EXTENDED_CLUSTER"/>
+            <ROOT_SCRIPT NAME="EXTENDED_CLUSTER"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME=""/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME="CLUSTER_TYPE"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME="oracle.install.crs.config.autoConfigureClusterNodeVIP"/>
+            <CVU_CMD_VAR NAME="AUTO_CONFIGURE_CLUSTER_NODE_VIP"/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME="oracle.install.crs.config.sharedFileSystemStorage.votingDiskRedundancy"/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME="oracle.install.crs.config.sharedFileSystemStorage.ocrRedundancy"/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME="oracle.install.crs.config.useIPMI"/>
+            <CVU_CMD_VAR NAME="USE_IPMI"/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME="oracle.install.crs.config.ipmi.bmcUsername"/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME="oracle.install.crs.config.ipmi.bmcPassword"/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME="oracle.install.crs.config.ignoreDownNodes"/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME="oracle.installer.autoupdates.option"/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME="oracle.installer.autoupdates.downloadUpdatesLoc"/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME="AUTOUPDATES_MYORACLESUPPORT_USERNAME"/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME="AUTOUPDATES_MYORACLESUPPORT_PASSWORD"/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME="PROXY_HOST"/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME="PROXY_PORT"/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME="PROXY_USER"/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME="PROXY_PWD"/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME="PROXY_REALM"/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME="oracle.install.config.omsHost"/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME="oracle.install.config.omsPort"/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME="oracle.install.config.emAdminUser"/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME="oracle.install.config.emAdminPassword"/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="oracle_install_crs_app_VIPAddress"/>
+            <INSTALL_RESP NAME="oracle.install.crs.app.applicationAddress"/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME="APPLICATION_VIP"/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="POST_SW_INSTALL_API_MODE"/>
+            <INSTALL_RESP NAME=""/>
+            <CVU_CMD_VAR NAME="POST_SW_INSTALL_API_MODE"/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME=""/>
+            <INSTALL_RESP NAME="oracle.install.crs.configureAFD"/>
+            <CVU_CMD_VAR NAME="CONFIGURE_AFD"/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="oracle_install_OracleHomeUserName"/>
+            <INSTALL_RESP NAME="oracle.install.OracleHomeUserName"/>
+            <CVU_CMD_VAR NAME="WINSEC_SERVICE_USERNAME"/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="oracle_install_OracleHomeUserPassword"/>
+            <INSTALL_RESP NAME="oracle.install.OracleHomeUserPassword"/>
+            <CVU_CMD_VAR NAME="WINSEC_SERVICE_PASSWORD"/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="oracle_install_IsBuiltInAccount"/>
+            <INSTALL_RESP NAME="oracle.install.IsBuiltInAccount"/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+         <VARIABLE>
+            <INSTALL_UI NAME="oracle.install.IsVirtualAccount"/>
+            <INSTALL_RESP NAME="oracle_install_IsVirtualAccount"/>
+            <CVU_CMD_VAR NAME=""/>
+            <ROOT_SCRIPT NAME=""/>
+         </VARIABLE>
+      </VARIABLE_LIST>
+   </SOFTWARE>
+</ROOT>
+

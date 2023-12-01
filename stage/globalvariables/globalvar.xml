@@ -1,0 +1,292 @@
+<GLOBALVARS>
+      <!-- GLOBAL VARIABLES FOR PRODUCT NAME -->
+      <VAR NAME="oracle_install_ProductName" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+      <!-- GLOBAL VARIABLES FOR DATABASE INSTALL -->
+      <VAR NAME="oracle_install_db_SID" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_RACInstall" TYPE="BOOL" ALLOW_ASSIGNMENT="T" VALUE="F"/>
+	<VAR NAME="oracle_install_IsOracleHomeShared" TYPE="BOOL" ALLOW_ASSIGNMENT="T" VALUE="F"/>
+	<VAR NAME="oracle_install_IsOracleBaseShared" TYPE="BOOL" ALLOW_ASSIGNMENT="T" VALUE="F"/>
+      <VAR NAME="oracle_install_OSDBA" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_OSOPER" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_OSBKP" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_OSDGD" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_OSKMT" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_OSASM" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_OSRAC" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+<!-- oracle_install_db_SkipPathUpdate is set to true if undocumented flag -skipPathUpdate is passed in the command line. Default value is false. -->
+      <VAR NAME="oracle_install_db_SkipPathUpdate" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+<!-- GLOBAL VARIABLES FOR WINDOWS SECURE OPTION -->
+      <VAR NAME="oracle_install_IsOracleServiceUserExists" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_IsBuiltInAccount" TYPE="BOOL" VALUE="T" ALLOW_ASSIGNMENT="T"/>
+<!-- Adding the VirtualAccount Support for Windows Secure Option -->
+	<VAR NAME="oracle_install_IsVirtualAccount" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+	<VAR NAME="oracle_install_skip_winSecurity" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+	<VAR NAME="oracle_install_isExistingBase" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+	<VAR NAME="oracle_install_isExistingHome" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+     <VAR NAME="oracle_install_OracleHomeUserName" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_OracleHomeUserPassword" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T" SECURE="T"/>
+      <VAR NAME="oracle_install_OracleSVCUserPWDReq" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_LocalSystem" TYPE="STRING" VALUE="NT AUTHORITY\SYSTEM" ALLOW_ASSIGNMENT="T"/>
+
+      <VAR NAME="oracle_install_DirectoryStorageType" TYPE="STRING" VALUE="Directory" ALLOW_ASSIGNMENT="T"/>
+	<VAR NAME="oracle_install_FileStorageType" TYPE="STRING" VALUE="File" ALLOW_ASSIGNMENT="T"/>
+	<VAR NAME="oracle_install_RegistryStorageType" TYPE="STRING" VALUE="Registry" ALLOW_ASSIGNMENT="T"/>
+	<VAR NAME="oracle_install_RawDiskStorageType" TYPE="STRING" VALUE="RawDisk" ALLOW_ASSIGNMENT="T"/>
+	<VAR NAME="oracle_install_RegistryPermissionType" TYPE="STRING" VALUE="Registry" ALLOW_ASSIGNMENT="T"/>
+
+	<VAR NAME="oracle_install_HomeType" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+	<VAR NAME="oracle_install_ClientHomeType" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+	<VAR NAME="oracle_install_GIHomeType" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+	<VAR NAME="oracle_install_UsersGroup" TYPE="STRING" VALUE="USERS" ALLOW_ASSIGNMENT="T"/>
+
+<!-- GLOBAL VARIABLES FOR ODAC INSTALL -->
+      <VAR NAME="oracle_install_client_odac_ManagedAndUnmanaged" TYPE="BOOL" VALUE="T" ALLOW_ASSIGNMENT="T"/>
+
+<!-- GLOBAL VARIABLES FOR ODAC TNS AND LDAP ENV SETTING -->
+      <VAR NAME="oracle_install_client_odac_set_tns_admin" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_client_odac_set_ldap_admin" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_client_odac_set_names_directory_path" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_client_odac_tnsadmin_value" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_client_odac_ldapadmin_value" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+
+<!-- GLOBAL VARIABLES FOR ODAC TNS COPY -->
+      <VAR NAME="oracle_install_client_odac_OH1TNSPath_value" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_client_odac_OH2TNSPath_value" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_client_odac_OH3TNSPath_value" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+
+<!-- GLOBAL VARIABLES FOR ODAC TNS DIALOG -->
+      <VAR NAME="oracle_install_client_odac_Connection_Alias" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_client_odac_Host_Name" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_client_odac_Database_Service_Name" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_client_odac_Port_Number" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_client_odac_display_tns_page" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+
+<!-- GLOBAL VARIABLES FOR ODAC ODT DIALOG -->
+      <VAR NAME="oracle_install_client_odac_odt_set_vs2015" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_client_odac_odt_set_vs2017Professional" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_client_odac_odt_set_vs2017Enterprise" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_client_odac_odt_vs2015_installed" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_client_odac_odt_vs2017Professional_installed" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_client_odac_odt_vs2017Enterprise_installed" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_client_odac_VS2017ProfessionalPath_value" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_client_odac_VS2017EnterprisePath_value" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+
+<!-- GLOBAL VARIABLES FOR ODAC ODP DIALOG -->
+      <VAR NAME="oracle_install_client_odac_config_odp" TYPE="BOOL" VALUE="T" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_client_odac_display_odp_page" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+
+
+<!-- GLOBAL VARIABLES FOR CLIENT INSTALL -->
+      <VAR NAME="oracle_install_client_ic_FlattenOracleHome" TYPE="BOOL" VALUE="T" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_architecture" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>	
+      <VAR NAME="oracle_install_client_upgrading" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_client_internalInstallType" TYPE="STRING" VALUE="InstantClient" ALLOW_ASSIGNMENT="T"/>
+<!-- Custom component booleans -->
+      <VAR NAME="oracle_install_comp_clrintg_ode_net_Selected" TYPE="BOOL" VALUE="T" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_comp_clrintg_ode_net_2_Selected" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_comp_rdbms_partitioning_Selected" TYPE="BOOL" VALUE="T" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_comp_rdbms_dm_Selected" TYPE="BOOL" VALUE="T" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_comp_rdbms_rat_Selected" TYPE="BOOL" VALUE="T" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_comp_oraolap_Selected" TYPE="BOOL" VALUE="T" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="b_schedulerAgentSelected" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+ 
+<!-- DBCA/DBUA Config Vars -->
+      <VAR NAME="oracle_install_db_LaunchDBCA" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_db_LaunchODMA" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_db_dbcaCmd" TYPE="STRING" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.VariableInitializer"/>
+      <VAR NAME="oracle_install_db_dbuaCmd" TYPE="STRING" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.VariableInitializer"/>
+<!-- NETCA Config Vars-->
+      <VAR NAME="oracle_install_LaunchNetCA" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_crs_LaunchNETCA" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_db_LaunchNETCA" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_client_LaunchNETCA" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_gsm_LaunchNETCA" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_tg_LaunchNETCA" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_LaunchSchedulerAgent" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+	 <VAR NAME="oracle_install_netcaCmd" TYPE="STRING" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.VariableInitializer"/>
+      <VAR NAME="oracle_install_netcaDeinstCmd" TYPE="STRING" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.VariableInitializer"/>
+<!-- HA/CRS config vars-->
+      <VAR NAME="oracle_install_crs_GIUpgrade" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_db_isHAOrCRSConfigured" TYPE="BOOL"  VALUE="F"  ALLOW_ASSIGNMENT="T"/>	
+      <VAR NAME="oracle_install_crs_LaunchASMCA" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_crs_LaunchOifcfg" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_crs_LaunchCluvfy" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_crs_LaunchEmca" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_crs_LaunchRootBat" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_crs_crsInstCmd" TYPE="STRING" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.VariableInitializer"/>
+      <VAR NAME="oracle_install_crs_crsDeinstCmd" TYPE="STRING" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.VariableInitializer"/>
+      <VAR NAME="oracle_install_crs_crsUpgrdCmd" TYPE="STRING" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.VariableInitializer"/>
+      <VAR NAME="oracle_install_crs_cluvfyCmd" TYPE="STRING" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.VariableInitializer"/>
+      <VAR NAME="oracle_install_crs_cluvfyargs" TYPE="STRING" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.VariableInitializer"/>
+      <VAR NAME="oracle_install_crs_asmcaCmd" TYPE="STRING" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.VariableInitializer"/>
+      <VAR NAME="oracle_install_crs_emcaCmd" TYPE="STRING" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.VariableInitializer"/>
+      <VAR NAME="oracle_install_crs_configuredCRSHome" TYPE="STRING"  VALUE="" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable"/>
+      <VAR NAME="oracle_install_NoMigration" TYPE="BOOL" VALUE="T" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.BooleanTrueVar" COMPUTE_AT_CLONE="T"/>
+      <VAR NAME="oracle_install_RDBMSInstalling" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_db_UseDBControl" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_crs_InstallOption" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_db_InstallOption" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_db_InstallEdition" TYPE="STRING" VALUE="EE" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_db_ConfigurationType" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_crs_OCRPartitionLocation" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_db_InstallType" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_crs_StorageOption" TYPE="NUMBER" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+      <VAR NAME="oracle_install_asm_DiskGroupName" TYPE="STRING" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+      <VAR NAME="oracle_install_asm_DiskDiscoveryString" TYPE="STRING" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+      <VAR NAME="oracle_install_asm_Disks" TYPE="STRINGLIST" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+      <VAR NAME="oracle_install_asm_DiskGroupRedundancy" TYPE="STRING" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+      <VAR NAME="oracle_install_asm_DiskGroupAUSize" TYPE="NUMBER" VALUE="1" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_asm_UseExistingDG" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+      <VAR NAME="ORACLE_HOSTNAME" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_crs_prereq_Ignored" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/> 
+      <VAR NAME="oracle_install_crs_OCRRedundancy" TYPE="NUMBER" VALUE="0" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_crs_VotingDiskRedundancy" TYPE="NUMBER" VALUE="0" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_crs_ClusterName" TYPE="STRING" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+      <VAR NAME="oracle_install_crs_CommaSeparatedNodes" TYPE="STRING" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+      <VAR NAME="oracle_install_crs_OCRMirrorLocation" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_crs_OCRMirrorLocation2" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_crs_DiskDriveMapping" TYPE="STRINGLIST" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+      <VAR NAME="oracle_install_crs_OCRDeviceList" TYPE="STRING" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+      <VAR NAME="oracle_install_crs_VotingDiskList" TYPE="STRING" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+      <VAR NAME="oracle_install_crs_VDSKMirror1Location1" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_crs_VDSKMirror1Location2" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_crs_VDSKLocation" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_crs_SWOnly" TYPE="BOOL" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.BooleanTrueVar" COMPUTE_AT_CLONE="T"/>
+      <VAR NAME="oracle_install_crs_SwitchGIHome" TYPE="BOOL" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+      <VAR NAME="oracle_install_crs_PatchGIHome" TYPE="BOOL" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+      <VAR NAME="oracle_install_crs_swonly_multinode" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+      <VAR NAME="oracle_install_LanguageID" TYPE="STRING" ALLOW_ASSIGNMENT="T" VALUE=""/>
+      <VAR NAME="oracle_install_crs_mgmtcaCmd" TYPE="STRING" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.VariableInitializer"/>
+      <VAR NAME="oracle_install_crs_ConfigureMgmtDB" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable"/>
+      <VAR NAME="oracle_install_crs_MgmtDB_CDB" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_crs_MgmtDB_Std" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_crs_MgmtDB_Spfile" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+      <VAR NAME="oracle_install_crs_MGMTCA_Std" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_crs_LaunchMGMTCA" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+<!-- Setting CRS Upgrade to false for bug 8421107 -->
+      <VAR NAME="oracle_install_crs_Upgrade" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+      <VAR NAME="oracle_install_crs_ConfigureGNS" TYPE="BOOL" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+      <VAR NAME="oracle_install_crs_GNSType" TYPE="STRING" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T" VALUE=""/>
+      <VAR NAME="oracle_install_crs_GNSSubDomain" TYPE="STRING" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+      <VAR NAME="oracle_install_crs_GNSVIPAddress" TYPE="STRING" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+      <VAR NAME="oracle_install_crs_SCANName" TYPE="STRING" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+      <VAR NAME="oracle_install_crs_SCANPortNumber" TYPE="NUMBER" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+      <VAR NAME="oracle_install_crs_FinalInterfaceList" TYPE="STRINGLIST" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+      <VAR NAME="oracle_install_crs_NodeVips" TYPE="STRING" CLASS="oracle.install.driver.oui.util.InterviewVariable" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="s_windowsSystemDirectory" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.VariableInitializer"/>
+      <VAR NAME="oracle_install_crs_UseIPMI" TYPE="BOOL" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+      <VAR NAME="oracle_install_crs_PublicNodeListWithoutDomain" TYPE="STRINGLIST" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+      <VAR NAME="oracle_install_IsGridInstall" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_crs_isRolling" TYPE="BOOL" VALUE="T" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_LaunchInvUpdate" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="s_args" TYPE="STRING" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.VariableInitializer"/>
+      <!-- 12g additions-->
+      <!-- TRUE/FALSE -->
+	<!-- need to remote following variable once has team update the crsconfig_params to use new var.-->
+      <VAR NAME="oracle_install_crs_IsBigCluster" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+      <VAR NAME="oracle_install_crs_IsFlexCluster" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+      <!-- LOCAL/REMOTE -->
+      <VAR NAME="oracle_install_asm_ConfigurationType" TYPE="STRING" VALUE="LOCAL" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+      <!-- multi gns credential file path -->
+      <VAR NAME="oracle_install_crs_GNSClientDataFile" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+      <!-- remote ASM credential file path-->
+      <VAR NAME="oracle_install_asm_ClientDataFile" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+      <!-- HUB/AUTO/RIM nodes list-->
+      <VAR NAME="oracle_install_crs_TargetHubSize" TYPE="NUMBER" VALUE="0" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+      <VAR NAME="oracle_install_crs_HUBNodesList" TYPE="STRINGLIST" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+      <VAR NAME="oracle_install_crs_AUTONodesList" TYPE="STRINGLIST" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+        <!-- need to remote following variable once has team update the crsconfig_params to use new var.-->
+      <VAR NAME="oracle_install_crs_RIMNodesList" TYPE="STRINGLIST" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+      <VAR NAME="oracle_install_crs_LEAFNodesList" TYPE="STRINGLIST" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+      <VAR NAME="oracle_install_crs_HUBVipList" TYPE="STRINGLIST" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+      <VAR NAME="oracle_install_crs_AUTOVipList" TYPE="STRINGLIST" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+        <!-- need to remote following variable once has team update the crsconfig_params to use new var.-->
+      <VAR NAME="oracle_install_crs_RIMVipList" TYPE="STRINGLIST" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+      <VAR NAME="oracle_install_crs_LEAFVipList" TYPE="STRINGLIST" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+
+      <VAR NAME="ASM_INSTCOUNT" TYPE="NUMBER" VALUE="3" ALLOW_ASSIGNMENT="T" />
+      <VAR NAME="IOSERVER_INSTCOUNT" TYPE="NUMBER" VALUE="3" ALLOW_ASSIGNMENT="T" />
+<!-- s_asmupgrade set to true if ASM is being upgraded. -->
+<!-- setting default val of oracle_install_asm_MigrateASM to "false" - bug 8234229 -->
+      <VAR NAME="oracle_install_asm_MigrateASM" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+      <VAR NAME="oracle_install_OraMTSPortNumber" TYPE="STRING" VALUE="2030" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_9iRACPresent" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/><!-- unix makepath variable -->
+      <VAR NAME="oracle_install_UnixMakePath" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.VariableInitializer"/>
+<!-- installerCmd used by install/utl/updnodelist.pl -->
+	  <VAR NAME="oracle_install_installerCmd" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.VariableInitializer"/>
+      <VAR NAME="oracle_install_windowsCommandLine" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.VariableInitializer"/>
+<!-- oracle_install_db_SkipHARegistration set to true if there is lower version of SIHA present. default value is false. -->
+      <VAR NAME="oracle_install_db_SkipHARegistration" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+       <!-- GLOBAL VARIABLES FOR VENDOR CLUSTERWARE INSTALL -->
+      <VAR NAME="oracle_install_crs_IsVendorClusterware" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_crs_Timezone" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+	<VAR NAME="oracle_install_classpath_separator" TYPE="STRING" VALUE=":" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.VariableInitializer"/>
+	<VAR NAME="oracle_install_PlatformDirectoryName" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+<!-- root automation related variables. -->
+      <VAR NAME="oracle_install_rootConfiguration_ExecuteRootScript" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+<!-- addnode related variables-->
+      <VAR NAME="oracle_addnode_crs_NewNodeRoles" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/> 
+      <VAR NAME="CLUSTER_NEW_VIRTUAL_HOSTNAMES" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/> 
+      <VAR NAME="CLUSTER_NEW_HOST_NAMES" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="CRS_DHCP_ENABLED" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="CRS_ADDNODE" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_install_crs_NodeListenerUser" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+      <VAR NAME="oracle_addnode_crs_NewNodeSites" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+
+<!-- tg: DRDA AS required variables -->
+     <VAR NAME="oracle_install_tg_drdaasConnDesc" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T" COMPUTE_AT_CLONE="T"/>
+     <VAR NAME="oracle_install_tg_drdaasHostName" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T" COMPUTE_AT_CLONE="T"/>
+     <VAR NAME="oracle_install_tg_drdaasMapName" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T" COMPUTE_AT_CLONE="T"/>
+     <VAR NAME="oracle_install_tg_drdaasPortNumber" TYPE="NUMBER" VALUE="1446" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+<!-- User name global variable -->
+     <VAR NAME="oracle_install_user" TYPE="STRING" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>  
+   
+     <VAR NAME="oracle_install_isHostExadata" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>  
+	
+     <VAR NAME="oracle_install_installUser" TYPE="STRING" ALLOW_ASSIGNMENT="T" COMPUTE_AT_CLONE="T"/>
+     <VAR NAME="oracle_install_crs_rootUpgradeMessage" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+     <VAR NAME="oracle_install_crs_customRootShMessage" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T" COMPUTE_AT_CLONE="T"/>
+     <VAR NAME="oracle_install_crs_Ping_Targets" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+     <VAR NAME="oracle_install_crs_MgmtDB_DropDB" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T" COMPUTE_AT_CLONE="T"/>
+     <VAR NAME="oracle_install_oldGIHome" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T"/>
+     <VAR NAME="oracle_install_crs_dropDBCmd" TYPE="STRING" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.VariableInitializer"/>
+     <VAR NAME="oracle_install_asmca_additionalArgs" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+<!-- Application Cluster related -->
+     <VAR NAME="oracle_install_crs_ClusterType" TYPE="STRING" VALUE="DB" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+     <VAR NAME="oracle_install_crs_ClusterClass" TYPE="STRING" VALUE="STANDALONE" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+     <VAR NAME="oracle_install_crs_app_VIPAddress" TYPE="STRING" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+     <VAR NAME="oracle_install_crs_GIMRType" TYPE="STRING" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T" VALUE=""/>
+     <VAR NAME="oracle_install_crs_RemoteGIMRDataFile" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+     <VAR NAME="oracle_install_crs_MemberClusterDataFile" TYPE="STRING" VALUE="" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+     <VAR NAME="oracle_install_asm_FailureGroups" TYPE="STRINGLIST" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+     <VAR NAME="oracle_install_asm_QuorumFailureGroups" TYPE="STRINGLIST" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+
+     <VAR NAME="oracle_install_asm_backupDG_Name" TYPE="STRING" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+     <VAR NAME="oracle_install_asm_backupDG_Disks" TYPE="STRINGLIST" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+     <VAR NAME="oracle_install_asm_backupDG_Redundancy" TYPE="STRING" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+     <VAR NAME="oracle_install_asm_backupDG_FailureGroups" TYPE="STRINGLIST" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+     <VAR NAME="oracle_install_asm_backupDG_QuorumFailureGroups" TYPE="STRINGLIST" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+     <VAR NAME="oracle_install_asm_UseIOService" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+      <!-- Extended Cluster -->
+     <VAR NAME="oracle_install_crs_IsExtendedCluster" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+     <VAR NAME="oracle_install_crs_Sites" TYPE="STRINGLIST" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+     <VAR NAME="oracle_install_asm_SitesList" TYPE="STRINGLIST" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+     <VAR NAME="oracle_install_asm_backupDG_SitesList" TYPE="STRINGLIST" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+     <VAR NAME="oracle_install_asm_backupDG_AUSize" TYPE="NUMBER" VALUE="1" ALLOW_ASSIGNMENT="T"/>
+     <VAR NAME="oracle_install_crs_ConfigureAFD" TYPE="STRING" VALUE="false" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+     <VAR NAME="oracle_install_crs_ConfigureRHPS" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+     <VAR NAME="oracle_install_crs_UpgradeRHP" TYPE="BOOL" VALUE="F" ALLOW_ASSIGNMENT="T" COMPUTE_AT_CLONE="T"/>
+     <VAR NAME="oracle_install_crs_RHPUpgradeCmd" TYPE="STRING" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.VariableInitializer"/>
+     <VAR NAME="oracle_install_crs_RHPUpgrade_args" TYPE="STRING" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.VariableInitializer"/>
+     <!-- OPC params -->
+     <VAR NAME="oracle_install_crs_OPC_Cluster_Type" TYPE="STRING" ALLOW_ASSIGNMENT="T" VALUE="" CLASS="oracle.install.driver.oui.util.VariableInitializer" COMPUTE_AT_CLONE="T"/>
+     <VAR NAME="oracle_install_crs_OPC_NAT_Address" TYPE="STRING" ALLOW_ASSIGNMENT="T" VALUE="" CLASS="oracle.install.driver.oui.util.VariableInitializer" COMPUTE_AT_CLONE="T"/>
+     <VAR NAME="oracle_install_crs_ODA_Config" TYPE="STRING" ALLOW_ASSIGNMENT="T" VALUE="" CLASS="oracle.install.driver.oui.util.VariableInitializer" COMPUTE_AT_CLONE="T"/>
+
+     <VAR NAME="oracle_install_crs_srvctlCmd" TYPE="STRING" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.VariableInitializer"/>
+     <VAR NAME="oracle_install_crs_RHPS_args" TYPE="STRING" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.VariableInitializer"/>
+
+     <!-- ASM on NAS -->
+     <VAR NAME="oracle_install_crs_asmOnNAS_ocrDGSize" TYPE="NUMBER" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+     <VAR NAME="oracle_install_crs_asmOnNAS_gimrDGSize" TYPE="NUMBER" ALLOW_ASSIGNMENT="T" CLASS="oracle.install.driver.oui.util.InterviewVariable" COMPUTE_AT_CLONE="T"/>
+   </GLOBALVARS>

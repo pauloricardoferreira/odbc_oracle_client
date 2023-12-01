@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+<!-- Copyright (c) 2004, 2016, Oracle and/or its affiliates. 
+All rights reserved.-->
+
+<!-- ref host for microsoft windows 2000 -->
+<HOST PLATID="233">
+   <SYSTEM>
+      <MEMORY>
+         <PHYSICAL_MEMORY VALUE="4096" UNIT="MB" SEVERITY="IGNORABLE"/>
+         <AVAILABLE_MEMORY VALUE="50" UNIT="MB" SEVERITY="IGNORABLE"/>
+         <SWAP_SIZE SEVERITY="IGNORABLE">
+             	<STEPS>
+		<MIN VALUE="1536" UNIT="MB"/>
+		<MAX VALUE="16" UNIT="GB"/>
+                 	<STEP NAME="PHYSICAL_MEMORY" ATLEAST="1536" ATMOST="2048" UNIT="MB" MULTIPLE="1.5"/>
+                 	<STEP NAME="PHYSICAL_MEMORY" GREATER_THAN="2048" UNIT="MB" MULTIPLE="1"/>
+               </STEPS>
+         </SWAP_SIZE>
+       </MEMORY>
+      <SPACE>
+         <LOC VAR="CRS_HOME" SIZE="7.0" UNIT="GB" SEVERITY="IGNORABLE"/>
+         <LOC VAR="TEMP_AREA" TEMP="true" SIZE="1" UNIT="GB" SEVERITY="IGNORABLE"/>
+      </SPACE>
+      <ORACLE_PATCH_CHECKS>
+         <SOURCE_HOME_PATCHES>
+            <CONDITION VAR="INSTALL_OPTION" EQ="UPGRADE">
+               <CONDITION VAR="SRC_HOME_RELEASE_VERSION" ATLEAST="11.2.0.1.0" LESS_THAN="11.2.0.2.0" TYPE="VERSION">
+              	  <CONDITION VAR="ISROLLING" EQ="TRUE"> 
+		     <CONDITION VAR="ASM_RUNNING">
+		        <ORACLE_PATCH VALUE="9413827" SEVERITY="CRITICAL"/>
+	  	     </CONDITION>
+		  </CONDITION>		  
+               </CONDITION>
+	       <CONDITION VAR="SRC_HOME_RELEASE_VERSION" ATLEAST="11.2.0.2.0" LESS_THAN="11.2.0.3.0" TYPE="VERSION">
+              	  <CONDITION VAR="ISROLLING" EQ="TRUE"> 
+		     <CONDITION VAR="ASM_RUNNING">
+		        <ORACLE_PATCH VALUE="12539000" SEVERITY="CRITICAL"/>		  
+		     </CONDITION>
+              	  </CONDITION>
+               </CONDITION>
+               <CONDITION VAR="SRC_HOME_RELEASE_VERSION" EQ="11.1.0.7.0" TYPE="VERSION">
+                        <ORACLE_PATCH VALUE="11724953" SEVERITY="CRITICAL"/>
+               </CONDITION>
+	       <CONDITION VAR="SRC_HOME_RELEASE_VERSION" EQ="10.2.0.5.0" TYPE="VERSION">
+                  <ORACLE_PATCH VALUE="14617909" SEVERITY="CRITICAL"/>
+               </CONDITION>
+	     </CONDITION>
+	 </SOURCE_HOME_PATCHES>  
+         <RAC_HOME_PATCHES>
+            <CONDITION VAR="INSTALL_OPTION" EQ="UPGRADE">
+               <CONDITION VAR="SRC_HOME_RELEASE_VERSION" EQ="12.1.0.1.0" TYPE="VERSION"> 
+                  <CONDITION VAR="DEST_HOME_RELEASE_VERSION" EQ="12.1.0.2.0" TYPE="VERSION">          
+                     <CONDITION VAR="RAC_VERSION" EQ="12.1.0.1.0" TYPE="VERSION">
+                        <ORACLE_PATCH VALUE="19168335" SEVERITY="CRITICAL" />
+                     </CONDITION>   
+                  </CONDITION>
+               </CONDITION>
+            </CONDITION>
+         </RAC_HOME_PATCHES>
+       </ORACLE_PATCH_CHECKS> 
+       <UPGRADE_SUITABILITY_MATRIX>
+         <SRC_VERSION ATLEAST="10.2.0.5.0" ATMOST="10.2.99.99.99" />
+         <SRC_VERSION ATLEAST="11.1.0.7.0" ATMOST="11.1.99.99.99" />
+         <SRC_VERSION ATLEAST="11.2.0.2.0" ATMOST="11.2.99.99.99" />
+	 <SRC_VERSION ATLEAST="12.1.0.1.0" ATMOST="12.1.99.99.99" />
+       </UPGRADE_SUITABILITY_MATRIX>     
+   </SYSTEM>
+   <CERTIFIED_SYSTEMS>
+      <OPERATING_SYSTEM RELEASE="6.0">
+         <VERSION VALUE="6.0"/>
+         <ARCHITECTURE VALUE="64-bit"/>
+         <NAME VALUE="Windows Server 2008"/>
+         <VENDOR VALUE="Windows Server 2008"/>
+         <ENV_VAR_LIST>
+             <ENV_VAR NAME="PATH" MAX_LENGTH="5119" />
+         </ENV_VAR_LIST>
+      </OPERATING_SYSTEM>
+      <OPERATING_SYSTEM RELEASE="6.0">
+       	 <VERSION VALUE="3"/>
+       	 <ARCHITECTURE VALUE="64-bit"/>
+       	 <NAME VALUE="WindowsVista"/>
+       	 <VENDOR VALUE="WindowsVista"/>
+         <ENV_VAR_LIST>
+             <ENV_VAR NAME="PATH" MAX_LENGTH="5119" />
+         </ENV_VAR_LIST>
+      </OPERATING_SYSTEM>
+      <OPERATING_SYSTEM RELEASE="6.1">
+         <VERSION VALUE="6.1"/>
+         <ARCHITECTURE VALUE="64-bit"/>
+         <NAME VALUE="Windows 7"/>
+         <VENDOR VALUE="Windows 7"/>
+         <ENV_VAR_LIST>
+             <ENV_VAR NAME="PATH" MAX_LENGTH="5119" />
+         </ENV_VAR_LIST>
+      </OPERATING_SYSTEM>
+      <OPERATING_SYSTEM RELEASE="6.1">
+         <VERSION VALUE="6.1"/>
+         <ARCHITECTURE VALUE="64-bit"/>
+         <NAME VALUE="Windows Server 2008 R2"/>
+         <VENDOR VALUE="Windows Server 2008 R2"/>
+         <ENV_VAR_LIST>
+             <ENV_VAR NAME="PATH" MAX_LENGTH="5119" />
+         </ENV_VAR_LIST>
+      </OPERATING_SYSTEM>
+ 	     <OPERATING_SYSTEM RELEASE="6.2">
+         <VERSION VALUE="6.2"/>
+         <ARCHITECTURE VALUE="64-bit"/>
+         <NAME VALUE="Windows 8"/>
+         <VENDOR VALUE="Windows 8"/>
+         <ENV_VAR_LIST>
+             <ENV_VAR NAME="PATH" MAX_LENGTH="5119" />
+         </ENV_VAR_LIST>
+      </OPERATING_SYSTEM>
+      <OPERATING_SYSTEM RELEASE="6.2">
+	<VERSION VALUE="3"/>
+        <ARCHITECTURE VALUE="64-bit"/>
+        <NAME VALUE="Windows Server 2012"/>
+        <ENV_VAR_LIST>
+            <ENV_VAR NAME="PATH" MAX_LENGTH="5119" />		
+        </ENV_VAR_LIST>
+     </OPERATING_SYSTEM>
+     <OPERATING_SYSTEM RELEASE="6.3">
+        <VERSION VALUE="3"/>
+        <ARCHITECTURE VALUE="64-bit"/>
+        <NAME VALUE="Windows Server 2012 R2"/>
+        <ENV_VAR_LIST>
+	    <ENV_VAR NAME="PATH" MAX_LENGTH="5119" />
+        </ENV_VAR_LIST>
+     </OPERATING_SYSTEM>
+   </CERTIFIED_SYSTEMS>
+   <ORACLE_HOME>
+	<COMPATIBILITY_MATRIX>
+         <ALLOW>
+	    <!-- Allowing new home and removing all disallow section ,fix for bug# 17399376  -->
+            <NEW_HOME/>
+         </ALLOW>
+      </COMPATIBILITY_MATRIX>	
+   </ORACLE_HOME>
+  <NETWORK>
+      <PORTLIST>
+         <PORT NAME="Oracle Containers for J2EE (OC4J)" VALUE="8888" PROTOCOL="TCP" NETWORK_TYPE="PUBLIC"/>
+         <PORT NAME="Oracle Remote Method Invocation (ORMI)" VALUE="23791" PROTOCOL="TCP" NETWORK_TYPE="PUBLIC"/>
+         <PORT NAME="Oracle Remote Method Invocation (ORMI)" VALUE="23792" PROTOCOL="TCP" NETWORK_TYPE="PUBLIC"/>
+         <PORT NAME="Oracle Notification Service (ONS)" VALUE="6100" PROTOCOL="TCP" NETWORK_TYPE="ALL"/>
+         <PORT NAME="Oracle Notification Service (ONS)" VALUE="6200" PROTOCOL="TCP" NETWORK_TYPE="ALL"/>
+         <PORT NAME="Oracle Database Listener" VALUE="1521" PROTOCOL="TCP" NETWORK_TYPE="PUBLIC"/>
+         <PORT NAME="Oracle Notification Service (ONS) Enterprise Manager support" VALUE="2016" PROTOCOL="TCP" NETWORK_TYPE="PUBLIC"/>
+      </PORTLIST>
+  </NETWORK>
+</HOST>

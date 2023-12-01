@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!--  $Header: opsm/cv/cvdata/variables.xsd /main/1 2015/01/21 13:21:27 jgagarci Exp $ -->
+
+<!-- 
+ Copyright (c) 2014, Oracle and/or its affiliates. All rights reserved.
+
+   NAME
+     variables.xsd - CVU variables xml schema
+
+   DESCRIPTION
+     XML schema for CVU Variables matching context xml
+
+   NOTES
+     
+   MODIFIED   (MM/DD/YY)
+   jgagarci    12/05/14 - change context name for command line to include CVU
+   ptare       11/07/14 - Creation
+
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.w3.org/2001/XMLSchema http://www.w3.org/2001/XMLSchema.xsd">
+    <xs:element name="ROOT" >
+       <xs:complexType>
+         <xs:sequence>
+            <xs:element name="SOFTWARE" minOccurs="0" maxOccurs="unbounded">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="VARIABLE_LIST" minOccurs="1" maxOccurs="1">
+                        <xs:complexType>
+                           <xs:sequence>
+                              <xs:element name="VARIABLE" minOccurs="1" maxOccurs="unbounded">
+                                 <xs:complexType>
+                                    <xs:all>
+                                       <xs:element name="INSTALL_UI" minOccurs="1" maxOccurs="1" type="variableAttributes"/>
+                                       <xs:element name="INSTALL_RESP" minOccurs="1" maxOccurs="1" type="variableAttributes"/>
+                                       <xs:element name="CVU_CMD_VAR" minOccurs="1" maxOccurs="1" type="variableAttributes"/>
+                                       <xs:element name="ROOT_SCRIPT" minOccurs="1" maxOccurs="1" type="variableAttributes"/>
+                                    </xs:all>
+                                 </xs:complexType>
+                              </xs:element>
+                           </xs:sequence>
+                        </xs:complexType>
+                     </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="VERSION" use="required" type="xs:string"/>
+               </xs:complexType>
+            </xs:element>
+         </xs:sequence>
+       </xs:complexType>
+    </xs:element>
+    <xs:complexType name="variableAttributes">
+       <xs:attribute name="NAME" use="required" type="xs:string"/>
+    </xs:complexType>
+</xs:schema>
+

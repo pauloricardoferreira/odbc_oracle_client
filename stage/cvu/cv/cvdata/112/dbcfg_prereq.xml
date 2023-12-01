@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<HOST PLATID="233">
+<SYSTEM>
+	<MEMORY>
+		<PHYSICAL_MEMORY VALUE="922" UNIT="MB" SEVERITY="IGNORABLE"/>
+		<AVAILABLE_MEMORY VALUE="50" UNIT="MB" SEVERITY="IGNORABLE"/>
+	<SWAP_SIZE SEVERITY="IGNORABLE">
+             	<STEPS>
+		<MIN VALUE="1024" UNIT="MB"/>
+		<MAX VALUE="16" UNIT="GB"/>
+                 	<STEP NAME="PHYSICAL_MEMORY" ATLEAST="1024" ATMOST="2048" UNIT="MB" MULTIPLE="1.5"/>
+                 	<STEP NAME="PHYSICAL_MEMORY" GREATER_THAN="2048" UNIT="MB" MULTIPLE="1"/>
+               </STEPS>
+        </SWAP_SIZE>
+	</MEMORY>
+
+	<SPACE>
+		<LOC VAR="RAC_HOME" SIZE="3.4" UNIT="GB" SEVERITY="IGNORABLE"/>
+		<LOC VAR="TEMP_AREA" TEMP="true" SIZE="500" UNIT="MB" SEVERITY="IGNORABLE"/>
+	</SPACE>
+
+</SYSTEM>
+<CERTIFIED_SYSTEMS>
+         <OPERATING_SYSTEM RELEASE="5.0">
+         	 <VERSION VALUE="3"/>
+         	 <ARCHITECTURE VALUE="64-bit"/>
+         	 <NAME VALUE="Windows2000"/>
+         	 <ENV_VAR_LIST>
+         	     <ENV_VAR NAME="PATH" MAX_LENGTH="1023" />
+         	 </ENV_VAR_LIST>
+         </OPERATING_SYSTEM>
+         <OPERATING_SYSTEM RELEASE="5.1">
+         	 <VERSION VALUE="3"/>
+         	 <ARCHITECTURE VALUE="64-bit"/>
+         	 <NAME VALUE="WindowsXP"/>
+         	 <ENV_VAR_LIST>
+         	     <ENV_VAR NAME="PATH" MAX_LENGTH="2047" />
+         	 </ENV_VAR_LIST>
+         </OPERATING_SYSTEM>
+         <OPERATING_SYSTEM RELEASE="5.2">
+         	 <VERSION VALUE="3"/>
+         	 <ARCHITECTURE VALUE="64-bit"/>
+         	 <NAME VALUE="Windows Server 2003"/>
+         	 <ENV_VAR_LIST>
+         	     <ENV_VAR NAME="PATH" MAX_LENGTH="2047" />
+         	 </ENV_VAR_LIST>
+         </OPERATING_SYSTEM>
+         <OPERATING_SYSTEM RELEASE="6.0">
+         	 <VERSION VALUE="3"/>
+         	 <ARCHITECTURE VALUE="64-bit"/>
+         	 <NAME VALUE="WindowsServer2008"/>
+         	 <ENV_VAR_LIST>
+         	     <ENV_VAR NAME="PATH" MAX_LENGTH="5119" />
+         	 </ENV_VAR_LIST>
+         </OPERATING_SYSTEM>
+         <OPERATING_SYSTEM RELEASE="6.0">
+         	 <VERSION VALUE="3"/>
+         	 <ARCHITECTURE VALUE="64-bit"/>
+         	 <NAME VALUE="WindowsVista"/>
+         	 <ENV_VAR_LIST>
+         	     <ENV_VAR NAME="PATH" MAX_LENGTH="5119" />
+         	 </ENV_VAR_LIST>
+         </OPERATING_SYSTEM>
+     	 <OPERATING_SYSTEM RELEASE="6.1">
+         	 <VERSION VALUE="3"/>
+         	 <ARCHITECTURE VALUE="64-bit"/>
+         	 <NAME VALUE="Windows 7"/>
+         	 <ENV_VAR_LIST>
+         	     <ENV_VAR NAME="PATH" MAX_LENGTH="5119" />
+         	 </ENV_VAR_LIST>
+         </OPERATING_SYSTEM>
+     	 <OPERATING_SYSTEM RELEASE="6.1">
+         	 <VERSION VALUE="3"/>
+         	 <ARCHITECTURE VALUE="64-bit"/>
+         	 <NAME VALUE="WindowsServer2008R2"/>
+         	 <ENV_VAR_LIST>
+         	     <ENV_VAR NAME="PATH" MAX_LENGTH="5119" />
+         	 </ENV_VAR_LIST>
+         </OPERATING_SYSTEM>
+</CERTIFIED_SYSTEMS>
+<ORACLE_HOME>
+	<COMPATIBILITY_MATRIX>
+		<ALLOW>
+			<NEW_HOME/>
+		</ALLOW>
+		<DISALLOW>
+			<COMP NAME="oracle.server" ATLEAST="8.1.0.0.0" ATMOST="9.2.0.9.0"/>
+			<COMP NAME="oracle.server" ATLEAST="10.1.0.0.0" ATMOST="10.1.0.9.0"/>
+			<COMP NAME="oracle.client" ATLEAST="8.1.0.0.0" ATMOST="9.2.0.9.0"/>
+			<COMP NAME="oracle.iappserver.iapptop" ATLEAST="9.0.2.0.0" ATMOST="99.9.9.9.9"/>
+			<COMP NAME="oracle.iappserver.infrastructure" ATLEAST="9.0.2.0.0" ATMOST="99.9.9.9.9"/>
+			<COMP NAME="oracle.iappserver.devcorner " ATLEAST="9.0.2.0.0" ATMOST="99.9.9.9.9"/>
+			<COMP NAME="oracle.ids.toplevel.development" ATLEAST="9.0.0.0.0" ATMOST="99.9.9.9.9"/>
+			<COMP NAME="oracle.install.instcommon" ATLEAST="8.1.3.0.0" ATMOST="9.2.9.9.9"/>
+			<COMP NAME="oracle.client" ATLEAST="10.1.0.0.0"/>
+			<COMP NAME="oracle.crs" ATLEAST="10.1.0.0.0"/>
+			<ORCA_HOME/>
+		</DISALLOW>
+	</COMPATIBILITY_MATRIX>      
+	<EXISTENCE_MATRIX>
+		<COMP NAME="oracle.crs" DESC="Oracle Cluster Ready Services (CRS) 10gR2" EXISTS="FALSE" ATLEAST="10.1.0.0.0" ATMOST="10.2.0.0.0"/>
+		<COMP NAME="oracle.server" DESC="Oracle Real Application Cluster (RAC) 10gR2" EXISTS="FALSE" ATLEAST="9.2.0.0.0" ATMOST="9.2.0.0.0"/>
+	</EXISTENCE_MATRIX>
+</ORACLE_HOME>
+</HOST>
+

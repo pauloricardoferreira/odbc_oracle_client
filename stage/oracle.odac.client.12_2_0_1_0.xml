@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="yes" ?>
+<!-- Copyright (c) 1999, 2017, Oracle and/or its affiliates.
+All rights reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+<agg:Descriptions version="1.0.0" xmlns:agg="http://www.oracle.com/sysman/emCfg/AggregateDescriptions" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.oracle.com/sysman/emCfg/AggregateDescriptions" platform="NT_X86 NT_IA64 NT_AMD64 W95 W98 NT_Alpha">
+   <agg:ComplexAggregate id="oracle.odac.client">
+     <agg:Action id="configuration" types="configuration" ignore_duplicate_references="true">
+      <agg:ActionStep required="true" priority="2" standaloneonly="false">
+        <agg:AggregateActionRef owner="oracle.ntoramts"/>
+      </agg:ActionStep>
+     </agg:Action>
+     <agg:SimplestAggregateRef idref="OuiConfigVariables"/>
+    <agg:ComplexAggregateRef idref="oracle.ntoramts" ownership="exclusive"/>
+   </agg:ComplexAggregate>
+</agg:Descriptions>

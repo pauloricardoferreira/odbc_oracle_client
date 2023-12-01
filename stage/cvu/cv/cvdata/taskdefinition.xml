@@ -1,0 +1,4707 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ROOT>
+    <TASK_DEFINITION_LIST>
+        <!--
+                       PLUGGABLE Task Definitions start here. 
+                       ====================================== 
+        All The Pluggable Task definitions must appear in this section. The Java 
+        Task must be defined in the next section which appear immediately after 
+        this section. 
+        Please follow this rule to keep this file well organized and readable. 
+        -->
+    <TASK_DEFINITION ID="FAST_START_MTTR_TARGET" SEVERITY="IGNORABLE">
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="select i.instance_name,p.value from gv$parameter p,gv$instance i where p.inst_id = i.inst_id and p.name = 'fast_start_mttr_target' order by i.inst_id">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER EMPTY_RESULTSET_IMPLIES_SUCCESS="true">
+                <COLUMN_LIST>
+                    <REFERENCE_COLUMN NAME="instance_name" />
+                    <COLUMN NAME="fast_start_mttr_target">
+                        <COMPARATOR TYPE="numeric" EQ="0" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="FAST_START_INSTANCE_RECOVERY_TARGET"
+        SEVERITY="IGNORABLE" MORE_DETAILS_ID="FAST_START_INSTANCE_RECOVERY_TARGET_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="select i.instance_name,p.value from gv$parameter p,gv$instance i where p.inst_id = i.inst_id and p.name = '_fast_start_instance_recovery_target' order by i.inst_id">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <REFERENCE_COLUMN NAME="instance_name" />
+                    <COLUMN NAME="_fast_start_instance_recovery_target">
+                        <COMPARATOR TYPE="numeric" GE="5" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="ENABLED_AMM" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="ENABLED_AMM">
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="select name,value,sid,isspecified from gv$spparameter where name like 'memory_target' and isspecified not like 'false' and value not like '0' and sid like '*'">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+                    <ARG>
+                        <NAME VALUE="DB_DESCR" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_DESCR" />
+                    </ARG>
+                    <ARG>
+                        <NAME VALUE="DB_PWD" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_PWD" />
+                    </ARG>
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <REFERENCE_COLUMN NAME="NAME" />
+                    <COLUMN NAME="VALUE">
+                        <COMPARATOR TYPE="numeric" GT="0" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="PRE_PAGE_SGA" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="PRE_PAGE_SGA_DETAILS">
+        <REFERENCE_LIST>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=289585.1
+            </REFERENCE>
+        </REFERENCE_LIST>
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="select i.instance_name,p.value as pre_page_sga from gv$parameter p,gv$instance i where p.inst_id = i.inst_id and p.name = 'pre_page_sga' order by i.inst_id">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER EMPTY_RESULTSET_IMPLIES_SUCCESS="true">
+                <COLUMN_LIST>
+                    <REFERENCE_COLUMN NAME="instance_name" />
+                    <COLUMN NAME="pre_page_sga">
+                        <COMPARATOR TYPE="string" EQ_NO_CASE="FALSE" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="PARALLEL_EXECUTION_MESSAGE_SIZE"
+        SEVERITY="IGNORABLE" MORE_DETAILS_ID="PARALLEL_EXECUTION_MESSAGE_SIZE_DETAILS">
+        <REFERENCE_LIST>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=280939.1
+            </REFERENCE>
+            <REFERENCE>http://download.oracle.com/docs/cd/B28359_01/server.111/b28320/initparams170.htm#REFRN10156
+            </REFERENCE>
+        </REFERENCE_LIST>
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="select i.instance_name,p.value as parallel_execution_messagesize from gv$parameter p,gv$instance i where p.inst_id = i.inst_id and p.name = 'parallel_execution_message_size' order by i.inst_id">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <REFERENCE_COLUMN NAME="instance_name" />
+                    <COLUMN NAME="parallel_execution_message_size">
+                        <COMPARATOR TYPE="numeric" GE="4096" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="OPTIMIZER_DYNAMIC_SAMPLING"
+        SEVERITY="IGNORABLE" MORE_DETAILS_ID="OPTIMIZER_DYNAMIC_SAMPLING_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="select i.instance_name,p.value as optimizer_dynamic_sampling from gv$parameter p,gv$instance i where p.inst_id = i.inst_id and p.name = 'optimizer_dynamic_sampling' order by i.inst_id">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <REFERENCE_COLUMN NAME="instance_name" />
+                    <COLUMN NAME="optimizer_dynamic_sampling">
+                        <COMPARATOR TYPE="numeric" EQ="2" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="DISK_ASYNCH_IO" SEVERITY="IGNORABLE">
+        <REFERENCE_LIST>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=237299.1
+            </REFERENCE>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=270213.1
+            </REFERENCE>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=205259.1
+            </REFERENCE>
+        </REFERENCE_LIST>
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="select i.instance_name,p.value as disk_asynch_io from gv$parameter p,gv$instance i where p.inst_id = i.inst_id and p.name = 'disk_asynch_io' order by i.inst_id">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER EMPTY_RESULTSET_IMPLIES_SUCCESS="true">
+                <COLUMN_LIST>
+                    <REFERENCE_COLUMN NAME="instance_name" />
+                    <COLUMN NAME="disk_asynch_io">
+                        <COMPARATOR TYPE="string" EQ="FALSE" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="MULTIUSER_SVC" SEVERITY="IGNORABLE">
+        <EXECUTABLE_INFO TYPE="SHELL">
+            <EXTERNAL>
+                <NAME VALUE="mus_check.sh" />
+            </EXTERNAL>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="SOLARIS" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="CHECK_EN_LOCALE" SEVERITY="CRITICAL">
+        <EXECUTABLE_INFO TYPE="SHELL">
+            <EXTERNAL>
+                <NAME VALUE="localenam_check.sh" />
+            </EXTERNAL>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="SOLARIS" VERSION="5.10"/>
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="DISK_ASYNCH_IO_LINKING" SEVERITY="IGNORABLE">
+        <EXECUTABLE_INFO TYPE="SHELL">
+            <EXTERNAL>
+                <NAME VALUE="check_disk_asynch_io_linking.sh" />
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="ORACLE_HOME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="ORACLE_HOME" />
+                    </ARG>
+                </ARGS>
+            </EXTERNAL>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+
+    <TASK_DEFINITION ID="DB_WRITER_PROCESSES" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="DB_WRITER_PROCESSES_DETAILS">
+        <REFERENCE_LIST>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=97291.1
+            </REFERENCE>
+        </REFERENCE_LIST>
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="select i.instance_name,p.value as disk_asynch_io from gv$parameter p,gv$instance i where p.inst_id = i.inst_id and p.name = 'db_writer_processes' order by i.inst_id">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <REFERENCE_COLUMN NAME="instance_name" />
+                    <COLUMN NAME="db_writer_processes">
+                        <COMPARATOR TYPE="numeric" EQ="1" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="DBWR_IO_SLAVES" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="DBWR_IO_SLAVES_DETAILS">
+        <REFERENCE_LIST>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=97291.1
+            </REFERENCE>
+        </REFERENCE_LIST>
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="select i.instance_name,p.value as disk_asynch_io from gv$parameter p,gv$instance i where p.inst_id = i.inst_id and p.name = 'dbwr_io_slaves' order by i.inst_id">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <REFERENCE_COLUMN NAME="instance_name" />
+                    <COLUMN NAME="dbwr_io_slaves">
+                        <COMPARATOR TYPE="numeric" GE="1" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="MAX_COMMIT_PROPAGATION_DELAY"
+        SEVERITY="IGNORABLE" MORE_DETAILS_ID="MAX_COMMIT_PROPAGATION_DELAY_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="select i.instance_name, decode(p.value, NULL,0, p.value) max_commit_propagation_delay from gv$instance i left outer join (select p.inst_id, p.value from gv$parameter p where p.name = 'max_commit_propagation_delay') p using(inst_id)">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER EMPTY_RESULTSET_IMPLIES_SUCCESS="true">
+                <COLUMN_LIST>
+                    <REFERENCE_COLUMN NAME="instance_name" />
+                    <COLUMN NAME="max_commit_propagation_delay">
+                        <COMPARATOR TYPE="numeric" LE="700" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="INVALID_JAVA_OBJ" SEVERITY="IGNORABLE">
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="SELECT count(*) as invalid_java_obj FROM dba_objects  WHERE object_type LIKE '%JAVA%'  AND status='INVALID'  AND owner='SYS'">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <COLUMN NAME="invalid_java_obj">
+                        <COMPARATOR TYPE="numeric" EQ="0" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="SYSAUX_TS" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="SYSAUX_TS_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="select count(*) as SYSAUX_TS from v$tablespace where name = 'SYSAUX'">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <COLUMN NAME="SYSAUX_TS">
+                        <COMPARATOR TYPE="numeric" GE="1" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="JVM_CONFIGURATION" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="JVM_CONFIGURATION_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE VALUE="select dbms_java.longname('true') JVM from dual">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <COLUMN NAME="dbms_java.longname('true')">
+                        <COMPARATOR TYPE="string" EQ="true" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="JAVA_BASED_USERS" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="JAVA_BASED_USERS_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="SELECT count(*) as java_based_users FROM dba_users WHERE username LIKE '%AURORA%' AND username LIKE '%OSE%'">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <COLUMN NAME="java_based_users_count">
+                        <COMPARATOR TYPE="numeric" EQ="0" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="JAVA_ROLE_COUNT" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="JAVA_ROLE_COUNT_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="SELECT count(*) java_role_count FROM dba_roles  WHERE role LIKE '%JAVA%'">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <COLUMN NAME="java_role_count">
+                        <COMPARATOR TYPE="numeric" EQ="6" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+
+    <TASK_DEFINITION ID="JAVA_VM_VERSION" SEVERITY="IGNORABLE">
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="SELECT substr(version,1,6) FROM SYS.registry$ WHERE cid='JAVAVM' AND status &lt;&gt; 99">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <COLUMN NAME="java_vm_version">
+                        <COMPARATOR TYPE="version" EQ="11.2.0" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+
+    <TASK_DEFINITION ID="INVALID_SYSTEM_OBJECTS" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="INVALID_SYSTEM_OBJECTS_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="SELECT count(*) invalid_obj  FROM dba_objects WHERE status != 'VALID' AND owner in ('SYS','SYSTEM') and object_name NOT LIKE 'BIN$%'">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <COLUMN NAME="sys_invalid_obj">
+                        <COMPARATOR TYPE="numeric" EQ="0" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="INVALID_APPLICATION_OBJECTS"
+        SEVERITY="IGNORABLE" MORE_DETAILS_ID="INVALID_APPLICATION_OBJECTS_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="SELECT count(1) app_invalid_obj FROM dba_objects WHERE status != 'VALID' AND owner not in ('SYS','SYSTEM') and object_name NOT LIKE 'BIN$%'">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+                    
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <COLUMN NAME="app_invalid_obj">
+                        <COMPARATOR TYPE="numeric" EQ="0" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="SPFILE" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="SPFILE_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="select i.instance_name,p.value as spfile from gv$parameter p,gv$instance i where p.inst_id = i.inst_id and p.name = 'spfile' order by i.inst_id">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <REFERENCE_COLUMN NAME="instance_name" />
+                    <COLUMN NAME="spfile">
+                        <COMPARATOR TYPE="string" NE="NULL" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="DATABASE_WORDSIZE" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="DATABASE_WORDSIZE_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE VALUE="SELECT  SUBSTR(metadata,109,4) db_wordsize FROM sys.kopm$">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <COLUMN NAME="db wordsize">
+                        <COMPARATOR TYPE="string" NE="B023" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="DUPLICATE_SYSTEM_OBJECTS"
+        SEVERITY="IGNORABLE" MORE_DETAILS_ID="DUPLICATE_SYSTEM_OBJECTS_DETAILS">
+        <REFERENCE_LIST>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=1030426.6
+            </REFERENCE>
+        </REFERENCE_LIST>
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="SELECT count(1) DUPE_SYS_SYSTEM_OBJ FROM dba_objects WHERE object_name not in ( 'AQ$_SCHEDULES', 'AQ$_SCHEDULES_PRIMARY', 'DBMS_REPCAT_AUTH') and object_name||object_type in (SELECT object_name||object_type from dba_objects where owner = 'SYS') and owner = 'SYSTEM'">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <COLUMN NAME="sys_duplicate_obj">
+                        <COMPARATOR TYPE="string" RE="0|4" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="ASM_POWER_LIMIT" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="ASM_POWER_LIMIT_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL" RUN_ON="ASM">
+            <INLINE
+                VALUE="select i.instance_name,p.value as asm_power_limit from gv$parameter p,gv$instance i where p.inst_id = i.inst_id and p.name = 'asm_power_limit' order by i.inst_id" />
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" KEY="ASM Instances" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <REFERENCE_COLUMN NAME="instance_name" />
+                    <COLUMN NAME="asm_power_limit">
+                        <COMPARATOR TYPE="numeric" LE="1" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <!-- Commenting out check for _ENABLE_NUMA_OPTIMIZATION_DETAILS at the request 
+        of Bill Manry <TASK_DEFINITION ID="_ENABLE_NUMA_OPTIMIZATION" SEVERITY="IGNORABLE" 
+        MORE_DETAILS_ID="_ENABLE_NUMA_OPTIMIZATION_DETAILS"> <EXECUTABLE_INFO TYPE="SQL"> 
+        <INLINE VALUE="select i.instance_name,p.value as enable_NUMA_optimization 
+        from gv$parameter p,gv$instance i where p.inst_id = i.inst_id and p.name 
+        = '_enable_NUMA_optimization' order by i.inst_id"> <ARGS> <ARG> <NAME VALUE="DB_NAME" 
+        /> <TYPE VALUE="string" /> <VAR VALUE="DB_NAME" /> </ARG> <ARG> <NAME VALUE="DB_DESCR" 
+        /> <TYPE VALUE="string" /> <VAR VALUE="DB_DESCR" /> </ARG> <ARG> <NAME VALUE="DB_PWD" 
+        /> <TYPE VALUE="string" /> <VAR VALUE="DB_PWD" /> </ARG> </ARGS> </INLINE> 
+        <RESULT_TYPE VALUE="TO_BE_ANALYZED" /> </EXECUTABLE_INFO> <ANALYZER> <SQL_ANALYZER> 
+        <COLUMN_LIST> <REFERENCE_COLUMN NAME="instance_name" /> <COLUMN NAME="_enable_NUMA_optimization"> 
+        <COMPARATOR TYPE="string" EQ="FALSE" /> </COLUMN> </COLUMN_LIST> </SQL_ANALYZER> 
+        </ANALYZER> <OPERATING_SYSTEM_LIST> <OPERATING_SYSTEM TYPE="ALL" /> </OPERATING_SYSTEM_LIST> 
+        </TASK_DEFINITION> -->
+    <TASK_DEFINITION ID="MAX_DUMP_FILE_SIZE" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="MAX_DUMP_FILE_SIZE_DETAILS">
+        <REFERENCE_LIST>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=30762.1
+            </REFERENCE>
+        </REFERENCE_LIST>
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="select i.instance_name,p.value as max_dump_file_size from gv$parameter p,gv$instance i where p.inst_id = i.inst_id and p.name = 'max_dump_file_size' order by i.inst_id">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <REFERENCE_COLUMN NAME="instance_name" />
+                    <COLUMN NAME="max_dump_file_size">
+                        <COMPARATOR TYPE="string" EQ_NO_CASE="UNLIMITED" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="REMOTE_LISTENER" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="REMOTE_LISTENER_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="select i.instance_name,p.value as remote_listener from gv$parameter p,gv$instance i where p.inst_id = i.inst_id and p.name = 'remote_listener' order by i.inst_id">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <REFERENCE_COLUMN NAME="instance_name" />
+                    <COLUMN NAME="remote_listener">
+                        <COMPARATOR TYPE="string" NE="NULL" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="FILES_IN_BACKUP" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="FILES_IN_BACKUP_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="SELECT count(*)  files_in_backup FROM V$DATAFILE d, V$TABLESPACE t, V$BACKUP b WHERE d.TS#=t.TS# AND b.FILE#=d.FILE# AND b.STATUS != 'NOT ACTIVE'">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <COLUMN NAME="files_in_backup">
+                        <COMPARATOR TYPE="numeric" EQ="0" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="MEDIA_RECOVERY_FILES" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="MEDIA_RECOVERY_FILES_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE VALUE="select count(*) media_recovery_files from v$recover_file">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <COLUMN NAME="media_recovery_files">
+                        <COMPARATOR TYPE="numeric" EQ="0" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="INDOUBT_DIST_TRANS" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="INDOUBT_DIST_TRANS_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE VALUE="select count(*) indoubt_dist_trans from dba_2pc_pending">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <COLUMN NAME="indoubt_dist_trans">
+                        <COMPARATOR TYPE="numeric" EQ="0" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="ORPHAN_DICTIONARY_ROWS" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="ORPHAN_DICTIONARY_ROWS_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="select count(*) orphan_dictionary_rows from sys.kottd$ where sys_nc_oid$ not in (select oid$ from sys.obj$ where type#=13)">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <COLUMN NAME="orphan_dictionary_rows">
+                        <COMPARATOR TYPE="numeric" EQ="0" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TIME_ZONE_FILE_VERSION" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="time_zone_file_version_DETAILS">
+        <REFERENCE_LIST>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=556477.1
+            </REFERENCE>
+        </REFERENCE_LIST>
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE VALUE="select version time_zone_file_version from v$timezone_file">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <COLUMN NAME="time_zone_file_version">
+                        <COMPARATOR TYPE="numeric" GE="4" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="SYS_OBJ_TABLES" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="SYS_OBJ_TABLES_DETAILS">
+        <REFERENCE_LIST>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=579523.1
+            </REFERENCE>
+        </REFERENCE_LIST>
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="select count(*) sys_obj_tables from sys.&quot;_BASE_USER&quot; u, sys.obj$ o, sys.col$ c, sys.coltype$ t where o.type# = 2 and o.owner# = u.user# and o.obj# = c.obj# and o.obj# = t.obj# and c.intcol# = t.intcol# and bitand(c.property, 1) = 0 and bitand(t.flags, 128) &lt;&gt; 0 and u.name = 'SYS'">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <COLUMN NAME="sys_obj_tables">
+                        <COMPARATOR TYPE="numeric" EQ="0" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="CONNECT_ROLE_GRANTEES" SEVERITY="IGNORABLE">
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="SELECT count(*) connect_role_grantee_count FROM dba_role_privs WHERE granted_role = 'CONNECT' AND grantee NOT IN ('SYS', 'OUTLN', 'SYSTEM', 'CTXSYS', 'DBSNMP','LOGSTDBY_ADMINISTRATOR', 'ORDSYS','ORDPLUGINS', 'OEM_MONITOR', 'WKSYS', 'WKPROXY','WK_TEST', 'WKUSER', 'MDSYS', 'LBACSYS', 'DMSYS','WMSYS', 'OLAPDBA', 'OLAPSVR', 'OLAP_USER','OLAPSYS', 'EXFSYS', 'SYSMAN', 'MDDATA','SI_INFORMTN_SCHEMA', 'XDB', 'ODM')">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <COLUMN NAME="connect_role_grantees">
+                        <COMPARATOR TYPE="numeric" EQ="0" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="INVALID_REGISTRY_COMP" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="INVALID_REGISTRY_COMP_DETAILS">
+        <REFERENCE_LIST>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=556477.1
+            </REFERENCE>
+        </REFERENCE_LIST>
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="SELECT count(*) invalid_registry_comp_count FROM dba_registry where status != 'VALID'">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <COLUMN NAME="invalid_registry_comp_count">
+                        <COMPARATOR TYPE="numeric" EQ="0" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="AUDIT_TABLESPACE" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="AUDIT_TABLESPACE_DETAILS">
+        <REFERENCE_LIST>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=429825.1
+            </REFERENCE>
+        </REFERENCE_LIST>
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="SELECT  tablespace_name audit_tablespace FROM dba_tables WHERE table_name='AUD$'">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <COLUMN NAME="audit_tablespace">
+                        <COMPARATOR TYPE="string" EQ="SYSTEM" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="EXT_SSL_AUTHENTICATED_USERS"
+        SEVERITY="IGNORABLE" MORE_DETAILS_ID="EXT_SSL_AUTHENTICATED_USERS_DETAILS">
+        <REFERENCE_LIST>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=429825.1
+            </REFERENCE>
+        </REFERENCE_LIST>
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="SELECT count(*) ext_ssl_authenticated_users FROM sys.user$ WHERE ext_username IS NOT NULL AND password = 'GLOBAL'">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <COLUMN NAME="ext_ssl_authenticated_users">
+                        <COMPARATOR TYPE="numeric" EQ="0" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="MV_GROUP_REFRESH_JOBS" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="MV_GROUP_REFRESH_JOBS_DETAILS">
+        <REFERENCE_LIST>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=258021.1
+            </REFERENCE>
+        </REFERENCE_LIST>
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="select count(*) mv_group_refresh_jobs from dba_jobs_running jr, v$session s, dba_jobs j where jr.sid=s.sid and j.job=jr.job and upper(j.what) like '%REFRESH%'">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <COLUMN NAME="mv_group_refresh_jobs">
+                        <COMPARATOR TYPE="numeric" EQ="0" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="MV_GROUP_MANUAL_REFRESH" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="MV_GROUP_MANUAL_REFRESH_DETAILS">
+        <REFERENCE_LIST>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=258021.1
+            </REFERENCE>
+        </REFERENCE_LIST>
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="select count(*) mv_group_manual_refresh from ( select username, s.sid, rc.rowner, rc.rname, count(*) from v$lock l, dba_objects o, v$session s, dba_refresh_children rc where o.object_id=l.id1 and l.type='JI' and l.lmode=6 and s.sid=l.sid and o.object_type='TABLE' and o.object_name=rc.name and o.owner=rc.owner and rc.type='SNAPSHOT' group by username, s.sid, rc.rowner, rc.rname having count(*)=( select count(*) from dba_refresh_children where rowner= rc.rowner and rname=rc.rname and type='SNAPSHOT') )">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <COLUMN NAME="mv_group_manual_refresh">
+                        <COMPARATOR TYPE="numeric" EQ="0" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="CORE_DUMP_DEST" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="CORE_DUMP_DEST_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+            VALUE="select i.host_name,i.instance_name,p.value from gv$parameter p,gv$instance i where p.inst_id = i.inst_id and p.name = 'diagnostic_dest' order by i.inst_id">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+          <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+          
+<EXTERNAL_ANALYZER GLOBAL_ANALYZER="true">
+            <EXECUTABLE_INFO TYPE="JAVA">
+              <JAVA NAME="DBScriptAnalyzer">
+                <ARGS>
+                    <ARG>
+                    <NAME VALUE="SCRIPT_NAME" />
+                        <TYPE VALUE="string" />
+                    <VAL VALUE="core_dump_dest_analyzer" />
+                  </ARG>
+                  <ARG>
+                    <NAME VALUE="DB_NAME" />
+                    <TYPE VALUE="string" />
+                    <VAR VALUE="DB_NAME" />
+                    </ARG>
+                    <ARG>
+                    <NAME VALUE="AGE_IN_DAYS" />
+                    <TYPE VALUE="numeric" />
+                    <VAL VALUE="30" />
+                  </ARG>
+                  <ARG>
+                    <NAME VALUE="EXPECTED_COUNT" />
+                    <TYPE VALUE="numeric" />
+                    <VAL VALUE="0" />
+                  </ARG>
+                </ARGS>
+              </JAVA>
+              <RESULT_TYPE VALUE="ANALYZED" />
+            </EXECUTABLE_INFO>
+          </EXTERNAL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+          <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+      <TASK_DEFINITION ID="CORE_DUMP_DEST2" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="CORE_DUMP_DEST_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL">
+          <INLINE
+            VALUE="select i.host_name,i.instance_name,p.value from gv$parameter p,gv$instance i where p.inst_id = i.inst_id and p.name = 'core_dump_dest' order by i.inst_id">
+            <ARGS>
+                    <ARG>
+                <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <EXTERNAL_ANALYZER GLOBAL_ANALYZER="true">
+                <EXECUTABLE_INFO TYPE="JAVA">
+                    <JAVA NAME="DBScriptAnalyzer">
+                        <ARGS>
+                            <ARG>
+                                <NAME VALUE="SCRIPT_NAME" />
+                                <TYPE VALUE="string" />
+                    <VAL VALUE="core_dump_dest_analyzer2" />
+                            </ARG>
+                            <ARG>
+                                <NAME VALUE="DB_NAME" />
+                                <TYPE VALUE="string" />
+                                <VAR VALUE="DB_NAME" />
+                            </ARG>
+                            <ARG>
+                                <NAME VALUE="AGE_IN_DAYS" />
+                                <TYPE VALUE="numeric" />
+                                <VAL VALUE="30" />
+                            </ARG>
+                            <ARG>
+                                <NAME VALUE="EXPECTED_COUNT" />
+                                <TYPE VALUE="numeric" />
+                                <VAL VALUE="0" />
+                            </ARG>
+                        </ARGS>
+                    </JAVA>
+                    <RESULT_TYPE VALUE="ANALYZED" />
+                </EXECUTABLE_INFO>
+            </EXTERNAL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    
+    <TASK_DEFINITION ID="ORA_00600_ERRORS" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="ORA_00600_ERRORS_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+            VALUE="select i.host_name,i.instance_name,p.value from gv$parameter p,gv$instance i where p.inst_id = i.inst_id and p.name = 'diagnostic_dest' order by i.inst_id">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+          <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+<ANALYZER>
+          <EXTERNAL_ANALYZER GLOBAL_ANALYZER="true">
+            <EXECUTABLE_INFO TYPE="JAVA">
+              <JAVA NAME="DBScriptAnalyzer">
+                <ARGS>
+                    <ARG>
+                    <NAME VALUE="SCRIPT_NAME" />
+                        <TYPE VALUE="string" />
+                    <VAL VALUE="ora_00600_errors_analyzer" />
+                    </ARG>
+                    <ARG>
+                    <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                    <VAR VALUE="DB_NAME" />
+                  </ARG>
+                  <ARG>
+                    <NAME VALUE="EXPECTED_COUNT" />
+                    <TYPE VALUE="numeric" />
+                    <VAL VALUE="0" />
+                  </ARG>
+                </ARGS>
+              </JAVA>
+              <RESULT_TYPE VALUE="ANALYZED" />
+            </EXECUTABLE_INFO>
+          </EXTERNAL_ANALYZER>
+        </ANALYZER>
+    
+        <OPERATING_SYSTEM_LIST>
+          <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+      <TASK_DEFINITION ID="ORA_00600_ERRORS2" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="ORA_00600_ERRORS_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL">
+          <INLINE
+            VALUE="select i.host_name,i.instance_name,p.value from gv$parameter p,gv$instance i where p.inst_id = i.inst_id and p.name = 'background_dump_dest' order by i.inst_id">
+            <ARGS>
+                    <ARG>
+                <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <EXTERNAL_ANALYZER GLOBAL_ANALYZER="true">
+                <EXECUTABLE_INFO TYPE="JAVA">
+                    <JAVA NAME="DBScriptAnalyzer">
+                        <ARGS>
+                            <ARG>
+                                <NAME VALUE="SCRIPT_NAME" />
+                                
+<TYPE VALUE="string" />
+                    <VAL VALUE="ora_00600_errors_analyzer2" />
+                            </ARG>
+                            <ARG>
+                                <NAME VALUE="DB_NAME" />
+                                <TYPE VALUE="string" />
+                                <VAR VALUE="DB_NAME" />
+                            </ARG>
+                            <ARG>
+                                <NAME VALUE="EXPECTED_COUNT" />
+                                <TYPE VALUE="numeric" />
+                                <VAL VALUE="0" />
+                            </ARG>
+                        </ARGS>
+                    </JAVA>
+                    <RESULT_TYPE VALUE="ANALYZED" />
+                </EXECUTABLE_INFO>
+            </EXTERNAL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    
+    <TASK_DEFINITION ID="ORA_07445_ERRORS" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="ORA_07445_ERRORS_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+            VALUE="select i.host_name,i.instance_name,p.value from gv$parameter p,gv$instance i where p.inst_id = i.inst_id and p.name = 'diagnostic_dest' order by i.inst_id">
+            <ARGS>
+                    <ARG>
+                <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                <VAR VALUE="DB_NAME" />
+                    </ARG>
+            </ARGS>
+          </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <EXTERNAL_ANALYZER GLOBAL_ANALYZER="true">
+                <EXECUTABLE_INFO TYPE="JAVA">
+                    <JAVA NAME="DBScriptAnalyzer">
+                        <ARGS>
+                            <ARG>
+                                <NAME VALUE="SCRIPT_NAME" />
+                                <TYPE VALUE="string" />
+                    <VAL VALUE="ora_07445_errors_analyzer" />
+                            </ARG>
+                            <ARG>
+                                <NAME VALUE="DB_NAME" />
+                                <TYPE VALUE="string" />
+                                <VAR VALUE="DB_NAME" />
+                            </ARG>
+                            <ARG>
+                                <NAME VALUE="EXPECTED_COUNT" />
+                                <TYPE VALUE="numeric" />
+                                <VAL VALUE="0" />
+                            </ARG>
+                        </ARGS>
+                    </JAVA>
+                    <RESULT_TYPE VALUE="ANALYZED" />
+                </EXECUTABLE_INFO>
+            </EXTERNAL_ANALYZER>
+        </ANALYZER>
+
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+      </TASK_DEFINITION>
+    
+      <TASK_DEFINITION ID="ORA_07445_ERRORS2" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="ORA_07445_ERRORS_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="select i.host_name,i.instance_name,p.value from gv$parameter p,gv$instance i where p.inst_id = i.inst_id and p.name = 'background_dump_dest' order by i.inst_id">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+          <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+          <EXTERNAL_ANALYZER GLOBAL_ANALYZER="true">
+            <EXECUTABLE_INFO TYPE="JAVA">
+              <JAVA NAME="DBScriptAnalyzer">
+                <ARGS>
+                  <ARG>
+                    <NAME VALUE="SCRIPT_NAME" />
+                    <TYPE VALUE="string" />
+                    <VAL VALUE="ora_07445_errors_analyzer2" />
+                  </ARG>
+                  <ARG>
+                    <NAME VALUE="DB_NAME" />
+                    <TYPE VALUE="string" />
+                    <VAR VALUE="DB_NAME" />
+                  </ARG>
+                  <ARG>
+                    <NAME VALUE="EXPECTED_COUNT" />
+                    <TYPE VALUE="numeric" />
+                    <VAL VALUE="0" />
+                  </ARG>
+                </ARGS>
+              </JAVA>
+              <RESULT_TYPE VALUE="ANALYZED" />
+            </EXECUTABLE_INFO>
+          </EXTERNAL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+          <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+      <TASK_DEFINITION ID="ALERT_LOG_FILE_SIZE" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="ALERT_LOG_FILE_SIZE_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL">
+          <INLINE
+            VALUE="select i.host_name,i.instance_name,p.value from gv$parameter p,gv$instance i where p.inst_id = i.inst_id and p.name = 'diagnostic_dest' order by i.inst_id">
+            <ARGS>
+                    <ARG>
+                <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+            </ARGS>
+          </INLINE>
+          <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+          <EXTERNAL_ANALYZER GLOBAL_ANALYZER="true">
+            <EXECUTABLE_INFO TYPE="JAVA">
+              <JAVA NAME="DBScriptAnalyzer">
+                <ARGS>
+                  <ARG>
+                    <NAME VALUE="SCRIPT_NAME" />
+                    <TYPE VALUE="string" />
+                    <VAL VALUE="alert_log_file_size_analyzer" />
+                  </ARG>
+                  <ARG>
+                    <NAME VALUE="DB_NAME" />
+                    <TYPE VALUE="string" />
+                    <VAR VALUE="DB_NAME" />
+                  </ARG>
+                  <ARG>
+                    <NAME VALUE="EXPECTED_SIZE" />
+                    <TYPE VALUE="string" />
+                    <VAL VALUE="51200k" />
+                  </ARG>
+                </ARGS>
+              </JAVA>
+              <RESULT_TYPE VALUE="ANALYZED" />
+            </EXECUTABLE_INFO>
+          </EXTERNAL_ANALYZER>
+        </ANALYZER>
+    
+        <OPERATING_SYSTEM_LIST>
+          <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+      </TASK_DEFINITION>
+    
+      <TASK_DEFINITION ID="ALERT_LOG_FILE_SIZE2" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="ALERT_LOG_FILE_SIZE_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL">
+          <INLINE
+                VALUE="select i.host_name,i.instance_name,p.value from gv$parameter p,gv$instance i where p.inst_id = i.inst_id and p.name = 'background_dump_dest' order by i.inst_id">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <EXTERNAL_ANALYZER GLOBAL_ANALYZER="true">
+                <EXECUTABLE_INFO TYPE="JAVA">
+                    <JAVA NAME="DBScriptAnalyzer">
+                        <ARGS>
+                            <ARG>
+                                <NAME VALUE="SCRIPT_NAME" />
+                                <TYPE VALUE="string" />
+                    <VAL VALUE="alert_log_file_size_analyzer2" />
+                            </ARG>
+                            <ARG>
+                                <NAME VALUE="DB_NAME" />
+                                <TYPE VALUE="string" />
+                                <VAR VALUE="DB_NAME" />
+                            </ARG>
+                            <ARG>
+                    <NAME VALUE="EXPECTED_SIZE" />
+                    <TYPE VALUE="string" />
+                    <VAL VALUE="51200k" />
+                            </ARG>
+                        </ARGS>
+                    </JAVA>
+                    <RESULT_TYPE VALUE="ANALYZED" />
+                </EXECUTABLE_INFO>
+            </EXTERNAL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    
+      <TASK_DEFINITION ID="BACKGROUND_DUMP_DESTINATION"
+        SEVERITY="IGNORABLE" MORE_DETAILS_ID="BACKGROUND_DUMP_DESTINATION_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="select i.host_name,i.instance_name,p.value from gv$parameter p,gv$instance i where p.inst_id = i.inst_id and p.name = 'background_dump_dest' order by i.inst_id">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <EXTERNAL_ANALYZER GLOBAL_ANALYZER="true">
+                <EXECUTABLE_INFO TYPE="JAVA">
+                    <JAVA NAME="DBScriptAnalyzer">
+                        <ARGS>
+                            <ARG>
+                                <NAME VALUE="SCRIPT_NAME" />
+                                <TYPE VALUE="string" />
+                    <VAL VALUE="bdump_dest_trace_analyzer" />
+                            </ARG>
+                            <ARG>
+                                <NAME VALUE="DB_NAME" />
+                                <TYPE VALUE="string" />
+                                <VAR VALUE="DB_NAME" />
+                            </ARG>
+                            <ARG>
+                    <NAME VALUE="AGE_IN_DAYS" />
+                    <TYPE VALUE="numeric" />
+                    <VAL VALUE="30" />
+                            </ARG>
+                  <ARG>
+                    <NAME VALUE="EXPECTED_COUNT" />
+                    <TYPE VALUE="numeric" />
+                    <VAL VALUE="0" />
+                            </ARG>
+                        </ARGS>
+                    </JAVA>
+                    <RESULT_TYPE VALUE="ANALYZED" />
+                </EXECUTABLE_INFO>
+            </EXTERNAL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+      <TASK_DEFINITION ID="BACKGROUND_DUMP_DESTINATION2"
+        SEVERITY="IGNORABLE" MORE_DETAILS_ID="BACKGROUND_DUMP_DESTINATION_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="select i.host_name,i.instance_name,p.value from gv$parameter p,gv$instance i where p.inst_id = i.inst_id and p.name = 'background_dump_dest' order by i.inst_id">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <EXTERNAL_ANALYZER GLOBAL_ANALYZER="true">
+                <EXECUTABLE_INFO TYPE="JAVA">
+                    <JAVA NAME="DBScriptAnalyzer">
+                        <ARGS>
+                            <ARG>
+                                <NAME VALUE="SCRIPT_NAME" />
+                                <TYPE VALUE="string" />
+                    <VAL VALUE="bdump_dest_trace_analyzer2" />
+                            </ARG>
+                            <ARG>
+                                <NAME VALUE="DB_NAME" />
+                                <TYPE VALUE="string" />
+                                <VAR VALUE="DB_NAME" />
+                            </ARG>
+                            <ARG>
+                                <NAME VALUE="AGE_IN_DAYS" />
+                                <TYPE VALUE="numeric" />
+                                <VAL VALUE="30" />
+                            </ARG>
+                            <ARG>
+                                <NAME VALUE="EXPECTED_COUNT" />
+                                <TYPE VALUE="numeric" />
+                                <VAL VALUE="0" />
+                            </ARG>
+                        </ARGS>
+                    </JAVA>
+                    <RESULT_TYPE VALUE="ANALYZED" />
+                </EXECUTABLE_INFO>
+            </EXTERNAL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="DB_LOG_MODE" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="DB_LOG_MODE_DETAILS">
+        <REFERENCE_LIST>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=429825.1
+            </REFERENCE>
+        </REFERENCE_LIST>
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE VALUE="select log_mode db_log_mode from v$database">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <COLUMN NAME="db_log_mode">
+                        <COMPARATOR TYPE="string" EQ="NOARCHIVELOG" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="REDO_LOG_SIZE" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="REDO_LOG_SIZE_DETAILS">
+        <REFERENCE_LIST>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=601807.1
+            </REFERENCE>
+        </REFERENCE_LIST>
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="select count(*)  redo_log_file_less_than_4mb from v$log where bytes &lt;4194304">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <COLUMN NAME="redo_log_file_less_than_4mb">
+                        <COMPARATOR TYPE="numeric" EQ="0" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="SHARED_POOL_SIZE" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="SHARED_POOL_SIZE_DETAILS">
+        <REFERENCE_LIST>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=437924.1
+            </REFERENCE>
+
+        </REFERENCE_LIST>
+        <EXECUTABLE_INFO TYPE="SQL" RUN_ON="ASM">
+            <INLINE
+                VALUE="select i.instance_name, round(sum(bytes)/1024/1024,0) sp from gv$sgastat s, gv$instance i where i.inst_id = s.inst_id and pool in ('shared pool') group by instance_name">
+
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" KEY="ASM Instances" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <REFERENCE_COLUMN NAME="instance_name" />
+                    <COLUMN NAME="SHARED_POOL_SIZE">
+                        <COMPARATOR TYPE="numeric" GE="150" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="NO_OF_DICTIONARY_MANAGED_TS"
+        SEVERITY="IGNORABLE" MORE_DETAILS_ID="NO_OF_DICTIONARY_MANAGED_TS_DETAILS">
+        <REFERENCE_LIST>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=175434.1
+            </REFERENCE>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=105120.1
+            </REFERENCE>
+        </REFERENCE_LIST>
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="select count(extent_management) no_of_dictionary_managed_ts from dba_tablespaces where extent_management !='LOCAL'">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <COLUMN NAME="no_of_dictionary_managed_ts">
+                        <COMPARATOR TYPE="numeric" EQ="0" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="UNIFORM_ALLOCATION_TYPE_TS"
+        SEVERITY="IGNORABLE" MORE_DETAILS_ID="UNIFORM_ALLOCATION_TYPE_TS_DETAILS">
+        <REFERENCE_LIST>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=847951.1
+            </REFERENCE>
+        </REFERENCE_LIST>
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="select count(ALLOCATION_TYPE) uniform_allocation_type_ts from dba_tablespaces where ALLOCATION_TYPE != 'UNIFORM'">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <COLUMN NAME="uniform_allocation_type_ts">
+                        <COMPARATOR TYPE="numeric" LE="0" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="AUTO_SEGMENT_SPACE_MGMT" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="AUTO_SEGMENT_SPACE_MGMT_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="select count(SEGMENT_SPACE_MANAGEMENT) auto_segment_space_management from dba_tablespaces where SEGMENT_SPACE_MANAGEMENT !='AUTO' and contents = 'PERMANENT' and tablespace_name !='SYSTEM'">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <COLUMN NAME="auto_segment_space_management">
+                        <COMPARATOR TYPE="numeric" LE="0" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <!--This task is for database version 9i or old -->
+    <TASK_DEFINITION ID="AVG_GC_CR_BLOCK_RECV_TIME_9"
+        SEVERITY="IGNORABLE" MORE_DETAILS_ID="AVG_GC_CR_BLOCK_RECV_TIME_9_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="select b1.inst_id, ((b1.value / decode(b2.value,0,1, b2.value)) * 10) avg_gc_cr_block_receive_time from gv$sysstat b1, gv$sysstat b2 where  b1.name = 'global cache cr block receive time' and b2.name = 'global cache cr blocks received'  and b1.inst_id = b2.inst_id">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <REFERENCE_COLUMN NAME="instance_name" />
+                    <COLUMN NAME="avg_gc_cr_block_receive_time">
+                        <COMPARATOR TYPE="numeric" LE="15" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <!--This task is for database version 9i or old -->
+    <TASK_DEFINITION ID="AVG_GC_CURRENT_BLOCK_RECV_TIME_9"
+        SEVERITY="IGNORABLE" MORE_DETAILS_ID="AVG_GC_CURRENT_BLOCK_RECV_TIME_9_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="select  i.instance_name, ((b1.value / decode(b2.value,0,1, b2.value)) * 10) avg_gc_current_block_recv_time  from gv$sysstat b1, gv$sysstat b2, gv$instance i where b1.name = 'global cache current block receive time' and b2.name = 'global cache current blocks received'  and b1.inst_id = b2.inst_id and i.inst_id = b1.inst_id">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <REFERENCE_COLUMN NAME="instance_name" />
+                    <COLUMN NAME="avg_gc_current_block_recv_time">
+                        <COMPARATOR TYPE="numeric" LE="15" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="AVG_GC_CR_BLOCK_RECV_TIME"
+        SEVERITY="IGNORABLE" MORE_DETAILS_ID="AVG_GC_CR_BLOCK_RECV_TIME_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="select i.instance_name,  ((b1.value / decode(b2.value,0,1, b2.value)) *10) avg_gc_cr_block_receive_time  from gv$sysstat b1, gv$sysstat b2, gv$instance i where b1.name = 'gc cr block receive time' and b2.name = 'gc cr blocks received'  and b1.inst_id = b2.inst_id and i.inst_id = b1.inst_id">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <REFERENCE_COLUMN NAME="instance_name" />
+                    <COLUMN NAME="avg_gc_cr_block_receive_time">
+                        <COMPARATOR TYPE="numeric" LE="15" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="AVG_GC_CURRENT_BLOCK_RECV_TIME"
+        SEVERITY="IGNORABLE" MORE_DETAILS_ID="AVG_GC_CURRENT_BLOCK_RECV_TIME_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="select i.instance_name,  ((b1.value / decode(b2.value,0,1,b2.value)) * 10) avg_gc_current_block_recv_time from gv$sysstat b1, gv$sysstat b2,gv$instance i where b1.name = 'gc current block receive time' and b2.name = 'gc current blocks received'  and b1.inst_id = b2.inst_id and i.inst_id = b1.inst_id">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <REFERENCE_COLUMN NAME="instance_name" />
+                    <COLUMN NAME="avg_gc_current_block_recv_time">
+                        <COMPARATOR TYPE="numeric" LE="15" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="AUTO_UNDO_MGMT" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="AUTO_UNDO_MGMT_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="select i.instance_name,p.value as undo_management from gv$parameter p,gv$instance i where p.inst_id = i.inst_id and p.name = 'undo_management' order by i.inst_id">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <REFERENCE_COLUMN NAME="instance_name" />
+                    <COLUMN NAME="undo_management">
+                        <COMPARATOR TYPE="string" EQ_NO_CASE="AUTO" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="CLUSTER_INTERCONNECTS" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="CLUSTER_INTERCONNECTS_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="select i.instance_name, sum( decode( upper(c.is_public), 'NO', 1, 0 ) ) cluster_interconnects from gv$instance i left outer join gv$cluster_interconnects c using (inst_id) group by i.instance_name">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <REFERENCE_COLUMN NAME="instance_name" />
+                    <COLUMN NAME="cluster_interconnects">
+                        <COMPARATOR TYPE="numeric" GE="1" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="ASM_DISK_IO_ERRORS" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="ASM_DISK_IO_ERRORS_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL" RUN_ON="ASM">
+            <INLINE
+                VALUE="select nvl(sum(read_errs + write_errs),0) asm_disk_read_write_error from v$asm_disk" />
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" KEY="ASM" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <COLUMN NAME="asm_disk_read_write_errors">
+                        <COMPARATOR TYPE="numeric" EQ="0" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="ASM_DISKS_WITHOUT_GROUPS"
+        SEVERITY="IGNORABLE" MORE_DETAILS_ID="ASM_DISKS_WITHOUT_GROUPS_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL" RUN_ON="ASM">
+            <INLINE
+                VALUE="select path as disks, group_number as asm_disk_group_number from v$asm_disk where group_number=0 and label is null union select listagg(path,',') within group(order by label) as disks, sum(group_number) as asm_disk_group_number from v$asm_disk where label is not null group by label" />
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" KEY="ASM Disks" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER EMPTY_RESULTSET_IMPLIES_SUCCESS="true">
+                <COLUMN_LIST>
+                    <REFERENCE_COLUMN NAME="disks" />
+                    <COLUMN NAME="asm_disk_group_number">
+                        <COMPARATOR TYPE="numeric" NE="0" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="ASM_REBAL_OPS_IN_WAIT" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="ASM_REBAL_OPS_IN_WAIT_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL" RUN_ON="ASM">
+            <INLINE
+                VALUE="select count(*) asm_rebal_ops_in_wait from v$asm_operation where operation like 'REBAL' and state like 'WAIT'">
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" KEY="ASM" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER EMPTY_RESULTSET_IMPLIES_SUCCESS="true">
+                <COLUMN_LIST>
+                    <COLUMN NAME="asm_rebal_ops_in_wait">
+                        <COMPARATOR TYPE="numeric" EQ="0" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="ASM_REBAL_OPS_IN_WAIT_POST_12" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="ASM_REBAL_OPS_IN_WAIT_POST_12_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL" RUN_ON="ASM">
+            <INLINE
+                VALUE="select count(*) asm_rebal_ops_in_wait from v$asm_operation where pass like 'REBALANCE' and state like 'WAIT'">
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" KEY="ASM" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <COLUMN NAME="asm_rebal_ops_in_wait">
+                        <COMPARATOR TYPE="numeric" EQ="0" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="ASM_INCORRECT_FILE_OWNER" APPLICABILITY="!bestpractice"
+        SEVERITY="CRITICAL" MORE_DETAILS_ID="ASM_INCORRECT_FILE_OWNER">
+        <EXECUTABLE_INFO TYPE="SQL" RUN_ON="ASM">
+            <INLINE
+                VALUE="select count(*) as asm_incorrect_users_count, listagg(a.NAME,',') within group (order by a.NAME) files, LISTAGG(u.OS_NAME,',') within group (order by u.OS_NAME) as users from v$asm_alias a, v$asm_user u, v$asm_file f where a.FILE_NUMBER = f.FILE_NUMBER and f.USER_NUMBER = u.USER_NUMBER and u.OS_NAME like 'CRSUSER__ASM_%' ">
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" KEY="ASM Parameters" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <COLUMN NAME="asm_incorrect_users_count">
+                        <COMPARATOR TYPE="numeric" EQ="0" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="ASM_INCORRECT_DISKSTRING" APPLICABILITY="!bestpractice"
+        SEVERITY="IGNORABLE" MORE_DETAILS_ID="ASM_INCORRECT_DISKSTRING_DETAILS"> 
+<EXECUTABLE_INFO TYPE="SQL" RUN_ON="ASM">
+            <INLINE
+                VALUE="select i.instance_name, value as asm_diskstring from gv$parameter p, gv$instance i where i.inst_id = p.inst_id and name like 'asm_diskstring' order by i.inst_id">
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" KEY="ASM Instances" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <REFERENCE_COLUMN NAME="instance_name" />
+                    <COLUMN NAME="asm_diskstring">
+                        <COMPARATOR TYPE="string" NOT_IN="/dev/*|/dev/t*|/dev/tt*|/dev/tty*" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    
+    <TASK_DEFINITION ID="ASM_SPARE_PARAMETERS" APPLICABILITY="!bestpractice"
+        SEVERITY="IGNORABLE" MORE_DETAILS_ID="ASM_SPARE_PARAMETERS_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL" RUN_ON="ASM">
+            <INLINE
+                VALUE="select count(*) as spare_param_count, listagg(ksppinm,',') within group(order by ksppinm) as spare_parameters from x$ksppi a, x$ksppcv b where a.indx=b.indx and ksppinm like '_%_spare_parameter%' and ksppstdf like 'FALSE'">
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" KEY="ASM" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <COLUMN NAME="spare_param_count">
+                        <COMPARATOR TYPE="numeric" EQ="0" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="COMPATIBLE_ASM_DG_ATTRIBUTE" APPLICABILITY="!bestpractice"
+        SEVERITY="CRITICAL" MORE_DETAILS_ID="COMPATIBLE_ASM_DG_ATTRIBUTE_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL" RUN_ON="ASM">
+            <INLINE
+                VALUE="select distinct b.name as diskgroup, a.value as compatible_asm from v$asm_attribute a , v$asm_diskgroup b where a.group_number = b.group_number and a.name like 'compatible.asm'">
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" KEY="ASM Diskgroups" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <REFERENCE_COLUMN NAME="diskgroup" />
+                    <COLUMN NAME="compatible_asm">
+                        <COMPARATOR TYPE="version" GE="11.2.0.2.0" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="COMPATIBLE_RDBMS_DG_ATTRIBUTE" APPLICABILITY="!bestpractice"
+        SEVERITY="CRITICAL" MORE_DETAILS_ID="COMPATIBLE_RDBMS_DG_ATTRIBUTE_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL" RUN_ON="ASM">
+            <INLINE
+                VALUE="select distinct b.name as diskgroup, a.value as compatible_rdbms from v$asm_attribute a , v$asm_diskgroup b where a.group_number = b.group_number and a.name like 'compatible.rdbms'">
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" KEY="ASM Diskgroups" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                <REFERENCE_COLUMN NAME="diskgroup" />
+                    <COLUMN NAME="compatible_rdbms">
+                        <COMPARATOR TYPE="version" GE="11.2.0.0.0" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="ASM_FAILGROUP_EXADATA"
+        SEVERITY="IGNORABLE" MORE_DETAILS_ID="ASM_FAILGROUP_EXADATA_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL" RUN_ON="ASM">
+            <INLINE
+                VALUE="select count(*) as cells_with_multiple_fg, listagg(cell,',') within group (order by cell) as cells from (select cell,count(cell) as fg_count from (select distinct regexp_substr(path,'[^/]+',2) as cell, failgroup from v$asm_disk) group by cell) where fg_count>1">
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" KEY="ASM" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                
+<COLUMN_LIST>
+                    <COLUMN NAME="cells_with_multiple_fg">
+                        <COMPARATOR TYPE="numeric" EQ="0" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="ASM_DISKGROUP_FREE_SPACE"
+        SEVERITY="IGNORABLE" MORE_DETAILS_ID="ASM_DISKGROUP_FREE_SPACE_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL" RUN_ON="ASM">
+            <INLINE
+                VALUE="select name as diskgroup, free_mb as free_space, '50MB' as expected_free_space  from v$asm_diskgroup where state like 'MOUNTED'">
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" KEY="ASM Diskgroups" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <REFERENCE_COLUMN NAME="diskgroup" />
+                    <COLUMN NAME="free_space">
+                        <COMPARATOR TYPE="numeric" GE="50" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+
+    <TASK_DEFINITION ID="IDGEN$_SEQUENCE_CACHE_SIZE"
+        SEVERITY="IGNORABLE" MORE_DETAILS_ID="IDGEN$_SEQUENCE_CACHE_SIZE_DETAILS">
+        <REFERENCE_LIST>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=561414.1
+            </REFERENCE>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=432508.1
+            </REFERENCE>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=268476.1
+            </REFERENCE>
+        </REFERENCE_LIST>
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="select cache_size from dba_sequences where sequence_name = 'IDGEN1$' and sequence_owner = 'SYS'">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <COLUMN NAME="idgen1$.cache_size">
+                        <COMPARATOR TYPE="numeric" GE="1000" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="AUDSES$_SEQUENCE_CACHE_SIZE"
+        SEVERITY="IGNORABLE" MORE_DETAILS_ID="AUDSES$_SEQUENCE_CACHE_SIZE_DETAILS">
+        <REFERENCE_LIST>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=561414.1
+            </REFERENCE>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=432508.1
+            </REFERENCE>
+        </REFERENCE_LIST>
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="select cache_size from dba_sequences where sequence_name = 'AUDSES$' and sequence_owner = 'SYS'">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <COLUMN NAME="audses$.cache_size">
+                        <COMPARATOR TYPE="numeric" GE="10000" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="ACTIVE_INSTANCE_COUNT" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="ACTIVE_INSTANCE_COUNT_DETAILS">
+        <REFERENCE_LIST>
+            <REFERENCE>http://download.oracle.com/docs/cd/B28359_01/server.111/b28320/initparams007.htm#sthref42
+            </REFERENCE>
+        </REFERENCE_LIST>
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="select i.instance_name, decode(p.value, NULL,0, p.value) active_instance_count from gv$instance i left outer join (select p.inst_id, p.value from gv$parameter p where p.name = 'active_instance_count') p using(inst_id)">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <REFERENCE_COLUMN NAME="instance_name" />
+                    <COLUMN NAME="active_instance_count">
+                        <COMPARATOR TYPE="numeric" NE="1" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="DATABASE_USING_ASM" SEVERITY="IGNORABLE">
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE VALUE="select count (*) from v$datafile where name like '+%'">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <COLUMN NAME="datafiles_on_asm">
+                        <COMPARATOR TYPE="numeric" GE="1" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="DB_JAVA_OBJ_INST_CHECK" SEVERITY="IGNORABLE">
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="SELECT count(*) as sys_java_obj FROM dba_objects WHERE object_type LIKE '%JAVA%' AND owner='SYS'">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <COLUMN NAME="sys_java_obj">
+                        <COMPARATOR TYPE="numeric" GE="13866" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="DB_TIMEZONE_VER" SEVERITY="IGNORABLE">
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="SELECT CASE COUNT(DISTINCT(tzname)) WHEN 183 then 1 WHEN 355 then 1 WHEN 347 then 1 WHEN 377 then 2 WHEN 186 then CASE COUNT(tzname) WHEN 636 then 2 WHEN 626 then 3 ELSE 0 END WHEN 185 then 3 WHEN 386 then 3 WHEN 387 then case COUNT(tzname) WHEN 1438 then 3 ELSE 0 end WHEN 391 then case COUNT(tzname) WHEN 1457 then 4 ELSE 0 end WHEN 392 then case COUNT(tzname) WHEN 1458 then 4 ELSE 0 end WHEN 188 then case COUNT(tzname) WHEN 637 then 4 ELSE 0 end WHEN 189 then case COUNT(tzname) WHEN 638 then 4 ELSE 0 end ELSE 0 end as time_zone_file_version  FROM v$timezone_names">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <COLUMN NAME="time_zone_file_version">
+                        <COMPARATOR TYPE="numeric" GE="4" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+
+    <TASK_DEFINITION ID="DB_STANDBY_DBS" SEVERITY="IGNORABLE">
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="SELECT count(*) as standby_databases FROM v$parameter WHERE name LIKE 'log_archive_dest%' AND UPPER(value) LIKE 'SERVICE%'">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <COLUMN NAME="standby_databases">
+                        <COMPARATOR TYPE="numeric" GE="1" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="DB_FILESYSTEMIO_OPTIONS" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="DB_FILESYSTEMIO_OPTIONS_DETAILS">
+        <EXECUTABLE_INFO TYPE="SQL">
+            <INLINE
+                VALUE="SELECT value as filesystemio_options FROM gv$parameter WHERE name='filesystemio_options'">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DB_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DB_NAME" />
+                    </ARG>
+
+                </ARGS>
+            </INLINE>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <SQL_ANALYZER>
+                <COLUMN_LIST>
+                    <COLUMN NAME="filesystemio_options">
+                        <COMPARATOR TYPE="string" EQ_NO_CASE="SETALL" />
+                    </COLUMN>
+                </COLUMN_LIST>
+            </SQL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="HANGCHECK_TIMER" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="HANGCHECK_TIMER_DETAILS">
+        <REFERENCE_LIST>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=232355.1
+            </REFERENCE>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=220970.1
+            </REFERENCE>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=726833.1
+            </REFERENCE>
+            <REFERENCE>http://download.oracle.com/docs/cd/B28359_01/install.111/b28263/postinst.htm#BABHGHDI
+            </REFERENCE>
+        </REFERENCE_LIST>
+        <EXECUTABLE_INFO TYPE="SHELL">
+            <EXTERNAL>
+                <NAME VALUE="hangchecktimer.sh" />
+            </EXTERNAL>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="LINUX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="HANGCHECK_REBOOT" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="HANGCHECK_REBOOT_DETAILS">
+        <REFERENCE_LIST>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=232355.1
+            </REFERENCE>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=220970.1
+            </REFERENCE>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=726833.1
+            </REFERENCE>
+            <REFERENCE>http://download.oracle.com/docs/cd/B28359_01/install.111/b28263/postinst.htm#BABHGHDI
+            </REFERENCE>
+        </REFERENCE_LIST>
+        <EXECUTABLE_INFO TYPE="SHELL">
+            <EXTERNAL>
+                <NAME VALUE="hangcheck_reboot.sh" />
+            </EXTERNAL>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="LINUX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="HANGCHECK_TICK" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="HANGCHECK_TICK_DETAILS">
+        <REFERENCE_LIST>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=232355.1
+            </REFERENCE>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=220970.1
+            </REFERENCE>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=726833.1
+            </REFERENCE>
+            <REFERENCE>http://download.oracle.com/docs/cd/B28359_01/install.111/b28263/postinst.htm#BABHGHDI
+            </REFERENCE>
+        </REFERENCE_LIST>
+        <EXECUTABLE_INFO TYPE="SHELL">
+            <EXTERNAL>
+                <NAME VALUE="hangcheck_tick.sh" />
+            </EXTERNAL>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="LINUX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="HANGCHECK_MARGIN" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="HANGCHECK_MARGIN_DETAILS">
+        <REFERENCE_LIST>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=232355.1
+            </REFERENCE>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=220970.1
+            </REFERENCE>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=726833.1
+            </REFERENCE>
+            <REFERENCE>http://download.oracle.com/docs/cd/B28359_01/install.111/b28263/postinst.htm#BABHGHDI
+            </REFERENCE>
+        </REFERENCE_LIST>
+        <EXECUTABLE_INFO TYPE="SHELL">
+            <EXTERNAL>
+                <NAME VALUE="hangcheck_margin.sh" />
+            </EXTERNAL>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="LINUX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="CSS_DIAGWAIT" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="CSS_DIAGWAIT_DETAILS">
+        <REFERENCE_LIST>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=559365.1
+            </REFERENCE>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=294430.1
+            </REFERENCE>
+        </REFERENCE_LIST>
+        <EXECUTABLE_INFO TYPE="SHELL">
+            <EXTERNAL>
+                <NAME VALUE="css_diagwait.sh" />
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="CONFIGURED_CRS_HOME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="CONFIGURED_CRS_HOME" />
+                    </ARG>
+                </ARGS>
+            </EXTERNAL>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="CSS_MISSCOUNT" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="CSS_MISSCOUNT_DETAILS">
+        <REFERENCE_LIST>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=294430.1
+            </REFERENCE>
+        </REFERENCE_LIST>
+        <EXECUTABLE_INFO TYPE="SHELL">
+            <EXTERNAL>
+                <NAME VALUE="css_misscount.sh" />
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="CONFIGURED_CRS_HOME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="CONFIGURED_CRS_HOME" />
+                    </ARG>
+                    <ARG>
+                        <NAME VALUE="GRID_ACTIVE_VERSION" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="GRID_ACTIVE_VERSION" />
+                    </ARG>
+                </ARGS>
+            </EXTERNAL>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="CSS_REBOOTTIME" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="CSS_REBOOTTIME_DETAILS">
+        <REFERENCE_LIST>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=294430.1
+            </REFERENCE>
+        </REFERENCE_LIST>
+        <EXECUTABLE_INFO TYPE="SHELL">
+            <EXTERNAL>
+                <NAME VALUE="css_reboot_time.sh" />
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="CONFIGURED_CRS_HOME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="CONFIGURED_CRS_HOME" />
+                    </ARG>
+                </ARGS>
+            </EXTERNAL>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="CSS_DISKTIMEOUT" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="CSS_DISKTIMEOUT_DETAILS">
+        <REFERENCE_LIST>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=294430.1
+            </REFERENCE>
+        </REFERENCE_LIST>
+        <EXECUTABLE_INFO TYPE="SHELL">
+            <EXTERNAL>
+                <NAME VALUE="css_disk_timeout.sh" />
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="CONFIGURED_CRS_HOME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="CONFIGURED_CRS_HOME" />
+                    </ARG>
+                </ARGS>
+            </EXTERNAL>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="NETWORK_PARAMETER" SEVERITY="IGNORABLE">
+        <EXECUTABLE_INFO TYPE="SHELL">
+            <EXTERNAL>
+                <NAME VALUE="check_network_param.sh" />
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="STAGE" />
+                        <TYPE VALUE="string" />
+                        <VAL VALUE="-pre" />
+                    </ARG>
+                    <ARG>
+                        <NAME VALUE="NETWORK_PARAM_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAL VALUE="foo" />
+                    </ARG>
+                    <ARG>
+                        <NAME VALUE="NETWORK_PARAM_VALUE" />
+                        <TYPE VALUE="numeric" />
+                        <VAL VALUE="1" />
+                    </ARG>
+                    <ARG>
+                        <NAME VALUE="ADDITIONAL_ARGUMENT" />
+                        <TYPE VALUE="string" />
+                        <VAL VALUE="1" />
+                    </ARG>
+                </ARGS>
+            </EXTERNAL>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="AIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="VMM_PARAMETER" SEVERITY="IGNORABLE"
+        ROOT_PRIVILEGE_REQUIRED="true">
+        <EXECUTABLE_INFO TYPE="SHELL">
+            <EXTERNAL>
+                <NAME VALUE="check_vmm.sh" />
+            </EXTERNAL>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="AIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="JUMBO_FRAMES" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="JUMBO_FRAMES_DETAILS">
+        <REFERENCE_LIST>
+            <REFERENCE>http://docs.hp.com/en/AB290-90001/ch01s11.html?jumpid=reg_R1002_USEN
+            </REFERENCE>
+            <REFERENCE>http://www.sun.com/products/networking/ethernet/jumbo/
+            </REFERENCE>
+            <REFERENCE>http://kbserver.netgear.com/kb_web_files/n101539.asp
+            </REFERENCE>
+            <REFERENCE>http://www.cisco.com/en/US/products/hw/switches/ps700/products_configuration_example09186a008010edab.shtml
+            </REFERENCE>
+            <REFERENCE>http://www.juniper.net/company/presscenter/pr/2005/pr-050815.html
+            </REFERENCE>
+            <REFERENCE>http://darkwing.uoregon.edu/~joe/jumbo-clean-gear.html
+            </REFERENCE>
+            <REFERENCE>http://www.dell.com/content/products/productdetails.aspx/pwcnt_2724?c=us&amp;cs=04&amp;l=en&amp;s=bsd
+            </REFERENCE>
+            <REFERENCE>http://www.intel.com/support/network/adapter/index.htm
+            </REFERENCE>
+        </REFERENCE_LIST>
+        <EXECUTABLE_INFO TYPE="SHELL">
+            <EXTERNAL>
+                <NAME VALUE="check_jumbo_frames.sh" />
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="CONFIGURED_CRS_HOME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="CONFIGURED_CRS_HOME" />
+                    </ARG>
+                    <ARG>
+                        <NAME VALUE="EXPECTED_MTU_SIZE" />
+                        <TYPE VALUE="numeric" />
+                        <VAL VALUE="9000" />
+                    </ARG>
+                </ARGS>
+            </EXTERNAL>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="REVERSE_PATH_FILTER" SEVERITY="CRITICAL"
+        FIXABLE="true" MORE_DETAILS_ID="REVERSE_PATH_FILTER_DETAILS">
+        <EXECUTABLE_INFO TYPE="SHELL">
+            <EXTERNAL>
+                <NAME VALUE="check_rp_filter.sh" />
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="PVT_NETWORKS_LIST" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="PVT_NETWORKS_LIST" />
+                    </ARG>
+                </ARGS>
+            </EXTERNAL>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="LINUX"  VERSION="OEL6/OL7/SUSE11/SUSE12" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="BPF_DEVICES" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="BPF_DEVICES_DETAILS">
+        <EXECUTABLE_INFO TYPE="SHELL">
+            <EXTERNAL>
+                <NAME VALUE="check_bpf_devices.sh" />
+            </EXTERNAL>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <EXTERNAL_ANALYZER GLOBAL_ANALYZER="true">
+                <EXECUTABLE_INFO TYPE="JAVA">
+                    <JAVA NAME="PluggableBPFDevicesAnalyzer">
+                    </JAVA>
+                    <RESULT_TYPE VALUE="ANALYZED" />
+                </EXECUTABLE_INFO>
+            </EXTERNAL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="AIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="CI_BONDING" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="CI_BONDING_DETAILS">
+        <EXECUTABLE_INFO TYPE="SHELL">
+            <EXTERNAL>
+                <NAME VALUE="check_network_bonding.sh" />
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="PVT_NETWORKS_LIST" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="PVT_NETWORKS_LIST" />
+                    </ARG>
+                </ARGS>
+            </EXTERNAL>
+            <RESULT_TYPE VALUE="TO_BE_ANALYZED" />
+        </EXECUTABLE_INFO>
+        <ANALYZER>
+            <EXTERNAL_ANALYZER GLOBAL_ANALYZER="true">
+                <EXECUTABLE_INFO TYPE="JAVA">
+                    <JAVA NAME="PluggableNetworkBondingAnalyzer" />
+                    <RESULT_TYPE VALUE="ANALYZED" />
+                </EXECUTABLE_INFO>
+            </EXTERNAL_ANALYZER>
+        </ANALYZER>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="LINUX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="E1000_FLOW_CONTROL" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="E1000_FLOW_CONTROL_DETAILS">
+        <EXECUTABLE_INFO TYPE="SHELL">
+            <EXTERNAL>
+                <NAME VALUE="check_e1000.sh" />
+            </EXTERNAL>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="LINUX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="DEFAULT_GATEWAY_VIP_SUBNET"
+        SEVERITY="IGNORABLE" MORE_DETAILS_ID="DEFAULT_GATEWAY_VIP_SUBNET_DETAILS">
+        <REFERENCE_LIST>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=298895.1
+            </REFERENCE>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=399213.1
+            </REFERENCE>
+        </REFERENCE_LIST>
+        <EXECUTABLE_INFO TYPE="SHELL">
+            <EXTERNAL>
+                <NAME VALUE="check_default_gateway.sh" />
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="CONFIGURED_CRS_HOME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="CONFIGURED_CRS_HOME" />
+                    </ARG>
+                </ARGS>
+            </EXTERNAL>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+
+    <TASK_DEFINITION ID="NON_ROUTABLE_NETWORK_INTERCONNECT"
+        SEVERITY="IGNORABLE" MORE_DETAILS_ID="NON_ROUTABLE_NETWORK_INTERCONNECT_DETAILS">
+        <REFERENCE_LIST>
+            <REFERENCE>http://www.faqs.org/rfcs/rfc1918.html</REFERENCE>
+        </REFERENCE_LIST>
+        <EXECUTABLE_INFO TYPE="SHELL">
+            <EXTERNAL>
+                <NAME VALUE="check_non_routable_network_interconnect.sh" />
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="CONFIGURED_CRS_HOME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="CONFIGURED_CRS_HOME" />
+                    </ARG>
+                </ARGS>
+            </EXTERNAL>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TCP_RETRANSMISSIONS" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="TCP_RETRANSMISSIONS_DETAILS">
+        <EXECUTABLE_INFO TYPE="SHELL">
+            <EXTERNAL>
+                <NAME VALUE="check_tcp_packet_retransmit.sh" />
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="retransmit_rate" />
+                        <TYPE VALUE="numeric" />
+                        <VAL VALUE="30" />
+                    </ARG>
+                </ARGS>
+            </EXTERNAL>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="SOLARIS" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="NETWORK_PACKET_REASSEMBLY"
+        SEVERITY="IGNORABLE">
+        <REFERENCE_LIST>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=563566.1
+            </REFERENCE>
+        </REFERENCE_LIST>
+        <EXECUTABLE_INFO TYPE="SHELL">
+            <EXTERNAL>
+                <NAME VALUE="check_network_packet_reassembly.sh" />
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="ipReasmOKs" />
+                        <TYPE VALUE="numeric" />
+                        <VAL VALUE="0" />
+                    </ARG>
+                </ARGS>
+            </EXTERNAL>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="SOLARIS" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="VIP_RESTART" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="VIP_RESTART_DETAILS">
+        <REFERENCE_LIST>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=294526.1
+            </REFERENCE>
+        </REFERENCE_LIST>
+        <EXECUTABLE_INFO TYPE="SHELL">
+            <EXTERNAL>
+                <NAME VALUE="check_vip_restart_attempt.sh" />
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="CONFIGURED_CRS_HOME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="CONFIGURED_CRS_HOME" />
+                    </ARG>
+                </ARGS>
+            </EXTERNAL>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="LISTENER_NAMING_CONVENTION"
+        SEVERITY="IGNORABLE" MORE_DETAILS_ID="LISTENER_NAMING_CONVENTION_DETAILS">
+        <REFERENCE_LIST>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=232355.1
+            </REFERENCE>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=220970.1
+            </REFERENCE>
+            <REFERENCE>https://support.oracle.com/CSP/main/article?cmd=show&amp;type=NOT&amp;id=726833.1
+            </REFERENCE>
+            <REFERENCE>http://download.oracle.com/docs/cd/B28359_01/install.111/b28263/postinst.htm#BABHGHDI
+            </REFERENCE>
+        </REFERENCE_LIST>
+        <EXECUTABLE_INFO TYPE="SHELL">
+            <EXTERNAL>
+                <NAME VALUE="listener_naming_convention.sh" />
+            </EXTERNAL>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="LINUX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="CHECK_ZEROCONF" SEVERITY="IGNORABLE"
+        FIXABLE="true">
+        <EXECUTABLE_INFO TYPE="SHELL">
+            <EXTERNAL>
+                <NAME VALUE="zeroconf.sh" />
+            </EXTERNAL>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="LINUX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="CHECK_BOOT_MOUNTED" SEVERITY="IGNORABLE">
+        <EXECUTABLE_INFO TYPE="SHELL">
+            <EXTERNAL>
+                <NAME VALUE="check_symvers.sh" />
+            </EXTERNAL>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="LINUX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="ENABLED_HUGE_PAGE" SEVERITY="IGNORABLE"
+        FIXABLE="true">
+        <EXECUTABLE_INFO TYPE="SHELL">
+            <EXTERNAL>
+                <NAME VALUE="checkhugepage.sh" />
+            </EXTERNAL>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="LINUX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="HWCLOCK_SHUTDOWN_SYNC" SEVERITY="IGNORABLE">
+        <EXECUTABLE_INFO TYPE="SHELL">
+            <EXTERNAL>
+                <NAME VALUE="shutdown_hwclock_sync.sh" />
+            </EXTERNAL>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="LINUX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="SYSLOG_SETTING" SEVERITY="IGNORABLE">
+        <EXECUTABLE_INFO TYPE="SHELL">
+            <EXTERNAL>
+                <NAME VALUE="checksyslog.sh" />
+            </EXTERNAL>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="CHECK_OFSCTL" SEVERITY="IGNORABLE"
+        MORE_DETAILS_ID="CHECK_OFSCTL_DETAILS">
+        <EXECUTABLE_INFO TYPE="SHELL">
+            <EXTERNAL>
+                <NAME VALUE="check_ofsctl.sh" />
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="CONFIGURED_CRS_HOME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="CONFIGURED_CRS_HOME" />
+                    </ARG>
+                </ARGS>
+            </EXTERNAL>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="LINUX" />
+            <OPERATING_SYSTEM TYPE="AIX" />
+            <OPERATING_SYSTEM TYPE="SOLARIS" />
+
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="MAX_LOCKED_MEM" SEVERITY="IGNORABLE"
+        FIXABLE="true">
+        <EXECUTABLE_INFO TYPE="SHELL">
+            <EXTERNAL>
+                <NAME VALUE="checkmemlock.sh" />
+            </EXTERNAL>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="LINUX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="MEMLOCK_LIMIT" SEVERITY="IGNORABLE"
+        FIXABLE="true">
+        <EXECUTABLE_INFO TYPE="SHELL">
+            <EXTERNAL>
+                <NAME VALUE="checkmemlock.sh" />
+            </EXTERNAL>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="LINUX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="PORT_AVAILABILITY" SEVERITY="IGNORABLE">
+        <EXECUTABLE_INFO TYPE="SHELL">
+            <EXTERNAL>
+                <NAME VALUE="checkportavail.sh" />
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="ARG-1" />
+                        <TYPE VALUE="numeric" />
+                        <VAL VALUE="8888" />
+                    </ARG>
+                    <ARG>
+                        <NAME VALUE="ARG-2" />
+                        <TYPE VALUE="string" />
+                        <VAL VALUE="tcp" />
+                    </ARG>
+                </ARGS>
+            </EXTERNAL>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="DEV_SHM_MOUNT" SEVERITY="IGNORABLE">
+        <EXECUTABLE_INFO TYPE="SHELL">
+            <EXTERNAL>
+                <NAME VALUE="checktmpfs.sh" />
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="memory_target" />
+                        <TYPE VALUE="numeric" />
+                        <VAL VALUE="0" />
+                    </ARG>
+                    <ARG>
+                        <NAME VALUE="stage" />
+                        <TYPE VALUE="string" />
+                        <VAL VALUE="not_pre_db_install" />
+                    </ARG>
+                </ARGS>
+            </EXTERNAL>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="LINUX"  VERSION="!OL7" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="IP_HOSTMODEL" SEVERITY="IGNORABLE">
+        <EXECUTABLE_INFO TYPE="SHELL">
+            <EXTERNAL>
+                <NAME VALUE="checkIPHostModel.sh" />
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="INTERCONNECT_LIST" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="INTERCONNECT_LIST" />
+                    </ARG>
+                </ARGS>
+            </EXTERNAL>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="SOLARIS" VERSION="5.11" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="CHECK_GSD_RESOURCE" SEVERITY="IGNORABLE"
+        FIXABLE="true">
+        <EXECUTABLE_INFO TYPE="SCRIPT">
+            <EXTERNAL>
+                <NAME VALUE="checkGSDResourceStatus" />
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="CONFIGURED_CRS_HOME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="CONFIGURED_CRS_HOME" />
+                    </ARG>
+                </ARGS>
+            </EXTERNAL>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="CHECK_IOCP_STATUS" SEVERITY="IGNORABLE"
+        FIXABLE="true" FIXUP_REBOOT="true">
+        <EXECUTABLE_INFO TYPE="SHELL">
+            <EXTERNAL>
+                <NAME VALUE="checkIOCPDeviceStatus.sh" />
+            </EXTERNAL>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="AIX" VERSION="6.1.0.0/7.1.0.0/7.2.0.0" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="CHECK_MOUNT_OPTIONS" SEVERITY="IGNORABLE">
+        <EXECUTABLE_INFO TYPE="SHELL">
+            <EXTERNAL>
+                <NAME VALUE="checkFSMountOptions.sh" />
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="PATH" />
+                        <TYPE VALUE="string" />
+                        <VAL VALUE="foo" />
+                    </ARG>
+                </ARGS>
+            </EXTERNAL>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="CHECK_SYSTEMD_LOGIN_IPC_PARAM" SEVERITY="CRITICAL">
+        <EXECUTABLE_INFO TYPE="SHELL">
+            <EXTERNAL>
+                <NAME VALUE="checkLogindIPCSettings.sh" />
+            </EXTERNAL>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="LINUX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="CHECK_AFD_CONFIG" SEVERITY="IGNORABLE">
+        <EXECUTABLE_INFO TYPE="SCRIPT">
+            <EXTERNAL>
+                <NAME VALUE="check_afd_drivers" />
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="DRV_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="AFD_DRV_NAME" />
+                    </ARG>
+                    <ARG>
+                        <NAME VALUE="LIB_FILE_NAME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="AFD_LIB_FILE_NAME" />
+                    </ARG>
+                    <ARG>
+                        <NAME VALUE="AFD_CONF_FILE_PATH" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="AFD_CONF_FILE_PATH" DEFAULT="NA" />
+                    </ARG>
+                </ARGS>
+            </EXTERNAL>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="LINUX" />
+            <OPERATING_SYSTEM TYPE="SOLARIS" />
+            <OPERATING_SYSTEM TYPE="WINDOWS" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <!--
+                    JAVA Task Definitions start here.
+                    ================================= 
+      All The JAVA Task definitions must appear below this section. The section 
+      above this line shall have only pluggable task definitions. Please follow 
+      this rule to keep this file well organized and readable. 
+    -->
+    <TASK_DEFINITION ID="TaskUpgradeCheckPrivilegedGroups"
+        SYNONYM="UPGRADE_PRIVILEGED_GROUP_CHECK">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskUpgradeCheckPrivilegedGroups">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="ASM_GROUP" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="ASM_GROUP" />
+                    </ARG>
+                    <ARG>
+                        <NAME VALUE="DBA_GROUP" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="DBA_GROUP" />
+                    </ARG>
+                </ARGS>
+            </JAVA>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskCheckHome" SYNONYM="CHECK_HOME">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskCheckHome">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="PATH" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="CRS_HOME" />
+                    </ARG>
+                    <ARG>
+                        <NAME VALUE="TYPE" />
+                        <TYPE VALUE="string" />
+                        <VAL VALUE="CRS_HOME" /><!-- CRS_HOME,GI_HOME,ORACLE_HOME,RAC_HOME,ORACLE_BASE 
+                            are supported values -->
+                    </ARG>
+                </ARGS>
+            </JAVA>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskCFSIntegrity" SYNONYM="CHECK_CFS_INTEGRITY">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskCFSIntegrity">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="PATH" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="ORACLE_HOME" />
+                    </ARG>
+                </ARGS>
+            </JAVA>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskSharedStorageAccess"
+        SYNONYM="CHECK_SHARED_STORAGE_ACCESSIBILITY">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskSharedStorageAccess">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="TYPE" />
+                        <TYPE VALUE="string" />
+                        <VAL VALUE="ALL" /><!-- VOTING_DISK, OCR, DB_FILES, ALL are valid 
+                            values -->
+                    </ARG>
+                </ARGS>
+            </JAVA>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskDBHomeAvailability"
+        SYNONYM="CHECK_AVAILABILITY_OF_DB_HOME">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskDBHomeAvailability" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskNodeAddDelete"
+        SYNONYM="CHECKS_FOR_NODE_ADDITION_AND_DELETION">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskNodeAddDelete" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskNTP" SYNONYM="CHECK_NETWORK_TIME_PROTOCOL">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskNTP" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskUserExistence" SYNONYM="CHECK_USER_EXISTENCE">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskUserExistence">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="USERS" />
+                        <TYPE VALUE="string" />
+                        <VAL VALUE="none" /><!-- comma seperated list of user names -->
+                    </ARG>
+                </ARGS>
+            </JAVA>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskCoreFileNameConsistency"
+        SYNONYM="CHECK_CORE_FILE_NAME_CONSISTENCY">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskCoreFileNameConsistency" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="sTaskGIConfigurationFiles"
+        SYNONYM="CHECK_GRID_HOME_CONFIGURATION_FILES">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="sTaskGIConfigurationFiles" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskRunLevel" SYNONYM="CHECK_RUN_LEVEL">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskRunLevel" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskUserMask" SYNONYM="CHECK_USER_MASK">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskUserMask" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskResolvConfIntegrity"
+        SYNONYM="CHECK_INTEGRITY_OF_RESOLVE_CONF_FILE">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskResolvConfIntegrity" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskUSMUdevChecks" SYNONYM="CHECK_USM_DEVICES">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskUSMUdevChecks">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="ENTITY" />
+                        <TYPE VALUE="string" />
+                        <VAL VALUE="USM" /><!-- Allowed values are USM, OCR, VDISK, ASM -->
+                    </ARG>
+                </ARGS>
+            </JAVA>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskCurrentUserIsDomainUser"
+        SYNONYM="CHECK_CURRENT_USER_IS_DOMAIN_USER">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskCurrentUserIsDomainUser" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="WINDOWS" />
+        </OPERATING_SYSTEM_LIST>
+     </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskNodesNotDomainController"
+        SYNONYM="CHECK_CLUSTER_NODES_NOT_DOMAIN_CONTROLLER">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="sTaskClusterNodesNotDomainController" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="WINDOWS" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>     
+    <TASK_DEFINITION ID="TaskGroupExistence" SYNONYM="CHECK_GROUP_EXISTENCE">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskGroupExistence">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="GROUP" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="GROUP" />
+                    </ARG>
+                </ARGS>
+            </JAVA>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskPackage" SYNONYM="CHECK_PACKAGE_EXISTENCE">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskPackage">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="NAME" />
+                        <TYPE VALUE="string" />
+                        <VAL VALUE="NAME" />
+                    </ARG>
+                    <ARG>
+                        <NAME VALUE="VERSION" />
+                        <TYPE VALUE="string" />
+                        <VAL VALUE="..." />
+                    </ARG>
+                    <ARG>
+                        <NAME VALUE="ARCH" />
+                        <TYPE VALUE="string" />
+                        <VAL VALUE="ARCHITECTURE" />
+                    </ARG>
+                </ARGS>
+            </JAVA>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskUserNotInGroup" SYNONYM="CHECK_USER_NOT_IN_GROUP">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskUserNotInGroup">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="USER" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="CRS_USER" />
+                    </ARG>
+                    <ARG>
+                        <NAME VALUE="GROUP" />
+                        <TYPE VALUE="string" />
+                        <VAL VALUE="root" />
+                    </ARG>
+                </ARGS>
+            </JAVA>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskTimeZoneSetting" SEVERITY="IGNORABLE"
+        SYNONYM="CHECK_TIME_ZONE_SETTINGS">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskTimeZoneSetting" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskGNSIntegrity" SYNONYM="CHECK_GNS_INTEGRITY">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskGNSIntegrity" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskVIPSubnetCheck" SYNONYM="CHECK_VIP_SUBNET">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskVIPSubnetCheck" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskValidateNodeRoles" SYNONYM="VALIDATE_NODE_ROLES">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskValidateNodeRoles" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskGPnPProfileCollection"
+        SYNONYM="GPNP_PROFILE_COLLECTION">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskGPnPProfileCollection" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskCRSResourceCollection"
+        SYNONYM="CRS_RESOURCE_COLLECTION">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskCRSResourceCollection">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="MODE" />
+                        <TYPE VALUE="string" />
+                        <VAL VALUE="CRS" /><!-- CRS,OHASD are valid values -->
+                    </ARG>
+                </ARGS>
+            </JAVA>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskSoftwareDistribution" SYNONYM="CHECK_SOFTWARE_DISTRIBUTION_FILES">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskSoftwareDistribution">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="COMPONENT" />
+                        <TYPE VALUE="string" />
+                        <VAL VALUE="CRS" /><!-- CRS, are valid values -->
+                    </ARG>
+                </ARGS>
+            </JAVA>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskIPMIChecks" SYNONYM="CHECK_IPMI">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskIPMIChecks" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskOnsConfIntegrity" SYNONYM="CHECK_ONS_INTEGRITY">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskOnsConfIntegrity" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskDomainSockets" SEVERITY="IGNORABLE"
+        SYNONYM="CHECK_DOMAIN_SOCKETS">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskDomainSockets" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskScan" SYNONYM="CHECK_SCAN">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskScan" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskDHCPChecks" SYNONYM="CHECK_DHCP">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskDHCPChecks" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskNameService" SYNONYM="CHECK_NAME_SERVICE">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskNameService" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="sTaskNameServiceSwitch" SYNONYM="CHECK_NAME_SERVICE_SWITCH">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="sTaskNameServiceSwitch" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskCRSVersionConsistency"
+        SYNONYM="CHECK_CRS_VERSION_CONSISTENCY">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskCRSVersionConsistency" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskVotingDisk" SYNONYM="CHECK_VOTING_DISK">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskVotingDisk" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskOCRIntegrity" SYNONYM="CHECK_OCR">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskOCRIntegrity" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskASMDeviceChecks" SYNONYM="CHECK_ASM_DEVICES">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskASMDeviceChecks" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskASMDeviceSharedness" SYNONYM="CHECK_ASM_DEVICE_SHAREDNESS">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskASMDeviceSharedness" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskACLChecks" SYNONYM="CHECK_ASM_ACL">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskACLChecks">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="TYPE" />
+                        <TYPE VALUE="string" />
+                        <VAL VALUE="ASM" /><!-- Supported type ASM -->
+                    </ARG>
+                </ARGS>
+            </JAVA>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskASMACLAttributeCheck" SYNONYM="CHECK_ASM_ACL_ATTRIBUTE">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskASMACLAttributeCheck" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="WINDOWS" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskASMLibChecks" SYNONYM="CHECK_ASMLIB">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskASMLibChecks" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="LINUX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskDaemonNotRunning" SEVERITY="IGNORABLE"
+        SYNONYM="CHECK_DAEMON_NOT_RUNNING">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskDaemonNotRunning">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="NAME" />
+                        <TYPE VALUE="string" />
+                        <VAL VALUE="AVAHI_DAEMON" /><!-- For now only AVAHI_DAEMON is supported -->
+                    </ARG>
+                </ARGS>
+            </JAVA>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="LINUX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskCheckDiskScheduler" SYNONYM="CHECK_DISK_SCHEDULER">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskCheckDiskScheduler" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="LINUX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskOLRIntegrity" SYNONYM="CHECK_OLR_INTEGRITY">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskOLRIntegrity">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="HOME_TYPE" />
+                        <TYPE VALUE="string" />
+                        <VAL VALUE="BOTH" /> <!-- CRS, HA, BOTH are supported valid values -->
+                    </ARG>
+                </ARGS>
+            </JAVA>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskCRSUserConsistent" SYNONYM="CHECK_CRS_USER_CONSISTENCY">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskCRSUserConsistent">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="IS_SIHA" />
+                        <TYPE VALUE="boolean" />
+                        <VAR VALUE="FALSE" />
+                    </ARG>
+                </ARGS>
+            </JAVA>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskUpgradeChecksASMAndListener"
+        SYNONYM="UPGRADE_CHECK_ASM_AND_LISTENER">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskUpgradeChecksASMAndListener">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="ACTIVE_VERSION" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="GRID_ACTIVE_VERSION" />
+                    </ARG>
+                </ARGS>
+            </JAVA>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskASMMissizedDiskCheck" SYNONYM="CHECK_ASM_MISSIZED_DISK">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskASMMissizedDiskCheck">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="IS_SIHA" />
+                        <TYPE VALUE="boolean" />
+                        <VAR VALUE="FALSE" />
+                    </ARG>
+                </ARGS>
+            </JAVA>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskUpgCheckASMDiscoveryString"
+        SYNONYM="UPGRADE_CHECK_ASM_DISCOVERY_STRING">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskUpgCheckASMDiscoveryString">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="IS_SIHA" />
+                        <TYPE VALUE="boolean" />
+                        <VAR VALUE="FALSE" />
+                    </ARG>
+                </ARGS>
+            </JAVA>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="LINUX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskChkDirStructure" SEVERITY="IGNORABLE"
+        SYNONYM="CHECK_DIRECTORY_HIERARCHY">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskChkDirStructure">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="BASE" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="ORACLE_BASE" />
+                    </ARG>
+                    <ARG>
+                        <NAME VALUE="HOME" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="ORACLE_HOME" />
+                    </ARG>
+                </ARGS>
+            </JAVA>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskCheckFirewallSetting" SYNONYM="CHECK_FIREWALL_SETTINGS"
+        SEVERITY="IGNORABLE">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskCheckFirewallSetting" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="WINDOWS" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskCheckWindowsUserConsistency"
+        SYNONYM="CHECK_WINDOWS_USER_CONSISTENCY">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskCheckWindowsUserConsistency" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="WINDOWS" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="sTaskNICBindingOrder">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="sTaskNICBindingOrder" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="WINDOWS" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskVerifyServiceUser" SEVERITY="IGNORABLE"
+        SYNONYM="CHECK_SERVICE_USER">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskVerifyServiceUser" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="WINDOWS" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="sTaskCheckOraFenceService"
+        SEVERITY="IGNORABLE" SYNONYM="CHECK_ORAFENCE_DRIVE">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="sTaskCheckOraFenceService" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="WINDOWS" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="sTaskCheckAutomount" SYNONYM="CHECK_AUTOMOUNT">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="sTaskCheckAutomount" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="WINDOWS" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="sTaskCheckAntivirus" SEVERITY="IGNORABLE"
+        SYNONYM="CHECK_ANTI_VIRUS">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="sTaskCheckAntivirus" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="WINDOWS" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="sTaskCheckIPMPSettings" SYNONYM="CHECK_IPMP_SETTINGS">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="sTaskCheckIPMPSettings" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="SOLARIS" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="sTaskCheckVMMParameters" SEVERITY="IGNORABLE"
+        SYNONYM="CHECK_VMM_SETTINGS" ROOT_PRIVILEGE_REQUIRED="true">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="sTaskCheckVMMParameters">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="NAME" />
+                        <TYPE VALUE="string" />
+                        <VAL VALUE="VMMTUNABLEID" />
+                    </ARG>
+                    <ARG>
+                        <NAME VALUE="VALUES" />
+                        <TYPE VALUE="string" />
+                        <VAL VALUE="CURVAL,DEFVAL,BOOTVAL" />
+                    </ARG>
+                    <ARG>
+                        <NAME VALUE="PARAMIDS" />
+                        <TYPE VALUE="string" />
+                        <VAL VALUE="CURRENT,DEFAULT,REBOOT" />
+                    </ARG>
+                </ARGS>
+            </JAVA>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="AIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="sTaskCheckPSMParameters" SEVERITY="IGNORABLE"
+        SYNONYM="CHECK_PSM_SETTINGS" ROOT_PRIVILEGE_REQUIRED="true">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="sTaskCheckPSMParameters">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="NAME" />
+                        <TYPE VALUE="string" />
+                        <VAL VALUE="PSMTUNABLEID" />
+                    </ARG>
+                    <ARG>
+                        <NAME VALUE="VALUES" />
+                        <TYPE VALUE="string" />
+                        <VAL VALUE="CURVAL,DEFVAL,BOOTVAL" />
+                    </ARG>
+                    <ARG>
+                        <NAME VALUE="PARAMIDS" />
+                        <TYPE VALUE="string" />
+                        <VAL VALUE="CURRENT,DEFAULT,REBOOT" />
+                    </ARG>
+                </ARGS>
+            </JAVA>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="AIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskCheckKernelRunningMode"
+        SYNONYM="CHECK_KERNEL_RUNNING_MODE">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskCheckKernelRunningMode" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="AIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="sTaskDeviceFileSettings" SYNONYM="CHECK_DEVICE_FILE_SETTINGS">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="sTaskDeviceFileSettings" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="HPUX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="sTaskHostnameLength" SYNONYM="CHECK_HOST_NAME_LENGTH">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="sTaskHostnameLength" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="HPUX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskASMIntegrity" SYNONYM="CHECK_ASM_INTEGRITY">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskASMIntegrity" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskSpaceAvail" SYNONYM="CHECK_SPACE_AVAILABILITY">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskSpaceAvail" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskOhasdIntegrity" SYNONYM="CHECK_OHASD_INTEGRITY">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskOhasdIntegrity" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskNodeConnectivity" SYNONYM="CHECK_NODE_CONNECTIVITY">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskNodeConnectivity">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="TYPE" />
+                        <TYPE VALUE="string" />
+                        <VAL VALUE="ALL" /><!-- ALL,NODECON,NODEREACH are valid values -->
+                    </ARG>
+                </ARGS>
+            </JAVA>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskMulticastCheck" SYNONYM="CHECK_MULTICAST">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskMulticastCheck" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskNetworkConfigurationConsistency"
+        SYNONYM="CHECK_NETWORK_CONFIGURATION_CONSISTENCY">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskNetworkConfigurationConsistency" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskNetworkInterfaceAttributes"
+        SYNONYM="CHECK_NETWORK_INTERFACE_ATTRIBUTES">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskNetworkInterfaceAttributes" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="SOLARIS" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskCheckLoopback"
+        SYNONYM="CHECK_LOOPBACK_INTERFACE_EXISTS">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskCheckLoopback" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="SOLARIS" />
+            <OPERATING_SYSTEM TYPE="LINUX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskGroupMembership" SYNONYM="CHECK_GROUP_MEMBERSHIP">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskGroupMembership">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="TYPE" />
+                        <TYPE VALUE="string" />
+                        <VAL VALUE="PRIMARY" />
+                    </ARG>
+                    <ARG>
+                        <NAME VALUE="USER" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="CRS_USER" />
+                    </ARG>
+                    <ARG>
+                        <NAME VALUE="GROUP" />
+                        <TYPE VALUE="string" />
+                        <VAR VALUE="GROUP" />
+                    </ARG>
+                </ARGS>
+            </JAVA>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskCheckRACUserASMPrivilege" SYNONYM="CHECK_RAC_USER_ASM_MEMBERSHIP">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskCheckRACUserASMPrivilege"/>  
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskClusterMgrIntegrity" SYNONYM="CHECK_CLUSTER_MANAGER_INTEGRITY">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskClusterMgrIntegrity" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskClusterIntegrity" SYNONYM="CHECK_CLUSTER_INTEGRITY">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskClusterIntegrity" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskDNSChecks" SYNONYM="CHECK_DNS">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskDNSChecks" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskGPNPIntegrity" SYNONYM="CHECK_GPNP_INTEGRITY">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskGPNPIntegrity" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskPeerCompatibility" SYNONYM="CHECK_PEER_COMPATIBILITY">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskPeerCompatibility" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskCRSIntegrity" SYNONYM="CHECK_CRS_INTEGRITY">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskCRSIntegrity" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskNodeAppCreation" SYNONYM="CHECK_NODE_APPS">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskNodeAppCreation" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskASMFilterDriverChecks"
+        SYNONYM="CHECK_ASM_FILTER_DRIVER">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskASMFilterDriverChecks" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="LINUX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskCTSSIntegrity" SYNONYM="CHECK_CTSS_INTEGRITY">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskCTSSIntegrity" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskPinNodes" SYNONYM="CHECK_PIN_NODES">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskPinNodes" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskHAIntegrity" SYNONYM="CHECK_HA_INTEGRITY">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskHAIntegrity" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskStaleSchema" SYNONYM="CHECK_STALE_SCHEMA">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskStaleSchema" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskAuditFileDestCheck" SYNONYM="CHECK_AUDIT_FILE_DESTINATION">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskAuditFileDestCheck" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskDBCRSVersionCompatibility"
+        SYNONYM="CHECK_DB_CRS_VERSION_COMPATIBILITY">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskDBCRSVersionCompatibility" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskASMInitParamCollection"
+        SYNONYM="ASM_INIT_PARAM_COLLECTION">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskASMInitParamCollection" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskEZConnect" SYNONYM="CHECK_EZ_CONNECT">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskEZConnect" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskAdminPrivileges" SYNONYM="CHECK_ADMIN_PRIVILEGES">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskAdminPrivileges">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="OPERATION" />
+                        <TYPE VALUE="string" />
+                        <VAL VALUE="user_equiv" /><!-- user_equiv, all, are supported -->
+                    </ARG>
+                </ARGS>
+            </JAVA>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskDBInitParamCollection"
+        SYNONYM="DB_INIT_PARAM_COLLECTION">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskDBInitParamCollection" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskACFSIntegrity" SYNONYM="CHECK_ACFS_INTEGRITY">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskACFSIntegrity" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskUSMDriverChecks" SYNONYM="CHECK_USM_DRIVER">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskUSMDriverChecks" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskOSDbGroupsExistence" SYNONYM="CHECK_OSDB_GROUP_EXISTENCE">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskOSDbGroupsExistence" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskDaemonLiveliness" SYNONYM="CHECK_DAEMON_RUNNING">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskDaemonLiveliness">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="NAME" />
+                        <TYPE VALUE="string" />
+                        <VAL VALUE="NAME" /><!-- string name supported -->
+                    </ARG>
+                </ARGS>
+            </JAVA>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskDBUserConsistent" SYNONYM="CHECK_DB_USER_CONSISTENT">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskDBUserConsistent" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskUsersWithSameID" SYNONYM="CHECK_USERS_WITH_SAME_ID">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskUsersWithSameID">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="ID" />
+                        <TYPE VALUE="string" />
+                        <VAL VALUE="0" /><!-- Numeric values supported -->
+                    </ARG>
+                </ARGS>
+            </JAVA>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskAllKernelParamCollection"
+        SYNONYM="KERNEL_PARAM_COLLECTION">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskAllKernelParamCollection">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="COMMAND_ID" />
+                        <TYPE VALUE="string" />
+                        <VAL VALUE="" />
+                    </ARG>
+                </ARGS>
+            </JAVA>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="LINUX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskAllVMMParamCollection"
+        SYNONYM="VMM_PARAM_COLLECTION">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskAllVMMParamCollection">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="COMMAND_ID" />
+                        <TYPE VALUE="string" />
+                        <VAL VALUE="" />
+                    </ARG>
+                </ARGS>
+            </JAVA>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="AIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskAllProcessorSchedulerCollection"
+        SYNONYM="PROCESSOR_SCHEDULER_COLLECTION">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskAllProcessorSchedulerCollection">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="COMMAND_ID" />
+                        <TYPE VALUE="string" />
+                        <VAL VALUE="" />
+                    </ARG>
+                </ARGS>
+            </JAVA>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="AIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskAllOSPackageCollection"
+        SYNONYM="OS_PACKAGES_COLLECTION">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskAllOSPackageCollection">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="COMMAND_ID" />
+                        <TYPE VALUE="string" />
+                        <VAL VALUE="" />
+                    </ARG>
+                </ARGS>
+            </JAVA>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="LINUX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskAllOSPatchCollection" SYNONYM="OS_PATCHES_COLLECTION">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskAllOSPatchCollection">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="COMMAND_ID" />
+                        <TYPE VALUE="string" />
+                        <VAL VALUE="" />
+                    </ARG>
+                </ARGS>
+            </JAVA>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="AIX" />
+            <OPERATING_SYSTEM TYPE="SOLARIS" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskAllResourceLimitsCollection"
+        SYNONYM="RESOURCE_LIMITS_COLLECTION">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskAllResourceLimitsCollection" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="LINUX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskAllEnvironmentVariableCollection"
+        SYNONYM="ENVIRONMENT_VARIABLE_COLLECTION">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskAllEnvironmentVariableCollection" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="LINUX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskAllInittabEntriesCollection"
+        SYNONYM="INITTAB_ENTRIES_COLLECTION">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskAllInittabEntriesCollection" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="LINUX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskAllRLimitsByPidCollection"
+        SYNONYM="RESOURCE_LIMITS_COLLECTION">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskAllRLimitsByPidCollection" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="LINUX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskAllEnvVarByPidCollection"
+        SYNONYM="ENVIRONMENT_VARIABLE_COLLECTION">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskAllEnvVarByPidCollection" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="LINUX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskLocalUserEquivalence" SEVERITY="IGNORABLE"
+        SYNONYM="CHECK_USER_EQUIVALENCE">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskUserEquivalence">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="IS_STAR_SSH_CHECK" />
+                        <TYPE VALUE="boolean" />
+                        <VAL VALUE="FALSE" />
+                    </ARG>
+                    <ARG>
+                        <NAME VALUE="IS_REACHABLILITY_CHECK" />
+                        <TYPE VALUE="boolean" />
+                        <VAL VALUE="FALSE" />
+                    </ARG>
+                    <ARG>
+                        <NAME VALUE="IS_LOCAL_NODE_EQUIVALENCE" />
+                        <TYPE VALUE="boolean" />
+                        <VAL VALUE="TRUE" />
+                    </ARG>
+                </ARGS>
+            </JAVA>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="WINDOWS" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskUserEquivalence" SEVERITY="IGNORABLE"
+        SYNONYM="CHECK_USER_EQUIVALENCE">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskUserEquivalence">
+                <ARGS>
+                    <ARG>
+                        <NAME VALUE="IS_STAR_SSH_CHECK" />
+                        <TYPE VALUE="boolean" />
+                        <VAL VALUE="TRUE" />
+                    </ARG>
+                    <ARG>
+                        <NAME VALUE="IS_REACHABLILITY_CHECK" />
+                        <TYPE VALUE="boolean" />
+                        <VAL VALUE="FALSE" />
+                    </ARG>
+                    <ARG>
+                        <NAME VALUE="IS_LOCAL_NODE_EQUIVALENCE" />
+                        <TYPE VALUE="boolean" />
+                        <VAL VALUE="FALSE" />
+                    </ARG>
+                </ARGS>
+            </JAVA>
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="UNIX" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskASMInitParamCollection">
+        <EXECUTABLE_INFO TYPE="JAVA">
+            <JAVA NAME="TaskASMInitParamCollection" />
+            <RESULT_TYPE VALUE="ANALYZED" />
+        </EXECUTABLE_INFO>
+        <OPERATING_SYSTEM_LIST>
+            <OPERATING_SYSTEM TYPE="ALL" />
+        </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+		<TASK_DEFINITION ID="TaskASMConfigurationCollection">
+			<EXECUTABLE_INFO TYPE="JAVA">
+				<JAVA NAME="TaskASMConfigurationCollection" />
+				<RESULT_TYPE VALUE="ANALYZED" />
+			</EXECUTABLE_INFO>
+			<OPERATING_SYSTEM_LIST>
+				<OPERATING_SYSTEM TYPE="ALL" />
+			</OPERATING_SYSTEM_LIST>
+		</TASK_DEFINITION>
+		<TASK_DEFINITION ID="TaskASMDiskGroupConfigurationCollection">
+			<EXECUTABLE_INFO TYPE="JAVA">
+				<JAVA NAME="TaskASMDiskGroupConfigurationCollection" />
+				<RESULT_TYPE VALUE="ANALYZED" />
+			</EXECUTABLE_INFO>
+			<OPERATING_SYSTEM_LIST>
+				<OPERATING_SYSTEM TYPE="ALL" />
+			</OPERATING_SYSTEM_LIST>
+		</TASK_DEFINITION>
+    <TASK_DEFINITION ID="TaskOraclePatchCollection">
+      <EXECUTABLE_INFO TYPE="JAVA">
+        <JAVA NAME="TaskOraclePatchCollection">
+          <ARGS>
+            <ARG>
+              <NAME VALUE="COMPONENT" />
+              <TYPE VALUE="string" />
+              <VAL VALUE="CRS" /><!-- CRS and database are valid values -->
+            </ARG>
+          </ARGS>
+        </JAVA>
+        <RESULT_TYPE VALUE="ANALYZED" />
+      </EXECUTABLE_INFO>
+      <OPERATING_SYSTEM_LIST>
+        <OPERATING_SYSTEM TYPE="ALL" />
+      </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+    <TASK_DEFINITION ID="CHECK_DAX_ACCESS" SEVERITY="IGNORABLE" FIXABLE="true">
+       <EXECUTABLE_INFO TYPE="SHELL">
+          <EXTERNAL>
+             <NAME VALUE="check_dax_access.sh" />
+             <ARGS>
+                <ARG>
+                   <NAME VALUE="CHECK_PRIVILEGE"/>
+                   <TYPE VALUE="string" />
+                   <VAL VALUE="-checkPriv" />
+                </ARG> 
+                <ARG>
+                   <NAME VALUE="RAC_USER"/>
+                   <TYPE VALUE="string" />
+                   <VAR VALUE="RAC_USER" />
+                </ARG> 
+             </ARGS>
+          </EXTERNAL>
+          <RESULT_TYPE VALUE="ANALYZED" />
+       </EXECUTABLE_INFO>
+       <OPERATING_SYSTEM_LIST>
+          <OPERATING_SYSTEM TYPE="SOLARIS" ARCHITECTURE="sparc64" />
+       </OPERATING_SYSTEM_LIST>
+    </TASK_DEFINITION>
+   </TASK_DEFINITION_LIST>
+</ROOT>

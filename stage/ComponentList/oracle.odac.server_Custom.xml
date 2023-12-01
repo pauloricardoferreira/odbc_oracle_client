@@ -1,0 +1,9 @@
+<?xml version="1.0" standalone="yes" ?>
+<!-- Copyright (c) 1999, 2017, Oracle and/or its affiliates.
+All rights reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+<COMPS_LIST>
+<COMP NAME="oracle.odac.server" VERSION="12.2.0.1.0"/>
+<COMP NAME="oracle.odac_doc_4" VERSION="12.2.0.1.0"/>
+<COMP NAME="oracle.odac_doc" VERSION="12.2.0.1.0"/>
+</COMPS_LIST>

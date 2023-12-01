@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<HOST PLATID="233">
+<SYSTEM>
+	<MEMORY>
+		<PHYSICAL_MEMORY VALUE="128" UNIT="MB" SEVERITY="IGNORABLE"/>
+		<!--<AVAILABLE_MEMORY VALUE="20" UNIT="MB"/> -->	
+	</MEMORY>
+	<SPACE>
+                <LOC VAR="TEMP_AREA" TEMP="true" SIZE="130" UNIT="MB"  SEVERITY="IGNORABLE"/>
+        </SPACE>
+</SYSTEM>
+<CERTIFIED_SYSTEMS>
+         <OPERATING_SYSTEM RELEASE="6.0">
+         	 <VERSION VALUE="3"/>
+         	 <ARCHITECTURE VALUE="64-bit"/>
+         	 <NAME VALUE="WindowsServer2008"/>
+         	 <ENV_VAR_LIST>
+         	     <ENV_VAR NAME="PATH" MAX_LENGTH="5119" />
+         	 </ENV_VAR_LIST>
+         </OPERATING_SYSTEM>
+         <OPERATING_SYSTEM RELEASE="6.0">
+         	 <VERSION VALUE="3"/>
+         	 <ARCHITECTURE VALUE="64-bit"/>
+         	 <NAME VALUE="WindowsVista"/>
+         	 <ENV_VAR_LIST>
+         	     <ENV_VAR NAME="PATH" MAX_LENGTH="5119" />
+         	 </ENV_VAR_LIST>
+         </OPERATING_SYSTEM>
+         <OPERATING_SYSTEM RELEASE="6.1">
+         	 <VERSION VALUE="3"/>
+         	 <ARCHITECTURE VALUE="64-bit"/>
+         	 <NAME VALUE="Windows 7"/>
+         	 <ENV_VAR_LIST>
+         	     <ENV_VAR NAME="PATH" MAX_LENGTH="5119" />
+         	 </ENV_VAR_LIST>
+         </OPERATING_SYSTEM>
+         <OPERATING_SYSTEM RELEASE="6.1">
+         	 <VERSION VALUE="3"/>
+         	 <ARCHITECTURE VALUE="64-bit"/>
+         	 <NAME VALUE="WindowsServer2008R2"/>
+         	 <ENV_VAR_LIST>
+         	     <ENV_VAR NAME="PATH" MAX_LENGTH="5119" />
+         	 </ENV_VAR_LIST>
+         </OPERATING_SYSTEM>
+	   <OPERATING_SYSTEM RELEASE="6.2">
+         	 <VERSION VALUE="3"/>
+         	 <ARCHITECTURE VALUE="64-bit"/>
+         	 <NAME VALUE="Windows 8"/>
+         	 <ENV_VAR_LIST>
+         	     <ENV_VAR NAME="PATH" MAX_LENGTH="5119" />
+         	 </ENV_VAR_LIST>
+         </OPERATING_SYSTEM>
+         <OPERATING_SYSTEM RELEASE="6.2">
+                 <VERSION VALUE="3"/>
+                 <ARCHITECTURE VALUE="64-bit"/>
+                 <NAME VALUE="Windows Server 2012"/>
+                 <ENV_VAR_LIST>
+                     <ENV_VAR NAME="PATH" MAX_LENGTH="5119" />
+                 </ENV_VAR_LIST>
+         </OPERATING_SYSTEM> 
+	 <OPERATING_SYSTEM RELEASE="6.3">
+                 <VERSION VALUE="3"/>
+                 <ARCHITECTURE VALUE="64-bit"/>
+                 <NAME VALUE="Windows Server 2012 R2"/>
+                 <ENV_VAR_LIST>
+                     <ENV_VAR NAME="PATH" MAX_LENGTH="5119" />
+                 </ENV_VAR_LIST>
+         </OPERATING_SYSTEM>
+		<OPERATING_SYSTEM RELEASE="10.0">
+         	 <VERSION VALUE="3"/>
+         	 <ARCHITECTURE>
+                     <LIST>
+                       <VALUE>64-bit</VALUE>
+                     </LIST>
+                 </ARCHITECTURE>
+         	 <NAME VALUE="Windows Server 2016"/>
+         	 <ENV_VAR_LIST>
+         	     <ENV_VAR NAME="PATH" MAX_LENGTH="5119" />
+         	 </ENV_VAR_LIST>
+         </OPERATING_SYSTEM>
+
+</CERTIFIED_SYSTEMS>
+<ORACLE_HOME>
+  <COMPATIBILITY_MATRIX>
+    <ALLOW>
+	<!-- Allowing new home and removing all disallow section ,fix for bug# 17399376  -->
+        <NEW_HOME/>
+    </ALLOW>
+  </COMPATIBILITY_MATRIX>
+</ORACLE_HOME>
+</HOST>

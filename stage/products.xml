@@ -1,0 +1,1756 @@
+<?xml version="1.0" standalone="yes" ?>
+<!-- Copyright (c) 1999, 2018, Oracle and/or its affiliates.
+All rights reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+<PRD_LIST XML_VER="4.1" ORDERED="F">
+<TL_LIST>
+<COMP NAME="oracle.odac.client" VER="12.2.0.1.0" BUILD_NUMBER="0" REP_VER="0.0.0.0.0" RELEASE="Production" INV_LOC="Components/oracle.odac.client/12.2.0.1.0/1/" LANGS="ALL_LANGS" STG_PLAT="NT_X86 NT_IA64 NT_AMD64 W95 W98 NT_Alpha" PLAT="NT_X86 NT_IA64 NT_AMD64 W95 W98 NT_Alpha">
+   <EXT_NAME>Oracle Data Access Components for Oracle Client</EXT_NAME>
+   <DESCID>COMPONENT_DESC</DESCID>
+   <STG_INFO OSP_VER="10.2.0.0.0">
+      <INST_VER PLAT="ALL_PLATS" VER="11.2.0.2.0"/>
+   </STG_INFO>
+   <CMP_JAR_INFO>
+      <INFO NAME="filemapObj" VAL="Components/oracle/odac/client/v12_2_0_1_0/filemap.xml"/>
+      <INFO NAME="helpDir" VAL="Components/oracle/odac/client/v12_2_0_1_0/help/"/>
+      <INFO NAME="actionsClass" VAL="Components.oracle.odac.client.v12_2_0_1_0.CompActions"/>
+      <INFO NAME="resourceClass" VAL="Components.oracle.odac.client.v12_2_0_1_0.resources.CompRes"/>
+      <INFO NAME="cfgTools" VAL=""/>
+      <INFO NAME="identifiersXML" VAL="Components/oracle/odac/client/v12_2_0_1_0/identifiers.xml"/>
+      <INFO NAME="contextClass" VAL="Components.oracle.odac.client.v12_2_0_1_0.CompContext"/>
+      <INFO NAME="actionPhaseClasses" VAL="Components/oracle/odac/client/v12_2_0_1_0/CompInstallPhase1.class,Components/oracle/odac/client/v12_2_0_1_0/CompInstallPhase2.class"/>
+      <INFO NAME="fastCopyLogXML" VAL="Components/oracle/odac/client/v12_2_0_1_0/fastCopyLog.xml"/>
+      <INFO NAME="filesFileMap" VAL="Components/oracle/odac/client/v12_2_0_1_0/filegroup1.xml,Components/oracle/odac/client/v12_2_0_1_0/filemap.xml"/>
+   </CMP_JAR_INFO>
+   <LOC_INFO INST_DFN_LOC="./" JAR_NAME="install1.jar" DSK_NO="1" JAR_LOC="Components/oracle.odac.client/12.2.0.1.0/1/" FGRP_LOC="Components/oracle.odac.client/12.2.0.1.0/1/DataFiles/"/>
+   <BOOK NAME="oracle.odac.client.hs"/>
+   <PRE_REQ DEF="F"/>
+   <PROD_HOME DEF="F"/>
+   <DEP_GRP_LIST>
+      <DEP_GRP NAME="Optional" TYPE="O">
+         <DEP_LIST>
+            <DEP NAME="oracle.ntoledb.odp_net_2" VER="12.2.0.1.0" PLAT="NT_X86 NT_IA64 NT_AMD64 W98"/>
+            <DEP NAME="oracle.aspnet_2" VER="12.2.0.1.0" PLAT="NT_X86 NT_AMD64 W98"/>
+            <DEP NAME="oracle.p2k.odt" VER="12.2.0.1.0" PLAT="NT_X86" HOME_IDX="-1"/>
+            <DEP NAME="oracle.ntoledb" VER="12.2.0.1.0" PLAT="NT_X86 NT_IA64 NT_AMD64 W95 W98"/>
+            <DEP NAME="oracle.oo4o" VER="12.2.0.1.0" PLAT="NT_X86 NT_IA64 W95 W98" HOME_IDX="-1"/>
+            <DEP NAME="oracle.ntoramts" VER="12.2.0.1.0" PLAT="NT_X86 NT_IA64 NT_AMD64"/>
+            <DEP NAME="oracle.odac_samples" VER="12.2.0.1.0" PLAT="NT_X86 NT_IA64 NT_AMD64 W95 W98 NT_Alpha"/>
+            <DEP NAME="oracle.odac_doc_4" VER="12.2.0.1.0" PLAT="NT_X86 NT_IA64 NT_AMD64 W95 W98 NT_Alpha"/>
+         </DEP_LIST>
+      </DEP_GRP>
+      <DEP_GRP NAME="group1" TYPE="R">
+         <DEP_LIST>
+            <DEP NAME="oracle.swd.oui" VER="12.2.0.1.0" PLAT="ALL_PLATFORMS" HOME_IDX="-1"/>
+            <DEP NAME="oracle.install.winsecurity" VER="12.2.0.1.0" PLAT="NT_X86 NT_IA64 NT_AMD64 W95 W98 NT_Alpha"/>
+         </DEP_LIST>
+      </DEP_GRP>
+      <DEP_GRP NAME="group2" TYPE="M">
+         <DEP_LIST>
+            <DEP NAME="oracle.rdbms.ic" VER="12.2.0.1.0" PLAT="ALL_PLATFORMS"/>
+            <DEP NAME="oracle.client" VER="12.2.0.1.0" PLAT="ALL_PLATFORMS" HOME_IDX="-1"/>
+         </DEP_LIST>
+      </DEP_GRP>
+   </DEP_GRP_LIST>
+   <INST_TYPE_LIST>
+      <INST_TYPE NAME="Custom" NAME_ID="Custom" DESC_ID="Custom_DESC">
+         <DEP_GRP_PRPS NAME="Optional" OPEN="T" ASK="T">
+            <DEP_GRP_CMP NAME="oracle.ntoledb.odp_net_2" VER="12.2.0.1.0" PLAT="NT_X86 NT_IA64 NT_AMD64 W98" INST_TYPE="Custom" SEL="T"/>
+            <DEP_GRP_CMP NAME="oracle.aspnet_2" VER="12.2.0.1.0" PLAT="NT_X86 NT_AMD64 W98" INST_TYPE="Custom" SEL="T"/>
+            <DEP_GRP_CMP NAME="oracle.p2k.odt" VER="12.2.0.1.0" PLAT="NT_X86" INST_TYPE="Complete" SEL="T"/>
+            <DEP_GRP_CMP NAME="oracle.ntoledb" VER="12.2.0.1.0" PLAT="NT_X86 NT_IA64 NT_AMD64 W95 W98" INST_TYPE="Custom" SEL="T"/>
+            <DEP_GRP_CMP NAME="oracle.oo4o" VER="12.2.0.1.0" PLAT="NT_X86 NT_IA64 W95 W98" INST_TYPE="Custom" SEL="T"/>
+            <DEP_GRP_CMP NAME="oracle.ntoramts" VER="12.2.0.1.0" PLAT="NT_X86 NT_IA64 NT_AMD64" INST_TYPE="Custom" SEL="T"/>
+            <DEP_GRP_CMP NAME="oracle.odac_samples" VER="12.2.0.1.0" PLAT="NT_X86 NT_IA64 NT_AMD64 W95 W98 NT_Alpha" INST_TYPE="Custom" SEL="F"/>
+            <DEP_GRP_CMP NAME="oracle.odac_doc_4" VER="12.2.0.1.0" PLAT="NT_X86 NT_IA64 NT_AMD64 W95 W98 NT_Alpha" INST_TYPE="Custom" SEL="T"/>
+         </DEP_GRP_PRPS>
+         <DEP_GRP_PRPS NAME="group1" OPEN="T" ASK="F">
+            <DEP_GRP_CMP NAME="oracle.swd.oui" VER="12.2.0.1.0" PLAT="ALL_PLATFORMS" INST_TYPE="Custom" SEL="T"/>
+            <DEP_GRP_CMP NAME="oracle.install.winsecurity" VER="12.2.0.1.0" PLAT="NT_X86 NT_IA64 NT_AMD64 W95 W98 NT_Alpha" INST_TYPE="Custom" SEL="T"/>
+         </DEP_GRP_PRPS>
+         <DEP_GRP_PRPS NAME="group2" OPEN="T" ASK="T">
+            <DEP_GRP_CMP NAME="oracle.rdbms.ic" VER="12.2.0.1.0" PLAT="ALL_PLATFORMS" INST_TYPE="InstantClient" SEL="T"/>
+            <DEP_GRP_CMP NAME="oracle.client" VER="12.2.0.1.0" PLAT="ALL_PLATFORMS" INST_TYPE="Custom" SEL="T"/>
+         </DEP_GRP_PRPS>
+      </INST_TYPE>
+   </INST_TYPE_LIST>
+   <PLAT_IDX_MAP>
+      <PLAT LIST="912 208 233 615 50 601"/>
+      <PLATSET IDX="1" BITSET="{0, 1, 2, 3, 4, 5}"/>
+   </PLAT_IDX_MAP>
+   <LANG_IDX_MAP>
+      <LANG LIST="en fr ar bn pt_BR bg fr_CA ca hr cs da nl ar_EG en_GB et fi de el iw hu is in it ja ko es lv lt ms es_MX no pl pt ro ru zh_CN sk sl es_ES sv th zh_TW tr uk vi"/>
+      <LANGSET IDX="1" BITSET="{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44}"/>
+      <LANGSET IDX="2" BITSET="{16}"/>
+      <LANGSET IDX="3" BITSET="{25}"/>
+      <LANGSET IDX="4" BITSET="{1}"/>
+      <LANGSET IDX="5" BITSET="{22}"/>
+      <LANGSET IDX="6" BITSET="{23}"/>
+      <LANGSET IDX="7" BITSET="{24}"/>
+      <LANGSET IDX="8" BITSET="{4}"/>
+      <LANGSET IDX="9" BITSET="{35}"/>
+      <LANGSET IDX="10" BITSET="{41}"/>
+      <LANGSET IDX="11" BITSET="{1, 4, 16, 22, 23, 24, 25, 35, 41}"/>
+      <LANGSET IDX="12" BITSET="{}"/>
+      <LANGSET IDX="13" BITSET="{0, 23}"/>
+   </LANG_IDX_MAP>
+   <DST_IDX_MAP>
+      <DST LIST="%ORACLE_HOME% %INVENTORY_LOCATION%"/>
+   </DST_IDX_MAP>
+   <SIZES>
+      <SZ PLAT="912" INST_TYPE="Custom" LRG_JAR_SZ="0">
+         <LANG_SZ IDX="0" SIZE="395691"/>
+         <LANG_SZ IDX="1" SIZE="80155857"/>
+         <LANG_SZ IDX="2" SIZE="11927"/>
+         <LANG_SZ IDX="3" SIZE="10752"/>
+         <LANG_SZ IDX="4" SIZE="10752"/>
+         <LANG_SZ IDX="5" SIZE="10752"/>
+         <LANG_SZ IDX="6" SIZE="10240"/>
+         <LANG_SZ IDX="7" SIZE="10240"/>
+         <LANG_SZ IDX="8" SIZE="10752"/>
+         <LANG_SZ IDX="9" SIZE="10240"/>
+         <LANG_SZ IDX="10" SIZE="10240"/>
+         <LANG_SZ IDX="14" SIZE="307388958"/>
+      </SZ>
+      <SZ PLAT="208" INST_TYPE="Custom" LRG_JAR_SZ="0">
+         <LANG_SZ IDX="0" SIZE="349976"/>
+         <LANG_SZ IDX="1" SIZE="80155857"/>
+         <LANG_SZ IDX="2" SIZE="11927"/>
+         <LANG_SZ IDX="3" SIZE="10752"/>
+         <LANG_SZ IDX="4" SIZE="10752"/>
+         <LANG_SZ IDX="5" SIZE="10752"/>
+         <LANG_SZ IDX="6" SIZE="10240"/>
+         <LANG_SZ IDX="7" SIZE="10240"/>
+         <LANG_SZ IDX="8" SIZE="10752"/>
+         <LANG_SZ IDX="9" SIZE="10240"/>
+         <LANG_SZ IDX="10" SIZE="10240"/>
+         <LANG_SZ IDX="14" SIZE="306736161"/>
+      </SZ>
+      <SZ PLAT="233" INST_TYPE="Custom" LRG_JAR_SZ="0">
+         <LANG_SZ IDX="0" SIZE="509059"/>
+         <LANG_SZ IDX="1" SIZE="80155857"/>
+         <LANG_SZ IDX="2" SIZE="11927"/>
+         <LANG_SZ IDX="3" SIZE="10752"/>
+         <LANG_SZ IDX="4" SIZE="10752"/>
+         <LANG_SZ IDX="5" SIZE="10752"/>
+         <LANG_SZ IDX="6" SIZE="10240"/>
+         <LANG_SZ IDX="7" SIZE="10240"/>
+         <LANG_SZ IDX="8" SIZE="10752"/>
+         <LANG_SZ IDX="9" SIZE="10240"/>
+         <LANG_SZ IDX="10" SIZE="10240"/>
+         <LANG_SZ IDX="14" SIZE="382402459"/>
+      </SZ>
+      <SZ PLAT="615" INST_TYPE="Custom" LRG_JAR_SZ="0">
+         <LANG_SZ IDX="0" SIZE="176766"/>
+         <LANG_SZ IDX="1" SIZE="80155857"/>
+         <LANG_SZ IDX="2" SIZE="11927"/>
+         <LANG_SZ IDX="3" SIZE="10752"/>
+         <LANG_SZ IDX="4" SIZE="10752"/>
+         <LANG_SZ IDX="5" SIZE="10752"/>
+         <LANG_SZ IDX="6" SIZE="10240"/>
+         <LANG_SZ IDX="7" SIZE="10240"/>
+         <LANG_SZ IDX="8" SIZE="10752"/>
+         <LANG_SZ IDX="9" SIZE="10240"/>
+         <LANG_SZ IDX="10" SIZE="10240"/>
+         <LANG_SZ IDX="14" SIZE="294570156"/>
+      </SZ>
+      <SZ PLAT="50" INST_TYPE="Custom" LRG_JAR_SZ="0">
+         <LANG_SZ IDX="0" SIZE="376234"/>
+         <LANG_SZ IDX="1" SIZE="80155857"/>
+         <LANG_SZ IDX="2" SIZE="11927"/>
+         <LANG_SZ IDX="3" SIZE="10752"/>
+         <LANG_SZ IDX="4" SIZE="10752"/>
+         <LANG_SZ IDX="5" SIZE="10752"/>
+         <LANG_SZ IDX="6" SIZE="10240"/>
+         <LANG_SZ IDX="7" SIZE="10240"/>
+         <LANG_SZ IDX="8" SIZE="10752"/>
+         <LANG_SZ IDX="9" SIZE="10240"/>
+         <LANG_SZ IDX="10" SIZE="10240"/>
+         <LANG_SZ IDX="14" SIZE="306476089"/>
+      </SZ>
+      <SZ PLAT="601" INST_TYPE="Custom" LRG_JAR_SZ="0">
+         <LANG_SZ IDX="0" SIZE="151105"/>
+         <LANG_SZ IDX="1" SIZE="80155857"/>
+         <LANG_SZ IDX="2" SIZE="1175"/>
+         <LANG_SZ IDX="14" SIZE="293055304"/>
+      </SZ>
+   </SIZES>
+   <STG_FSI>
+      <DST_LNG_PLT_MAP>
+         <ID DST="0" LANG="2" PLAT="1" SIZE="1175"/>
+      </DST_LNG_PLT_MAP>
+      <OFFSETS/>
+      <JAR_SZ>
+         <LRG_JAR PLAT="912" SIZE="1046"/>
+         <LRG_JAR PLAT="208" SIZE="1046"/>
+         <LRG_JAR PLAT="233" SIZE="1046"/>
+         <LRG_JAR PLAT="615" SIZE="1046"/>
+         <LRG_JAR PLAT="50" SIZE="1046"/>
+         <LRG_JAR PLAT="601" SIZE="1046"/>
+      </JAR_SZ>
+   </STG_FSI>
+   <LIB_DEP_LST>
+      <ACTION_LIST>
+         <LIB_DEP NAME="fileActions" VER="12.2.0.1.1" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.2.0" REP_VER="0.0" DEP_MAP="6"/>
+         <LIB_DEP NAME="generalActions" VER="10.2.0.9.0" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="6"/>
+         <LIB_DEP NAME="SpawnActions" VER="10.1.0.3.4" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.1.0.0.0" REP_VER="0.0" DEP_MAP="4"/>
+      </ACTION_LIST>
+      <QUERY_LIST>
+         <LIB_DEP NAME="netQueries" VER="10.2.0.2.0" PLAT="NT_X86 W95 W98 NT_AMD64 NT_IA64 Solaris Solaris_SPARC64 Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX IBM_AIXPPC64 Dynix UnixWare DG_UX HP_UX HP_UX64 NEC Hitachi_UX Iris NCOS OpenVMS IBM_MVS Linux Linux_AMD64 Linux_S390 HP_IA64 MACOSX Linux_IA64 Linux_Itanium Linux_PPC Linux_LOP Linux_SPARC64" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="65"/>
+         <LIB_DEP NAME="areasQueries" VER="10.2.0.1.0" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="67"/>
+         <LIB_DEP NAME="fileQueries" VER="10.1.0.3.0" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="71"/>
+         <LIB_DEP NAME="w32RegQueries" VER="10.2.0.1.0" PLAT="NT_X86 W95 W98 NT_AMD64 NT_IA64" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="64"/>
+      </QUERY_LIST>
+      <DIALOG_LIST/>
+   </LIB_DEP_LST>
+</COMP>
+</TL_LIST>
+<COMP_LIST>
+<COMP NAME="oracle.odac_samples" VER="12.2.0.1.0" BUILD_NUMBER="0" REP_VER="0.0.0.0.0" RELEASE="Production" INV_LOC="Components/oracle.odac_samples/12.2.0.1.0/1/" LANGS="en" STG_PLAT="NT_X86 NT_IA64 NT_AMD64 W95 W98 NT_Alpha" PLAT="NT_X86 NT_IA64 NT_AMD64 W95 W98 NT_Alpha">
+   <EXT_NAME>Oracle Data Access Components Samples</EXT_NAME>
+   <DESCID>COMPONENT_DESC</DESCID>
+   <STG_INFO OSP_VER="10.2.0.0.0">
+      <INST_VER PLAT="ALL_PLATS" VER="11.2.0.2.0"/>
+   </STG_INFO>
+   <CMP_JAR_INFO>
+      <INFO NAME="filemapObj" VAL="Components/oracle/odac_samples/v12_2_0_1_0/filemap.xml"/>
+      <INFO NAME="helpDir" VAL="Components/oracle/odac_samples/v12_2_0_1_0/help/"/>
+      <INFO NAME="actionsClass" VAL="Components.oracle.odac_samples.v12_2_0_1_0.CompActions"/>
+      <INFO NAME="resourceClass" VAL="Components.oracle.odac_samples.v12_2_0_1_0.resources.CompRes"/>
+      <INFO NAME="cfgTools" VAL=""/>
+      <INFO NAME="identifiersXML" VAL="Components/oracle/odac_samples/v12_2_0_1_0/identifiers.xml"/>
+      <INFO NAME="contextClass" VAL="Components.oracle.odac_samples.v12_2_0_1_0.CompContext"/>
+      <INFO NAME="fastCopyLogXML" VAL="Components/oracle/odac_samples/v12_2_0_1_0/fastCopyLog.xml"/>
+      <INFO NAME="actionPhaseClasses" VAL="Components/oracle/odac_samples/v12_2_0_1_0/CompInstallPhase1.class"/>
+      <INFO NAME="filesFileMap" VAL="Components/oracle/odac_samples/v12_2_0_1_0/filegroup1.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup2.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup3.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup4.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup5.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup6.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup7.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup8.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup9.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup10.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup11.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup12.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup13.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup14.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup15.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup16.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup17.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup18.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup19.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup20.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup21.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup22.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup23.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup24.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup25.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup26.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup27.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup28.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup29.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup30.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup31.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup32.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup33.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup34.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup35.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup36.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup37.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup38.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup39.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup40.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup41.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup42.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup43.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup44.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup45.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup46.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup47.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup48.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup49.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup50.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup51.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup52.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup53.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup54.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup55.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup56.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup57.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup58.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup59.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup60.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup61.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup62.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup63.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup64.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup65.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup66.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup67.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup68.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup69.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup70.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup71.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup72.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup73.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup74.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup75.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup76.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup77.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup78.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup79.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup80.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup81.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup82.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup83.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup84.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup85.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup86.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup87.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup88.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup89.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup90.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup91.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup92.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup93.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup94.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup95.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup96.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup97.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup98.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup99.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup100.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup101.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup102.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup103.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup104.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup105.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup106.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup107.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup108.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup109.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup110.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup111.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup112.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup113.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup114.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup115.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup116.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup117.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup118.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup119.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup120.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup121.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup122.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup123.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup124.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup125.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup126.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup127.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup128.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup129.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup130.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup131.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup132.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup133.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup134.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup135.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup136.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup137.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup138.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup139.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup140.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup141.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup142.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup143.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup144.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup145.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup146.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup147.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup148.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup149.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup150.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup151.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup152.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup153.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup154.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup155.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup156.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup157.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup158.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup159.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup160.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup161.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup162.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup163.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup164.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup165.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup166.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup167.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup168.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup169.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup170.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup171.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup172.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup173.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup174.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup175.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup176.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup177.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup178.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup179.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup180.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup181.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup182.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup183.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup184.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup185.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup186.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup187.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup188.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup189.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup190.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup191.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup192.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filegroup193.1.1.xml,Components/oracle/odac_samples/v12_2_0_1_0/filemap.xml"/>
+   </CMP_JAR_INFO>
+   <LOC_INFO INST_DFN_LOC="./" JAR_NAME="install1.jar" DSK_NO="1" JAR_LOC="Components/oracle.odac_samples/12.2.0.1.0/1/" FGRP_LOC="Components/oracle.odac_samples/12.2.0.1.0/1/DataFiles/"/>
+   <BOOK NAME="oracle.odac_samples.hs"/>
+   <PRE_REQ DEF="F"/>
+   <PROD_HOME DEF="F"/>
+   <DEP_GRP_LIST/>
+   <INST_TYPE_LIST>
+      <INST_TYPE NAME="Custom" NAME_ID="Custom" DESC_ID="Custom_DESC"/>
+   </INST_TYPE_LIST>
+   <PLAT_IDX_MAP>
+      <PLAT LIST="912 208 233 615 50 601"/>
+      <PLATSET IDX="1" BITSET="{0, 1, 2, 3, 4, 5}"/>
+   </PLAT_IDX_MAP>
+   <LANG_IDX_MAP>
+      <LANG LIST="en"/>
+      <LANGSET IDX="1" BITSET="{0}"/>
+   </LANG_IDX_MAP>
+   <DST_IDX_MAP>
+      <DST LIST="%PROD_HOME% %INVENTORY_LOCATION% %ORACLE_HOME%"/>
+   </DST_IDX_MAP>
+   <STG_FSI>
+      <DST_LNG_PLT_MAP>
+         <ID DST="0" LANG="1" PLAT="1" SIZE="5055879"/>
+      </DST_LNG_PLT_MAP>
+      <OFFSETS/>
+      <JAR_SZ>
+         <LRG_JAR PLAT="912" SIZE="129763"/>
+         <LRG_JAR PLAT="208" SIZE="129763"/>
+         <LRG_JAR PLAT="233" SIZE="129763"/>
+         <LRG_JAR PLAT="615" SIZE="129763"/>
+         <LRG_JAR PLAT="50" SIZE="129763"/>
+         <LRG_JAR PLAT="601" SIZE="129763"/>
+      </JAR_SZ>
+   </STG_FSI>
+   <LIB_DEP_LST>
+      <ACTION_LIST>
+         <LIB_DEP NAME="fileActions" VER="12.2.0.1.1" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.2.0" REP_VER="0.0" DEP_MAP="2"/>
+      </ACTION_LIST>
+      <QUERY_LIST/>
+      <DIALOG_LIST/>
+   </LIB_DEP_LST>
+</COMP>
+<COMP NAME="oracle.install.winsecurity" VER="12.2.0.1.0" BUILD_NUMBER="0" REP_VER="0.0.0.0.0" RELEASE="Production" INV_LOC="Components/oracle.install.winsecurity/12.2.0.1.0/1/" LANGS="ALL_LANGS" STG_PLAT="NT_X86 NT_IA64 NT_AMD64 W95 W98 NT_Alpha" PLAT="NT_X86 NT_IA64 NT_AMD64 W95 W98 NT_Alpha">
+   <EXT_NAME>Oracle Windows Security Interface</EXT_NAME>
+   <DESCID>COMPONENT_DESC</DESCID>
+   <STG_INFO OSP_VER="10.2.0.0.0">
+      <INST_VER PLAT="ALL_PLATS" VER="11.2.0.2.0"/>
+   </STG_INFO>
+   <CMP_JAR_INFO>
+      <INFO NAME="filemapObj" VAL="Components/oracle/install/winsecurity/v12_2_0_1_0/filemap.xml"/>
+      <INFO NAME="helpDir" VAL="Components/oracle/install/winsecurity/v12_2_0_1_0/help/"/>
+      <INFO NAME="actionsClass" VAL="Components.oracle.install.winsecurity.v12_2_0_1_0.CompActions"/>
+      <INFO NAME="resourceClass" VAL="Components.oracle.install.winsecurity.v12_2_0_1_0.resources.CompRes"/>
+      <INFO NAME="cfgTools" VAL=""/>
+      <INFO NAME="identifiersXML" VAL="Components/oracle/install/winsecurity/v12_2_0_1_0/identifiers.xml"/>
+      <INFO NAME="contextClass" VAL="Components.oracle.install.winsecurity.v12_2_0_1_0.CompContext"/>
+      <INFO NAME="actionPhaseClasses" VAL="Components/oracle/install/winsecurity/v12_2_0_1_0/CompInstallPhase1.class"/>
+      <INFO NAME="fastCopyLogXML" VAL="Components/oracle/install/winsecurity/v12_2_0_1_0/fastCopyLog.xml"/>
+      <INFO NAME="filesFileMap" VAL="Components/oracle/install/winsecurity/v12_2_0_1_0/filemap.xml"/>
+   </CMP_JAR_INFO>
+   <LOC_INFO INST_DFN_LOC="./" JAR_NAME="install1.jar" DSK_NO="1" JAR_LOC="Components/oracle.install.winsecurity/12.2.0.1.0/1/" FGRP_LOC="Components/oracle.install.winsecurity/12.2.0.1.0/1/DataFiles/"/>
+   <BOOK NAME="oracle.install.winsecurity.hs"/>
+   <PRE_REQ DEF="F"/>
+   <PROD_HOME DEF="F"/>
+   <DEP_GRP_LIST/>
+   <INST_TYPE_LIST>
+      <INST_TYPE NAME="Minimal" NAME_ID="Minimal" DESC_ID="Minimal_DESC"/>
+      <INST_TYPE NAME="Complete" NAME_ID="Complete" DESC_ID="Complete_DESC"/>
+      <INST_TYPE NAME="Custom" NAME_ID="Custom" DESC_ID="Custom_DESC"/>
+      <INST_TYPE NAME="Typical" NAME_ID="Typical" DESC_ID="Typical_DESC"/>
+   </INST_TYPE_LIST>
+   <PLAT_IDX_MAP>
+      <PLAT LIST="912 208 233 615 50 601"/>
+      <PLATSET IDX="1" BITSET="{}"/>
+   </PLAT_IDX_MAP>
+   <LANG_IDX_MAP>
+      <LANG LIST="en fr ar bn pt_BR bg fr_CA ca hr cs da nl ar_EG en_GB et fi de el iw hu is in it ja ko es lv lt ms es_MX no pl pt ro ru zh_CN sk sl es_ES sv th zh_TW tr uk vi"/>
+      <LANGSET IDX="1" BITSET="{}"/>
+   </LANG_IDX_MAP>
+   <DST_IDX_MAP>
+      <DST LIST="%INVENTORY_LOCATION% %ORACLE_HOME%"/>
+   </DST_IDX_MAP>
+   <STG_FSI>
+      <DST_LNG_PLT_MAP/>
+      <OFFSETS/>
+      <JAR_SZ>
+         <LRG_JAR PLAT="912" SIZE="0"/>
+         <LRG_JAR PLAT="208" SIZE="0"/>
+         <LRG_JAR PLAT="233" SIZE="0"/>
+         <LRG_JAR PLAT="615" SIZE="0"/>
+         <LRG_JAR PLAT="50" SIZE="0"/>
+         <LRG_JAR PLAT="601" SIZE="0"/>
+      </JAR_SZ>
+   </STG_FSI>
+   <LIB_DEP_LST>
+      <ACTION_LIST>
+         <LIB_DEP NAME="fileActions" VER="12.2.0.1.1" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.2.0" REP_VER="0.0" DEP_MAP="2"/>
+         <LIB_DEP NAME="aclActions" VER="12.2.0.1.0" PLAT="ALL_PLATFORMS" MIN_INST_VER="0" REP_VER="0" DEP_MAP="2"/>
+         <LIB_DEP NAME="WindowsActionLib" VER="12.0.0.0.0" PLAT="NT_X86 NT_AMD64 NT_IA64" MIN_INST_VER="11.2.0.2.0" REP_VER="0.0.0.0.0" DEP_MAP="2"/>
+         <LIB_DEP NAME="w32RegActions" VER="10.2.0.1.0" PLAT="NT_X86 W95 W98 NT_AMD64 NT_IA64" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="2"/>
+      </ACTION_LIST>
+      <QUERY_LIST>
+         <LIB_DEP NAME="generalQueries" VER="10.2.0.2.1" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="64"/>
+         <LIB_DEP NAME="areasQueries" VER="10.2.0.1.0" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="64"/>
+      </QUERY_LIST>
+      <DIALOG_LIST/>
+   </LIB_DEP_LST>
+</COMP>
+<COMP NAME="oracle.swd.oui" VER="12.2.0.1.4" BUILD_NUMBER="0" REP_VER="0.0.0.0.0" RELEASE="Production" INV_LOC="Components/oracle.swd.oui/12.2.0.1.4/1/" LANGS="ALL_LANGS" STG_PLAT="NT_AMD64" PLAT="ALL_PLATFORMS">
+   <EXT_NAME>Oracle Universal Installer</EXT_NAME>
+   <DESCID>COMPONENT_DESC</DESCID>
+   <STG_INFO OSP_VER="10.2.0.0.0">
+      <INST_VER PLAT="ALL_PLATS" VER="11.2.0.2.0"/>
+   </STG_INFO>
+   <CMP_JAR_INFO>
+      <INFO NAME="filemapObj" VAL="Components/oracle/swd/oui/v12_2_0_1_4/filemap.xml"/>
+      <INFO NAME="helpDir" VAL="Components/oracle/swd/oui/v12_2_0_1_4/help/"/>
+      <INFO NAME="actionsClass" VAL="Components.oracle.swd.oui.v12_2_0_1_4.CompActions"/>
+      <INFO NAME="resourceClass" VAL="Components.oracle.swd.oui.v12_2_0_1_4.resources.CompRes"/>
+      <INFO NAME="cfgTools" VAL=""/>
+      <INFO NAME="identifiersXML" VAL="Components/oracle/swd/oui/v12_2_0_1_4/identifiers.xml"/>
+      <INFO NAME="contextClass" VAL="Components.oracle.swd.oui.v12_2_0_1_4.CompContext"/>
+      <INFO NAME="fastCopyLogXML" VAL="Components/oracle/swd/oui/v12_2_0_1_4/fastCopyLog.xml"/>
+      <INFO NAME="actionPhaseClasses" VAL="Components/oracle/swd/oui/v12_2_0_1_4/CompInstallPhase1.class"/>
+      <INFO NAME="filesFileMap" VAL="Components/oracle/swd/oui/v12_2_0_1_4/filegroup1.xml,Components/oracle/swd/oui/v12_2_0_1_4/filegroup2.xml,Components/oracle/swd/oui/v12_2_0_1_4/filegroup3.xml,Components/oracle/swd/oui/v12_2_0_1_4/filegroup4.xml,Components/oracle/swd/oui/v12_2_0_1_4/filegroup5.xml,Components/oracle/swd/oui/v12_2_0_1_4/filegroup6.xml,Components/oracle/swd/oui/v12_2_0_1_4/filegroup7.xml,Components/oracle/swd/oui/v12_2_0_1_4/filegroup8.xml,Components/oracle/swd/oui/v12_2_0_1_4/filemap.xml"/>
+   </CMP_JAR_INFO>
+   <LOC_INFO INST_DFN_LOC="./" JAR_NAME="install1.jar" DSK_NO="1" JAR_LOC="Components/oracle.swd.oui/12.2.0.1.4/1/" FGRP_LOC="Components/oracle.swd.oui/12.2.0.1.4/1/DataFiles/"/>
+   <BOOK NAME="oracle.swd.oui.hs"/>
+   <PRE_REQ DEF="F"/>
+   <PROD_HOME DEF="F"/>
+   <DEP_GRP_LIST>
+      <DEP_GRP NAME="Group0" TYPE="R">
+         <DEP_LIST>
+            <DEP NAME="oracle.swd.oui.core" VER="12.2.0.1.4" PLAT="ALL_PLATFORMS"/>
+            <DEP NAME="oracle.swd.opatch" VER="11.2.0.1.2" PLAT="ALL_PLATFORMS" HOME_IDX="-1"/>
+         </DEP_LIST>
+      </DEP_GRP>
+      <DEP_GRP NAME="Group1" TYPE="M">
+         <DEP_LIST>
+            <DEP NAME="oracle.swd.jre" VER="1.8.0.45.0" PLAT="Linux" HOME_IDX="-1"/>
+            <DEP NAME="oracle.swd.jre" VER="1.8.0.45.0" PLAT="NT_X86 W95 W98 NT_Alpha" HOME_IDX="-1"/>
+            <DEP NAME="oracle.jdk" VER="1.6.0.0.0" PLAT="ALL_PLATFORMS" HOME_IDX="-1"/>
+            <DEP NAME="oracle.swd.jre" VER="1.8.0.45.0" PLAT="NT_IA64" HOME_IDX="-1"/>
+            <DEP NAME="oracle.swd.jre" VER="1.8.0.45.0" PLAT="NT_AMD64" HOME_IDX="-1"/>
+            <DEP NAME="oracle.swd.jre" VER="1.8.0.45.0" PLAT="Linux_PPC" HOME_IDX="-1"/>
+            <DEP NAME="oracle.swd.jre" VER="1.8.0.45.0" PLAT="Linux_S390" HOME_IDX="-1"/>
+            <DEP NAME="oracle.swd.jre" VER="1.8.0.45.0" PLAT="Intel_Solaris" HOME_IDX="-1"/>
+            <DEP NAME="oracle.jrockit" VER="1.6.0.0.5" PLAT="ALL_PLATFORMS" HOME_IDX="-1"/>
+            <DEP NAME="oracle.jre" VER="1.8.0.45.0" PLAT="ALL_PLATFORMS" HOME_IDX="-1"/>
+         </DEP_LIST>
+      </DEP_GRP>
+      <DEP_GRP NAME="Group2" TYPE="O">
+         <DEP_LIST>
+            <DEP NAME="oracle.sysman.ccr" VER="10.3.1.0.0" PLAT="ALL_PLATFORMS" HOME_IDX="-1"/>
+         </DEP_LIST>
+      </DEP_GRP>
+   </DEP_GRP_LIST>
+   <INST_TYPE_LIST>
+      <INST_TYPE NAME="Custom" NAME_ID="Custom" DESC_ID="Custom_DESC">
+         <DEP_GRP_PRPS NAME="Group0" OPEN="T" ASK="F">
+            <DEP_GRP_CMP NAME="oracle.swd.oui.core" VER="12.2.0.1.4" PLAT="ALL_PLATFORMS" INST_TYPE="Custom" SEL="T"/>
+            <DEP_GRP_CMP NAME="oracle.swd.opatch" VER="11.2.0.1.2" PLAT="ALL_PLATFORMS" INST_TYPE="Custom" SEL="T"/>
+         </DEP_GRP_PRPS>
+         <DEP_GRP_PRPS NAME="Group1" OPEN="T" ASK="F">
+            <DEP_GRP_CMP NAME="oracle.swd.jre" VER="1.8.0.45.0" PLAT="Linux" INST_TYPE="Custom" SEL="F"/>
+            <DEP_GRP_CMP NAME="oracle.swd.jre" VER="1.8.0.45.0" PLAT="NT_X86 W95 W98 NT_Alpha" INST_TYPE="Custom" SEL="F"/>
+            <DEP_GRP_CMP NAME="oracle.jdk" VER="1.6.0.0.0" PLAT="ALL_PLATFORMS" INST_TYPE="Custom" SEL="F"/>
+            <DEP_GRP_CMP NAME="oracle.swd.jre" VER="1.8.0.45.0" PLAT="NT_IA64" INST_TYPE="Custom" SEL="T"/>
+            <DEP_GRP_CMP NAME="oracle.swd.jre" VER="1.8.0.45.0" PLAT="NT_AMD64" INST_TYPE="Custom" SEL="T"/>
+            <DEP_GRP_CMP NAME="oracle.swd.jre" VER="1.8.0.45.0" PLAT="Linux_PPC" INST_TYPE="Custom" SEL="T"/>
+            <DEP_GRP_CMP NAME="oracle.swd.jre" VER="1.8.0.45.0" PLAT="Linux_S390" INST_TYPE="Custom" SEL="T"/>
+            <DEP_GRP_CMP NAME="oracle.swd.jre" VER="1.8.0.45.0" PLAT="Intel_Solaris" INST_TYPE="Custom" SEL="T"/>
+            <DEP_GRP_CMP NAME="oracle.jrockit" VER="1.6.0.0.5" PLAT="ALL_PLATFORMS" INST_TYPE="Custom" SEL="F"/>
+            <DEP_GRP_CMP NAME="oracle.jre" VER="1.8.0.45.0" PLAT="ALL_PLATFORMS" INST_TYPE="Custom" SEL="F"/>
+         </DEP_GRP_PRPS>
+         <DEP_GRP_PRPS NAME="Group2" OPEN="T" ASK="F">
+            <DEP_GRP_CMP NAME="oracle.sysman.ccr" VER="10.3.1.0.0" PLAT="ALL_PLATFORMS" INST_TYPE="Custom" SEL="T"/>
+         </DEP_GRP_PRPS>
+      </INST_TYPE>
+   </INST_TYPE_LIST>
+   <PLAT_IDX_MAP>
+      <PLAT LIST="233"/>
+      <PLATSET IDX="1" BITSET="{0}"/>
+   </PLAT_IDX_MAP>
+   <LANG_IDX_MAP>
+      <LANG LIST="en fr ar bn pt_BR bg fr_CA ca hr cs da nl ar_EG en_GB et fi de el iw hu is in it ja ko es lv lt ms es_MX no pl pt ro ru zh_CN sk sl es_ES sv th zh_TW tr uk vi"/>
+      <LANGSET IDX="1" BITSET="{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44}"/>
+   </LANG_IDX_MAP>
+   <DST_IDX_MAP>
+      <DST LIST="%ORACLE_HOME% %INVENTORY_LOCATION%"/>
+   </DST_IDX_MAP>
+   <STG_FSI>
+      <DST_LNG_PLT_MAP>
+         <ID DST="0" LANG="2" PLAT="1" SIZE="14546449"/>
+      </DST_LNG_PLT_MAP>
+      <OFFSETS/>
+      <JAR_SZ>
+         <LRG_JAR PLAT="233" SIZE="13177984"/>
+      </JAR_SZ>
+   </STG_FSI>
+   <LIB_DEP_LST>
+      <ACTION_LIST>
+         <LIB_DEP NAME="fileActions" VER="12.2.0.1.1" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.2.0" REP_VER="0.0" DEP_MAP="2"/>
+      </ACTION_LIST>
+      <QUERY_LIST>
+         <LIB_DEP NAME="areasQueries" VER="10.2.0.1.0" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="2"/>
+         <LIB_DEP NAME="generalQueries" VER="10.2.0.2.1" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="64"/>
+      </QUERY_LIST>
+      <DIALOG_LIST/>
+   </LIB_DEP_LST>
+</COMP>
+<COMP NAME="oracle.swd.oui.core" VER="12.2.0.1.4" BUILD_NUMBER="0" REP_VER="0.0.0.0.0" RELEASE="Production" INV_LOC="Components/oracle.swd.oui.core/12.2.0.1.4/1/" LANGS="ALL_LANGS" STG_PLAT="NT_AMD64" PLAT="ALL_PLATFORMS">
+   <EXT_NAME>Installer SDK Component</EXT_NAME>
+   <DESCID>COMPONENT_DESC</DESCID>
+   <STG_INFO OSP_VER="10.2.0.0.0">
+      <INST_VER PLAT="ALL_PLATS" VER="11.2.0.2.0"/>
+   </STG_INFO>
+   <CMP_JAR_INFO>
+      <INFO NAME="filemapObj" VAL="Components/oracle/swd/oui/core/v12_2_0_1_4/filemap.xml"/>
+      <INFO NAME="helpDir" VAL="Components/oracle/swd/oui/core/v12_2_0_1_4/help/"/>
+      <INFO NAME="actionsClass" VAL="Components.oracle.swd.oui.core.v12_2_0_1_4.CompActions"/>
+      <INFO NAME="resourceClass" VAL="Components.oracle.swd.oui.core.v12_2_0_1_4.resources.CompRes"/>
+      <INFO NAME="cfgTools" VAL=""/>
+      <INFO NAME="identifiersXML" VAL="Components/oracle/swd/oui/core/v12_2_0_1_4/identifiers.xml"/>
+      <INFO NAME="contextClass" VAL="Components.oracle.swd.oui.core.v12_2_0_1_4.CompContext"/>
+      <INFO NAME="fastCopyLogXML" VAL="Components/oracle/swd/oui/core/v12_2_0_1_4/fastCopyLog.xml"/>
+      <INFO NAME="actionPhaseClasses" VAL="Components/oracle/swd/oui/core/v12_2_0_1_4/CompInstallPhase1.class,Components/oracle/swd/oui/core/v12_2_0_1_4/CompInstallPhase2.class"/>
+      <INFO NAME="filesFileMap" VAL="Components/oracle/swd/oui/core/v12_2_0_1_4/filegroup1.xml,Components/oracle/swd/oui/core/v12_2_0_1_4/filegroup2.xml,Components/oracle/swd/oui/core/v12_2_0_1_4/filegroup3.xml,Components/oracle/swd/oui/core/v12_2_0_1_4/filegroup4.xml,Components/oracle/swd/oui/core/v12_2_0_1_4/filemap.xml"/>
+   </CMP_JAR_INFO>
+   <LOC_INFO INST_DFN_LOC="./" JAR_NAME="install1.jar" DSK_NO="1" JAR_LOC="Components/oracle.swd.oui.core/12.2.0.1.4/1/" FGRP_LOC="Components/oracle.swd.oui.core/12.2.0.1.4/1/DataFiles/"/>
+   <BOOK NAME="oracle.swd.oui.core.hs"/>
+   <PRE_REQ DEF="F"/>
+   <PROD_HOME DEF="F"/>
+   <DEP_GRP_LIST>
+      <DEP_GRP NAME="group1" TYPE="R">
+         <DEP_LIST>
+            <DEP NAME="oracle.swd.oui.core.min" VER="12.2.0.1.4" PLAT="ALL_PLATFORMS"/>
+         </DEP_LIST>
+      </DEP_GRP>
+   </DEP_GRP_LIST>
+   <INST_TYPE_LIST>
+      <INST_TYPE NAME="Custom" NAME_ID="Custom" DESC_ID="Custom_DESC">
+         <DEP_GRP_PRPS NAME="group1" OPEN="T" ASK="F">
+            <DEP_GRP_CMP NAME="oracle.swd.oui.core.min" VER="12.2.0.1.4" PLAT="ALL_PLATFORMS" INST_TYPE="Custom" SEL="T"/>
+         </DEP_GRP_PRPS>
+      </INST_TYPE>
+      <INST_TYPE NAME="install_type_1" NAME_ID="install_type_1" DESC_ID="install_type_1_DESC">
+         <DEP_GRP_PRPS NAME="group1" OPEN="T" ASK="F">
+            <DEP_GRP_CMP NAME="oracle.swd.oui.core.min" VER="12.2.0.1.4" PLAT="ALL_PLATFORMS" INST_TYPE="Complete" SEL="T"/>
+         </DEP_GRP_PRPS>
+      </INST_TYPE>
+   </INST_TYPE_LIST>
+   <PLAT_IDX_MAP>
+      <PLAT LIST="233"/>
+      <PLATSET IDX="1" BITSET="{0}"/>
+      <PLATSET IDX="2" BITSET="{}"/>
+   </PLAT_IDX_MAP>
+   <LANG_IDX_MAP>
+      <LANG LIST="en fr ar bn pt_BR bg fr_CA ca hr cs da nl ar_EG en_GB et fi de el iw hu is in it ja ko es lv lt ms es_MX no pl pt ro ru zh_CN sk sl es_ES sv th zh_TW tr uk vi"/>
+      <LANGSET IDX="1" BITSET="{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44}"/>
+      <LANGSET IDX="2" BITSET="{}"/>
+   </LANG_IDX_MAP>
+   <DST_IDX_MAP>
+      <DST LIST="%ORACLE_HOME% %INVENTORY_LOCATION%"/>
+   </DST_IDX_MAP>
+   <STG_FSI>
+      <DST_LNG_PLT_MAP>
+         <ID DST="0" LANG="3" PLAT="1" SIZE="15436823"/>
+      </DST_LNG_PLT_MAP>
+      <OFFSETS/>
+      <JAR_SZ>
+         <LRG_JAR PLAT="233" SIZE="11088195"/>
+      </JAR_SZ>
+   </STG_FSI>
+   <LIB_DEP_LST>
+      <ACTION_LIST>
+         <LIB_DEP NAME="fileActions" VER="12.2.0.1.1" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.2.0" REP_VER="0.0" DEP_MAP="6"/>
+         <LIB_DEP NAME="ntw32FoldersActions" VER="10.2.0.3.0" PLAT="NT_X86 W95 W98 NT_AMD64 NT_IA64" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="2"/>
+      </ACTION_LIST>
+      <QUERY_LIST>
+         <LIB_DEP NAME="areasQueries" VER="10.2.0.1.0" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="2"/>
+         <LIB_DEP NAME="generalQueries" VER="10.2.0.2.1" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="64"/>
+      </QUERY_LIST>
+      <DIALOG_LIST/>
+   </LIB_DEP_LST>
+</COMP>
+<COMP NAME="oracle.dbjava.ic" VER="12.2.0.1.0" BUILD_NUMBER="0" REP_VER="0.0.0.0.0" RELEASE="Production" INV_LOC="Components/oracle.dbjava.ic/12.2.0.1.0/1/" LANGS="ALL_LANGS" STG_PLAT="NT_AMD64" PLAT="ALL_PLATFORMS">
+   <EXT_NAME>Oracle JDBC/OCI Instant Client</EXT_NAME>
+   <DESCID>COMPONENT_DESC</DESCID>
+   <STG_INFO OSP_VER="10.2.0.0.0">
+      <INST_VER PLAT="ALL_PLATS" VER="11.2.0.2.0"/>
+   </STG_INFO>
+   <CMP_JAR_INFO>
+      <INFO NAME="filemapObj" VAL="Components/oracle/dbjava/ic/v12_2_0_1_0/filemap.xml"/>
+      <INFO NAME="helpDir" VAL="Components/oracle/dbjava/ic/v12_2_0_1_0/help/"/>
+      <INFO NAME="actionsClass" VAL="Components.oracle.dbjava.ic.v12_2_0_1_0.CompActions"/>
+      <INFO NAME="resourceClass" VAL="Components.oracle.dbjava.ic.v12_2_0_1_0.resources.CompRes"/>
+      <INFO NAME="cfgTools" VAL=""/>
+      <INFO NAME="identifiersXML" VAL="Components/oracle/dbjava/ic/v12_2_0_1_0/identifiers.xml"/>
+      <INFO NAME="contextClass" VAL="Components.oracle.dbjava.ic.v12_2_0_1_0.CompContext"/>
+      <INFO NAME="fastCopyLogXML" VAL="Components/oracle/dbjava/ic/v12_2_0_1_0/fastCopyLog.xml"/>
+      <INFO NAME="actionPhaseClasses" VAL="Components/oracle/dbjava/ic/v12_2_0_1_0/CompInstallPhase1.class,Components/oracle/dbjava/ic/v12_2_0_1_0/CompInstallPhase2.class"/>
+      <INFO NAME="filesFileMap" VAL="Components/oracle/dbjava/ic/v12_2_0_1_0/filegroup1.xml,Components/oracle/dbjava/ic/v12_2_0_1_0/filegroup2.xml,Components/oracle/dbjava/ic/v12_2_0_1_0/filemap.xml"/>
+   </CMP_JAR_INFO>
+   <LOC_INFO INST_DFN_LOC="./" JAR_NAME="install1.jar" DSK_NO="1" JAR_LOC="Components/oracle.dbjava.ic/12.2.0.1.0/1/" FGRP_LOC="Components/oracle.dbjava.ic/12.2.0.1.0/1/DataFiles/"/>
+   <BOOK NAME="oracle.dbjava.ic.hs"/>
+   <PRE_REQ DEF="F"/>
+   <PROD_HOME DEF="F"/>
+   <DEP_GRP_LIST>
+      <DEP_GRP NAME="Required" TYPE="R">
+         <DEP_LIST>
+            <DEP NAME="oracle.nlsrtl.rsf.ic" VER="12.2.0.1.0" PLAT="ALL_PLATFORMS"/>
+         </DEP_LIST>
+      </DEP_GRP>
+   </DEP_GRP_LIST>
+   <INST_TYPE_LIST>
+      <INST_TYPE NAME="Minimal" NAME_ID="Minimal" DESC_ID="Minimal_DESC">
+         <DEP_GRP_PRPS NAME="Required" OPEN="T" ASK="F">
+            <DEP_GRP_CMP NAME="oracle.nlsrtl.rsf.ic" VER="12.2.0.1.0" PLAT="ALL_PLATFORMS" INST_TYPE="Minimal" SEL="T"/>
+         </DEP_GRP_PRPS>
+      </INST_TYPE>
+      <INST_TYPE NAME="Complete" NAME_ID="Complete" DESC_ID="Complete_DESC">
+         <DEP_GRP_PRPS NAME="Required" OPEN="T" ASK="F">
+            <DEP_GRP_CMP NAME="oracle.nlsrtl.rsf.ic" VER="12.2.0.1.0" PLAT="ALL_PLATFORMS" INST_TYPE="Complete" SEL="T"/>
+         </DEP_GRP_PRPS>
+      </INST_TYPE>
+      <INST_TYPE NAME="Custom" NAME_ID="Custom" DESC_ID="Custom_DESC">
+         <DEP_GRP_PRPS NAME="Required" OPEN="T" ASK="F">
+            <DEP_GRP_CMP NAME="oracle.nlsrtl.rsf.ic" VER="12.2.0.1.0" PLAT="ALL_PLATFORMS" INST_TYPE="Custom" SEL="T"/>
+         </DEP_GRP_PRPS>
+      </INST_TYPE>
+      <INST_TYPE NAME="Typical" NAME_ID="Typical" DESC_ID="Typical_DESC">
+         <DEP_GRP_PRPS NAME="Required" OPEN="T" ASK="F">
+            <DEP_GRP_CMP NAME="oracle.nlsrtl.rsf.ic" VER="12.2.0.1.0" PLAT="ALL_PLATFORMS" INST_TYPE="Typical" SEL="T"/>
+         </DEP_GRP_PRPS>
+      </INST_TYPE>
+   </INST_TYPE_LIST>
+   <PLAT_IDX_MAP>
+      <PLAT LIST="233"/>
+      <PLATSET IDX="1" BITSET="{0}"/>
+      <PLATSET IDX="2" BITSET="{}"/>
+   </PLAT_IDX_MAP>
+   <LANG_IDX_MAP>
+      <LANG LIST="en fr ar bn pt_BR bg fr_CA ca hr cs da nl ar_EG en_GB et fi de el iw hu is in it ja ko es lv lt ms es_MX no pl pt ro ru zh_CN sk sl es_ES sv th zh_TW tr uk vi"/>
+      <LANGSET IDX="1" BITSET="{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44}"/>
+      <LANGSET IDX="2" BITSET="{}"/>
+   </LANG_IDX_MAP>
+   <DST_IDX_MAP>
+      <DST LIST="%ORACLE_HOME% %INVENTORY_LOCATION%"/>
+   </DST_IDX_MAP>
+   <STG_FSI>
+      <DST_LNG_PLT_MAP>
+         <ID DST="0" LANG="3" PLAT="1" SIZE="4259537"/>
+      </DST_LNG_PLT_MAP>
+      <OFFSETS/>
+      <JAR_SZ>
+         <LRG_JAR PLAT="233" SIZE="3758576"/>
+      </JAR_SZ>
+   </STG_FSI>
+   <LIB_DEP_LST>
+      <ACTION_LIST>
+         <LIB_DEP NAME="fileActions" VER="12.2.0.1.1" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.2.0" REP_VER="0.0" DEP_MAP="6"/>
+         <LIB_DEP NAME="aclActions" VER="12.2.0.1.0" PLAT="ALL_PLATFORMS" MIN_INST_VER="0" REP_VER="0" DEP_MAP="2"/>
+      </ACTION_LIST>
+      <QUERY_LIST>
+         <LIB_DEP NAME="fileQueries" VER="10.1.0.3.0" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="4"/>
+         <LIB_DEP NAME="generalQueries" VER="10.2.0.2.1" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="64"/>
+      </QUERY_LIST>
+      <DIALOG_LIST/>
+   </LIB_DEP_LST>
+</COMP>
+<COMP NAME="oracle.swd.opatch" VER="12.2.0.1.6" BUILD_NUMBER="0" REP_VER="0.0.0.0.0" RELEASE="Production" INV_LOC="Components/oracle.swd.opatch/12.2.0.1.6/1/" LANGS="ALL_LANGS" STG_PLAT="NT_AMD64" PLAT="ALL_PLATFORMS">
+   <EXT_NAME>Oracle One-Off Patch Installer</EXT_NAME>
+   <DESCID>COMPONENT_DESC</DESCID>
+   <STG_INFO OSP_VER="10.2.0.0.0">
+      <INST_VER PLAT="ALL_PLATS" VER="11.2.0.2.0"/>
+   </STG_INFO>
+   <CMP_JAR_INFO>
+      <INFO NAME="filemapObj" VAL="Components/oracle/swd/opatch/v12_2_0_1_6/filemap.xml"/>
+      <INFO NAME="helpDir" VAL="Components/oracle/swd/opatch/v12_2_0_1_6/help/"/>
+      <INFO NAME="actionsClass" VAL="Components.oracle.swd.opatch.v12_2_0_1_6.CompActions"/>
+      <INFO NAME="resourceClass" VAL="Components.oracle.swd.opatch.v12_2_0_1_6.resources.CompRes"/>
+      <INFO NAME="cfgTools" VAL=""/>
+      <INFO NAME="identifiersXML" VAL="Components/oracle/swd/opatch/v12_2_0_1_6/identifiers.xml"/>
+      <INFO NAME="contextClass" VAL="Components.oracle.swd.opatch.v12_2_0_1_6.CompContext"/>
+      <INFO NAME="actionPhaseClasses" VAL="Components/oracle/swd/opatch/v12_2_0_1_6/CompInstallPhase1.class"/>
+      <INFO NAME="fastCopyLogXML" VAL="Components/oracle/swd/opatch/v12_2_0_1_6/fastCopyLog.xml"/>
+      <INFO NAME="filesFileMap" VAL="Components/oracle/swd/opatch/v12_2_0_1_6/filegroup1.xml,Components/oracle/swd/opatch/v12_2_0_1_6/filegroup2.xml,Components/oracle/swd/opatch/v12_2_0_1_6/filegroup3.xml,Components/oracle/swd/opatch/v12_2_0_1_6/filegroup4.xml,Components/oracle/swd/opatch/v12_2_0_1_6/filegroup5.xml,Components/oracle/swd/opatch/v12_2_0_1_6/filegroup7.xml,Components/oracle/swd/opatch/v12_2_0_1_6/filegroup8.xml,Components/oracle/swd/opatch/v12_2_0_1_6/filegroup9.xml,Components/oracle/swd/opatch/v12_2_0_1_6/filemap.xml"/>
+   </CMP_JAR_INFO>
+   <LOC_INFO INST_DFN_LOC="./" JAR_NAME="install1.jar" DSK_NO="1" JAR_LOC="Components/oracle.swd.opatch/12.2.0.1.6/1/" FGRP_LOC="Components/oracle.swd.opatch/12.2.0.1.6/1/DataFiles/"/>
+   <BOOK NAME="oracle.swd.opatch.hs"/>
+   <PRE_REQ DEF="F"/>
+   <PROD_HOME DEF="F"/>
+   <DEP_GRP_LIST>
+      <DEP_GRP NAME="group1" TYPE="R">
+         <DEP_LIST>
+            <DEP NAME="oracle.swd.oui.core" VER="12.2.0.1.0" PLAT="ALL_PLATFORMS" HOME_IDX="-1"/>
+         </DEP_LIST>
+      </DEP_GRP>
+   </DEP_GRP_LIST>
+   <INST_TYPE_LIST>
+      <INST_TYPE NAME="Custom" NAME_ID="Custom" DESC_ID="Custom_DESC">
+         <DEP_GRP_PRPS NAME="group1" OPEN="T" ASK="F">
+            <DEP_GRP_CMP NAME="oracle.swd.oui.core" VER="12.2.0.1.0" PLAT="ALL_PLATFORMS" INST_TYPE="Custom" SEL="T"/>
+         </DEP_GRP_PRPS>
+      </INST_TYPE>
+   </INST_TYPE_LIST>
+   <PLAT_IDX_MAP>
+      <PLAT LIST="233"/>
+      <PLATSET IDX="1" BITSET="{0}"/>
+      <PLATSET IDX="2" BITSET="{}"/>
+   </PLAT_IDX_MAP>
+   <LANG_IDX_MAP>
+      <LANG LIST="en fr ar bn pt_BR bg fr_CA ca hr cs da nl ar_EG en_GB et fi de el iw hu is in it ja ko es lv lt ms es_MX no pl pt ro ru zh_CN sk sl es_ES sv th zh_TW tr uk vi"/>
+      <LANGSET IDX="1" BITSET="{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44}"/>
+      <LANGSET IDX="2" BITSET="{}"/>
+   </LANG_IDX_MAP>
+   <DST_IDX_MAP>
+      <DST LIST="%ORACLE_HOME% %INVENTORY_LOCATION%"/>
+   </DST_IDX_MAP>
+   <STG_FSI>
+      <DST_LNG_PLT_MAP>
+         <ID DST="0" LANG="3" PLAT="1" SIZE="3308204"/>
+      </DST_LNG_PLT_MAP>
+      <OFFSETS/>
+      <JAR_SZ>
+         <LRG_JAR PLAT="233" SIZE="2925909"/>
+      </JAR_SZ>
+   </STG_FSI>
+   <LIB_DEP_LST>
+      <ACTION_LIST>
+         <LIB_DEP NAME="fileActions" VER="12.2.0.1.1" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.2.0" REP_VER="0.0" DEP_MAP="2"/>
+      </ACTION_LIST>
+      <QUERY_LIST/>
+      <DIALOG_LIST/>
+   </LIB_DEP_LST>
+</COMP>
+<COMP NAME="oracle.odbc.ic" VER="12.2.0.1.0" BUILD_NUMBER="0" REP_VER="0.0.0.0.0" RELEASE="Production" INV_LOC="Components/oracle.odbc.ic/12.2.0.1.0/1/" LANGS="en ja" STG_PLAT="NT_AMD64" PLAT="NT_X86 NT_IA64 NT_AMD64 W95 W98 Solaris Intel_Solaris UNIX_Alpha Linux Linux_IA64 IBM_AIX HP_IA64 Linux_S390">
+   <EXT_NAME>Oracle ODBC Driverfor Instant Client</EXT_NAME>
+   <DESCID>COMPONENT_DESC</DESCID>
+   <STG_INFO OSP_VER="10.2.0.0.0">
+      <INST_VER PLAT="ALL_PLATS" VER="11.2.0.2.0"/>
+   </STG_INFO>
+   <CMP_JAR_INFO>
+      <INFO NAME="filemapObj" VAL="Components/oracle/odbc/ic/v12_2_0_1_0/filemap.xml"/>
+      <INFO NAME="helpDir" VAL="Components/oracle/odbc/ic/v12_2_0_1_0/help/"/>
+      <INFO NAME="actionsClass" VAL="Components.oracle.odbc.ic.v12_2_0_1_0.CompActions"/>
+      <INFO NAME="resourceClass" VAL="Components.oracle.odbc.ic.v12_2_0_1_0.resources.CompRes"/>
+      <INFO NAME="cfgTools" VAL=""/>
+      <INFO NAME="identifiersXML" VAL="Components/oracle/odbc/ic/v12_2_0_1_0/identifiers.xml"/>
+      <INFO NAME="contextClass" VAL="Components.oracle.odbc.ic.v12_2_0_1_0.CompContext"/>
+      <INFO NAME="fastCopyLogXML" VAL="Components/oracle/odbc/ic/v12_2_0_1_0/fastCopyLog.xml"/>
+      <INFO NAME="actionPhaseClasses" VAL="Components/oracle/odbc/ic/v12_2_0_1_0/CompInstallPhase1.class,Components/oracle/odbc/ic/v12_2_0_1_0/CompInstallPhase2.class"/>
+      <INFO NAME="filesFileMap" VAL="Components/oracle/odbc/ic/v12_2_0_1_0/filegroup1.xml,Components/oracle/odbc/ic/v12_2_0_1_0/filegroup2.xml,Components/oracle/odbc/ic/v12_2_0_1_0/filemap.xml"/>
+   </CMP_JAR_INFO>
+   <LOC_INFO INST_DFN_LOC="./" JAR_NAME="install1.jar" DSK_NO="1" JAR_LOC="Components/oracle.odbc.ic/12.2.0.1.0/1/" FGRP_LOC="Components/oracle.odbc.ic/12.2.0.1.0/1/DataFiles/"/>
+   <BOOK NAME="oracle.odbc.ic.hs"/>
+   <PRE_REQ DEF="F"/>
+   <PROD_HOME DEF="F"/>
+   <DEP_GRP_LIST/>
+   <INST_TYPE_LIST>
+      <INST_TYPE NAME="Complete" NAME_ID="Complete" DESC_ID="Complete_DESC"/>
+      <INST_TYPE NAME="Typical" NAME_ID="Typical" DESC_ID="Typical_DESC"/>
+      <INST_TYPE NAME="Minimal" NAME_ID="Minimal" DESC_ID="Minimal_DESC"/>
+      <INST_TYPE NAME="Custom" NAME_ID="Custom" DESC_ID="Custom_DESC"/>
+      <INST_TYPE NAME="InstantClient" NAME_ID="InstantClient" DESC_ID="InstantClient_DESC"/>
+   </INST_TYPE_LIST>
+   <PLAT_IDX_MAP>
+      <PLAT LIST="233"/>
+      <PLATSET IDX="1" BITSET="{0}"/>
+      <PLATSET IDX="2" BITSET="{}"/>
+   </PLAT_IDX_MAP>
+   <LANG_IDX_MAP>
+      <LANG LIST="en ja"/>
+      <LANGSET IDX="1" BITSET="{0, 1}"/>
+      <LANGSET IDX="2" BITSET="{}"/>
+   </LANG_IDX_MAP>
+   <DST_IDX_MAP>
+      <DST LIST="%ORACLE_HOME% %INVENTORY_LOCATION%"/>
+   </DST_IDX_MAP>
+   <STG_FSI>
+      <DST_LNG_PLT_MAP>
+         <ID DST="0" LANG="3" PLAT="1" SIZE="1514632"/>
+      </DST_LNG_PLT_MAP>
+      <OFFSETS/>
+      <JAR_SZ>
+         <LRG_JAR PLAT="233" SIZE="330520"/>
+      </JAR_SZ>
+   </STG_FSI>
+   <LIB_DEP_LST>
+      <ACTION_LIST>
+         <LIB_DEP NAME="fileActions" VER="12.2.0.1.1" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.2.0" REP_VER="0.0" DEP_MAP="2"/>
+         <LIB_DEP NAME="aclActions" VER="12.2.0.1.0" PLAT="ALL_PLATFORMS" MIN_INST_VER="0" REP_VER="0" DEP_MAP="2"/>
+         <LIB_DEP NAME="ntw32FoldersActions" VER="10.2.0.3.0" PLAT="NT_X86 W95 W98 NT_AMD64 NT_IA64" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="4"/>
+         <LIB_DEP NAME="w32RegActions" VER="10.2.0.1.0" PLAT="NT_X86 W95 W98 NT_AMD64 NT_IA64" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="4"/>
+      </ACTION_LIST>
+      <QUERY_LIST>
+         <LIB_DEP NAME="WindowsGeneralQueries" VER="10.2.0.1.0" PLAT="NT_X86 W95 W98 NT_AMD64 NT_IA64" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="66"/>
+         <LIB_DEP NAME="fileQueries" VER="10.1.0.3.0" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="6"/>
+         <LIB_DEP NAME="areasQueries" VER="10.2.0.1.0" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="64"/>
+      </QUERY_LIST>
+      <DIALOG_LIST/>
+   </LIB_DEP_LST>
+</COMP>
+<COMP NAME="oracle.ons.ic" VER="12.2.0.1.0" BUILD_NUMBER="0" REP_VER="0.0.0.0.0" RELEASE="Production" INV_LOC="Components/oracle.ons.ic/12.2.0.1.0/1/" LANGS="ALL_LANGS" STG_PLAT="NT_AMD64" PLAT="ALL_PLATFORMS">
+   <EXT_NAME>Oracle Notification Service for Instant Client</EXT_NAME>
+   <DESCID>COMPONENT_DESC</DESCID>
+   <STG_INFO OSP_VER="10.2.0.0.0">
+      <INST_VER PLAT="ALL_PLATS" VER="11.2.0.2.0"/>
+   </STG_INFO>
+   <CMP_JAR_INFO>
+      <INFO NAME="filemapObj" VAL="Components/oracle/ons/ic/v12_2_0_1_0/filemap.xml"/>
+      <INFO NAME="helpDir" VAL="Components/oracle/ons/ic/v12_2_0_1_0/help/"/>
+      <INFO NAME="actionsClass" VAL="Components.oracle.ons.ic.v12_2_0_1_0.CompActions"/>
+      <INFO NAME="resourceClass" VAL="Components.oracle.ons.ic.v12_2_0_1_0.resources.CompRes"/>
+      <INFO NAME="cfgTools" VAL="Components/oracle/ons/ic/v12_2_0_1_0/oracle.ons.ic.12_2_0_1_0.xml"/>
+      <INFO NAME="identifiersXML" VAL="Components/oracle/ons/ic/v12_2_0_1_0/identifiers.xml"/>
+      <INFO NAME="contextClass" VAL="Components.oracle.ons.ic.v12_2_0_1_0.CompContext"/>
+      <INFO NAME="fastCopyLogXML" VAL="Components/oracle/ons/ic/v12_2_0_1_0/fastCopyLog.xml"/>
+      <INFO NAME="actionPhaseClasses" VAL="Components/oracle/ons/ic/v12_2_0_1_0/CompInstallPhase1.class"/>
+      <INFO NAME="filesFileMap" VAL="Components/oracle/ons/ic/v12_2_0_1_0/filegroup2.xml,Components/oracle/ons/ic/v12_2_0_1_0/filemap.xml"/>
+   </CMP_JAR_INFO>
+   <LOC_INFO INST_DFN_LOC="./" JAR_NAME="install1.jar" DSK_NO="1" JAR_LOC="Components/oracle.ons.ic/12.2.0.1.0/1/" FGRP_LOC="Components/oracle.ons.ic/12.2.0.1.0/1/DataFiles/"/>
+   <BOOK NAME="oracle.ons.ic.hs"/>
+   <PRE_REQ DEF="F"/>
+   <PROD_HOME DEF="F"/>
+   <DEP_GRP_LIST/>
+   <INST_TYPE_LIST>
+      <INST_TYPE NAME="Complete" NAME_ID="Complete" DESC_ID="Complete_DESC"/>
+   </INST_TYPE_LIST>
+   <PLAT_IDX_MAP>
+      <PLAT LIST="233"/>
+      <PLATSET IDX="1" BITSET="{}"/>
+      <PLATSET IDX="2" BITSET="{0}"/>
+   </PLAT_IDX_MAP>
+   <LANG_IDX_MAP>
+      <LANG LIST="en fr ar bn pt_BR bg fr_CA ca hr cs da nl ar_EG en_GB et fi de el iw hu is in it ja ko es lv lt ms es_MX no pl pt ro ru zh_CN sk sl es_ES sv th zh_TW tr uk vi"/>
+      <LANGSET IDX="1" BITSET="{}"/>
+      <LANGSET IDX="2" BITSET="{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44}"/>
+   </LANG_IDX_MAP>
+   <DST_IDX_MAP>
+      <DST LIST="%ORACLE_HOME% %INVENTORY_LOCATION%"/>
+   </DST_IDX_MAP>
+   <STG_FSI>
+      <DST_LNG_PLT_MAP>
+         <ID DST="0" LANG="3" PLAT="2" SIZE="252416"/>
+      </DST_LNG_PLT_MAP>
+      <OFFSETS/>
+      <JAR_SZ>
+         <LRG_JAR PLAT="233" SIZE="113278"/>
+      </JAR_SZ>
+   </STG_FSI>
+   <LIB_DEP_LST>
+      <ACTION_LIST>
+         <LIB_DEP NAME="fileActions" VER="12.2.0.1.1" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.2.0" REP_VER="0.0" DEP_MAP="2"/>
+         <LIB_DEP NAME="aclActions" VER="12.2.0.1.0" PLAT="ALL_PLATFORMS" MIN_INST_VER="0" REP_VER="0" DEP_MAP="2"/>
+      </ACTION_LIST>
+      <QUERY_LIST/>
+      <DIALOG_LIST/>
+   </LIB_DEP_LST>
+</COMP>
+<COMP NAME="oracle.rdbms.rsf.ic" VER="12.2.0.1.0" BUILD_NUMBER="0" REP_VER="10.0.0.0.0" RELEASE="Production" INV_LOC="Components/oracle.rdbms.rsf.ic/12.2.0.1.0/1/" LANGS="ALL_LANGS" STG_PLAT="NT_AMD64" PLAT="ALL_PLATFORMS">
+   <EXT_NAME>RDBMS Required Support Files for Instant Client</EXT_NAME>
+   <DESCID>COMPONENT_DESC</DESCID>
+   <STG_INFO OSP_VER="10.2.0.0.0">
+      <INST_VER PLAT="ALL_PLATS" VER="11.2.0.2.0"/>
+   </STG_INFO>
+   <CMP_JAR_INFO>
+      <INFO NAME="filemapObj" VAL="Components/oracle/rdbms/rsf/ic/v12_2_0_1_0/filemap.xml"/>
+      <INFO NAME="helpDir" VAL="Components/oracle/rdbms/rsf/ic/v12_2_0_1_0/help/"/>
+      <INFO NAME="actionsClass" VAL="Components.oracle.rdbms.rsf.ic.v12_2_0_1_0.CompActions"/>
+      <INFO NAME="resourceClass" VAL="Components.oracle.rdbms.rsf.ic.v12_2_0_1_0.resources.CompRes"/>
+      <INFO NAME="cfgTools" VAL=""/>
+      <INFO NAME="identifiersXML" VAL="Components/oracle/rdbms/rsf/ic/v12_2_0_1_0/identifiers.xml"/>
+      <INFO NAME="contextClass" VAL="Components.oracle.rdbms.rsf.ic.v12_2_0_1_0.CompContext"/>
+      <INFO NAME="fastCopyLogXML" VAL="Components/oracle/rdbms/rsf/ic/v12_2_0_1_0/fastCopyLog.xml"/>
+      <INFO NAME="actionPhaseClasses" VAL="Components/oracle/rdbms/rsf/ic/v12_2_0_1_0/makedeps2.xml,Components/oracle/rdbms/rsf/ic/v12_2_0_1_0/CompInstallPhase1.class,Components/oracle/rdbms/rsf/ic/v12_2_0_1_0/CompLinkPhase.class"/>
+      <INFO NAME="filesFileMap" VAL="Components/oracle/rdbms/rsf/ic/v12_2_0_1_0/filegroup1.xml,Components/oracle/rdbms/rsf/ic/v12_2_0_1_0/filegroup2.xml,Components/oracle/rdbms/rsf/ic/v12_2_0_1_0/filemap.xml"/>
+   </CMP_JAR_INFO>
+   <LOC_INFO INST_DFN_LOC="./" JAR_NAME="install1.jar" DSK_NO="1" JAR_LOC="Components/oracle.rdbms.rsf.ic/12.2.0.1.0/1/" FGRP_LOC="Components/oracle.rdbms.rsf.ic/12.2.0.1.0/1/DataFiles/"/>
+   <BOOK NAME="oracle.rdbms.rsf.ic.hs"/>
+   <PRE_REQ DEF="F"/>
+   <PROD_HOME DEF="F"/>
+   <DEP_GRP_LIST/>
+   <INST_TYPE_LIST>
+      <INST_TYPE NAME="Minimal" NAME_ID="Minimal" DESC_ID="Minimal_DESC"/>
+      <INST_TYPE NAME="Complete" NAME_ID="Complete" DESC_ID="Complete_DESC"/>
+      <INST_TYPE NAME="Custom" NAME_ID="Custom" DESC_ID="Custom_DESC"/>
+      <INST_TYPE NAME="Typical" NAME_ID="Typical" DESC_ID="Typical_DESC"/>
+   </INST_TYPE_LIST>
+   <PLAT_IDX_MAP>
+      <PLAT LIST="233"/>
+      <PLATSET IDX="1" BITSET="{0}"/>
+      <PLATSET IDX="2" BITSET="{}"/>
+   </PLAT_IDX_MAP>
+   <LANG_IDX_MAP>
+      <LANG LIST="en fr ar bn pt_BR bg fr_CA ca hr cs da nl ar_EG en_GB et fi de el iw hu is in it ja ko es lv lt ms es_MX no pl pt ro ru zh_CN sk sl es_ES sv th zh_TW tr uk vi"/>
+      <LANGSET IDX="1" BITSET="{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44}"/>
+      <LANGSET IDX="2" BITSET="{}"/>
+   </LANG_IDX_MAP>
+   <DST_IDX_MAP>
+      <DST LIST="%ORACLE_HOME% %INVENTORY_LOCATION%"/>
+   </DST_IDX_MAP>
+   <STG_FSI>
+      <DST_LNG_PLT_MAP>
+         <ID DST="0" LANG="3" PLAT="1" SIZE="5853138"/>
+      </DST_LNG_PLT_MAP>
+      <OFFSETS/>
+      <JAR_SZ>
+         <LRG_JAR PLAT="233" SIZE="1571548"/>
+      </JAR_SZ>
+   </STG_FSI>
+   <LIB_DEP_LST>
+      <ACTION_LIST>
+         <LIB_DEP NAME="fileActions" VER="12.2.0.1.1" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.2.0" REP_VER="0.0" DEP_MAP="2"/>
+         <LIB_DEP NAME="aclActions" VER="12.2.0.1.0" PLAT="ALL_PLATFORMS" MIN_INST_VER="0" REP_VER="0" DEP_MAP="2"/>
+         <LIB_DEP NAME="unixActions" VER="10.2.0.3.0" PLAT="Solaris Solaris_SPARC64 Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX IBM_AIXPPC64 Dynix UnixWare DG_UX HP_UX HP_UX64 NEC Hitachi_UX Iris NCOS OpenVMS IBM_MVS Linux Linux_AMD64 Linux_S390 HP_IA64 MACOSX Linux_IA64 Linux_Itanium Linux_PPC Linux_LOP Linux_SPARC64" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="10"/>
+      </ACTION_LIST>
+      <QUERY_LIST>
+         <LIB_DEP NAME="fileQueries" VER="10.1.0.3.0" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="66"/>
+         <LIB_DEP NAME="generalQueries" VER="10.2.0.2.1" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="66"/>
+      </QUERY_LIST>
+      <DIALOG_LIST/>
+   </LIB_DEP_LST>
+</COMP>
+<COMP NAME="oracle.sqlplus.ic" VER="12.2.0.1.0" BUILD_NUMBER="0" REP_VER="0.0.0.0.0" RELEASE="Production" INV_LOC="Components/oracle.sqlplus.ic/12.2.0.1.0/1/" LANGS="ALL_LANGS" STG_PLAT="NT_AMD64" PLAT="Solaris Solaris_SPARC64 Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX IBM_AIXPPC64 Dynix UnixWare DG_UX HP_UX HP_UX64 NEC Hitachi_UX Iris NCOS OpenVMS IBM_MVS Linux Linux_AMD64 Linux_S390 HP_IA64 MACOSX Linux_IA64 Linux_Itanium Linux_PPC Linux_LOP Linux_SPARC64 NT_X86 NT_IA64 NT_AMD64 W95 W98 NT_Alpha">
+   <EXT_NAME>SQL*Plus Files for Instant Client</EXT_NAME>
+   <DESCID>COMPONENT_DESC</DESCID>
+   <STG_INFO OSP_VER="10.2.0.0.0">
+      <INST_VER PLAT="ALL_PLATS" VER="11.2.0.2.0"/>
+   </STG_INFO>
+   <CMP_JAR_INFO>
+      <INFO NAME="filemapObj" VAL="Components/oracle/sqlplus/ic/v12_2_0_1_0/filemap.xml"/>
+      <INFO NAME="helpDir" VAL="Components/oracle/sqlplus/ic/v12_2_0_1_0/help/"/>
+      <INFO NAME="actionsClass" VAL="Components.oracle.sqlplus.ic.v12_2_0_1_0.CompActions"/>
+      <INFO NAME="resourceClass" VAL="Components.oracle.sqlplus.ic.v12_2_0_1_0.resources.CompRes"/>
+      <INFO NAME="cfgTools" VAL=""/>
+      <INFO NAME="identifiersXML" VAL="Components/oracle/sqlplus/ic/v12_2_0_1_0/identifiers.xml"/>
+      <INFO NAME="contextClass" VAL="Components.oracle.sqlplus.ic.v12_2_0_1_0.CompContext"/>
+      <INFO NAME="fastCopyLogXML" VAL="Components/oracle/sqlplus/ic/v12_2_0_1_0/fastCopyLog.xml"/>
+      <INFO NAME="actionPhaseClasses" VAL="Components/oracle/sqlplus/ic/v12_2_0_1_0/CompInstallPhase1.class"/>
+      <INFO NAME="filesFileMap" VAL="Components/oracle/sqlplus/ic/v12_2_0_1_0/filegroup2.xml,Components/oracle/sqlplus/ic/v12_2_0_1_0/filemap.xml"/>
+   </CMP_JAR_INFO>
+   <LOC_INFO INST_DFN_LOC="./" JAR_NAME="install1.jar" DSK_NO="1" JAR_LOC="Components/oracle.sqlplus.ic/12.2.0.1.0/1/" FGRP_LOC="Components/oracle.sqlplus.ic/12.2.0.1.0/1/DataFiles/"/>
+   <BOOK NAME="oracle.sqlplus.ic.hs"/>
+   <PRE_REQ DEF="F"/>
+   <PROD_HOME DEF="F"/>
+   <DEP_GRP_LIST/>
+   <INST_TYPE_LIST>
+      <INST_TYPE NAME="Minimal" NAME_ID="Minimal" DESC_ID="Minimal_DESC"/>
+      <INST_TYPE NAME="Complete" NAME_ID="Complete" DESC_ID="Complete_DESC"/>
+      <INST_TYPE NAME="Custom" NAME_ID="Custom" DESC_ID="Custom_DESC"/>
+      <INST_TYPE NAME="Typical" NAME_ID="Typical" DESC_ID="Typical_DESC"/>
+   </INST_TYPE_LIST>
+   <PLAT_IDX_MAP>
+      <PLAT LIST="233"/>
+      <PLATSET IDX="1" BITSET="{}"/>
+      <PLATSET IDX="2" BITSET="{0}"/>
+   </PLAT_IDX_MAP>
+   <LANG_IDX_MAP>
+      <LANG LIST="en fr ar bn pt_BR bg fr_CA ca hr cs da nl ar_EG en_GB et fi de el iw hu is in it ja ko es lv lt ms es_MX no pl pt ro ru zh_CN sk sl es_ES sv th zh_TW tr uk vi"/>
+      <LANGSET IDX="1" BITSET="{}"/>
+      <LANGSET IDX="2" BITSET="{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44}"/>
+   </LANG_IDX_MAP>
+   <DST_IDX_MAP>
+      <DST LIST="%ORACLE_HOME% %INVENTORY_LOCATION%"/>
+   </DST_IDX_MAP>
+   <STG_FSI>
+      <DST_LNG_PLT_MAP>
+         <ID DST="0" LANG="3" PLAT="2" SIZE="2878624"/>
+      </DST_LNG_PLT_MAP>
+      <OFFSETS/>
+      <JAR_SZ>
+         <LRG_JAR PLAT="233" SIZE="957522"/>
+      </JAR_SZ>
+   </STG_FSI>
+   <LIB_DEP_LST>
+      <ACTION_LIST>
+         <LIB_DEP NAME="fileActions" VER="12.2.0.1.1" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.2.0" REP_VER="0.0" DEP_MAP="2"/>
+         <LIB_DEP NAME="aclActions" VER="12.2.0.1.0" PLAT="ALL_PLATFORMS" MIN_INST_VER="0" REP_VER="0" DEP_MAP="2"/>
+      </ACTION_LIST>
+      <QUERY_LIST/>
+      <DIALOG_LIST/>
+   </LIB_DEP_LST>
+</COMP>
+<COMP NAME="oracle.jdk" VER="1.8.0.91.0" BUILD_NUMBER="0" REP_VER="0.0.0.0.0" RELEASE="Production" INV_LOC="Components/oracle.jdk/1.8.0.91.0/1/" LANGS="ALL_LANGS" STG_PLAT="NT_AMD64" PLAT="ALL_PLATFORMS">
+   <EXT_NAME>Java Development Kit</EXT_NAME>
+   <DESCID>COMPONENT_DESC</DESCID>
+   <STG_INFO OSP_VER="10.2.0.0.0">
+      <INST_VER PLAT="ALL_PLATS" VER="11.2.0.2.0"/>
+   </STG_INFO>
+   <CMP_JAR_INFO>
+      <INFO NAME="filemapObj" VAL="Components/oracle/jdk/v1_8_0_91_0/filemap.xml"/>
+      <INFO NAME="helpDir" VAL="Components/oracle/jdk/v1_8_0_91_0/help/"/>
+      <INFO NAME="actionsClass" VAL="Components.oracle.jdk.v1_8_0_91_0.CompActions"/>
+      <INFO NAME="resourceClass" VAL="Components.oracle.jdk.v1_8_0_91_0.resources.CompRes"/>
+      <INFO NAME="cfgTools" VAL=""/>
+      <INFO NAME="identifiersXML" VAL="Components/oracle/jdk/v1_8_0_91_0/identifiers.xml"/>
+      <INFO NAME="contextClass" VAL="Components.oracle.jdk.v1_8_0_91_0.CompContext"/>
+      <INFO NAME="fastCopyLogXML" VAL="Components/oracle/jdk/v1_8_0_91_0/fastCopyLog.xml"/>
+      <INFO NAME="actionPhaseClasses" VAL="Components/oracle/jdk/v1_8_0_91_0/CompInstallPhase1.class,Components/oracle/jdk/v1_8_0_91_0/CompInstallPhase2.class"/>
+      <INFO NAME="filesFileMap" VAL="Components/oracle/jdk/v1_8_0_91_0/filegroup1.xml,Components/oracle/jdk/v1_8_0_91_0/filegroup2.xml,Components/oracle/jdk/v1_8_0_91_0/filegroup3.xml,Components/oracle/jdk/v1_8_0_91_0/filegroup4.xml,Components/oracle/jdk/v1_8_0_91_0/filegroup5.xml,Components/oracle/jdk/v1_8_0_91_0/filegroup6.xml,Components/oracle/jdk/v1_8_0_91_0/filemap.xml"/>
+   </CMP_JAR_INFO>
+   <LOC_INFO INST_DFN_LOC="./" JAR_NAME="install1.jar" DSK_NO="1" JAR_LOC="Components/oracle.jdk/1.8.0.91.0/1/" FGRP_LOC="Components/oracle.jdk/1.8.0.91.0/1/DataFiles/"/>
+   <BOOK NAME="oracle.jdk.hs"/>
+   <PRE_REQ DEF="F"/>
+   <PROD_HOME DEF="F"/>
+   <DEP_GRP_LIST/>
+   <INST_TYPE_LIST/>
+   <PLAT_IDX_MAP>
+      <PLAT LIST="233"/>
+      <PLATSET IDX="1" BITSET="{0}"/>
+   </PLAT_IDX_MAP>
+   <LANG_IDX_MAP>
+      <LANG LIST="en fr ar bn pt_BR bg fr_CA ca hr cs da nl ar_EG en_GB et fi de el iw hu is in it ja ko es lv lt ms es_MX no pl pt ro ru zh_CN sk sl es_ES sv th zh_TW tr uk vi"/>
+      <LANGSET IDX="1" BITSET="{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44}"/>
+   </LANG_IDX_MAP>
+   <DST_IDX_MAP>
+      <DST LIST="%ORACLE_HOME% %INVENTORY_LOCATION%"/>
+   </DST_IDX_MAP>
+   <STG_FSI>
+      <DST_LNG_PLT_MAP>
+         <ID DST="0" LANG="2" PLAT="1" SIZE="324478802"/>
+      </DST_LNG_PLT_MAP>
+      <OFFSETS/>
+      <JAR_SZ>
+         <LRG_JAR PLAT="233" SIZE="80462052"/>
+      </JAR_SZ>
+   </STG_FSI>
+   <LIB_DEP_LST>
+      <ACTION_LIST>
+         <LIB_DEP NAME="fileActions" VER="12.2.0.1.1" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.2.0" REP_VER="0.0" DEP_MAP="2"/>
+         <LIB_DEP NAME="SpawnActions" VER="10.1.0.3.4" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.1.0.0.0" REP_VER="0.0" DEP_MAP="4"/>
+      </ACTION_LIST>
+      <QUERY_LIST>
+         <LIB_DEP NAME="generalQueries" VER="10.2.0.2.1" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="4"/>
+         <LIB_DEP NAME="fileQueries" VER="10.1.0.3.0" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="68"/>
+      </QUERY_LIST>
+      <DIALOG_LIST/>
+   </LIB_DEP_LST>
+</COMP>
+<COMP NAME="oracle.ldap.rsf.ic" VER="12.2.0.1.0" BUILD_NUMBER="0" REP_VER="10.0.0.0.0" RELEASE="Production" INV_LOC="Components/oracle.ldap.rsf.ic/12.2.0.1.0/1/" LANGS="ALL_LANGS" STG_PLAT="NT_AMD64" PLAT="Solaris Solaris_SPARC64 Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX IBM_AIXPPC64 Dynix UnixWare DG_UX HP_UX HP_UX64 NEC Hitachi_UX Iris NCOS OpenVMS IBM_MVS Linux Linux_AMD64 Linux_S390 HP_IA64 MACOSX Linux_IA64 Linux_Itanium Linux_PPC Linux_LOP Linux_SPARC64 NT_X86 NT_IA64 NT_AMD64 W95 W98">
+   <EXT_NAME>SSL Required Support Files for InstantClient</EXT_NAME>
+   <DESCID>COMPONENT_DESC</DESCID>
+   <STG_INFO OSP_VER="10.2.0.0.0">
+      <INST_VER PLAT="ALL_PLATS" VER="11.2.0.2.0"/>
+   </STG_INFO>
+   <CMP_JAR_INFO>
+      <INFO NAME="filemapObj" VAL="Components/oracle/ldap/rsf/ic/v12_2_0_1_0/filemap.xml"/>
+      <INFO NAME="helpDir" VAL="Components/oracle/ldap/rsf/ic/v12_2_0_1_0/help/"/>
+      <INFO NAME="actionsClass" VAL="Components.oracle.ldap.rsf.ic.v12_2_0_1_0.CompActions"/>
+      <INFO NAME="resourceClass" VAL="Components.oracle.ldap.rsf.ic.v12_2_0_1_0.resources.CompRes"/>
+      <INFO NAME="cfgTools" VAL=""/>
+      <INFO NAME="identifiersXML" VAL="Components/oracle/ldap/rsf/ic/v12_2_0_1_0/identifiers.xml"/>
+      <INFO NAME="contextClass" VAL="Components.oracle.ldap.rsf.ic.v12_2_0_1_0.CompContext"/>
+      <INFO NAME="fastCopyLogXML" VAL="Components/oracle/ldap/rsf/ic/v12_2_0_1_0/fastCopyLog.xml"/>
+      <INFO NAME="actionPhaseClasses" VAL="Components/oracle/ldap/rsf/ic/v12_2_0_1_0/CompInstallPhase1.class"/>
+      <INFO NAME="filesFileMap" VAL="Components/oracle/ldap/rsf/ic/v12_2_0_1_0/filegroup2.xml,Components/oracle/ldap/rsf/ic/v12_2_0_1_0/filemap.xml"/>
+   </CMP_JAR_INFO>
+   <LOC_INFO INST_DFN_LOC="./" JAR_NAME="install1.jar" DSK_NO="1" JAR_LOC="Components/oracle.ldap.rsf.ic/12.2.0.1.0/1/" FGRP_LOC="Components/oracle.ldap.rsf.ic/12.2.0.1.0/1/DataFiles/"/>
+   <BOOK NAME="oracle.ldap.rsf.ic.hs"/>
+   <PRE_REQ DEF="F"/>
+   <PROD_HOME DEF="F"/>
+   <DEP_GRP_LIST/>
+   <INST_TYPE_LIST>
+      <INST_TYPE NAME="Minimal" NAME_ID="Minimal" DESC_ID="Minimal_DESC"/>
+      <INST_TYPE NAME="Complete" NAME_ID="Complete" DESC_ID="Complete_DESC"/>
+      <INST_TYPE NAME="Custom" NAME_ID="Custom" DESC_ID="Custom_DESC"/>
+      <INST_TYPE NAME="Typical" NAME_ID="Typical" DESC_ID="Typical_DESC"/>
+   </INST_TYPE_LIST>
+   <PLAT_IDX_MAP>
+      <PLAT LIST="233"/>
+      <PLATSET IDX="1" BITSET="{}"/>
+      <PLATSET IDX="2" BITSET="{0}"/>
+   </PLAT_IDX_MAP>
+   <LANG_IDX_MAP>
+      <LANG LIST="en fr ar bn pt_BR bg fr_CA ca hr cs da nl ar_EG en_GB et fi de el iw hu is in it ja ko es lv lt ms es_MX no pl pt ro ru zh_CN sk sl es_ES sv th zh_TW tr uk vi"/>
+      <LANGSET IDX="1" BITSET="{}"/>
+      <LANGSET IDX="2" BITSET="{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44}"/>
+   </LANG_IDX_MAP>
+   <DST_IDX_MAP>
+      <DST LIST="%ORACLE_HOME% %INVENTORY_LOCATION%"/>
+   </DST_IDX_MAP>
+   <STG_FSI>
+      <DST_LNG_PLT_MAP>
+         <ID DST="0" LANG="3" PLAT="2" SIZE="9243648"/>
+      </DST_LNG_PLT_MAP>
+      <OFFSETS/>
+      <JAR_SZ>
+         <LRG_JAR PLAT="233" SIZE="5781442"/>
+      </JAR_SZ>
+   </STG_FSI>
+   <LIB_DEP_LST>
+      <ACTION_LIST>
+         <LIB_DEP NAME="fileActions" VER="12.2.0.1.1" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.2.0" REP_VER="0.0" DEP_MAP="2"/>
+         <LIB_DEP NAME="aclActions" VER="12.2.0.1.0" PLAT="ALL_PLATFORMS" MIN_INST_VER="0" REP_VER="0" DEP_MAP="2"/>
+      </ACTION_LIST>
+      <QUERY_LIST/>
+      <DIALOG_LIST/>
+   </LIB_DEP_LST>
+</COMP>
+<COMP NAME="oracle.swd.oui.core.min" VER="12.2.0.1.4" BUILD_NUMBER="0" REP_VER="0.0.0.0.0" RELEASE="Production" INV_LOC="Components/oracle.swd.oui.core.min/12.2.0.1.4/1/" LANGS="ALL_LANGS" STG_PLAT="NT_AMD64" PLAT="ALL_PLATFORMS">
+   <EXT_NAME>oracle.swd.oui.core.min</EXT_NAME>
+   <DESCID>COMPONENT_DESC</DESCID>
+   <STG_INFO OSP_VER="10.2.0.0.0">
+      <INST_VER PLAT="ALL_PLATS" VER="11.2.0.2.0"/>
+   </STG_INFO>
+   <CMP_JAR_INFO>
+      <INFO NAME="filemapObj" VAL="Components/oracle/swd/oui/core/min/v12_2_0_1_4/filemap.xml"/>
+      <INFO NAME="helpDir" VAL="Components/oracle/swd/oui/core/min/v12_2_0_1_4/help/"/>
+      <INFO NAME="actionsClass" VAL="Components.oracle.swd.oui.core.min.v12_2_0_1_4.CompActions"/>
+      <INFO NAME="resourceClass" VAL="Components.oracle.swd.oui.core.min.v12_2_0_1_4.resources.CompRes"/>
+      <INFO NAME="cfgTools" VAL=""/>
+      <INFO NAME="identifiersXML" VAL="Components/oracle/swd/oui/core/min/v12_2_0_1_4/identifiers.xml"/>
+      <INFO NAME="contextClass" VAL="Components.oracle.swd.oui.core.min.v12_2_0_1_4.CompContext"/>
+      <INFO NAME="fastCopyLogXML" VAL="Components/oracle/swd/oui/core/min/v12_2_0_1_4/fastCopyLog.xml"/>
+      <INFO NAME="actionPhaseClasses" VAL="Components/oracle/swd/oui/core/min/v12_2_0_1_4/CompInstallPhase1.class"/>
+      <INFO NAME="filesFileMap" VAL="Components/oracle/swd/oui/core/min/v12_2_0_1_4/filegroup1.xml,Components/oracle/swd/oui/core/min/v12_2_0_1_4/filegroup2.xml,Components/oracle/swd/oui/core/min/v12_2_0_1_4/filemap.xml"/>
+   </CMP_JAR_INFO>
+   <LOC_INFO INST_DFN_LOC="./" JAR_NAME="install1.jar" DSK_NO="1" JAR_LOC="Components/oracle.swd.oui.core.min/12.2.0.1.4/1/" FGRP_LOC="Components/oracle.swd.oui.core.min/12.2.0.1.4/1/DataFiles/"/>
+   <BOOK NAME="oracle.swd.oui.core.min.hs"/>
+   <PRE_REQ DEF="F"/>
+   <PROD_HOME DEF="F"/>
+   <DEP_GRP_LIST/>
+   <INST_TYPE_LIST>
+      <INST_TYPE NAME="Minimum" NAME_ID="Minimum" DESC_ID="Minimum_DESC"/>
+      <INST_TYPE NAME="Complete" NAME_ID="Complete" DESC_ID="Complete_DESC"/>
+      <INST_TYPE NAME="Custom" NAME_ID="Custom" DESC_ID="Custom_DESC"/>
+      <INST_TYPE NAME="Typical" NAME_ID="Typical" DESC_ID="Typical_DESC"/>
+   </INST_TYPE_LIST>
+   <PLAT_IDX_MAP>
+      <PLAT LIST="233"/>
+      <PLATSET IDX="1" BITSET="{0}"/>
+   </PLAT_IDX_MAP>
+   <LANG_IDX_MAP>
+      <LANG LIST="en fr ar bn pt_BR bg fr_CA ca hr cs da nl ar_EG en_GB et fi de el iw hu is in it ja ko es lv lt ms es_MX no pl pt ro ru zh_CN sk sl es_ES sv th zh_TW tr uk vi"/>
+      <LANGSET IDX="1" BITSET="{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44}"/>
+   </LANG_IDX_MAP>
+   <DST_IDX_MAP>
+      <DST LIST="%ORACLE_HOME% %INVENTORY_LOCATION%"/>
+   </DST_IDX_MAP>
+   <STG_FSI>
+      <DST_LNG_PLT_MAP>
+         <ID DST="0" LANG="2" PLAT="1" SIZE="13488667"/>
+      </DST_LNG_PLT_MAP>
+      <OFFSETS/>
+      <JAR_SZ>
+         <LRG_JAR PLAT="233" SIZE="6819187"/>
+      </JAR_SZ>
+   </STG_FSI>
+   <LIB_DEP_LST>
+      <ACTION_LIST>
+         <LIB_DEP NAME="fileActions" VER="12.2.0.1.1" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.2.0" REP_VER="0.0" DEP_MAP="2"/>
+      </ACTION_LIST>
+      <QUERY_LIST/>
+      <DIALOG_LIST/>
+   </LIB_DEP_LST>
+</COMP>
+<COMP NAME="oracle.nlsrtl.rsf.ic" VER="12.2.0.1.0" BUILD_NUMBER="0" REP_VER="10.0.0.0.0" RELEASE="Production" INV_LOC="Components/oracle.nlsrtl.rsf.ic/12.2.0.1.0/1/" LANGS="ALL_LANGS" STG_PLAT="NT_AMD64" PLAT="ALL_PLATFORMS">
+   <EXT_NAME>Oracle Globalization Support</EXT_NAME>
+   <DESCID>COMPONENT_DESC</DESCID>
+   <STG_INFO OSP_VER="10.2.0.0.0">
+      <INST_VER PLAT="ALL_PLATS" VER="11.2.0.2.0"/>
+   </STG_INFO>
+   <CMP_JAR_INFO>
+      <INFO NAME="filemapObj" VAL="Components/oracle/nlsrtl/rsf/ic/v12_2_0_1_0/filemap.xml"/>
+      <INFO NAME="helpDir" VAL="Components/oracle/nlsrtl/rsf/ic/v12_2_0_1_0/help/"/>
+      <INFO NAME="actionsClass" VAL="Components.oracle.nlsrtl.rsf.ic.v12_2_0_1_0.CompActions"/>
+      <INFO NAME="resourceClass" VAL="Components.oracle.nlsrtl.rsf.ic.v12_2_0_1_0.resources.CompRes"/>
+      <INFO NAME="cfgTools" VAL=""/>
+      <INFO NAME="identifiersXML" VAL="Components/oracle/nlsrtl/rsf/ic/v12_2_0_1_0/identifiers.xml"/>
+      <INFO NAME="contextClass" VAL="Components.oracle.nlsrtl.rsf.ic.v12_2_0_1_0.CompContext"/>
+      <INFO NAME="fastCopyLogXML" VAL="Components/oracle/nlsrtl/rsf/ic/v12_2_0_1_0/fastCopyLog.xml"/>
+      <INFO NAME="actionPhaseClasses" VAL="Components/oracle/nlsrtl/rsf/ic/v12_2_0_1_0/CompInstallPhase1.class"/>
+      <INFO NAME="filesFileMap" VAL="Components/oracle/nlsrtl/rsf/ic/v12_2_0_1_0/filegroup1.xml,Components/oracle/nlsrtl/rsf/ic/v12_2_0_1_0/filemap.xml"/>
+   </CMP_JAR_INFO>
+   <LOC_INFO INST_DFN_LOC="./" JAR_NAME="install1.jar" DSK_NO="1" JAR_LOC="Components/oracle.nlsrtl.rsf.ic/12.2.0.1.0/1/" FGRP_LOC="Components/oracle.nlsrtl.rsf.ic/12.2.0.1.0/1/DataFiles/"/>
+   <BOOK NAME="oracle.nlsrtl.rsf.ic.hs"/>
+   <PRE_REQ DEF="F"/>
+   <PROD_HOME DEF="F"/>
+   <DEP_GRP_LIST/>
+   <INST_TYPE_LIST/>
+   <PLAT_IDX_MAP>
+      <PLAT LIST="233"/>
+      <PLATSET IDX="1" BITSET="{0}"/>
+   </PLAT_IDX_MAP>
+   <LANG_IDX_MAP>
+      <LANG LIST="en fr ar bn pt_BR bg fr_CA ca hr cs da nl ar_EG en_GB et fi de el iw hu is in it ja ko es lv lt ms es_MX no pl pt ro ru zh_CN sk sl es_ES sv th zh_TW tr uk vi"/>
+      <LANGSET IDX="1" BITSET="{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44}"/>
+   </LANG_IDX_MAP>
+   <DST_IDX_MAP>
+      <DST LIST="%ORACLE_HOME% %INVENTORY_LOCATION%"/>
+   </DST_IDX_MAP>
+   <STG_FSI>
+      <DST_LNG_PLT_MAP>
+         <ID DST="0" LANG="2" PLAT="1" SIZE="4231363"/>
+      </DST_LNG_PLT_MAP>
+      <OFFSETS/>
+      <JAR_SZ>
+         <LRG_JAR PLAT="233" SIZE="2674461"/>
+      </JAR_SZ>
+   </STG_FSI>
+   <LIB_DEP_LST>
+      <ACTION_LIST>
+         <LIB_DEP NAME="fileActions" VER="12.2.0.1.1" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.2.0" REP_VER="0.0" DEP_MAP="2"/>
+         <LIB_DEP NAME="aclActions" VER="12.2.0.1.0" PLAT="ALL_PLATFORMS" MIN_INST_VER="0" REP_VER="0" DEP_MAP="2"/>
+         <LIB_DEP NAME="w32RegActions" VER="10.2.0.1.0" PLAT="NT_X86 W95 W98 NT_AMD64 NT_IA64" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="2"/>
+      </ACTION_LIST>
+      <QUERY_LIST>
+         <LIB_DEP NAME="w32RegQueries" VER="10.2.0.1.0" PLAT="NT_X86 W95 W98 NT_AMD64 NT_IA64" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="2"/>
+         <LIB_DEP NAME="NLSQueries" VER="12.2.0.1.0" PLAT="NT_X86 W95 W98 NT_IA64 NT_AMD64 Solaris HP_UX HP_IA64 UNIX_Alpha Linux Linux_S390 Linux_IA64 Intel_Solaris IBM_AIX" MIN_INST_VER="1.5.0.0.0" REP_VER="1.3.6" DEP_MAP="2"/>
+         <LIB_DEP NAME="generalQueries" VER="10.2.0.2.1" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="64"/>
+      </QUERY_LIST>
+      <DIALOG_LIST/>
+   </LIB_DEP_LST>
+</COMP>
+<COMP NAME="oracle.ntoramts" VER="12.2.0.1.0" BUILD_NUMBER="0" REP_VER="0.0.0.0.0" RELEASE="Production" INV_LOC="Components/oracle.ntoramts/12.2.0.1.0/1/" LANGS="ALL_LANGS" STG_PLAT="NT_X86 NT_IA64 NT_AMD64" PLAT="NT_X86 NT_IA64 NT_AMD64">
+   <EXT_NAME>Oracle Services For Microsoft Transaction Server</EXT_NAME>
+   <DESCID>COMPONENT_DESC</DESCID>
+   <STG_INFO OSP_VER="10.2.0.0.0">
+      <INST_VER PLAT="ALL_PLATS" VER="11.2.0.2.0"/>
+   </STG_INFO>
+   <CMP_JAR_INFO>
+      <INFO NAME="filemapObj" VAL="Components/oracle/ntoramts/v12_2_0_1_0/filemap.xml"/>
+      <INFO NAME="helpDir" VAL="Components/oracle/ntoramts/v12_2_0_1_0/help/"/>
+      <INFO NAME="actionsClass" VAL="Components.oracle.ntoramts.v12_2_0_1_0.CompActions"/>
+      <INFO NAME="resourceClass" VAL="Components.oracle.ntoramts.v12_2_0_1_0.resources.CompRes"/>
+      <INFO NAME="cfgTools" VAL="Components/oracle/ntoramts/v12_2_0_1_0/oracle.ntoramts.12_2_0_1_0.xml"/>
+      <INFO NAME="identifiersXML" VAL="Components/oracle/ntoramts/v12_2_0_1_0/identifiers.xml"/>
+      <INFO NAME="contextClass" VAL="Components.oracle.ntoramts.v12_2_0_1_0.CompContext"/>
+      <INFO NAME="fastCopyLogXML" VAL="Components/oracle/ntoramts/v12_2_0_1_0/fastCopyLog.xml"/>
+      <INFO NAME="actionPhaseClasses" VAL="Components/oracle/ntoramts/v12_2_0_1_0/CompInstallPhase1.class,Components/oracle/ntoramts/v12_2_0_1_0/CompInstallPhase2.class"/>
+      <INFO NAME="filesFileMap" VAL="Components/oracle/ntoramts/v12_2_0_1_0/filegroup2.xml,Components/oracle/ntoramts/v12_2_0_1_0/filemap.xml"/>
+   </CMP_JAR_INFO>
+   <LOC_INFO INST_DFN_LOC="./" JAR_NAME="install1.jar" DSK_NO="1" JAR_LOC="Components/oracle.ntoramts/12.2.0.1.0/1/" FGRP_LOC="Components/oracle.ntoramts/12.2.0.1.0/1/DataFiles/"/>
+   <BOOK NAME="oracle.ntoramts.hs"/>
+   <PRE_REQ DEF="F"/>
+   <PROD_HOME DEF="F"/>
+   <DEP_GRP_LIST>
+      <DEP_GRP NAME="Optional" TYPE="O">
+         <DEP_LIST>
+            <DEP NAME="oracle.has.common" VER="12.2.0.1.0" PLAT="ALL_PLATFORMS" HOME_IDX="-1"/>
+         </DEP_LIST>
+      </DEP_GRP>
+      <DEP_GRP NAME="Required" TYPE="R">
+         <DEP_LIST/>
+      </DEP_GRP>
+   </DEP_GRP_LIST>
+   <INST_TYPE_LIST>
+      <INST_TYPE NAME="Complete" NAME_ID="Complete" DESC_ID="Complete_DESC">
+         <DEP_GRP_PRPS NAME="Optional" OPEN="T" ASK="F">
+            <DEP_GRP_CMP NAME="oracle.has.common" VER="12.2.0.1.0" PLAT="ALL_PLATFORMS" INST_TYPE="Typical" SEL="T"/>
+         </DEP_GRP_PRPS>
+         <DEP_GRP_PRPS NAME="Required" OPEN="T" ASK="F"/>
+      </INST_TYPE>
+      <INST_TYPE NAME="Typical" NAME_ID="Typical" DESC_ID="Typical_DESC">
+         <DEP_GRP_PRPS NAME="Optional" OPEN="T" ASK="F">
+            <DEP_GRP_CMP NAME="oracle.has.common" VER="12.2.0.1.0" PLAT="ALL_PLATFORMS" INST_TYPE="Typical" SEL="T"/>
+         </DEP_GRP_PRPS>
+         <DEP_GRP_PRPS NAME="Required" OPEN="T" ASK="F"/>
+      </INST_TYPE>
+      <INST_TYPE NAME="Minimal" NAME_ID="Minimal" DESC_ID="Minimal_DESC">
+         <DEP_GRP_PRPS NAME="Optional" OPEN="T" ASK="F">
+            <DEP_GRP_CMP NAME="oracle.has.common" VER="12.2.0.1.0" PLAT="ALL_PLATFORMS" INST_TYPE="Minimal" SEL="T"/>
+         </DEP_GRP_PRPS>
+         <DEP_GRP_PRPS NAME="Required" OPEN="T" ASK="F"/>
+      </INST_TYPE>
+      <INST_TYPE NAME="Custom" NAME_ID="Custom" DESC_ID="Custom_DESC">
+         <DEP_GRP_PRPS NAME="Optional" OPEN="T" ASK="F">
+            <DEP_GRP_CMP NAME="oracle.has.common" VER="12.2.0.1.0" PLAT="ALL_PLATFORMS" INST_TYPE="Custom" SEL="T"/>
+         </DEP_GRP_PRPS>
+         <DEP_GRP_PRPS NAME="Required" OPEN="T" ASK="F"/>
+      </INST_TYPE>
+   </INST_TYPE_LIST>
+   <PLAT_IDX_MAP>
+      <PLAT LIST="912 208 233"/>
+      <PLATSET IDX="1" BITSET="{}"/>
+      <PLATSET IDX="2" BITSET="{0, 1, 2}"/>
+   </PLAT_IDX_MAP>
+   <LANG_IDX_MAP>
+      <LANG LIST="en fr ar bn pt_BR bg fr_CA ca hr cs da nl ar_EG en_GB et fi de el iw hu is in it ja ko es lv lt ms es_MX no pl pt ro ru zh_CN sk sl es_ES sv th zh_TW tr uk vi"/>
+      <LANGSET IDX="1" BITSET="{}"/>
+      <LANGSET IDX="2" BITSET="{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44}"/>
+   </LANG_IDX_MAP>
+   <DST_IDX_MAP>
+      <DST LIST="%ORACLE_HOME% %INVENTORY_LOCATION%"/>
+   </DST_IDX_MAP>
+   <STG_FSI>
+      <DST_LNG_PLT_MAP>
+         <ID DST="0" LANG="3" PLAT="2" SIZE="912869"/>
+      </DST_LNG_PLT_MAP>
+      <OFFSETS/>
+      <JAR_SZ>
+         <LRG_JAR PLAT="912" SIZE="285387"/>
+         <LRG_JAR PLAT="208" SIZE="285387"/>
+         <LRG_JAR PLAT="233" SIZE="285387"/>
+      </JAR_SZ>
+   </STG_FSI>
+   <LIB_DEP_LST>
+      <ACTION_LIST>
+         <LIB_DEP NAME="fileActions" VER="12.2.0.1.1" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.2.0" REP_VER="0.0" DEP_MAP="6"/>
+         <LIB_DEP NAME="aclActions" VER="12.2.0.1.0" PLAT="ALL_PLATFORMS" MIN_INST_VER="0" REP_VER="0" DEP_MAP="2"/>
+         <LIB_DEP NAME="SpawnActions" VER="10.1.0.3.4" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.1.0.0.0" REP_VER="0.0" DEP_MAP="4"/>
+      </ACTION_LIST>
+      <QUERY_LIST>
+         <LIB_DEP NAME="w32RegQueries" VER="10.2.0.1.0" PLAT="NT_X86 W95 W98 NT_AMD64 NT_IA64" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="69"/>
+         <LIB_DEP NAME="fileQueries" VER="10.1.0.3.0" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="5"/>
+         <LIB_DEP NAME="WindowsGeneralQueries" VER="10.2.0.1.0" PLAT="NT_X86 W95 W98 NT_AMD64 NT_IA64" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="64"/>
+         <LIB_DEP NAME="netQueries" VER="10.2.0.2.0" PLAT="NT_X86 W95 W98 NT_AMD64 NT_IA64 Solaris Solaris_SPARC64 Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX IBM_AIXPPC64 Dynix UnixWare DG_UX HP_UX HP_UX64 NEC Hitachi_UX Iris NCOS OpenVMS IBM_MVS Linux Linux_AMD64 Linux_S390 HP_IA64 MACOSX Linux_IA64 Linux_Itanium Linux_PPC Linux_LOP Linux_SPARC64" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="64"/>
+      </QUERY_LIST>
+      <DIALOG_LIST/>
+   </LIB_DEP_LST>
+</COMP>
+<COMP NAME="oracle.rdbms.ic" VER="12.2.0.1.0" BUILD_NUMBER="0" REP_VER="10.0.0.0.0" RELEASE="Production" INV_LOC="Components/oracle.rdbms.ic/12.2.0.1.0/2/" LANGS="ALL_LANGS" STG_PLAT="NT_X86 NT_IA64 NT_AMD64 W95 W98 NT_Alpha" PLAT="ALL_PLATFORMS">
+   <EXT_NAME>Oracle Instant Client</EXT_NAME>
+   <DESCID>COMPONENT_DESC</DESCID>
+   <STG_INFO OSP_VER="10.2.0.0.0">
+      <INST_VER PLAT="ALL_PLATS" VER="11.2.0.2.0"/>
+   </STG_INFO>
+   <CMP_JAR_INFO>
+      <INFO NAME="filemapObj" VAL="Components/oracle/rdbms/ic/v12_2_0_1_0/filemap.xml"/>
+      <INFO NAME="helpDir" VAL="Components/oracle/rdbms/ic/v12_2_0_1_0/help/"/>
+      <INFO NAME="actionsClass" VAL="Components.oracle.rdbms.ic.v12_2_0_1_0.CompActions"/>
+      <INFO NAME="resourceClass" VAL="Components.oracle.rdbms.ic.v12_2_0_1_0.resources.CompRes"/>
+      <INFO NAME="cfgTools" VAL=""/>
+      <INFO NAME="identifiersXML" VAL="Components/oracle/rdbms/ic/v12_2_0_1_0/identifiers.xml"/>
+      <INFO NAME="contextClass" VAL="Components.oracle.rdbms.ic.v12_2_0_1_0.CompContext"/>
+      <INFO NAME="fastCopyLogXML" VAL="Components/oracle/rdbms/ic/v12_2_0_1_0/fastCopyLog.xml"/>
+      <INFO NAME="actionPhaseClasses" VAL="Components/oracle/rdbms/ic/v12_2_0_1_0/CompInstallPhase1.class,Components/oracle/rdbms/ic/v12_2_0_1_0/CompInstallPhase2.class"/>
+      <INFO NAME="filesFileMap" VAL="Components/oracle/rdbms/ic/v12_2_0_1_0/filegroup1.xml,Components/oracle/rdbms/ic/v12_2_0_1_0/filegroup2.xml,Components/oracle/rdbms/ic/v12_2_0_1_0/filemap.xml"/>
+   </CMP_JAR_INFO>
+   <LOC_INFO INST_DFN_LOC="./" JAR_NAME="install2.jar" DSK_NO="1" JAR_LOC="Components/oracle.rdbms.ic/12.2.0.1.0/2/" FGRP_LOC="Components/oracle.rdbms.ic/12.2.0.1.0/2/DataFiles/"/>
+   <BOOK NAME="oracle.rdbms.ic.hs"/>
+   <PRE_REQ DEF="F"/>
+   <PROD_HOME DEF="F"/>
+   <DEP_GRP_LIST>
+      <DEP_GRP NAME="Required" TYPE="R">
+         <DEP_LIST>
+            <DEP NAME="oracle.odbc.ic" VER="12.2.0.1.0" PLAT="Solaris Intel_Solaris UNIX_Alpha Linux Linux_IA64 IBM_AIX HP_IA64 NT_X86 NT_IA64 NT_AMD64 W95 W98 Linux_S390"/>
+            <DEP NAME="oracle.dbjava.ic" VER="12.2.0.1.0" PLAT="Solaris Solaris_SPARC64 Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX IBM_AIXPPC64 Dynix UnixWare DG_UX HP_UX HP_UX64 NEC Hitachi_UX Iris NCOS OpenVMS IBM_MVS Linux Linux_AMD64 Linux_S390 HP_IA64 MACOSX Linux_IA64 Linux_Itanium Linux_PPC Linux_LOP Linux_SPARC64 NT_X86 NT_IA64 NT_AMD64 W95 W98"/>
+            <DEP NAME="oracle.ldap.rsf.ic" VER="12.2.0.1.0" PLAT="Solaris Solaris_SPARC64 Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX IBM_AIXPPC64 Dynix UnixWare DG_UX HP_UX HP_UX64 NEC Hitachi_UX Iris NCOS OpenVMS IBM_MVS Linux Linux_AMD64 Linux_S390 HP_IA64 MACOSX Linux_IA64 Linux_Itanium Linux_PPC Linux_LOP Linux_SPARC64 NT_X86 NT_IA64 NT_AMD64 W95 W98"/>
+            <DEP NAME="oracle.rdbms.rsf.ic" VER="12.2.0.1.0" PLAT="Solaris Solaris_SPARC64 Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX IBM_AIXPPC64 Dynix UnixWare DG_UX HP_UX HP_UX64 NEC Hitachi_UX Iris NCOS OpenVMS IBM_MVS Linux Linux_AMD64 Linux_S390 HP_IA64 MACOSX Linux_IA64 Linux_Itanium Linux_PPC Linux_LOP Linux_SPARC64 NT_X86 NT_IA64 NT_AMD64 W95 W98"/>
+            <DEP NAME="oracle.sqlplus.ic" VER="12.2.0.1.0" PLAT="Solaris Solaris_SPARC64 Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX IBM_AIXPPC64 Dynix UnixWare DG_UX HP_UX HP_UX64 NEC Hitachi_UX Iris NCOS OpenVMS IBM_MVS Linux Linux_AMD64 Linux_S390 HP_IA64 MACOSX Linux_IA64 Linux_Itanium Linux_PPC Linux_LOP Linux_SPARC64 NT_X86 NT_IA64 NT_AMD64 W95 W98 NT_Alpha"/>
+            <DEP NAME="oracle.ons.ic" VER="12.2.0.1.0" PLAT="Solaris Intel_Solaris UNIX_Alpha Linux Linux_IA64 IBM_AIX HP_IA64 NT_X86 NT_IA64 NT_AMD64 W95 W98 Linux_S390"/>
+         </DEP_LIST>
+      </DEP_GRP>
+   </DEP_GRP_LIST>
+   <INST_TYPE_LIST>
+      <INST_TYPE NAME="Minimal" NAME_ID="Minimal" DESC_ID="Minimal_DESC">
+         <DEP_GRP_PRPS NAME="Required" OPEN="T" ASK="F">
+            <DEP_GRP_CMP NAME="oracle.odbc.ic" VER="12.2.0.1.0" PLAT="Solaris Intel_Solaris UNIX_Alpha Linux Linux_IA64 IBM_AIX HP_IA64 NT_X86 NT_IA64 NT_AMD64 W95 W98 Linux_S390" INST_TYPE="Minimal" SEL="T"/>
+            <DEP_GRP_CMP NAME="oracle.dbjava.ic" VER="12.2.0.1.0" PLAT="Solaris Solaris_SPARC64 Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX IBM_AIXPPC64 Dynix UnixWare DG_UX HP_UX HP_UX64 NEC Hitachi_UX Iris NCOS OpenVMS IBM_MVS Linux Linux_AMD64 Linux_S390 HP_IA64 MACOSX Linux_IA64 Linux_Itanium Linux_PPC Linux_LOP Linux_SPARC64 NT_X86 NT_IA64 NT_AMD64 W95 W98" INST_TYPE="Minimal" SEL="T"/>
+            <DEP_GRP_CMP NAME="oracle.ldap.rsf.ic" VER="12.2.0.1.0" PLAT="Solaris Solaris_SPARC64 Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX IBM_AIXPPC64 Dynix UnixWare DG_UX HP_UX HP_UX64 NEC Hitachi_UX Iris NCOS OpenVMS IBM_MVS Linux Linux_AMD64 Linux_S390 HP_IA64 MACOSX Linux_IA64 Linux_Itanium Linux_PPC Linux_LOP Linux_SPARC64 NT_X86 NT_IA64 NT_AMD64 W95 W98" INST_TYPE="Minimal" SEL="T"/>
+            <DEP_GRP_CMP NAME="oracle.rdbms.rsf.ic" VER="12.2.0.1.0" PLAT="Solaris Solaris_SPARC64 Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX IBM_AIXPPC64 Dynix UnixWare DG_UX HP_UX HP_UX64 NEC Hitachi_UX Iris NCOS OpenVMS IBM_MVS Linux Linux_AMD64 Linux_S390 HP_IA64 MACOSX Linux_IA64 Linux_Itanium Linux_PPC Linux_LOP Linux_SPARC64 NT_X86 NT_IA64 NT_AMD64 W95 W98" INST_TYPE="Minimal" SEL="T"/>
+            <DEP_GRP_CMP NAME="oracle.sqlplus.ic" VER="12.2.0.1.0" PLAT="Solaris Solaris_SPARC64 Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX IBM_AIXPPC64 Dynix UnixWare DG_UX HP_UX HP_UX64 NEC Hitachi_UX Iris NCOS OpenVMS IBM_MVS Linux Linux_AMD64 Linux_S390 HP_IA64 MACOSX Linux_IA64 Linux_Itanium Linux_PPC Linux_LOP Linux_SPARC64 NT_X86 NT_IA64 NT_AMD64 W95 W98 NT_Alpha" INST_TYPE="Minimal" SEL="T"/>
+            <DEP_GRP_CMP NAME="oracle.ons.ic" VER="12.2.0.1.0" PLAT="Solaris Intel_Solaris UNIX_Alpha Linux Linux_IA64 IBM_AIX HP_IA64 NT_X86 NT_IA64 NT_AMD64 W95 W98 Linux_S390" INST_TYPE="Complete" SEL="T"/>
+         </DEP_GRP_PRPS>
+      </INST_TYPE>
+      <INST_TYPE NAME="Complete" NAME_ID="Complete" DESC_ID="Complete_DESC">
+         <DEP_GRP_PRPS NAME="Required" OPEN="T" ASK="F">
+            <DEP_GRP_CMP NAME="oracle.odbc.ic" VER="12.2.0.1.0" PLAT="Solaris Intel_Solaris UNIX_Alpha Linux Linux_IA64 IBM_AIX HP_IA64 NT_X86 NT_IA64 NT_AMD64 W95 W98 Linux_S390" INST_TYPE="Complete" SEL="T"/>
+            <DEP_GRP_CMP NAME="oracle.dbjava.ic" VER="12.2.0.1.0" PLAT="Solaris Solaris_SPARC64 Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX IBM_AIXPPC64 Dynix UnixWare DG_UX HP_UX HP_UX64 NEC Hitachi_UX Iris NCOS OpenVMS IBM_MVS Linux Linux_AMD64 Linux_S390 HP_IA64 MACOSX Linux_IA64 Linux_Itanium Linux_PPC Linux_LOP Linux_SPARC64 NT_X86 NT_IA64 NT_AMD64 W95 W98" INST_TYPE="Complete" SEL="T"/>
+            <DEP_GRP_CMP NAME="oracle.ldap.rsf.ic" VER="12.2.0.1.0" PLAT="Solaris Solaris_SPARC64 Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX IBM_AIXPPC64 Dynix UnixWare DG_UX HP_UX HP_UX64 NEC Hitachi_UX Iris NCOS OpenVMS IBM_MVS Linux Linux_AMD64 Linux_S390 HP_IA64 MACOSX Linux_IA64 Linux_Itanium Linux_PPC Linux_LOP Linux_SPARC64 NT_X86 NT_IA64 NT_AMD64 W95 W98" INST_TYPE="Complete" SEL="T"/>
+            <DEP_GRP_CMP NAME="oracle.rdbms.rsf.ic" VER="12.2.0.1.0" PLAT="Solaris Solaris_SPARC64 Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX IBM_AIXPPC64 Dynix UnixWare DG_UX HP_UX HP_UX64 NEC Hitachi_UX Iris NCOS OpenVMS IBM_MVS Linux Linux_AMD64 Linux_S390 HP_IA64 MACOSX Linux_IA64 Linux_Itanium Linux_PPC Linux_LOP Linux_SPARC64 NT_X86 NT_IA64 NT_AMD64 W95 W98" INST_TYPE="Complete" SEL="T"/>
+            <DEP_GRP_CMP NAME="oracle.sqlplus.ic" VER="12.2.0.1.0" PLAT="Solaris Solaris_SPARC64 Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX IBM_AIXPPC64 Dynix UnixWare DG_UX HP_UX HP_UX64 NEC Hitachi_UX Iris NCOS OpenVMS IBM_MVS Linux Linux_AMD64 Linux_S390 HP_IA64 MACOSX Linux_IA64 Linux_Itanium Linux_PPC Linux_LOP Linux_SPARC64 NT_X86 NT_IA64 NT_AMD64 W95 W98 NT_Alpha" INST_TYPE="Complete" SEL="T"/>
+            <DEP_GRP_CMP NAME="oracle.ons.ic" VER="12.2.0.1.0" PLAT="Solaris Intel_Solaris UNIX_Alpha Linux Linux_IA64 IBM_AIX HP_IA64 NT_X86 NT_IA64 NT_AMD64 W95 W98 Linux_S390" INST_TYPE="Complete" SEL="T"/>
+         </DEP_GRP_PRPS>
+      </INST_TYPE>
+      <INST_TYPE NAME="Custom" NAME_ID="Custom" DESC_ID="Custom_DESC">
+         <DEP_GRP_PRPS NAME="Required" OPEN="T" ASK="F">
+            <DEP_GRP_CMP NAME="oracle.odbc.ic" VER="12.2.0.1.0" PLAT="Solaris Intel_Solaris UNIX_Alpha Linux Linux_IA64 IBM_AIX HP_IA64 NT_X86 NT_IA64 NT_AMD64 W95 W98 Linux_S390" INST_TYPE="Custom" SEL="T"/>
+            <DEP_GRP_CMP NAME="oracle.dbjava.ic" VER="12.2.0.1.0" PLAT="Solaris Solaris_SPARC64 Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX IBM_AIXPPC64 Dynix UnixWare DG_UX HP_UX HP_UX64 NEC Hitachi_UX Iris NCOS OpenVMS IBM_MVS Linux Linux_AMD64 Linux_S390 HP_IA64 MACOSX Linux_IA64 Linux_Itanium Linux_PPC Linux_LOP Linux_SPARC64 NT_X86 NT_IA64 NT_AMD64 W95 W98" INST_TYPE="Custom" SEL="T"/>
+            <DEP_GRP_CMP NAME="oracle.ldap.rsf.ic" VER="12.2.0.1.0" PLAT="Solaris Solaris_SPARC64 Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX IBM_AIXPPC64 Dynix UnixWare DG_UX HP_UX HP_UX64 NEC Hitachi_UX Iris NCOS OpenVMS IBM_MVS Linux Linux_AMD64 Linux_S390 HP_IA64 MACOSX Linux_IA64 Linux_Itanium Linux_PPC Linux_LOP Linux_SPARC64 NT_X86 NT_IA64 NT_AMD64 W95 W98" INST_TYPE="Custom" SEL="T"/>
+            <DEP_GRP_CMP NAME="oracle.rdbms.rsf.ic" VER="12.2.0.1.0" PLAT="Solaris Solaris_SPARC64 Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX IBM_AIXPPC64 Dynix UnixWare DG_UX HP_UX HP_UX64 NEC Hitachi_UX Iris NCOS OpenVMS IBM_MVS Linux Linux_AMD64 Linux_S390 HP_IA64 MACOSX Linux_IA64 Linux_Itanium Linux_PPC Linux_LOP Linux_SPARC64 NT_X86 NT_IA64 NT_AMD64 W95 W98" INST_TYPE="Custom" SEL="T"/>
+            <DEP_GRP_CMP NAME="oracle.sqlplus.ic" VER="12.2.0.1.0" PLAT="Solaris Solaris_SPARC64 Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX IBM_AIXPPC64 Dynix UnixWare DG_UX HP_UX HP_UX64 NEC Hitachi_UX Iris NCOS OpenVMS IBM_MVS Linux Linux_AMD64 Linux_S390 HP_IA64 MACOSX Linux_IA64 Linux_Itanium Linux_PPC Linux_LOP Linux_SPARC64 NT_X86 NT_IA64 NT_AMD64 W95 W98 NT_Alpha" INST_TYPE="Custom" SEL="T"/>
+            <DEP_GRP_CMP NAME="oracle.ons.ic" VER="12.2.0.1.0" PLAT="Solaris Intel_Solaris UNIX_Alpha Linux Linux_IA64 IBM_AIX HP_IA64 NT_X86 NT_IA64 NT_AMD64 W95 W98 Linux_S390" INST_TYPE="Complete" SEL="T"/>
+         </DEP_GRP_PRPS>
+      </INST_TYPE>
+      <INST_TYPE NAME="Typical" NAME_ID="Typical" DESC_ID="Typical_DESC">
+         <DEP_GRP_PRPS NAME="Required" OPEN="T" ASK="F">
+            <DEP_GRP_CMP NAME="oracle.odbc.ic" VER="12.2.0.1.0" PLAT="Solaris Intel_Solaris UNIX_Alpha Linux Linux_IA64 IBM_AIX HP_IA64 NT_X86 NT_IA64 NT_AMD64 W95 W98 Linux_S390" INST_TYPE="Typical" SEL="T"/>
+            <DEP_GRP_CMP NAME="oracle.dbjava.ic" VER="12.2.0.1.0" PLAT="Solaris Solaris_SPARC64 Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX IBM_AIXPPC64 Dynix UnixWare DG_UX HP_UX HP_UX64 NEC Hitachi_UX Iris NCOS OpenVMS IBM_MVS Linux Linux_AMD64 Linux_S390 HP_IA64 MACOSX Linux_IA64 Linux_Itanium Linux_PPC Linux_LOP Linux_SPARC64 NT_X86 NT_IA64 NT_AMD64 W95 W98" INST_TYPE="Typical" SEL="T"/>
+            <DEP_GRP_CMP NAME="oracle.ldap.rsf.ic" VER="12.2.0.1.0" PLAT="Solaris Solaris_SPARC64 Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX IBM_AIXPPC64 Dynix UnixWare DG_UX HP_UX HP_UX64 NEC Hitachi_UX Iris NCOS OpenVMS IBM_MVS Linux Linux_AMD64 Linux_S390 HP_IA64 MACOSX Linux_IA64 Linux_Itanium Linux_PPC Linux_LOP Linux_SPARC64 NT_X86 NT_IA64 NT_AMD64 W95 W98" INST_TYPE="Typical" SEL="T"/>
+            <DEP_GRP_CMP NAME="oracle.rdbms.rsf.ic" VER="12.2.0.1.0" PLAT="Solaris Solaris_SPARC64 Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX IBM_AIXPPC64 Dynix UnixWare DG_UX HP_UX HP_UX64 NEC Hitachi_UX Iris NCOS OpenVMS IBM_MVS Linux Linux_AMD64 Linux_S390 HP_IA64 MACOSX Linux_IA64 Linux_Itanium Linux_PPC Linux_LOP Linux_SPARC64 NT_X86 NT_IA64 NT_AMD64 W95 W98" INST_TYPE="Typical" SEL="T"/>
+            <DEP_GRP_CMP NAME="oracle.sqlplus.ic" VER="12.2.0.1.0" PLAT="Solaris Solaris_SPARC64 Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX IBM_AIXPPC64 Dynix UnixWare DG_UX HP_UX HP_UX64 NEC Hitachi_UX Iris NCOS OpenVMS IBM_MVS Linux Linux_AMD64 Linux_S390 HP_IA64 MACOSX Linux_IA64 Linux_Itanium Linux_PPC Linux_LOP Linux_SPARC64 NT_X86 NT_IA64 NT_AMD64 W95 W98 NT_Alpha" INST_TYPE="Typical" SEL="T"/>
+            <DEP_GRP_CMP NAME="oracle.ons.ic" VER="12.2.0.1.0" PLAT="Solaris Intel_Solaris UNIX_Alpha Linux Linux_IA64 IBM_AIX HP_IA64 NT_X86 NT_IA64 NT_AMD64 W95 W98 Linux_S390" INST_TYPE="Complete" SEL="T"/>
+         </DEP_GRP_PRPS>
+      </INST_TYPE>
+      <INST_TYPE NAME="InstantClient" NAME_ID="InstantClient" DESC_ID="InstantClient_DESC">
+         <DEP_GRP_PRPS NAME="Required" OPEN="T" ASK="F">
+            <DEP_GRP_CMP NAME="oracle.odbc.ic" VER="12.2.0.1.0" PLAT="Solaris Intel_Solaris UNIX_Alpha Linux Linux_IA64 IBM_AIX HP_IA64 NT_X86 NT_IA64 NT_AMD64 W95 W98 Linux_S390" INST_TYPE="InstantClient" SEL="T"/>
+            <DEP_GRP_CMP NAME="oracle.dbjava.ic" VER="12.2.0.1.0" PLAT="Solaris Solaris_SPARC64 Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX IBM_AIXPPC64 Dynix UnixWare DG_UX HP_UX HP_UX64 NEC Hitachi_UX Iris NCOS OpenVMS IBM_MVS Linux Linux_AMD64 Linux_S390 HP_IA64 MACOSX Linux_IA64 Linux_Itanium Linux_PPC Linux_LOP Linux_SPARC64 NT_X86 NT_IA64 NT_AMD64 W95 W98" INST_TYPE="Typical" SEL="T"/>
+            <DEP_GRP_CMP NAME="oracle.ldap.rsf.ic" VER="12.2.0.1.0" PLAT="Solaris Solaris_SPARC64 Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX IBM_AIXPPC64 Dynix UnixWare DG_UX HP_UX HP_UX64 NEC Hitachi_UX Iris NCOS OpenVMS IBM_MVS Linux Linux_AMD64 Linux_S390 HP_IA64 MACOSX Linux_IA64 Linux_Itanium Linux_PPC Linux_LOP Linux_SPARC64 NT_X86 NT_IA64 NT_AMD64 W95 W98" INST_TYPE="Typical" SEL="T"/>
+            <DEP_GRP_CMP NAME="oracle.rdbms.rsf.ic" VER="12.2.0.1.0" PLAT="Solaris Solaris_SPARC64 Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX IBM_AIXPPC64 Dynix UnixWare DG_UX HP_UX HP_UX64 NEC Hitachi_UX Iris NCOS OpenVMS IBM_MVS Linux Linux_AMD64 Linux_S390 HP_IA64 MACOSX Linux_IA64 Linux_Itanium Linux_PPC Linux_LOP Linux_SPARC64 NT_X86 NT_IA64 NT_AMD64 W95 W98" INST_TYPE="Typical" SEL="T"/>
+            <DEP_GRP_CMP NAME="oracle.sqlplus.ic" VER="12.2.0.1.0" PLAT="Solaris Solaris_SPARC64 Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX IBM_AIXPPC64 Dynix UnixWare DG_UX HP_UX HP_UX64 NEC Hitachi_UX Iris NCOS OpenVMS IBM_MVS Linux Linux_AMD64 Linux_S390 HP_IA64 MACOSX Linux_IA64 Linux_Itanium Linux_PPC Linux_LOP Linux_SPARC64 NT_X86 NT_IA64 NT_AMD64 W95 W98 NT_Alpha" INST_TYPE="Typical" SEL="T"/>
+            <DEP_GRP_CMP NAME="oracle.ons.ic" VER="12.2.0.1.0" PLAT="Solaris Intel_Solaris UNIX_Alpha Linux Linux_IA64 IBM_AIX HP_IA64 NT_X86 NT_IA64 NT_AMD64 W95 W98 Linux_S390" INST_TYPE="Complete" SEL="T"/>
+         </DEP_GRP_PRPS>
+      </INST_TYPE>
+   </INST_TYPE_LIST>
+   <PLAT_IDX_MAP>
+      <PLAT LIST="912 208 233 615 50 601"/>
+      <PLATSET IDX="1" BITSET="{0, 1, 2, 3, 4, 5}"/>
+      <PLATSET IDX="2" BITSET="{}"/>
+   </PLAT_IDX_MAP>
+   <LANG_IDX_MAP>
+      <LANG LIST="en fr ar bn pt_BR bg fr_CA ca hr cs da nl ar_EG en_GB et fi de el iw hu is in it ja ko es lv lt ms es_MX no pl pt ro ru zh_CN sk sl es_ES sv th zh_TW tr uk vi"/>
+      <LANGSET IDX="1" BITSET="{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44}"/>
+      <LANGSET IDX="2" BITSET="{}"/>
+   </LANG_IDX_MAP>
+   <DST_IDX_MAP>
+      <DST LIST="%ORACLE_HOME% %INVENTORY_LOCATION%"/>
+   </DST_IDX_MAP>
+   <STG_FSI>
+      <DST_LNG_PLT_MAP>
+         <ID DST="0" LANG="3" PLAT="1" SIZE="292961378"/>
+      </DST_LNG_PLT_MAP>
+      <OFFSETS/>
+      <JAR_SZ>
+         <LRG_JAR PLAT="912" SIZE="91990156"/>
+         <LRG_JAR PLAT="208" SIZE="91990156"/>
+         <LRG_JAR PLAT="233" SIZE="91990156"/>
+         <LRG_JAR PLAT="615" SIZE="91990156"/>
+         <LRG_JAR PLAT="50" SIZE="91990156"/>
+         <LRG_JAR PLAT="601" SIZE="91990156"/>
+      </JAR_SZ>
+   </STG_FSI>
+   <LIB_DEP_LST>
+      <ACTION_LIST>
+         <LIB_DEP NAME="fileActions" VER="12.2.0.1.1" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.2.0" REP_VER="0.0" DEP_MAP="6"/>
+         <LIB_DEP NAME="aclActions" VER="12.2.0.1.0" PLAT="ALL_PLATFORMS" MIN_INST_VER="0" REP_VER="0" DEP_MAP="2"/>
+         <LIB_DEP NAME="unixActions" VER="10.2.0.3.0" PLAT="Solaris Solaris_SPARC64 Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX IBM_AIXPPC64 Dynix UnixWare DG_UX HP_UX HP_UX64 NEC Hitachi_UX Iris NCOS OpenVMS IBM_MVS Linux Linux_AMD64 Linux_S390 HP_IA64 MACOSX Linux_IA64 Linux_Itanium Linux_PPC Linux_LOP Linux_SPARC64" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="4"/>
+         <LIB_DEP NAME="SpawnActions" VER="10.1.0.3.4" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.1.0.0.0" REP_VER="0.0" DEP_MAP="4"/>
+      </ACTION_LIST>
+      <QUERY_LIST>
+         <LIB_DEP NAME="fileQueries" VER="10.1.0.3.0" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="70"/>
+         <LIB_DEP NAME="areasQueries" VER="10.2.0.1.0" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="66"/>
+         <LIB_DEP NAME="generalQueries" VER="10.2.0.2.1" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="64"/>
+      </QUERY_LIST>
+      <DIALOG_LIST/>
+   </LIB_DEP_LST>
+</COMP>
+<COMP NAME="oracle.aspnet_2" VER="12.2.0.1.0" BUILD_NUMBER="0" REP_VER="0.0.0.0.0" RELEASE="Production" INV_LOC="Components/oracle.aspnet_2/12.2.0.1.0/1/" LANGS="ALL_LANGS" STG_PLAT="NT_X86 NT_AMD64 W98" PLAT="NT_X86 NT_AMD64 W98">
+   <EXT_NAME>Oracle Providers for ASP.NET</EXT_NAME>
+   <DESCID>COMPONENT_DESC</DESCID>
+   <STG_INFO OSP_VER="10.2.0.0.0">
+      <INST_VER PLAT="ALL_PLATS" VER="11.2.0.2.0"/>
+   </STG_INFO>
+   <CMP_JAR_INFO>
+      <INFO NAME="filemapObj" VAL="Components/oracle/aspnet_2/v12_2_0_1_0/filemap.xml"/>
+      <INFO NAME="helpDir" VAL="Components/oracle/aspnet_2/v12_2_0_1_0/help/"/>
+      <INFO NAME="actionsClass" VAL="Components.oracle.aspnet_2.v12_2_0_1_0.CompActions"/>
+      <INFO NAME="resourceClass" VAL="Components.oracle.aspnet_2.v12_2_0_1_0.resources.CompRes"/>
+      <INFO NAME="cfgTools" VAL=""/>
+      <INFO NAME="identifiersXML" VAL="Components/oracle/aspnet_2/v12_2_0_1_0/identifiers.xml"/>
+      <INFO NAME="contextClass" VAL="Components.oracle.aspnet_2.v12_2_0_1_0.CompContext"/>
+      <INFO NAME="fastCopyLogXML" VAL="Components/oracle/aspnet_2/v12_2_0_1_0/fastCopyLog.xml"/>
+      <INFO NAME="actionPhaseClasses" VAL="Components/oracle/aspnet_2/v12_2_0_1_0/CompInstallPhase1.class,Components/oracle/aspnet_2/v12_2_0_1_0/CompInstallPhase2.class"/>
+      <INFO NAME="filesFileMap" VAL="Components/oracle/aspnet_2/v12_2_0_1_0/filegroup1.xml,Components/oracle/aspnet_2/v12_2_0_1_0/filegroup2.xml,Components/oracle/aspnet_2/v12_2_0_1_0/filegroup3.xml,Components/oracle/aspnet_2/v12_2_0_1_0/filegroup4.xml,Components/oracle/aspnet_2/v12_2_0_1_0/filegroup5.xml,Components/oracle/aspnet_2/v12_2_0_1_0/filegroup6.xml,Components/oracle/aspnet_2/v12_2_0_1_0/filegroup7.xml,Components/oracle/aspnet_2/v12_2_0_1_0/filegroup8.xml,Components/oracle/aspnet_2/v12_2_0_1_0/filemap.xml"/>
+   </CMP_JAR_INFO>
+   <LOC_INFO INST_DFN_LOC="./" JAR_NAME="install1.jar" DSK_NO="1" JAR_LOC="Components/oracle.aspnet_2/12.2.0.1.0/1/" FGRP_LOC="Components/oracle.aspnet_2/12.2.0.1.0/1/DataFiles/"/>
+   <BOOK NAME="oracle.aspnet_2.hs"/>
+   <PRE_REQ DEF="F"/>
+   <PROD_HOME DEF="F"/>
+   <DEP_GRP_LIST>
+      <DEP_GRP NAME="Required" TYPE="R">
+         <DEP_LIST>
+            <DEP NAME="oracle.ntoledb.odp_net_2" VER="12.2.0.1.0" PLAT="NT_X86 NT_AMD64 W98"/>
+         </DEP_LIST>
+      </DEP_GRP>
+   </DEP_GRP_LIST>
+   <INST_TYPE_LIST>
+      <INST_TYPE NAME="Typical" NAME_ID="Typical" DESC_ID="Typical_DESC">
+         <DEP_GRP_PRPS NAME="Required" OPEN="T" ASK="F">
+            <DEP_GRP_CMP NAME="oracle.ntoledb.odp_net_2" VER="12.2.0.1.0" PLAT="NT_X86 NT_AMD64 W98" INST_TYPE="Typical" SEL="T"/>
+         </DEP_GRP_PRPS>
+      </INST_TYPE>
+   </INST_TYPE_LIST>
+   <PLAT_IDX_MAP>
+      <PLAT LIST="912 233 50"/>
+      <PLATSET IDX="1" BITSET="{0, 1, 2}"/>
+   </PLAT_IDX_MAP>
+   <LANG_IDX_MAP>
+      <LANG LIST="en fr ar bn pt_BR bg fr_CA ca hr cs da nl ar_EG en_GB et fi de el iw hu is in it ja ko es lv lt ms es_MX no pl pt ro ru zh_CN sk sl es_ES sv th zh_TW tr uk vi"/>
+      <LANGSET IDX="1" BITSET="{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44}"/>
+   </LANG_IDX_MAP>
+   <DST_IDX_MAP>
+      <DST LIST="%ORACLE_HOME% %INVENTORY_LOCATION%"/>
+   </DST_IDX_MAP>
+   <STG_FSI>
+      <DST_LNG_PLT_MAP>
+         <ID DST="0" LANG="2" PLAT="1" SIZE="652797"/>
+      </DST_LNG_PLT_MAP>
+      <OFFSETS/>
+      <JAR_SZ>
+         <LRG_JAR PLAT="912" SIZE="56174"/>
+         <LRG_JAR PLAT="233" SIZE="56174"/>
+         <LRG_JAR PLAT="50" SIZE="56174"/>
+      </JAR_SZ>
+   </STG_FSI>
+   <LIB_DEP_LST>
+      <ACTION_LIST>
+         <LIB_DEP NAME="fileActions" VER="12.2.0.1.1" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.2.0" REP_VER="0.0" DEP_MAP="6"/>
+         <LIB_DEP NAME="SpawnActions" VER="10.1.0.3.4" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.1.0.0.0" REP_VER="0.0" DEP_MAP="4"/>
+         <LIB_DEP NAME="w32RegActions" VER="10.2.0.1.0" PLAT="NT_X86 W95 W98 NT_AMD64 NT_IA64" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="4"/>
+         <LIB_DEP NAME="generalActions" VER="10.2.0.9.0" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="4"/>
+      </ACTION_LIST>
+      <QUERY_LIST>
+         <LIB_DEP NAME="w32RegQueries" VER="10.2.0.1.0" PLAT="NT_X86 W95 W98 NT_AMD64 NT_IA64" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="65"/>
+         <LIB_DEP NAME="fileQueries" VER="10.1.0.3.0" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="1"/>
+         <LIB_DEP NAME="areasQueries" VER="10.2.0.1.0" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="64"/>
+         <LIB_DEP NAME="generalQueries" VER="10.2.0.2.1" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="64"/>
+      </QUERY_LIST>
+      <DIALOG_LIST>
+         <LIB_DEP NAME="standardDialogs" VER="10.2.0.1.0" PLAT="ALL_PLATFORMS" MIN_INST_VER="10.1.0.2.0" REP_VER="1.0" DEP_MAP="1"/>
+      </DIALOG_LIST>
+   </LIB_DEP_LST>
+</COMP>
+<COMP NAME="oracle.odac_doc_4" VER="12.2.0.1.0" BUILD_NUMBER="0" REP_VER="0.0.0.0.0" RELEASE="Production" INV_LOC="Components/oracle.odac_doc_4/12.2.0.1.0/1/" LANGS="ALL_LANGS" STG_PLAT="NT_X86 NT_IA64 NT_AMD64 W95 W98 NT_Alpha" PLAT="NT_X86 NT_IA64 NT_AMD64 W95 W98 NT_Alpha">
+   <EXT_NAME>Oracle Data Access Components Documentation for Visual Studio</EXT_NAME>
+   <DESCID>COMPONENT_DESC</DESCID>
+   <STG_INFO OSP_VER="10.2.0.0.0">
+      <INST_VER PLAT="ALL_PLATS" VER="11.2.0.2.0"/>
+   </STG_INFO>
+   <CMP_JAR_INFO>
+      <INFO NAME="filemapObj" VAL="Components/oracle/odac_doc_4/v12_2_0_1_0/filemap.xml"/>
+      <INFO NAME="helpDir" VAL="Components/oracle/odac_doc_4/v12_2_0_1_0/help/"/>
+      <INFO NAME="actionsClass" VAL="Components.oracle.odac_doc_4.v12_2_0_1_0.CompActions"/>
+      <INFO NAME="resourceClass" VAL="Components.oracle.odac_doc_4.v12_2_0_1_0.resources.CompRes"/>
+      <INFO NAME="cfgTools" VAL=""/>
+      <INFO NAME="identifiersXML" VAL="Components/oracle/odac_doc_4/v12_2_0_1_0/identifiers.xml"/>
+      <INFO NAME="contextClass" VAL="Components.oracle.odac_doc_4.v12_2_0_1_0.CompContext"/>
+      <INFO NAME="fastCopyLogXML" VAL="Components/oracle/odac_doc_4/v12_2_0_1_0/fastCopyLog.xml"/>
+      <INFO NAME="actionPhaseClasses" VAL="Components/oracle/odac_doc_4/v12_2_0_1_0/CompInstallPhase1.class,Components/oracle/odac_doc_4/v12_2_0_1_0/CompInstallPhase2.class"/>
+      <INFO NAME="filesFileMap" VAL="Components/oracle/odac_doc_4/v12_2_0_1_0/filegroup1.1.1.xml,Components/oracle/odac_doc_4/v12_2_0_1_0/filemap.xml"/>
+   </CMP_JAR_INFO>
+   <LOC_INFO INST_DFN_LOC="./" JAR_NAME="install1.jar" DSK_NO="1" JAR_LOC="Components/oracle.odac_doc_4/12.2.0.1.0/1/" FGRP_LOC="Components/oracle.odac_doc_4/12.2.0.1.0/1/DataFiles/"/>
+   <BOOK NAME="oracle.odac_doc_4.hs"/>
+   <PRE_REQ DEF="F"/>
+   <PROD_HOME DEF="F"/>
+   <DEP_GRP_LIST>
+      <DEP_GRP NAME="group1" TYPE="R">
+         <DEP_LIST>
+            <DEP NAME="oracle.odac_doc" VER="12.2.0.1.0" PLAT="NT_X86 NT_IA64 NT_AMD64 W95 W98 NT_Alpha"/>
+         </DEP_LIST>
+      </DEP_GRP>
+   </DEP_GRP_LIST>
+   <INST_TYPE_LIST>
+      <INST_TYPE NAME="Custom" NAME_ID="Custom" DESC_ID="Custom_DESC">
+         <DEP_GRP_PRPS NAME="group1" OPEN="T" ASK="F">
+            <DEP_GRP_CMP NAME="oracle.odac_doc" VER="12.2.0.1.0" PLAT="NT_X86 NT_IA64 NT_AMD64 W95 W98 NT_Alpha" INST_TYPE="Custom" SEL="T"/>
+         </DEP_GRP_PRPS>
+      </INST_TYPE>
+   </INST_TYPE_LIST>
+   <PLAT_IDX_MAP>
+      <PLAT LIST="912 208 233 615 50 601"/>
+      <PLATSET IDX="1" BITSET="{0, 1, 2, 3, 4, 5}"/>
+   </PLAT_IDX_MAP>
+   <LANG_IDX_MAP>
+      <LANG LIST="en fr ar bn pt_BR bg fr_CA ca hr cs da nl ar_EG en_GB et fi de el iw hu is in it ja ko es lv lt ms es_MX no pl pt ro ru zh_CN sk sl es_ES sv th zh_TW tr uk vi"/>
+      <LANGSET IDX="1" BITSET="{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44}"/>
+   </LANG_IDX_MAP>
+   <DST_IDX_MAP>
+      <DST LIST="%PROD_HOME% %INVENTORY_LOCATION% %ORACLE_HOME%"/>
+   </DST_IDX_MAP>
+   <STG_FSI>
+      <DST_LNG_PLT_MAP>
+         <ID DST="0" LANG="1" PLAT="1" SIZE="44863488"/>
+      </DST_LNG_PLT_MAP>
+      <OFFSETS/>
+      <JAR_SZ>
+         <LRG_JAR PLAT="912" SIZE="44342281"/>
+         <LRG_JAR PLAT="208" SIZE="44342281"/>
+         <LRG_JAR PLAT="233" SIZE="44342281"/>
+         <LRG_JAR PLAT="615" SIZE="44342281"/>
+         <LRG_JAR PLAT="50" SIZE="44342281"/>
+         <LRG_JAR PLAT="601" SIZE="44342281"/>
+      </JAR_SZ>
+   </STG_FSI>
+   <LIB_DEP_LST>
+      <ACTION_LIST>
+         <LIB_DEP NAME="fileActions" VER="12.2.0.1.1" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.2.0" REP_VER="0.0" DEP_MAP="2"/>
+         <LIB_DEP NAME="SpawnActions" VER="10.1.0.3.4" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.1.0.0.0" REP_VER="0.0" DEP_MAP="4"/>
+      </ACTION_LIST>
+      <QUERY_LIST>
+         <LIB_DEP NAME="w32RegQueries" VER="10.2.0.1.0" PLAT="NT_X86 W95 W98 NT_AMD64 NT_IA64" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="68"/>
+         <LIB_DEP NAME="generalQueries" VER="10.2.0.2.1" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="64"/>
+      </QUERY_LIST>
+      <DIALOG_LIST/>
+   </LIB_DEP_LST>
+</COMP>
+<COMP NAME="oracle.ntoledb.odp_net_2" VER="12.2.0.1.0" BUILD_NUMBER="0" REP_VER="0.0.0.0.0" RELEASE="Production" INV_LOC="Components/oracle.ntoledb.odp_net_2/12.2.0.1.0/1/" LANGS="ALL_LANGS" STG_PLAT="NT_X86 NT_IA64 NT_AMD64 W98" PLAT="NT_X86 NT_IA64 NT_AMD64 W98">
+   <EXT_NAME>Oracle Data Provider for .NET</EXT_NAME>
+   <DESCID>COMPONENT_DESC</DESCID>
+   <STG_INFO OSP_VER="10.2.0.0.0">
+      <INST_VER PLAT="ALL_PLATS" VER="11.2.0.2.0"/>
+   </STG_INFO>
+   <CMP_JAR_INFO>
+      <INFO NAME="filemapObj" VAL="Components/oracle/ntoledb/odp_net_2/v12_2_0_1_0/filemap.xml"/>
+      <INFO NAME="helpDir" VAL="Components/oracle/ntoledb/odp_net_2/v12_2_0_1_0/help/"/>
+      <INFO NAME="actionsClass" VAL="Components.oracle.ntoledb.odp_net_2.v12_2_0_1_0.CompActions"/>
+      <INFO NAME="resourceClass" VAL="Components.oracle.ntoledb.odp_net_2.v12_2_0_1_0.resources.CompRes"/>
+      <INFO NAME="cfgTools" VAL=""/>
+      <INFO NAME="identifiersXML" VAL="Components/oracle/ntoledb/odp_net_2/v12_2_0_1_0/identifiers.xml"/>
+      <INFO NAME="contextClass" VAL="Components.oracle.ntoledb.odp_net_2.v12_2_0_1_0.CompContext"/>
+      <INFO NAME="fastCopyLogXML" VAL="Components/oracle/ntoledb/odp_net_2/v12_2_0_1_0/fastCopyLog.xml"/>
+      <INFO NAME="actionPhaseClasses" VAL="Components/oracle/ntoledb/odp_net_2/v12_2_0_1_0/CompInstallPhase1.class,Components/oracle/ntoledb/odp_net_2/v12_2_0_1_0/CompInstallPhase2.class"/>
+      <INFO NAME="filesFileMap" VAL="Components/oracle/ntoledb/odp_net_2/v12_2_0_1_0/filegroup1.xml,Components/oracle/ntoledb/odp_net_2/v12_2_0_1_0/filegroup2.xml,Components/oracle/ntoledb/odp_net_2/v12_2_0_1_0/filegroup3.xml,Components/oracle/ntoledb/odp_net_2/v12_2_0_1_0/filegroup4.xml,Components/oracle/ntoledb/odp_net_2/v12_2_0_1_0/filegroup5.xml,Components/oracle/ntoledb/odp_net_2/v12_2_0_1_0/filegroup6.xml,Components/oracle/ntoledb/odp_net_2/v12_2_0_1_0/filegroup7.xml,Components/oracle/ntoledb/odp_net_2/v12_2_0_1_0/filegroup8.xml,Components/oracle/ntoledb/odp_net_2/v12_2_0_1_0/filegroup9.xml,Components/oracle/ntoledb/odp_net_2/v12_2_0_1_0/filegroup10.xml,Components/oracle/ntoledb/odp_net_2/v12_2_0_1_0/filegroup11.xml,Components/oracle/ntoledb/odp_net_2/v12_2_0_1_0/filegroup12.xml,Components/oracle/ntoledb/odp_net_2/v12_2_0_1_0/filegroup13.xml,Components/oracle/ntoledb/odp_net_2/v12_2_0_1_0/filegroup14.xml,Components/oracle/ntoledb/odp_net_2/v12_2_0_1_0/filegroup15.xml,Components/oracle/ntoledb/odp_net_2/v12_2_0_1_0/filegroup16.xml,Components/oracle/ntoledb/odp_net_2/v12_2_0_1_0/filegroup17.xml,Components/oracle/ntoledb/odp_net_2/v12_2_0_1_0/filegroup18.xml,Components/oracle/ntoledb/odp_net_2/v12_2_0_1_0/filegroup19.xml,Components/oracle/ntoledb/odp_net_2/v12_2_0_1_0/filegroup20.xml,Components/oracle/ntoledb/odp_net_2/v12_2_0_1_0/filegroup21.xml,Components/oracle/ntoledb/odp_net_2/v12_2_0_1_0/filegroup22.xml,Components/oracle/ntoledb/odp_net_2/v12_2_0_1_0/filegroup23.xml,Components/oracle/ntoledb/odp_net_2/v12_2_0_1_0/filegroup24.xml,Components/oracle/ntoledb/odp_net_2/v12_2_0_1_0/filegroup25.xml,Components/oracle/ntoledb/odp_net_2/v12_2_0_1_0/filemap.xml"/>
+   </CMP_JAR_INFO>
+   <LOC_INFO INST_DFN_LOC="./" JAR_NAME="install1.jar" DSK_NO="1" JAR_LOC="Components/oracle.ntoledb.odp_net_2/12.2.0.1.0/1/" FGRP_LOC="Components/oracle.ntoledb.odp_net_2/12.2.0.1.0/1/DataFiles/"/>
+   <BOOK NAME="oracle.ntoledb.odp_net_2.hs"/>
+   <PRE_REQ DEF="F"/>
+   <PROD_HOME DEF="F"/>
+   <DEP_GRP_LIST>
+      <DEP_GRP NAME="Required" TYPE="R">
+         <DEP_LIST/>
+      </DEP_GRP>
+   </DEP_GRP_LIST>
+   <INST_TYPE_LIST>
+      <INST_TYPE NAME="Complete" NAME_ID="Complete" DESC_ID="Complete_DESC">
+         <DEP_GRP_PRPS NAME="Required" OPEN="T" ASK="F"/>
+      </INST_TYPE>
+      <INST_TYPE NAME="Typical" NAME_ID="Typical" DESC_ID="Typical_DESC">
+         <DEP_GRP_PRPS NAME="Required" OPEN="T" ASK="F"/>
+      </INST_TYPE>
+      <INST_TYPE NAME="Minimal" NAME_ID="Minimal" DESC_ID="Minimal_DESC">
+         <DEP_GRP_PRPS NAME="Required" OPEN="T" ASK="F"/>
+      </INST_TYPE>
+      <INST_TYPE NAME="Custom" NAME_ID="Custom" DESC_ID="Custom_DESC">
+         <DEP_GRP_PRPS NAME="Required" OPEN="T" ASK="F"/>
+      </INST_TYPE>
+   </INST_TYPE_LIST>
+   <PLAT_IDX_MAP>
+      <PLAT LIST="912 208 233 50"/>
+      <PLATSET IDX="1" BITSET="{0, 1, 2, 3}"/>
+   </PLAT_IDX_MAP>
+   <LANG_IDX_MAP>
+      <LANG LIST="en fr ar bn pt_BR bg fr_CA ca hr cs da nl ar_EG en_GB et fi de el iw hu is in it ja ko es lv lt ms es_MX no pl pt ro ru zh_CN sk sl es_ES sv th zh_TW tr uk vi"/>
+      <LANGSET IDX="1" BITSET="{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44}"/>
+   </LANG_IDX_MAP>
+   <DST_IDX_MAP>
+      <DST LIST="%ORACLE_HOME% %INVENTORY_LOCATION%"/>
+   </DST_IDX_MAP>
+   <STG_FSI>
+      <DST_LNG_PLT_MAP>
+         <ID DST="0" LANG="2" PLAT="1" SIZE="11253136"/>
+      </DST_LNG_PLT_MAP>
+      <OFFSETS/>
+      <JAR_SZ>
+         <LRG_JAR PLAT="912" SIZE="2784339"/>
+         <LRG_JAR PLAT="208" SIZE="2784339"/>
+         <LRG_JAR PLAT="233" SIZE="2784339"/>
+         <LRG_JAR PLAT="50" SIZE="2784339"/>
+      </JAR_SZ>
+   </STG_FSI>
+   <LIB_DEP_LST>
+      <ACTION_LIST>
+         <LIB_DEP NAME="fileActions" VER="12.2.0.1.1" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.2.0" REP_VER="0.0" DEP_MAP="6"/>
+         <LIB_DEP NAME="SpawnActions" VER="10.1.0.3.4" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.1.0.0.0" REP_VER="0.0" DEP_MAP="4"/>
+         <LIB_DEP NAME="w32RegActions" VER="10.2.0.1.0" PLAT="NT_X86 W95 W98 NT_AMD64 NT_IA64" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="4"/>
+      </ACTION_LIST>
+      <QUERY_LIST>
+         <LIB_DEP NAME="w32RegQueries" VER="10.2.0.1.0" PLAT="NT_X86 W95 W98 NT_AMD64 NT_IA64" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="69"/>
+         <LIB_DEP NAME="fileQueries" VER="10.1.0.3.0" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="5"/>
+         <LIB_DEP NAME="areasQueries" VER="10.2.0.1.0" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="64"/>
+         <LIB_DEP NAME="generalQueries" VER="10.2.0.2.1" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="64"/>
+         <LIB_DEP NAME="WindowsGeneralQueries" VER="10.2.0.1.0" PLAT="NT_X86 W95 W98 NT_AMD64 NT_IA64" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="64"/>
+      </QUERY_LIST>
+      <DIALOG_LIST/>
+   </LIB_DEP_LST>
+</COMP>
+<COMP NAME="oracle.ntoledb" VER="12.2.0.1.0" BUILD_NUMBER="0" REP_VER="0.0.0.0.0" RELEASE="Production" INV_LOC="Components/oracle.ntoledb/12.2.0.1.0/1/" LANGS="ALL_LANGS" STG_PLAT="NT_X86 NT_IA64 NT_AMD64 W95 W98" PLAT="NT_X86 NT_IA64 NT_AMD64 W95 W98">
+   <EXT_NAME>Oracle Provider for OLE DB</EXT_NAME>
+   <DESCID>COMPONENT_DESC</DESCID>
+   <STG_INFO OSP_VER="10.2.0.0.0">
+      <INST_VER PLAT="ALL_PLATS" VER="11.2.0.2.0"/>
+   </STG_INFO>
+   <CMP_JAR_INFO>
+      <INFO NAME="filemapObj" VAL="Components/oracle/ntoledb/v12_2_0_1_0/filemap.xml"/>
+      <INFO NAME="helpDir" VAL="Components/oracle/ntoledb/v12_2_0_1_0/help/"/>
+      <INFO NAME="actionsClass" VAL="Components.oracle.ntoledb.v12_2_0_1_0.CompActions"/>
+      <INFO NAME="resourceClass" VAL="Components.oracle.ntoledb.v12_2_0_1_0.resources.CompRes"/>
+      <INFO NAME="cfgTools" VAL=""/>
+      <INFO NAME="identifiersXML" VAL="Components/oracle/ntoledb/v12_2_0_1_0/identifiers.xml"/>
+      <INFO NAME="contextClass" VAL="Components.oracle.ntoledb.v12_2_0_1_0.CompContext"/>
+      <INFO NAME="fastCopyLogXML" VAL="Components/oracle/ntoledb/v12_2_0_1_0/fastCopyLog.xml"/>
+      <INFO NAME="actionPhaseClasses" VAL="Components/oracle/ntoledb/v12_2_0_1_0/CompInstallPhase1.class,Components/oracle/ntoledb/v12_2_0_1_0/CompInstallPhase2.class"/>
+      <INFO NAME="filesFileMap" VAL="Components/oracle/ntoledb/v12_2_0_1_0/filegroup1.xml,Components/oracle/ntoledb/v12_2_0_1_0/filegroup2.xml,Components/oracle/ntoledb/v12_2_0_1_0/filegroup3.xml,Components/oracle/ntoledb/v12_2_0_1_0/filegroup4.xml,Components/oracle/ntoledb/v12_2_0_1_0/filegroup5.xml,Components/oracle/ntoledb/v12_2_0_1_0/filegroup6.xml,Components/oracle/ntoledb/v12_2_0_1_0/filegroup7.xml,Components/oracle/ntoledb/v12_2_0_1_0/filegroup8.xml,Components/oracle/ntoledb/v12_2_0_1_0/filegroup9.xml,Components/oracle/ntoledb/v12_2_0_1_0/filegroup10.7.1.xml,Components/oracle/ntoledb/v12_2_0_1_0/filegroup10.9.1.xml,Components/oracle/ntoledb/v12_2_0_1_0/filegroup10.2.1.xml,Components/oracle/ntoledb/v12_2_0_1_0/filegroup10.4.1.xml,Components/oracle/ntoledb/v12_2_0_1_0/filegroup10.10.1.xml,Components/oracle/ntoledb/v12_2_0_1_0/filegroup10.6.1.xml,Components/oracle/ntoledb/v12_2_0_1_0/filegroup10.8.1.xml,Components/oracle/ntoledb/v12_2_0_1_0/filegroup10.3.1.xml,Components/oracle/ntoledb/v12_2_0_1_0/filegroup10.5.1.xml,Components/oracle/ntoledb/v12_2_0_1_0/filemap.xml"/>
+   </CMP_JAR_INFO>
+   <LOC_INFO INST_DFN_LOC="./" JAR_NAME="install1.jar" DSK_NO="1" JAR_LOC="Components/oracle.ntoledb/12.2.0.1.0/1/" FGRP_LOC="Components/oracle.ntoledb/12.2.0.1.0/1/DataFiles/"/>
+   <BOOK NAME="oracle.ntoledb.hs"/>
+   <PRE_REQ DEF="F"/>
+   <PROD_HOME DEF="F"/>
+   <DEP_GRP_LIST>
+      <DEP_GRP NAME="Required" TYPE="R">
+         <DEP_LIST/>
+      </DEP_GRP>
+   </DEP_GRP_LIST>
+   <INST_TYPE_LIST>
+      <INST_TYPE NAME="Complete" NAME_ID="Complete" DESC_ID="Complete_DESC">
+         <DEP_GRP_PRPS NAME="Required" OPEN="T" ASK="F"/>
+      </INST_TYPE>
+      <INST_TYPE NAME="Typical" NAME_ID="Typical" DESC_ID="Typical_DESC">
+         <DEP_GRP_PRPS NAME="Required" OPEN="T" ASK="F"/>
+      </INST_TYPE>
+      <INST_TYPE NAME="Minimal" NAME_ID="Minimal" DESC_ID="Minimal_DESC">
+         <DEP_GRP_PRPS NAME="Required" OPEN="T" ASK="F"/>
+      </INST_TYPE>
+      <INST_TYPE NAME="Custom" NAME_ID="Custom" DESC_ID="Custom_DESC">
+         <DEP_GRP_PRPS NAME="Required" OPEN="T" ASK="F"/>
+      </INST_TYPE>
+   </INST_TYPE_LIST>
+   <PLAT_IDX_MAP>
+      <PLAT LIST="912 208 233 615 50"/>
+      <PLATSET IDX="1" BITSET="{0, 1, 2, 3, 4}"/>
+   </PLAT_IDX_MAP>
+   <LANG_IDX_MAP>
+      <LANG LIST="en fr ar bn pt_BR bg fr_CA ca hr cs da nl ar_EG en_GB et fi de el iw hu is in it ja ko es lv lt ms es_MX no pl pt ro ru zh_CN sk sl es_ES sv th zh_TW tr uk vi"/>
+      <LANGSET IDX="1" BITSET="{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44}"/>
+      <LANGSET IDX="2" BITSET="{16}"/>
+      <LANGSET IDX="3" BITSET="{25}"/>
+      <LANGSET IDX="4" BITSET="{1}"/>
+      <LANGSET IDX="5" BITSET="{22}"/>
+      <LANGSET IDX="6" BITSET="{23}"/>
+      <LANGSET IDX="7" BITSET="{24}"/>
+      <LANGSET IDX="8" BITSET="{4}"/>
+      <LANGSET IDX="9" BITSET="{35}"/>
+      <LANGSET IDX="10" BITSET="{41}"/>
+      <LANGSET IDX="11" BITSET="{1, 4, 16, 22, 23, 24, 25, 35, 41}"/>
+   </LANG_IDX_MAP>
+   <DST_IDX_MAP>
+      <DST LIST="%ORACLE_HOME% %INVENTORY_LOCATION%"/>
+   </DST_IDX_MAP>
+   <STG_FSI>
+      <DST_LNG_PLT_MAP>
+         <ID DST="0" LANG="2" PLAT="1" SIZE="10752"/>
+         <ID DST="0" LANG="3" PLAT="1" SIZE="10752"/>
+         <ID DST="0" LANG="4" PLAT="1" SIZE="10752"/>
+         <ID DST="0" LANG="5" PLAT="1" SIZE="10752"/>
+         <ID DST="0" LANG="6" PLAT="1" SIZE="10240"/>
+         <ID DST="0" LANG="7" PLAT="1" SIZE="10240"/>
+         <ID DST="0" LANG="8" PLAT="1" SIZE="10752"/>
+         <ID DST="0" LANG="9" PLAT="1" SIZE="10240"/>
+         <ID DST="0" LANG="10" PLAT="1" SIZE="10240"/>
+         <ID DST="0" LANG="12" PLAT="1" SIZE="1514852"/>
+      </DST_LNG_PLT_MAP>
+      <OFFSETS/>
+      <JAR_SZ>
+         <LRG_JAR PLAT="912" SIZE="329047"/>
+         <LRG_JAR PLAT="208" SIZE="329047"/>
+         <LRG_JAR PLAT="233" SIZE="329047"/>
+         <LRG_JAR PLAT="615" SIZE="329047"/>
+         <LRG_JAR PLAT="50" SIZE="329047"/>
+      </JAR_SZ>
+   </STG_FSI>
+   <LIB_DEP_LST>
+      <ACTION_LIST>
+         <LIB_DEP NAME="fileActions" VER="12.2.0.1.1" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.2.0" REP_VER="0.0" DEP_MAP="6"/>
+         <LIB_DEP NAME="w32RegActions" VER="10.2.0.1.0" PLAT="NT_X86 W95 W98 NT_AMD64 NT_IA64" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="6"/>
+         <LIB_DEP NAME="w32OcxRegActions" VER="10.2.0.1.0" PLAT="NT_X86 W95 W98 NT_AMD64 NT_IA64" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="4"/>
+      </ACTION_LIST>
+      <QUERY_LIST>
+         <LIB_DEP NAME="w32RegQueries" VER="10.2.0.1.0" PLAT="NT_X86 W95 W98 NT_AMD64 NT_IA64" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="64"/>
+         <LIB_DEP NAME="WindowsGeneralQueries" VER="10.2.0.1.0" PLAT="NT_X86 W95 W98 NT_AMD64 NT_IA64" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="64"/>
+      </QUERY_LIST>
+      <DIALOG_LIST/>
+   </LIB_DEP_LST>
+</COMP>
+<COMP NAME="oracle.odac_doc" VER="12.2.0.1.0" BUILD_NUMBER="0" REP_VER="0.0.0.0.0" RELEASE="Production" INV_LOC="Components/oracle.odac_doc/12.2.0.1.0/1/" LANGS="ALL_LANGS" STG_PLAT="NT_X86 NT_IA64 NT_AMD64 W95 W98 NT_Alpha" PLAT="NT_X86 NT_IA64 NT_AMD64 W95 W98 NT_Alpha">
+   <EXT_NAME>Oracle Data Access Components Documentation</EXT_NAME>
+   <DESCID>COMPONENT_DESC</DESCID>
+   <STG_INFO OSP_VER="10.2.0.0.0">
+      <INST_VER PLAT="ALL_PLATS" VER="11.2.0.2.0"/>
+   </STG_INFO>
+   <CMP_JAR_INFO>
+      <INFO NAME="filemapObj" VAL="Components/oracle/odac_doc/v12_2_0_1_0/filemap.xml"/>
+      <INFO NAME="helpDir" VAL="Components/oracle/odac_doc/v12_2_0_1_0/help/"/>
+      <INFO NAME="actionsClass" VAL="Components.oracle.odac_doc.v12_2_0_1_0.CompActions"/>
+      <INFO NAME="resourceClass" VAL="Components.oracle.odac_doc.v12_2_0_1_0.resources.CompRes"/>
+      <INFO NAME="cfgTools" VAL=""/>
+      <INFO NAME="identifiersXML" VAL="Components/oracle/odac_doc/v12_2_0_1_0/identifiers.xml"/>
+      <INFO NAME="contextClass" VAL="Components.oracle.odac_doc.v12_2_0_1_0.CompContext"/>
+      <INFO NAME="actionPhaseClasses" VAL="Components/oracle/odac_doc/v12_2_0_1_0/CompInstallPhase1.class,Components/oracle/odac_doc/v12_2_0_1_0/CompInstallPhase2.class"/>
+      <INFO NAME="fastCopyLogXML" VAL="Components/oracle/odac_doc/v12_2_0_1_0/fastCopyLog.xml"/>
+      <INFO NAME="filesFileMap" VAL="Components/oracle/odac_doc/v12_2_0_1_0/filegroup1.1.1.xml,Components/oracle/odac_doc/v12_2_0_1_0/filegroup2.xml,Components/oracle/odac_doc/v12_2_0_1_0/filegroup3.xml,Components/oracle/odac_doc/v12_2_0_1_0/filegroup4.xml,Components/oracle/odac_doc/v12_2_0_1_0/filemap.xml"/>
+   </CMP_JAR_INFO>
+   <LOC_INFO INST_DFN_LOC="./" JAR_NAME="install1.jar" DSK_NO="1" JAR_LOC="Components/oracle.odac_doc/12.2.0.1.0/1/" FGRP_LOC="Components/oracle.odac_doc/12.2.0.1.0/1/DataFiles/"/>
+   <BOOK NAME="oracle.odac_doc.hs"/>
+   <PRE_REQ DEF="F"/>
+   <PROD_HOME DEF="T"/>
+   <DEP_GRP_LIST/>
+   <INST_TYPE_LIST>
+      <INST_TYPE NAME="Custom" NAME_ID="Custom" DESC_ID="Custom_DESC"/>
+   </INST_TYPE_LIST>
+   <PLAT_IDX_MAP>
+      <PLAT LIST="912 208 233 615 50 601"/>
+      <PLATSET IDX="1" BITSET="{0, 1, 2, 3, 4, 5}"/>
+   </PLAT_IDX_MAP>
+   <LANG_IDX_MAP>
+      <LANG LIST="en fr ar bn pt_BR bg fr_CA ca hr cs da nl ar_EG en_GB et fi de el iw hu is in it ja ko es lv lt ms es_MX no pl pt ro ru zh_CN sk sl es_ES sv th zh_TW tr uk vi"/>
+      <LANGSET IDX="1" BITSET="{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44}"/>
+   </LANG_IDX_MAP>
+   <DST_IDX_MAP>
+      <DST LIST="%PROD_HOME% %ORACLE_HOME% %INVENTORY_LOCATION%"/>
+   </DST_IDX_MAP>
+   <STG_FSI>
+      <DST_LNG_PLT_MAP>
+         <ID DST="0" LANG="1" PLAT="1" SIZE="26393397"/>
+         <ID DST="1" LANG="2" PLAT="1" SIZE="93926"/>
+      </DST_LNG_PLT_MAP>
+      <OFFSETS/>
+      <JAR_SZ>
+         <LRG_JAR PLAT="912" SIZE="25182922"/>
+         <LRG_JAR PLAT="208" SIZE="25182922"/>
+         <LRG_JAR PLAT="233" SIZE="25182922"/>
+         <LRG_JAR PLAT="615" SIZE="25182922"/>
+         <LRG_JAR PLAT="50" SIZE="25182922"/>
+         <LRG_JAR PLAT="601" SIZE="25182922"/>
+      </JAR_SZ>
+   </STG_FSI>
+   <LIB_DEP_LST>
+      <ACTION_LIST>
+         <LIB_DEP NAME="fileActions" VER="12.2.0.1.1" PLAT="ALL_PLATFORMS" MIN_INST_VER="11.2.0.2.0" REP_VER="0.0" DEP_MAP="6"/>
+         <LIB_DEP NAME="jarActions" VER="10.2.0.0.0" PLAT="ALL_PLATFORMS" MIN_INST_VER="10.2.0.0.0" REP_VER="0.0" DEP_MAP="4"/>
+         <LIB_DEP NAME="ntw32FoldersActions" VER="10.2.0.3.0" PLAT="NT_X86 W95 W98 NT_AMD64 NT_IA64" MIN_INST_VER="11.2.0.0.0" REP_VER="0.0" DEP_MAP="4"/>
+      </ACTION_LIST>
+      <QUERY_LIST/>
+      <DIALOG_LIST/>
+   </LIB_DEP_LST>
+</COMP>
+</COMP_LIST>
+</PRD_LIST>

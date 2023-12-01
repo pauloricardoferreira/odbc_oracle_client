@@ -1,0 +1,25 @@
+<!-- DTD for admin data in VDM module, Cluster verification -->
+
+<!--
+*  
+* RootProperty:
+*   As the name indicates, it is the root property
+*
+* PProperty:
+*   Contains an individual property, which has 2 must-have attributes.
+*   attr> Name: Name of the property
+*   attr> Value: Value of the property
+*
+-->
+
+<!-- Root property -->
+<!ELEMENT RootProperty ( Property ) >
+
+
+<!-- Property -->
+<!ELEMENT Property (NULL) >
+
+<!ATTLIST Property Name  CDATA #REQUIRED >
+<!ATTLIST Property Value CDATA #REQUIRED >
+
+

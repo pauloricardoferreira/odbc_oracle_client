@@ -1,0 +1,42 @@
+<?xml version="1.0" standalone="yes" ?>
+<!-- Copyright (c) 1999, 2018, Oracle and/or its affiliates.
+All rights reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+<LIB_LIST>
+<QUERY_LIST>
+<LIB NAME="areasQueries" VER="10.2.0.1.0" REP_VER="0.0" MIN_INST_VER="11.2.0.0.0" INV_LOC="Queries/areasQueries/10.2.0.1.0/1/areasQueries.jar" PLAT="ALL_PLATFORMS"/>
+<LIB NAME="clusterQueriesEx" VER="10.2.0.1.0" REP_VER="0.0" MIN_INST_VER="11.2.0.0.0" INV_LOC="Queries/clusterQueriesEx/10.2.0.1.0/1/clusterQuery.jar" PLAT="ALL_PLATFORMS"/>
+<LIB NAME="dbQueries" VER="10.1.0.2.0" REP_VER="0.0" MIN_INST_VER="11.2.0.0.0" INV_LOC="Queries/dbQueries/10.1.0.2.0/1/dbQueries.jar" PLAT="Solaris HP_UX Linux IBM_AIX UNIX_Alpha Linux_IA64"/>
+<LIB NAME="fileQueries" VER="10.1.0.3.0" REP_VER="0.0" MIN_INST_VER="11.2.0.0.0" INV_LOC="Queries/fileQueries/10.1.0.3.0/1/fileQueries.jar" PLAT="ALL_PLATFORMS"/>
+<LIB NAME="generalQueries" VER="10.2.0.2.1" REP_VER="0.0" MIN_INST_VER="11.2.0.0.0" INV_LOC="Queries/generalQueries/10.2.0.2.1/1/generalQueries.jar" PLAT="ALL_PLATFORMS"/>
+<LIB NAME="netQueries" VER="10.2.0.2.0" REP_VER="0.0" MIN_INST_VER="11.2.0.0.0" INV_LOC="Queries/netQueries/10.2.0.2.0/1/netQueries.jar" PLAT="NT_X86 W95 W98 NT_AMD64 NT_IA64 Solaris Solaris_SPARC64 Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX IBM_AIXPPC64 Dynix UnixWare DG_UX HP_UX HP_UX64 NEC Hitachi_UX Iris NCOS OpenVMS IBM_MVS Linux Linux_AMD64 Linux_S390 HP_IA64 MACOSX Linux_IA64 Linux_Itanium Linux_PPC Linux_LOP Linux_SPARC64"/>
+<LIB NAME="NtServicesQueries" VER="10.2.0.3.0" REP_VER="0.0" MIN_INST_VER="11.2.0.0.0" INV_LOC="Queries/NtServicesQueries/10.2.0.3.0/1/NtServiceQueries.jar" PLAT="NT_X86 NT_AMD64 NT_IA64"/>
+<LIB NAME="rgsQueries" VER="10.1.0.3.0" REP_VER="0.0" MIN_INST_VER="11.2.0.0.0" INV_LOC="Queries/rgsQueries/10.1.0.3.0/1/rgsQueries.jar" PLAT="ALL_PLATFORMS"/>
+<LIB NAME="unixQueries" VER="10.1.0.2.0" REP_VER="0.0" MIN_INST_VER="11.2.0.0.0" INV_LOC="Queries/unixQueries/10.1.0.2.0/1/unixQueries.jar" PLAT="Solaris Solaris_SPARC64 Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX IBM_AIXPPC64 Dynix UnixWare DG_UX HP_UX HP_UX64 NEC Hitachi_UX Iris NCOS OpenVMS IBM_MVS Linux Linux_AMD64 Linux_S390 HP_IA64 MACOSX Linux_IA64 Linux_Itanium Linux_PPC Linux_LOP Linux_SPARC64"/>
+<LIB NAME="w32RegQueries" VER="10.2.0.1.0" REP_VER="0.0" MIN_INST_VER="11.2.0.0.0" INV_LOC="Queries/w32RegQueries/10.2.0.1.0/1/w32RegQueryLib.jar" PLAT="NT_X86 W95 W98 NT_AMD64 NT_IA64"/>
+<LIB NAME="WindowsGeneralQueries" VER="10.2.0.1.0" REP_VER="0.0" MIN_INST_VER="11.2.0.0.0" INV_LOC="Queries/WindowsGeneralQueries/10.2.0.1.0/1/WindowsGeneralQueries.jar" PLAT="NT_X86 W95 W98 NT_AMD64 NT_IA64"/>
+<LIB NAME="NLSQueries" VER="12.2.0.1.0" REP_VER="1.3.6" MIN_INST_VER="1.5.0.0.0" INV_LOC="Queries/NLSQueries/12.2.0.1.0/1/NLSQueries.jar" PLAT="NT_X86 W95 W98 NT_IA64 NT_AMD64 Solaris HP_UX HP_IA64 UNIX_Alpha Linux Linux_S390 Linux_IA64 Intel_Solaris IBM_AIX"/>
+</QUERY_LIST>
+<DIALOG_LIST>
+<LIB NAME="standardDialogs" VER="10.2.0.1.0" REP_VER="1.0" MIN_INST_VER="10.1.0.2.0" INV_LOC="Dialogs/standardDialogs/10.2.0.1.0/1/standardDialogs.jar" PLAT="ALL_PLATFORMS"/>
+</DIALOG_LIST>
+<ACTION_LIST>
+<LIB NAME="clusterActions" VER="10.1.0.2.0" REP_VER="0.0" MIN_INST_VER="11.2.0.0.0" INV_LOC="Actions/clusterActions/10.1.0.2.0/1/clusterActionLib.jar" PLAT="ALL_PLATFORMS"/>
+<LIB NAME="dbActions" VER="10.1.0.2.0" REP_VER="0.0" MIN_INST_VER="11.2.0.0.0" INV_LOC="Actions/dbActions/10.1.0.2.0/1/dbActions.jar" PLAT="Solaris HP_UX Linux IBM_AIX UNIX_Alpha Linux_IA64"/>
+<LIB NAME="fileActions" VER="12.2.0.1.1" REP_VER="0.0" MIN_INST_VER="11.2.0.2.0" INV_LOC="Actions/fileActions/12.2.0.1.1/1/fileActionLib.jar" PLAT="ALL_PLATFORMS"/>
+<LIB NAME="generalActions" VER="10.2.0.9.0" REP_VER="0.0" MIN_INST_VER="11.2.0.0.0" INV_LOC="Actions/generalActions/10.2.0.9.0/1/generalActions.jar" PLAT="ALL_PLATFORMS"/>
+<LIB NAME="jarActions" VER="10.2.0.0.0" REP_VER="0.0" MIN_INST_VER="10.2.0.0.0" INV_LOC="Actions/jarActions/10.2.0.0.0/1/jarActionLib.jar" PLAT="ALL_PLATFORMS"/>
+<LIB NAME="launchPadActions" VER="10.1.0.2.0" REP_VER="0.0" MIN_INST_VER="11.2.0.0.0" INV_LOC="Actions/launchPadActions/10.1.0.2.0/1/launchpadaction.jar" PLAT="ALL_PLATFORMS"/>
+<LIB NAME="ntServicesActions" VER="10.2.0.6.0" REP_VER="0.0" MIN_INST_VER="11.2.0.0.0" INV_LOC="Actions/ntServicesActions/10.2.0.6.0/1/ntServicesActions.jar" PLAT="NT_X86 NT_AMD64 NT_IA64"/>
+<LIB NAME="oradim" VER="10.1.0.3.0" REP_VER="0.0" MIN_INST_VER="11.2.0.0.0" INV_LOC="Actions/oradim/10.1.0.3.0/1/oradim.jar" PLAT="NT_X86 NT_AMD64 NT_IA64"/>
+<LIB NAME="rgsActions" VER="10.1.0.3.0" REP_VER="0.0" MIN_INST_VER="11.2.0.0.0" INV_LOC="Actions/rgsActions/10.1.0.3.0/1/rgsActions.jar" PLAT="ALL_PLATFORMS"/>
+<LIB NAME="SpawnActions" VER="10.1.0.3.4" REP_VER="0.0" MIN_INST_VER="11.1.0.0.0" INV_LOC="Actions/SpawnActions/10.1.0.3.4/1/spawnActions.jar" PLAT="ALL_PLATFORMS"/>
+<LIB NAME="unixActions" VER="10.2.0.3.0" REP_VER="0.0" MIN_INST_VER="11.2.0.0.0" INV_LOC="Actions/unixActions/10.2.0.3.0/1/unixActions.jar" PLAT="Solaris Solaris_SPARC64 Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX IBM_AIXPPC64 Dynix UnixWare DG_UX HP_UX HP_UX64 NEC Hitachi_UX Iris NCOS OpenVMS IBM_MVS Linux Linux_AMD64 Linux_S390 HP_IA64 MACOSX Linux_IA64 Linux_Itanium Linux_PPC Linux_LOP Linux_SPARC64"/>
+<LIB NAME="w32OcxRegActions" VER="10.2.0.1.0" REP_VER="0.0" MIN_INST_VER="11.2.0.0.0" INV_LOC="Actions/w32OcxRegActions/10.2.0.1.0/1/w32OcxLib.jar" PLAT="NT_X86 W95 W98 NT_AMD64 NT_IA64"/>
+<LIB NAME="w32RegActions" VER="10.2.0.1.0" REP_VER="0.0" MIN_INST_VER="11.2.0.0.0" INV_LOC="Actions/w32RegActions/10.2.0.1.0/1/w32RegActionLib.jar" PLAT="NT_X86 W95 W98 NT_AMD64 NT_IA64"/>
+<LIB NAME="ntw32FoldersActions" VER="10.2.0.3.0" REP_VER="0.0" MIN_INST_VER="11.2.0.0.0" INV_LOC="Actions/ntw32FoldersActions/10.2.0.3.0/1/WindowsFolders.jar" PLAT="NT_X86 W95 W98 NT_AMD64 NT_IA64"/>
+<LIB NAME="wingeneralActions" VER="10.2.0.1.0" REP_VER="0.0" MIN_INST_VER="11.2.0.0.0" INV_LOC="Actions/wingeneralActions/10.2.0.1.0/1/wingeneralActionLib.jar" PLAT="NT_X86 W95 W98 NT_AMD64 NT_IA64"/>
+<LIB NAME="aclActions" VER="12.2.0.1.0" REP_VER="0" MIN_INST_VER="0" INV_LOC="Actions/aclActions/12.2.0.1.0/1/aclActionsLib.jar" PLAT="ALL_PLATFORMS"/>
+<LIB NAME="WindowsActionLib" VER="12.0.0.0.0" REP_VER="0.0.0.0.0" MIN_INST_VER="11.2.0.2.0" INV_LOC="Actions/WindowsActionLib/12.0.0.0.0/1/WindowsActionLib.jar" PLAT="NT_X86 NT_AMD64 NT_IA64"/>
+</ACTION_LIST>
+</LIB_LIST>

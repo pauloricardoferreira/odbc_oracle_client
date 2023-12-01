@@ -1,0 +1,54 @@
+#List of files to be excluded from the cluvfy comp software check
+#This file contains files that are present in the map file but are excluded
+#from the shiphome perhaps because they maybe optional
+#
+# Format:
+# OSLIST FILENAME 
+#
+# Note:
+# OSLIST is a comma-separated list of platforms on which the directory
+# needs to be created.  'all' indicates that the directory needs to be
+# created on every platform.  OSLIST MUST NOT contain whitespace.
+
+all	%ORACLE_HOME%/ldap/install/ldifmigrator.orc
+all	%ORACLE_HOME%/ldap/install/odisrvreg.orc
+all	%ORACLE_HOME%/ldap/install/oidprovtool.orc
+all	%ORACLE_HOME%/ldap/install/schemasync.orc
+
+all	%ORACLE_HOME%/network/tools/help/mgr/help/mgr_help.ja 
+all	%ORACLE_HOME%/network/tools/help/mgr/help/mgr_help.jar
+all	%ORACLE_HOME%/network/tools/help/mgr/help_de/mgr_help de.jar
+all	%ORACLE_HOME%/network/tools/help/mgr/help_de/mgr_help_de.jar
+all	%ORACLE_HOME%/network/tools/help/mgr/help_es/mgr_help es.jar
+all	%ORACLE_HOME%/network/tools/help/mgr/help_es/mgr_help_es.jar
+all	%ORACLE_HOME%/network/tools/help/mgr/help_fr/mgr_help fr.jar
+all	%ORACLE_HOME%/network/tools/help/mgr/help_fr/mgr_help_fr.jar
+all	%ORACLE_HOME%/network/tools/help/mgr/help_it/mgr_help it.jar
+all	%ORACLE_HOME%/network/tools/help/mgr/help_it/mgr_help_it.jar
+all	%ORACLE_HOME%/network/tools/help/mgr/help_ja/mgr_help ja.jar
+all	%ORACLE_HOME%/network/tools/help/mgr/help_ja/mgr_help_ja.jar
+all	%ORACLE_HOME%/network/tools/help/mgr/help_ko/mgr_help ko.jar
+all	%ORACLE_HOME%/network/tools/help/mgr/help_ko/mgr_help_ko.jar
+all	%ORACLE_HOME%/network/tools/help/mgr/help_pt_BR/mgr_h lp_pt_BR.jar
+all	%ORACLE_HOME%/network/tools/help/mgr/help_pt_BR/mgr_help_pt_BR.jar
+all	%ORACLE_HOME%/network/tools/help/mgr/help_zh_CN/mgr_h lp_zh_CN.jar
+all	%ORACLE_HOME%/network/tools/help/mgr/help_zh_CN/mgr_help_zh_CN.jar
+all	%ORACLE_HOME%/network/tools/help/mgr/help_zh_TW/mgr_h lp_zh_TW.jar
+all	%ORACLE_HOME%/network/tools/help/mgr/help_zh_TW/mgr_help_zh_TW.jar
+
+all	%ORACLE_HOME%/bin/instOracle.key
+all	%ORACLE_HOME%/rdbms/admin/instdbmssml.sql
+all	%ORACLE_HOME%/rdbms/admin/instextern.sql
+all	%ORACLE_HOME%/rdbms/admin/instsxpndoff.sql
+all	%ORACLE_HOME%/precomp/admin/instpcbcfg.cfg
+
+#bug fix 22995836, diagsnap_setup.pl gets renamed to diagsnap.pl
+all	%ORACLE_HOME%/bin/diagsnap_setup.pl
+
+#bug fix 22469233, /tmp/.oracle is not required on Linux & Solaris
+Linux,Solaris	/tmp/.oracle
+#bug fix 22469233, /var/tmp/.oracle is not required on AIX & HP
+AIX,HP	/var/tmp/.oracle
+
+#bug fix 23855566, installer removes rdbms/install/sbs/extusrupgrade.bat
+Windows %ORACLE_HOME%/rdbms/install/sbs/extusrupgrade.bat

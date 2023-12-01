@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ Copyright (c) 2008, 2013, Oracle and/or its affiliates. All rights reserved.
+
+   NAME
+     cvufixup.xsd - CVU fix-up xml data file schema
+
+   DESCRIPTION
+     XML schema for CVU fix-up data file
+
+   NOTES
+     
+   MODIFIED   (MM/DD/YY)
+     ptare    04/05/11  - CVU Fixup data file schema"
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.w3.org/2001/XMLSchema http://www.w3.org/2001/XMLSchema.xsd"
+  elementFormDefault="qualified">
+  <xs:element name="CVU_FIXUP_ROOT">
+    <xs:complexType>
+     <xs:sequence>
+      <xs:element name="TASK_LIST" minOccurs="1" maxOccurs="1" >
+       <xs:complexType>
+        <xs:sequence>
+         <!--Task Element to store the data specific to one fixable task-->
+         <xs:element name="TASK" type="TASK_DATA_TYPE" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+       </xs:complexType>
+      </xs:element>
+     </xs:sequence>  
+    </xs:complexType>
+  </xs:element>
+  <!--Task data type to store task specific data-->
+  <xs:complexType name="TASK_DATA_TYPE">
+   <xs:sequence>     
+    <xs:element name="FIXUP_DATA_LIST" minOccurs="1" maxOccurs="1" >
+      <xs:complexType>
+       <xs:sequence>
+	    <xs:element name="FIXUP_DATA" type="FIXUP_DATA_TYPE" minOccurs="0" maxOccurs="unbounded" />
+       </xs:sequence>  
+      </xs:complexType>
+    </xs:element>    
+   </xs:sequence>
+   <xs:attribute name="ID" type="xs:string" use="required" />
+  </xs:complexType>
+  <!--Fixup data type to store the fix related data in name value format-->
+  <xs:complexType name="FIXUP_DATA_TYPE">
+   <xs:sequence>
+    <xs:element name="NODE_LIST" minOccurs="1" maxOccurs="1" >
+     <xs:complexType>
+      <xs:sequence>
+	   <xs:element name="NODE" type="NODE_DATA_TYPE" minOccurs="1" maxOccurs="unbounded" />
+      </xs:sequence>  
+     </xs:complexType>
+    </xs:element>
+    <xs:element name="DATA_LIST" type="FIXUP_DATA_LIST_TYPE" minOccurs="1" maxOccurs="1" />
+    <xs:element name="FIXUP_SCRIPTS" minOccurs="1" maxOccurs="1" >
+     <xs:complexType>
+      <xs:sequence>
+       <xs:element name="SCRIPT" type="SCRIPT_DATA_TYPE" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+     </xs:complexType>
+    </xs:element>
+    <xs:element name="OVERALL_STATUS" type="STATUS_TYPE" minOccurs="1" maxOccurs="1" />
+   </xs:sequence>
+  </xs:complexType>
+    <!--Node data type-->
+  <xs:complexType name="NODE_DATA_TYPE">
+    <xs:all>
+    <!--Node wise output of the task fixed-->
+      <xs:element name="FIXUP_OUTPUT_DATA" type="FIXUP_OUTPUT_DATA_TYPE" minOccurs="0" maxOccurs="1" />
+    </xs:all>
+    <xs:attribute name="NAME" type="xs:string" use="required" />
+    <xs:attribute name="EXP_VAL" type="xs:string" use="optional" />
+    <xs:attribute name="ACT_VAL" type="xs:string" use="optional" />
+  </xs:complexType>  
+  <!--Fixup Data list type-->
+  <xs:complexType name="FIXUP_DATA_LIST_TYPE">
+    <xs:sequence>
+     <xs:element name="DATA" minOccurs="0" maxOccurs="unbounded" >
+      <xs:complexType>
+       <xs:attribute name="NAME" type="xs:string" use="required" />
+       <xs:attribute name="VAL" type="xs:string" use="required" />
+      </xs:complexType>
+     </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <!--Fixup Script type-->
+  <xs:complexType name="SCRIPT_DATA_TYPE">
+   <xs:all>
+    <xs:element name="ARG_LIST" minOccurs="0" maxOccurs="1" >
+     <xs:complexType>
+      <xs:sequence>
+       <xs:element name="ARG" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+     </xs:complexType>
+    </xs:element>
+   </xs:all>
+   <xs:attribute name="NAME" type="xs:string" use="required" />
+   <xs:attribute name="TYPE" type="xs:string" use="required" />
+  </xs:complexType>
+  <!-- OutputData Type-->
+  <xs:complexType name="FIXUP_OUTPUT_DATA_TYPE">
+    <xs:sequence>
+      <xs:element name="STATUS" type="NODE_STATUS_TYPE" minOccurs="1" maxOccurs="1" />
+      <xs:element name="ERROR_DETAILS" type="ERROR_DETAILS_TYPE" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+  <!--Fixup output Status type on one Node-->
+  <xs:simpleType name="NODE_STATUS_TYPE">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SUCCESSFUL" />
+      <xs:enumeration value="WARNING" />
+      <xs:enumeration value="FAILED" />
+      <xs:enumeration value="ERROR" />
+      <xs:enumeration value="UNKNOWN" />
+    </xs:restriction>
+  </xs:simpleType>
+  <!--Fixup Error Details type-->
+  <xs:complexType name="ERROR_DETAILS_TYPE">
+    <xs:sequence>
+     <xs:element name="NATIVE_ERRORS" minOccurs="0" maxOccurs="1" >
+      <xs:complexType>
+       <xs:sequence>
+        <xs:element name="ERROR" minOccurs="1" maxOccurs="unbounded" type="xs:string"/>
+       </xs:sequence>
+      </xs:complexType>
+     </xs:element>
+     <xs:element name="NLS_ERRORS" minOccurs="0" maxOccurs="1" >
+      <xs:complexType>
+       <xs:sequence>
+        <xs:element name="NLS_MSG" type="NLS_MSG_TYPE" minOccurs="1" maxOccurs="unbounded" />
+       </xs:sequence>
+      </xs:complexType>
+     </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <!--NLS Message Details type-->
+  <xs:complexType name="NLS_MSG_TYPE">
+   <xs:all>
+    <xs:element name="MSG_ARG_LIST" minOccurs="0" maxOccurs="1" >
+     <xs:complexType>
+      <xs:sequence>
+       <xs:element name="MSG_ARG" minOccurs="1" maxOccurs="unbounded" type="xs:string" />
+      </xs:sequence>
+     </xs:complexType>
+    </xs:element>
+   </xs:all>
+   <xs:attribute name="ID" type="xs:string" use="required" />
+   <xs:attribute name="FACILITY" type="xs:string" use="required" />
+   <xs:attribute name="DISPLAY_ID" type="xs:boolean" use="required" />
+  </xs:complexType>
+  <!--Overall Fixup Status type-->
+  <xs:simpleType name="STATUS_TYPE">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SUCCESSFUL" />
+      <xs:enumeration value="WARNING" />
+      <xs:enumeration value="FAILED" />
+      <xs:enumeration value="ERROR" />
+      <xs:enumeration value="UNKNOWN" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

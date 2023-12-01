@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ Copyright (c) 2008, 2016, Oracle and/or its affiliates. All rights reserved.
+
+   NAME
+     cvucheckresults.xsd - CVU Check result schema
+
+   DESCRIPTION
+     XML schema for CVU task result details
+
+   NOTES
+     
+   MODIFIED   (MM/DD/YY)
+      maboddu  03/18/16 - Add severity type FATAL
+      nvira    06/01/15 - add attribute for node_list
+      nvira    06/29/15 - fix cvu xml report subtask XSD schema
+      nvira    05/08/15 - fix the xsd for SUBTASK_LIST
+      kfgriffi 09/30/14 - Add subtask list (i.e. parent/child relationship)
+      nvira    10/18/13 - add enums for GPnP, OCR, CRS resource collections
+      nvira    06/12/13 - add collection groups
+      nvira    02/12/12 - add fields for baseline elements
+      ptare    08/25/10 
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.w3.org/2001/XMLSchema http://www.w3.org/2001/XMLSchema.xsd"
+  elementFormDefault="qualified">
+  <xs:element name="ROOT">
+    <xs:complexType>
+      <xs:all>
+        <!--Header of this snapshot to store the basic details like time, date, cluster and databases related information -->
+        <xs:element name="HEADER" minOccurs="0" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TIME_STAMP" type="TIME_DATE_TYPE" minOccurs="1" maxOccurs="1" />
+              <xs:element name="REPORT_NAME" minOccurs="0" maxOccurs="1" type="xs:string" />
+              <!--CLUSTER_DETAILS and DATABASE_LIST are not mandatory for cluvfy stage or component processing -->
+              <xs:element name="CLUSTER_DETAILS" type="CLUSTER_DETAILS_TYPE" minOccurs="0" maxOccurs="1" />
+              <xs:element name="DATABASE_LIST" minOccurs="0" maxOccurs="1" >
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="DATABASE" type="DATABASE_TYPE" minOccurs="0" maxOccurs="unbounded" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <!--Target wise elements for example "PRE_CRS_INST","POST_CRS_INST", "HEALTH_CHECK" etc -->
+        <xs:element name="TARGET_LIST" minOccurs="0" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TARGET_DATA" type="TARGET_DATA_TYPE" minOccurs="1" maxOccurs="unbounded" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:all>
+      </xs:complexType>
+  </xs:element>
+  <!--TIME_STAMP element to store the Time and Date details for this snapshot -->
+  <xs:complexType name="TIME_DATE_TYPE">
+    <xs:attribute name="DAY" type="xs:integer" use="required" />
+    <xs:attribute name="MONTH" type="xs:integer" use="required" />
+    <xs:attribute name="YEAR" type="xs:integer" use="required" />
+    <xs:attribute name="HOURS" type="xs:integer" use="required" />
+    <xs:attribute name="MINUTES" type="xs:integer" use="required" />
+    <xs:attribute name="SECONDS" type="xs:integer" use="required" />
+  </xs:complexType>
+  <!--TARGET_DATA element to store all the required result data for the given type of target -->
+  <xs:complexType name="TARGET_DATA_TYPE">
+    <xs:all>
+      <!--TASK LIST containing all the TASK elements for which result is stored-->
+      <xs:element name="TASK_LIST" minOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="TASK" type="TASK_DATA_TYPE" minOccurs="1" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:all>
+    <xs:attribute name="ID" type="TARGET_ID_TYPE" use="required" />
+    <xs:attribute name="CLUSTERNAME" type="xs:string" use="optional"  />
+    <xs:attribute name="DATABASENAME" type="xs:string" use="optional"  />
+    <xs:attribute name="HOME" type="xs:string" use="optional"  />
+  </xs:complexType>
+  <!--Task specific data-->
+  <xs:complexType name="TASK_DATA_TYPE">
+    <xs:all>
+      <!--Task element string-->
+      <xs:element name="ELEMENT" minOccurs="1" maxOccurs="1" />
+      <!--Task Description string-->
+      <xs:element name="DESC" minOccurs="1" maxOccurs="1" />
+      <!--For MetaLink, White papers, More information etc etc -->
+      <xs:element name="MORE_DETAILS" minOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="TEXT" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="REFERENCE" minOccurs="0" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--List of SUCCESS nodes-->
+      <xs:element name="SUCC_NODES" minOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="NODE" type="NODE_TYPE" minOccurs="0" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--List of FAILED nodes-->
+      <xs:element name="FAILED_NODES" minOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="NODE" type="NODE_TYPE" minOccurs="0" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--Global level errors-->
+      <xs:element name="GLOBAL_ERROR_DESC_LIST" minOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ERROR_DESC" type="ERROR_DESC_TYPE" minOccurs="0" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <!--Set of all the results on all the nodes (Reflection of ResultSet object)-->
+      <xs:element name="NODE_RESULT_SET" minOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <!--Nodewise Result element-->
+            <xs:element name="NODE_RESULT" type="NODE_RESULT_TYPE" minOccurs="0" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="TASK_SUMMARY" minOccurs="1" />
+      <!--Set of all the results on all the nodes (Reflection of ResultSet object)-->
+      <xs:element name="GLOBAL_COLLECTION_SET" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <!--Global collected data-->
+            <xs:element name="COLLECTION_ELEMENT" type="COLLECTION_ELEMENT_TYPE" minOccurs="0" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="NODE_COLLECTION_SET" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <!--Global collected data-->
+            <xs:element name="COLLECTION_ELEMENT" type="NODE_COLLECTION_ELEMENT_TYPE" minOccurs="0" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SUBTASK_LIST" minOccurs="0" maxOccurs="1" >
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="TASK" type="TASK_DATA_TYPE" minOccurs="1" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:all>
+    <xs:attribute name="TYPE" type="xs:string" use="required" />
+    <xs:attribute name="SEVERITY" type="SEVERITY_TYPE" use="required" />
+    <xs:attribute name="OVER_ALL_STATUS" type="STATUS_TYPE" use="required" />
+  </xs:complexType>
+  <!--NODE based result (reflection of Result object)-->
+  <xs:complexType name="NODE_RESULT_TYPE">
+    <xs:all>
+      <xs:element name="EXP_ACT_VALUE" type="EXP_ACT_VALUE_TYPE" minOccurs="1" />
+      <xs:element name="ERROR_DESC_LIST" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ERROR_DESC" type="ERROR_DESC_TYPE" minOccurs="0" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:all>
+    <xs:attribute name="NAME" type="xs:string" use="required" />
+    <xs:attribute name="STATUS" type="STATUS_TYPE_NODE" use="required" />
+    <xs:attribute name="FIXUP_AVAILABLE" type="xs:boolean" use="required" />
+  </xs:complexType>
+  <xs:complexType name="COLLECTION_ELEMENT_TYPE">
+    <xs:all>
+      <xs:element name="EXP_ACT_VALUE" type="EXP_ACT_VALUE_TYPE" minOccurs="1" />
+      <xs:element name="ERROR_DESC_LIST" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ERROR_DESC" type="ERROR_DESC_TYPE" minOccurs="0" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:all>
+    <xs:attribute name="NAME" type="xs:string" use="required" />
+    <xs:attribute name="DESCRIPTION" type="xs:string" use="optional" />
+    <xs:attribute name="COMPARATOR" type="xs:string" use="optional" />
+    <xs:attribute name="STATUS" type="STATUS_TYPE_NODE" use="required" />
+  </xs:complexType>
+  <xs:complexType name="NODE_COLLECTION_ELEMENT_TYPE">
+    <xs:all>
+      <xs:element name="EXP_ACT_VALUE" type="NODE_EXP_ACT_VALUE_TYPE" minOccurs="1" />
+      <xs:element name="ERROR_DESC_LIST" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="ERROR_DESC" type="ERROR_DESC_TYPE" minOccurs="0" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:all>
+    <xs:attribute name="NODE" type="xs:string" use="required" />
+    <xs:attribute name="NAME" type="xs:string" use="required" />
+    <xs:attribute name="DESCRIPTION" type="xs:string" use="optional" />
+    <xs:attribute name="COMPARATOR" type="xs:string" use="optional" />
+    <xs:attribute name="STATUS" type="STATUS_TYPE_NODE" use="required" />
+  </xs:complexType>
+  <!--Severity type-->
+  <xs:simpleType name="SEVERITY_TYPE">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FATAL" />
+      <xs:enumeration value="CRITICAL" />
+      <xs:enumeration value="IGNORABLE" />
+    </xs:restriction>
+  </xs:simpleType>
+  <!--Node element type-->
+  <xs:complexType name="NODE_TYPE">
+    <xs:attribute name="ID" use="required" type="xs:string" />
+  </xs:complexType>
+  <!--Status type for one node execution-->
+  <xs:simpleType name="STATUS_TYPE_NODE">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SUCCESSFUL" />
+      <xs:enumeration value="OPERATION_FAILED" />
+      <xs:enumeration value="VERIFICATION_FAILED" />
+      <xs:enumeration value="VERIFICATION_WARNING" />
+      <xs:enumeration value="UNDEFINED" />
+    </xs:restriction>
+  </xs:simpleType>
+  <!--Overall Status type-->
+  <xs:simpleType name="STATUS_TYPE">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SUCCESSFUL" />
+      <xs:enumeration value="OPERATION_FAILED" />
+      <xs:enumeration value="VERIFICATION_FAILED" />
+      <xs:enumeration value="WARNING" />
+      <xs:enumeration value="UNKNOWN" />
+    </xs:restriction>
+  </xs:simpleType>
+  <!--List of Various Stages and Components that can be the targets-->
+  <xs:simpleType name="TARGET_ID_TYPE">
+    <xs:restriction base="xs:string">
+       <xs:enumeration value="STAGE_PRE_CRSINST" />
+       <xs:enumeration value="BESTPRACTICE_PRE_CRS_INST" />
+       <xs:enumeration value="STAGE_POST_CRSINST" />
+       <xs:enumeration value="BESTPRACTICE_POSTREQ_CRS_INST" />
+       <xs:enumeration value="STAGE_PRE_DBINST" />
+       <xs:enumeration value="STAGE_PRE_DBCONFIG" />
+       <xs:enumeration value="STAGE_POST_DBCONFIG" />
+       <xs:enumeration value="BESTPRACTICE_POSTREQ_DB_CONFIG" />
+       <xs:enumeration value="STAGE_PRE_SIHAINST" />
+       <xs:enumeration value="STAGE_PRE_SIHACONFIG" />
+       <xs:enumeration value="STAGE_POST_SIHACONFIG" />
+       <xs:enumeration value="BESTPRACTICE_POSTREQ_SI_HA_CONFIG" />
+       <xs:enumeration value="STAGE_PRE_SIDBINST" />
+       <xs:enumeration value="STAGE_PRE_SIDBCONFIG" />
+       <xs:enumeration value="STAGE_PRE_CFS_SETUP" />
+       <xs:enumeration value="STAGE_POST_CFS_SETUP" />
+       <xs:enumeration value="STAGE_POST_HWOS_SETUP" />
+       <xs:enumeration value="STAGE_PRE_NODE_ADD" />
+       <xs:enumeration value="STAGE_POST_NODE_ADD" />
+       <xs:enumeration value="STAGE_POST_NODE_DEL" />
+       <xs:enumeration value="COMP_SYS_CRS" />
+       <xs:enumeration value="COMP_SYS_DB" />
+       <xs:enumeration value="STAGE_PRE_USM_CONFIG" />
+       <xs:enumeration value="STAGE_POST_USM_CONFIG" />
+       <xs:enumeration value="COMP_SYS_SI_HA" />
+       <xs:enumeration value="COMP_SYS_SI_DB" />
+       <xs:enumeration value="CRS_SOFTWARE_COLLECTION" />
+       <xs:enumeration value="DB_SOFTWARE_COLLECTION" />
+       <xs:enumeration value="CRS_MODEL_COLLECTION" />
+       <xs:enumeration value="OHASD_MODEL_COLLECTION" />
+       <xs:enumeration value="DB_INIT_PARAMETER_COLLECTION" />
+       <xs:enumeration value="NETWORK_COLLECTION" />
+       <xs:enumeration value="STORAGE_COLLECTION" />
+       <xs:enumeration value="OCR_COLLECTION" />
+       <xs:enumeration value="COMPONENT" />
+       <xs:enumeration value="STAGE" />
+    </xs:restriction>
+  </xs:simpleType>
+  <!--Expected and Actual Value-->
+  <xs:complexType name="EXP_ACT_VALUE_TYPE">
+    <xs:all>
+      <xs:element name="EXPECTED_VALUE" minOccurs="0" type="xs:string"/>
+      <xs:element name="ACTUAL_VALUE" minOccurs="0" type="xs:string"/>
+      <xs:element name="COLLECTION_SET" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <!--Global collected data-->
+            <xs:element name="COLLECTION_ELEMENT" type="COLLECTION_ELEMENT_TYPE" minOccurs="0" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="NODE_EXP_ACT_VALUE_TYPE">
+    <xs:all>
+      <xs:element name="EXPECTED_VALUE" minOccurs="0" type="xs:string"/>
+      <xs:element name="ACTUAL_VALUE" minOccurs="0" type="xs:string"/>
+      <xs:element name="COLLECTION_SET" minOccurs="0" maxOccurs="1">
+        <xs:complexType>
+          <xs:sequence>
+            <!--Global collected data-->
+            <xs:element name="COLLECTION_ELEMENT" type="NODE_COLLECTION_ELEMENT_TYPE" minOccurs="0" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+  <!--Error description type-->
+  <xs:complexType name="ERROR_DESC_TYPE">
+    <xs:all>
+      <xs:element name="MSG_TXT" minOccurs="1" type="xs:string"/>
+      <xs:element name="CAUSE" minOccurs="0" type="xs:string"/>
+      <xs:element name="ACTION" minOccurs="0" type="xs:string"/>
+    </xs:all>
+  </xs:complexType>
+  <!--Cluster Details Type -->
+  <xs:complexType name="CLUSTER_DETAILS_TYPE">
+      <xs:attribute name="CLUSTER_NAME" type="xs:string"/>
+      <xs:attribute name="CLUSTERWARE_VERSION" type="xs:string" />
+      <xs:attribute name="NODE_LIST" type="xs:string" />
+      <xs:attribute name="CRS_HOME" type="xs:string" />
+      <xs:attribute name="CRS_USER" type="xs:string"/>
+      <xs:attribute name="ORACLE_BASE" type="xs:string"/>
+      <xs:attribute name="OS_PLATFORM" type="xs:string"/>
+  </xs:complexType>
+  <!--Database type -->
+  <xs:complexType name="DATABASE_TYPE">
+    <xs:attribute name="DATABASE_VERSION" type="xs:string"/>
+    <xs:attribute name="DATABASE_HOME" type="xs:string"/>
+    <xs:attribute name="NAME" type="xs:string" use="required" />
+  </xs:complexType>
+</xs:schema>

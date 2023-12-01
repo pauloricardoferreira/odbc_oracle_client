@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+
+<!--  $Header: opsm/cv/cvdata/responsevars.xml /main/2 2016/05/16 10:53:16 jgagarci Exp $ -->
+
+<!-- 
+ Copyright (c) 2015, 2016, Oracle and/or its affiliates. All rights reserved.
+
+   NAME
+     responsevars.xml - list of variables in response file and valid values
+
+   DESCRIPTION
+     This document will be used to support response file from previous versions
+     with the option -r
+
+   NOTES
+     as of 12.2 only oracle.install.crs.config.ClusterType has different values
+     between releases 12.1 and 12.2
+
+   MODIFIED   (MM/DD/YY)
+   jgagarci    05/06/16 - Fixbug 23088919 - update ClusterType to
+                          ClusterConfiguration
+   jgagarci    12/14/15 - Creation
+
+-->
+<ROOT>
+   <SOFTWARE VERSION="12.2">
+      <VARIABLE_LIST>
+         <VARIABLE>
+            <RESPONSE_VARIABLE VALUE="oracle.install.crs.config.ClusterConfiguration"/>
+            <VALID_OPTIONS VALUE="STANDALONE,DOMAIN,MEMBERDB,MEMBERAPP"/>
+         </VARIABLE>
+      </VARIABLE_LIST>
+   </SOFTWARE>
+   <SOFTWARE VERSION="12.1">
+      <VARIABLE_LIST>
+         <VARIABLE>
+            <RESPONSE_VARIABLE VALUE="oracle.install.crs.config.ClusterType"/>
+            <VALID_OPTIONS VALUE="FLEX,STANDARD"/>
+         </VARIABLE>
+      </VARIABLE_LIST>
+   </SOFTWARE>
+</ROOT>

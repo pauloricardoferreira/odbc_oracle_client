@@ -1,0 +1,84 @@
+<SoftwareComponents>
+  <SoftwareComponent Name="crs">
+    <File Name="cemutlo.exe" Ext="" Path="bin\"/>
+    <File Name="cemutls.exe" Ext="" Path="bin\"/>
+    <File Name="clscfg.exe" Ext="" Path="bin\"/>
+    <File Name="clsfmt.exe" Ext="" Path="bin\"/>
+    <File Name="cluvfy.bat" Ext="" Path="bin\"/>
+    <File Name="crlogdr.exe" Ext="" Path="bin\"/>
+    <File Name="crs_getperm.exe" Ext="" Path="bin\"/>
+    <File Name="crs_profile.exe" Ext="" Path="bin\"/>
+    <File Name="crs_register.exe" Ext="" Path="bin\"/>
+    <File Name="crs_relocate.exe" Ext="" Path="bin\"/>
+    <File Name="crs_setperm.exe" Ext="" Path="bin\"/>
+    <File Name="crs_start.exe" Ext="" Path="bin\"/>
+    <File Name="crs_stat.exe" Ext="" Path="bin\"/>
+    <File Name="crs_stop.exe" Ext="" Path="bin\"/>
+    <File Name="crs_unregister.exe" Ext="" Path="bin\"/>
+    <File Name="crsctl.exe" Ext="" Path="bin\"/>
+    <File Name="crsd.exe" Ext="" Path="bin\"/>
+    <File Name="crssetup.exe" Ext="" Path="bin\"/>
+    <File Name="crstmpl.exe" Ext="" Path="bin\"/>
+    <File Name="crsuser.exe" Ext="" Path="bin\"/>
+    <File Name="DeleteDisk.exe" Ext="" Path="bin\"/>
+    <File Name="diagcollection.pl" Ext="" Path="bin\"/>
+    <File Name="evmd.exe" Ext="" Path="bin\"/>
+    <File Name="evminfo.exe" Ext="" Path="bin\"/>
+    <File Name="evmlogger.exe" Ext="" Path="bin\"/>
+    <File Name="evmmkbin.exe" Ext="" Path="bin\"/>
+    <File Name="evmmklib.exe" Ext="" Path="bin\"/>
+    <File Name="evmpost.exe" Ext="" Path="bin\"/>
+    <File Name="evmshow.exe" Ext="" Path="bin\"/>
+    <File Name="evmsort.exe" Ext="" Path="bin\"/>
+    <File Name="evmwatch.exe" Ext="" Path="bin\"/>
+    <File Name="ExportSYMLinks.exe" Ext="" Path="bin\"/>
+    <File Name="extjob.exe" Ext="" Path="bin\"/>
+    <File Name="extjobo.exe" Ext="" Path="bin\"/>
+    <File Name="gsd.bat" Ext="" Path="bin\"/>
+    <File Name="gsd.exe" Ext="" Path="bin\"/>
+    <File Name="gsdctl.bat" Ext="" Path="bin\"/>
+    <File Name="gsdservice.exe" Ext="" Path="bin\"/>
+    <File Name="gsdstop.bat" Ext="" Path="bin\"/>
+    <File Name="GUIOracleOBJManager.exe" Ext="" Path="bin\"/>
+    <File Name="ImportSYMLinks.exe" Ext="" Path="bin\"/>
+    <File Name="lbuilder.bat" Ext="" Path="bin\"/>
+    <File Name="LCSSCAN.EXE" Ext="" Path="bin\"/>
+    <File Name="LetterDelete.exe" Ext="" Path="bin\"/>
+    <File Name="lmsgen.exe" Ext="" Path="bin\"/>
+    <File Name="loadpsp.exe" Ext="" Path="bin\"/>
+    <File Name="localconfig.bat" Ext="" Path="bin\"/>
+    <File Name="LogPartFormat.exe" Ext="" Path="bin\"/>
+    <File Name="lsnodes.exe" Ext="" Path="bin\"/>
+    <File Name="lxegen.exe" Ext="" Path="bin\"/>
+    <File Name="lxinst.exe" Ext="" Path="bin\"/>
+    <File Name="ocrcheck.exe" Ext="" Path="bin\"/>
+    <File Name="ocrconfig.exe" Ext="" Path="bin\"/>
+    <File Name="ocrdump.exe" Ext="" Path="bin\"/>
+    <File Name="ocssd.exe" Ext="" Path="bin\"/>
+    <File Name="oifcfg.exe" Ext="" Path="bin\"/>
+    <File Name="olsnodes.exe" Ext="" Path="bin\"/>
+    <File Name="onsctl.exe" Ext="" Path="bin\"/>
+    <File Name="oracle.key" Ext="" Path="bin\"/>
+    <File Name="OracleAdNetConnect.exe" Ext="" Path="bin\"/>
+    <File Name="OracleAdNetTest.exe" Ext="" Path="bin\"/>
+    <File Name="OracleOBJManager.exe" Ext="" Path="bin\"/>
+    <File Name="OracleOBJService.exe" Ext="" Path="bin\"/>
+    <File Name="orauts.sym" Ext="" Path="bin\"/>
+    <File Name="racgeut.exe" Ext="" Path="bin\"/>
+    <File Name="racgevtf.exe" Ext="" Path="bin\"/>
+    <File Name="racgmain.exe" Ext="" Path="bin\"/>
+    <File Name="racgons.exe" Ext="" Path="bin\"/>
+    <File Name="racgvip.exe" Ext="" Path="bin\"/>
+    <File Name="racgwrap.bat" Ext="" Path="bin\"/>
+    <File Name="RemoteExecService.exe" Ext="" Path="bin\"/>
+    <File Name="sclsspawn.exe" Ext="" Path="bin\"/>
+    <File Name="srvctl.bat" Ext="" Path="bin\"/>
+    <File Name="unzip.exe" Ext="" Path="bin\"/>
+    <File Name="usrvip.bat" Ext="" Path="bin\"/>
+    <File Name="xmlwf.exe" Ext="" Path="bin\"/>
+    <File Name="zip.exe" Ext="" Path="bin\"/>
+  </SoftwareComponent>
+  <SoftwareComponent Name="database">
+    <File Name="oracle" Ext ="" Path="bin\"/> 
+  </SoftwareComponent>
+</SoftwareComponents>
